@@ -460,18 +460,6 @@
     };
     date = "2024-11-25";
   };
-  obsidian-nvim = {
-    pname = "obsidian-nvim";
-    version = "14e0427bef6c55da0d63f9a313fd9941be3a2479";
-    src = fetchFromGitHub {
-      owner = "epwalsh";
-      repo = "obsidian.nvim";
-      rev = "14e0427bef6c55da0d63f9a313fd9941be3a2479";
-      fetchSubmodules = false;
-      sha256 = "sha256-mbq7fAPmlwOAbWlN3lGX9WGBKTV8cAPZx8pnRCyszJc=";
-    };
-    date = "2024-08-01";
-  };
   plenary = {
     pname = "plenary";
     version = "2d9b06177a975543726ce5c73fca176cedbffe9d";
