@@ -8,7 +8,7 @@
   writeText,
 
   # neovim
-  pname ? "izvim",
+  pname ? "ivy",
   basePackage ? neovim-unwrapped, # you can choose the base, i choose neovim-unwrapped
   neovim-unwrapped,
   vimUtils,

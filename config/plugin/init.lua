@@ -1,1 +1,1 @@
-require("izvim")
+require("ivy")

@@ -3,12 +3,12 @@ local M = {}
 M.loaded = false
 
 M.check = function()
-  vim.health.start("izvim report")
+  vim.health.start("ivy report")
 
   if M.loaded then
-    vim.health.ok("izvim loaded correctly")
+    vim.health.ok("ivy loaded correctly")
   else
-    vim.health.error("izvim did not loaded correctly")
+    vim.health.error("ivy did not loaded correctly")
   end
 
   local deps = {
