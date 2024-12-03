@@ -43,6 +43,7 @@
   lazygit,
   nodePackages,
   nodejs-slim,
+  zk,
 
   # for our extra plugins
   vimPlugins,
@@ -136,6 +137,7 @@ let
     ltex-ls
     nodePackages.alex
     marksman
+    zk
 
     # go
     gonvim-tools

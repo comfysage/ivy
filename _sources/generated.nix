@@ -665,4 +665,16 @@
     };
     date = "2024-04-29";
   };
+  zk-nvim = {
+    pname = "zk-nvim";
+    version = "42dc341d897ac4da3d4a9c5c506a36153473f021";
+    src = fetchFromGitHub {
+      owner = "mickael-menu";
+      repo = "zk-nvim";
+      rev = "42dc341d897ac4da3d4a9c5c506a36153473f021";
+      fetchSubmodules = false;
+      sha256 = "sha256-HbqQZYvQunBsiEG1P8Xfl3fCZ0qxfFavWqTBGQhCPPs=";
+    };
+    date = "2024-11-20";
+  };
 }

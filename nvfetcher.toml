@@ -224,3 +224,7 @@ src.git = "https://github.com/tpope/vim-fugitive"
 pinned = true
 fetch.github = "wakatime/vim-wakatime"
 src.git = "https://github.com/wakatime/vim-wakatime"
+
+[zk-nvim]
+fetch.github = "mickael-menu/zk-nvim"
+src.git = "https://github.com/mickael-menu/zk-nvim"

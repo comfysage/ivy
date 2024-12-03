@@ -1106,5 +1106,25 @@
             "type": "github"
         },
         "version": "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23"
+    },
+    "zk-nvim": {
+        "cargoLocks": null,
+        "date": "2024-11-20",
+        "extract": null,
+        "name": "zk-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mickael-menu",
+            "repo": "zk-nvim",
+            "rev": "42dc341d897ac4da3d4a9c5c506a36153473f021",
+            "sha256": "sha256-HbqQZYvQunBsiEG1P8Xfl3fCZ0qxfFavWqTBGQhCPPs=",
+            "type": "github"
+        },
+        "version": "42dc341d897ac4da3d4a9c5c506a36153473f021"
     }
 }
