@@ -27,5 +27,5 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update Flake Inputs"
+          commit_message: "chore: update flake inputs"
           commit_user_name: GitHub Actions
