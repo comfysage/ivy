@@ -1,0 +1,31 @@
+name: Update Flake Inputs
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * 3" # 02:00 on Wednesday
+
+jobs:
+  update-lockfile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.0
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Update Lockfile
+        run: nix flake update
+
+      - name: Update Sources
+        run: |
+          nix run nixpkgs#nvfetcher
+          pushd pkgs/nvim-treesitter
+          nix run nixpkgs#nvfetcher
+          popd
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update Flake Inputs"
+          commit_user_name: GitHub Actions
