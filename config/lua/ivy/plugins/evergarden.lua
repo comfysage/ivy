@@ -11,10 +11,12 @@ return {
           search = { reverse = false, inc_reverse = true },
           types = { italic = true },
           keyword = { italic = true },
-          comment = { italic = false },
+          comment = { italic = true },
         },
         overrides = {}, -- add custom overrides
       })
+
+      vim.cmd.colorscheme("evergarden")
     end,
   },
 }
