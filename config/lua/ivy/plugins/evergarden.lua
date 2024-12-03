@@ -1,6 +1,7 @@
 return {
   {
     "evergarden",
+    priority = 1200,
     after = function()
       require("evergarden").setup({
         transparent_background = true,

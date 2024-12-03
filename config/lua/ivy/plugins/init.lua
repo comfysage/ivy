@@ -37,7 +37,24 @@ return {
   },
 
   -- lsp
-  { "rainbow-delimiters.nvim" },
+  {
+    "rainbow-delimiters.nvim",
+    after = function()
+      local C = require("evergarden.colors").setup()
+      local hls = {
+        RainbowDelimiterRed = { fg = C.red[1] },
+        RainbowDelimiterYellow = { fg = C.yellow[1] },
+        RainbowDelimiterBlue = { fg = C.blue[1] },
+        RainbowDelimiterOrange = { fg = C.orange[1] },
+        RainbowDelimiterGreen = { fg = C.green[1] },
+        RainbowDelimiterViolet = { fg = C.pink[1] },
+        RainbowDelimiterCyan = { fg = C.aqua[1] },
+      }
+      for hl_name, hl_value in pairs(hls) do
+        vim.api.nvim_set_hl(0, hl_name, hl_value)
+      end
+    end,
+  },
 
   -- rust lsp + formmating
   {
