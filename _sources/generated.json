@@ -381,6 +381,26 @@
         },
         "version": "7871a88056f7144defca9c931e311a3134c5d509"
     },
+    "keymaps-nvim": {
+        "cargoLocks": null,
+        "date": "2024-03-12",
+        "extract": null,
+        "name": "keymaps-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "comfysage",
+            "repo": "keymaps.nvim",
+            "rev": "62f10ae89dfcf065035c20ad3cda2c84f36e43ab",
+            "sha256": "sha256-Wgh9uVmKtKOCwo+Z3IFTp6Bv0m4QIju3FVPlxsHRWBg=",
+            "type": "github"
+        },
+        "version": "62f10ae89dfcf065035c20ad3cda2c84f36e43ab"
+    },
     "lazydev": {
         "cargoLocks": null,
         "date": "2024-11-25",

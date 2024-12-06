@@ -230,6 +230,18 @@
     };
     date = "2024-11-11";
   };
+  keymaps-nvim = {
+    pname = "keymaps-nvim";
+    version = "62f10ae89dfcf065035c20ad3cda2c84f36e43ab";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "keymaps.nvim";
+      rev = "62f10ae89dfcf065035c20ad3cda2c84f36e43ab";
+      fetchSubmodules = false;
+      sha256 = "sha256-Wgh9uVmKtKOCwo+Z3IFTp6Bv0m4QIju3FVPlxsHRWBg=";
+    };
+    date = "2024-03-12";
+  };
   lazydev = {
     pname = "lazydev";
     version = "f59bd14a852ca43db38e3662395354cb2a9b13e0";

@@ -15,6 +15,22 @@ return {
     end,
   },
 
+  -- keymaps
+  {
+    "keymaps.nvim",
+    priority = 1000,
+    after = function()
+      require("keymaps").setup({})
+
+      keymaps.normal["<leader>fm"] = {
+        function()
+          require("telescope").extensions.keymaps_nvim.keymaps_nvim()
+        end,
+        "find keymaps",
+      }
+    end,
+  },
+
   -- mini
   {
     "mini.ai",

@@ -45,6 +45,8 @@ return {
       telescope.load_extension("project")
       telescope.load_extension("ui-select")
 
+      telescope.load_extension("keymaps_nvim")
+
       telescope.setup({
         defaults = {
           prompt_prefix = " ",

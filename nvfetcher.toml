@@ -81,6 +81,10 @@ src.git = "https://github.com/HakonHarnes/img-clip.nvim"
 fetch.github = "lukas-reineke/indent-blankline.nvim"
 src.git = "https://github.com/lukas-reineke/indent-blankline.nvim"
 
+[keymaps-nvim]
+fetch.github = "comfysage/keymaps.nvim"
+src.git = "https://github.com/comfysage/keymaps.nvim"
+
 [lazydev]
 fetch.github = "folke/lazydev.nvim"
 src.git = "https://github.com/folke/lazydev.nvim"
