@@ -34,3 +34,16 @@ keymaps.visual["<leader>q"] = { vim.cmd.quitall, "quit all" }
 
 -- save file
 keymaps.normal["<C-s>"] = { vim.cmd.write, "write file" }
+
+-- window movement
+for _, direction in ipairs({ "h", "j", "k", "l" }) do
+  keymaps.normal["<leader>" .. direction] = {
+    function()
+      vim.cmd.wincmd(direction)
+    end,
+    string.format("switch window `%s`", direction),
+  }
+end
+
+keymaps.normal["sv"] = { vim.cmd.vsplit, "split window vertical" }
+keymaps.normal["sh"] = { vim.cmd.split, "split window horizontal" }
