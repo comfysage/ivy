@@ -1,14 +1,9 @@
--- netrw is handled by nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- true colors
 vim.o.termguicolors = true
 
 -- line numbers
 vim.o.mouse = "a"
 vim.o.number = true
-vim.o.relativenumber = true
 
 -- scroll offsets
 vim.o.scrolloff = 5
