@@ -22,12 +22,6 @@ keymaps.normal["<C-N>"] = {
   "open nvim tree",
 }
 
--- improved clipboard
-keymaps.normal["<leader>y"] = { '"+y', "copy to system clipboard" }
-keymaps.visual["<leader>y"] = { '"+y', "copy to system clipboard" }
-keymaps.normal["<leader>p"] = { '"+p', "paste from system clipboard" }
-keymaps.visual["<leader>p"] = { '"+p', "paste from system clipboard" }
-
 -- quit all
 keymaps.normal["<leader>q"] = { vim.cmd.quitall, "quit all" }
 keymaps.visual["<leader>q"] = { vim.cmd.quitall, "quit all" }
