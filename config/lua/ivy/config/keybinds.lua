@@ -1,3 +1,6 @@
+---@diagnostic disable-next-line: missing-fields
+local keymaps = require("keymaps").setup({})
+
 -- set space as leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
