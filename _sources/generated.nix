@@ -194,18 +194,6 @@
     };
     date = "2024-11-02";
   };
-  harpoon = {
-    pname = "harpoon";
-    version = "a84ab829eaf3678b586609888ef52f7779102263";
-    src = fetchFromGitHub {
-      owner = "ThePrimeagen";
-      repo = "harpoon";
-      rev = "a84ab829eaf3678b586609888ef52f7779102263";
-      fetchSubmodules = false;
-      sha256 = "sha256-PjB64kdmoCD7JfUB7Qz9n34hk0h2/ZZRlN8Jv2Z9HT8=";
-    };
-    date = "2024-11-12";
-  };
   img-clip-nvim = {
     pname = "img-clip-nvim";
     version = "5ff183655ad98b5fc50c55c66540375bbd62438c";
@@ -676,6 +664,18 @@
       sha256 = "sha256-Blxa6EENqd3wkBIFQuqd8vtsBpYEjkzBxpyBCWqSPUo=";
     };
     date = "2024-11-24";
+  };
+  shelf-nvim = {
+    pname = "shelf-nvim";
+    version = "c580fbffa2599ab6236486d35102c30598f60812";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "shelf.nvim";
+      rev = "c580fbffa2599ab6236486d35102c30598f60812";
+      fetchSubmodules = false;
+      sha256 = "sha256-phO1/tOZ9Qq3M7no+G9PFPB+Gqf0eHSWnBw15SMEX3w=";
+    };
+    date = "2024-06-24";
   };
   snacks-nvim = {
     pname = "snacks-nvim";

@@ -321,26 +321,6 @@
         },
         "version": "d783191eaa75215beae0c80319fcce5e6b3beeda"
     },
-    "harpoon": {
-        "cargoLocks": null,
-        "date": "2024-11-12",
-        "extract": null,
-        "name": "harpoon",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ThePrimeagen",
-            "repo": "harpoon",
-            "rev": "a84ab829eaf3678b586609888ef52f7779102263",
-            "sha256": "sha256-PjB64kdmoCD7JfUB7Qz9n34hk0h2/ZZRlN8Jv2Z9HT8=",
-            "type": "github"
-        },
-        "version": "a84ab829eaf3678b586609888ef52f7779102263"
-    },
     "img-clip-nvim": {
         "cargoLocks": null,
         "date": "2024-11-26",
@@ -1126,6 +1106,26 @@
             "type": "github"
         },
         "version": "bbd005a56daab7a19ceea22360a836957ac2c42c"
+    },
+    "shelf-nvim": {
+        "cargoLocks": null,
+        "date": "2024-06-24",
+        "extract": null,
+        "name": "shelf-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "comfysage",
+            "repo": "shelf.nvim",
+            "rev": "c580fbffa2599ab6236486d35102c30598f60812",
+            "sha256": "sha256-phO1/tOZ9Qq3M7no+G9PFPB+Gqf0eHSWnBw15SMEX3w=",
+            "type": "github"
+        },
+        "version": "c580fbffa2599ab6236486d35102c30598f60812"
     },
     "snacks-nvim": {
         "cargoLocks": null,

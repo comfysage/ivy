@@ -58,7 +58,6 @@ return {
           gitsigns = false,
           markdown = true,
           render_markdown = false,
-          harpoon = true,
           symbols_outline = true,
           ts_rainbow = true,
           notify = true,
