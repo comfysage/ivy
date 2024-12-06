@@ -4,7 +4,7 @@ return {
     priority = 1200,
     after = function()
       require("evergarden").setup({
-        transparent_background = true,
+        transparent_background = false,
         contrast_dark = "medium", -- 'hard'|'medium'|'soft'
         override_terminal = true,
         style = {
