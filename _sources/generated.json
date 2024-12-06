@@ -545,6 +545,206 @@
         },
         "version": "72cd34279e94ee96ee33bdf30a87b00e6d45319d"
     },
+    "mini-ai": {
+        "cargoLocks": null,
+        "date": "2024-11-08",
+        "extract": null,
+        "name": "mini-ai",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.ai",
+            "rev": "31c149067d38b97720d2a179619f7745a0006ecc",
+            "sha256": "sha256-+v6a4hKSWadxiUH/7mlOgeH7K8jVcp6TvzRFH7IbOc0=",
+            "type": "github"
+        },
+        "version": "31c149067d38b97720d2a179619f7745a0006ecc"
+    },
+    "mini-align": {
+        "cargoLocks": null,
+        "date": "2024-09-05",
+        "extract": null,
+        "name": "mini-align",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.align",
+            "rev": "26111a737494bc39576ad67b52bbc2638ca23553",
+            "sha256": "sha256-65rVlLKJN2LxRkOGVyeTkLOxGSmCyV8L6EXZx7bqo7M=",
+            "type": "github"
+        },
+        "version": "26111a737494bc39576ad67b52bbc2638ca23553"
+    },
+    "mini-animate": {
+        "cargoLocks": null,
+        "date": "2024-12-01",
+        "extract": null,
+        "name": "mini-animate",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.animate",
+            "rev": "d14190ac3040116540889e2ebc25f488b195799e",
+            "sha256": "sha256-ZePmJuHCCymTgaK46nSg5tRloxs+UKrVgVmT++rGKpc=",
+            "type": "github"
+        },
+        "version": "d14190ac3040116540889e2ebc25f488b195799e"
+    },
+    "mini-bracketed": {
+        "cargoLocks": null,
+        "date": "2024-09-27",
+        "extract": null,
+        "name": "mini-bracketed",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.bracketed",
+            "rev": "daf2bff8172bc84bfb934f765275618f5e7844a8",
+            "sha256": "sha256-JrczeJ4LHlIR4fXpzGTolwTX4t/Cx0SVh6XZ0sGSXkY=",
+            "type": "github"
+        },
+        "version": "daf2bff8172bc84bfb934f765275618f5e7844a8"
+    },
+    "mini-diff": {
+        "cargoLocks": null,
+        "date": "2024-12-03",
+        "extract": null,
+        "name": "mini-diff",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.diff",
+            "rev": "5947342c95a9c2e24c659b54bb8ef083da4495ad",
+            "sha256": "sha256-Mc5nb0cpAi9iKHg3vxPamw2KEKH2q5lsjoS2L4g+K24=",
+            "type": "github"
+        },
+        "version": "5947342c95a9c2e24c659b54bb8ef083da4495ad"
+    },
+    "mini-files": {
+        "cargoLocks": null,
+        "date": "2024-12-02",
+        "extract": null,
+        "name": "mini-files",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.files",
+            "rev": "84efb81e5207ae8c41f54abdafb79c6212fc0971",
+            "sha256": "sha256-LU+Z1TuryA4Zl3ctspHkrbzUJnFMmCV4/OSoC8XZ4yw=",
+            "type": "github"
+        },
+        "version": "84efb81e5207ae8c41f54abdafb79c6212fc0971"
+    },
+    "mini-git": {
+        "cargoLocks": null,
+        "date": "2024-09-07",
+        "extract": null,
+        "name": "mini-git",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini-git",
+            "rev": "f75ae3855f595e55e1a8a96521ffa01012632b28",
+            "sha256": "sha256-DwswjGP8L/D2sff+FqdQAfvIXvBFyBRKmdqXv2jy/rQ=",
+            "type": "github"
+        },
+        "version": "f75ae3855f595e55e1a8a96521ffa01012632b28"
+    },
+    "mini-move": {
+        "cargoLocks": null,
+        "date": "2024-08-15",
+        "extract": null,
+        "name": "mini-move",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.move",
+            "rev": "4caa1c212f5ca3d1633d21cfb184808090ed74b1",
+            "sha256": "sha256-nX0eAlhMnKhAftgM6qeHUuawagumLQMPKDkqZNPLljg=",
+            "type": "github"
+        },
+        "version": "4caa1c212f5ca3d1633d21cfb184808090ed74b1"
+    },
+    "mini-pairs": {
+        "cargoLocks": null,
+        "date": "2024-10-11",
+        "extract": null,
+        "name": "mini-pairs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.pairs",
+            "rev": "7e834c5937d95364cc1740e20d673afe2d034cdb",
+            "sha256": "sha256-PtHxLKU1smVTx655r5SINxuz5CJmZWnBW70T8zJ/oxM=",
+            "type": "github"
+        },
+        "version": "7e834c5937d95364cc1740e20d673afe2d034cdb"
+    },
+    "mini-splitjoin": {
+        "cargoLocks": null,
+        "date": "2024-07-01",
+        "extract": null,
+        "name": "mini-splitjoin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.splitjoin",
+            "rev": "3e92f6764e770ba392325cad3a4497adcada695f",
+            "sha256": "sha256-LDIbh5KfupTI4zkYOlLmVCd3DuZRhx5lTASN53VG34g=",
+            "type": "github"
+        },
+        "version": "3e92f6764e770ba392325cad3a4497adcada695f"
+    },
     "mini-surround": {
         "cargoLocks": null,
         "date": "2024-10-15",
@@ -564,6 +764,26 @@
             "type": "github"
         },
         "version": "48a9795c9d352c771e1ab5dedab6063c0a2df037"
+    },
+    "mini-trailspace": {
+        "cargoLocks": null,
+        "date": "2024-09-06",
+        "extract": null,
+        "name": "mini-trailspace",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.trailspace",
+            "rev": "3a328e62559c33014e422fb9ae97afc4208208b1",
+            "sha256": "sha256-JKYvFz8g8kVZvxE44RhwoHXQykghXx7ebW/Mj1ZdJIw=",
+            "type": "github"
+        },
+        "version": "3a328e62559c33014e422fb9ae97afc4208208b1"
     },
     "neovim-session-manager": {
         "cargoLocks": null,

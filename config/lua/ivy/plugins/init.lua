@@ -17,6 +17,76 @@ return {
 
   -- mini
   {
+    "mini.ai",
+    event = "BufAdd",
+    after = function()
+      require("mini.ai").setup()
+    end,
+  },
+  {
+    "mini.align",
+    event = "BufAdd",
+    after = function()
+      require("mini.align").setup()
+    end,
+  },
+  {
+    "mini.animate",
+    event = "UIEnter",
+    after = function()
+      require("mini.animate").setup()
+    end,
+  },
+  {
+    "mini.bracketed",
+    event = "UIEnter",
+    after = function()
+      require("mini.bracketed").setup()
+    end,
+  },
+  {
+    "mini.diff",
+    event = "BufAdd",
+    after = function()
+      require("mini.diff").setup()
+    end,
+  },
+  {
+    "mini.files",
+    event = "UIEnter",
+    after = function()
+      require("mini.files").setup()
+    end,
+  },
+  {
+    "mini-git",
+    event = "UIEnter",
+    after = function()
+      require("mini.git").setup()
+    end,
+  },
+  {
+    "mini.move",
+    event = "BufAdd",
+    after = function()
+      require("mini.move").setup()
+    end,
+  },
+  {
+    "mini.pairs",
+    event = "InsertEnter",
+    after = function()
+      require("mini.pairs").setup()
+    end,
+  },
+  {
+    "mini.splitjoin",
+    event = "BufAdd",
+    after = function()
+      require("mini.splitjoin").setup()
+    end,
+  },
+  {
     "mini.surround",
     event = "InsertEnter",
     after = function()
@@ -35,6 +105,7 @@ return {
       })
     end,
   },
+  { "mini.trailspace", event = "BufAdd" },
 
   -- lsp
   {

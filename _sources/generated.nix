@@ -328,6 +328,126 @@
     };
     date = "2024-11-23";
   };
+  mini-ai = {
+    pname = "mini-ai";
+    version = "31c149067d38b97720d2a179619f7745a0006ecc";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.ai";
+      rev = "31c149067d38b97720d2a179619f7745a0006ecc";
+      fetchSubmodules = false;
+      sha256 = "sha256-+v6a4hKSWadxiUH/7mlOgeH7K8jVcp6TvzRFH7IbOc0=";
+    };
+    date = "2024-11-08";
+  };
+  mini-align = {
+    pname = "mini-align";
+    version = "26111a737494bc39576ad67b52bbc2638ca23553";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.align";
+      rev = "26111a737494bc39576ad67b52bbc2638ca23553";
+      fetchSubmodules = false;
+      sha256 = "sha256-65rVlLKJN2LxRkOGVyeTkLOxGSmCyV8L6EXZx7bqo7M=";
+    };
+    date = "2024-09-05";
+  };
+  mini-animate = {
+    pname = "mini-animate";
+    version = "d14190ac3040116540889e2ebc25f488b195799e";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.animate";
+      rev = "d14190ac3040116540889e2ebc25f488b195799e";
+      fetchSubmodules = false;
+      sha256 = "sha256-ZePmJuHCCymTgaK46nSg5tRloxs+UKrVgVmT++rGKpc=";
+    };
+    date = "2024-12-01";
+  };
+  mini-bracketed = {
+    pname = "mini-bracketed";
+    version = "daf2bff8172bc84bfb934f765275618f5e7844a8";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.bracketed";
+      rev = "daf2bff8172bc84bfb934f765275618f5e7844a8";
+      fetchSubmodules = false;
+      sha256 = "sha256-JrczeJ4LHlIR4fXpzGTolwTX4t/Cx0SVh6XZ0sGSXkY=";
+    };
+    date = "2024-09-27";
+  };
+  mini-diff = {
+    pname = "mini-diff";
+    version = "5947342c95a9c2e24c659b54bb8ef083da4495ad";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.diff";
+      rev = "5947342c95a9c2e24c659b54bb8ef083da4495ad";
+      fetchSubmodules = false;
+      sha256 = "sha256-Mc5nb0cpAi9iKHg3vxPamw2KEKH2q5lsjoS2L4g+K24=";
+    };
+    date = "2024-12-03";
+  };
+  mini-files = {
+    pname = "mini-files";
+    version = "84efb81e5207ae8c41f54abdafb79c6212fc0971";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.files";
+      rev = "84efb81e5207ae8c41f54abdafb79c6212fc0971";
+      fetchSubmodules = false;
+      sha256 = "sha256-LU+Z1TuryA4Zl3ctspHkrbzUJnFMmCV4/OSoC8XZ4yw=";
+    };
+    date = "2024-12-02";
+  };
+  mini-git = {
+    pname = "mini-git";
+    version = "f75ae3855f595e55e1a8a96521ffa01012632b28";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini-git";
+      rev = "f75ae3855f595e55e1a8a96521ffa01012632b28";
+      fetchSubmodules = false;
+      sha256 = "sha256-DwswjGP8L/D2sff+FqdQAfvIXvBFyBRKmdqXv2jy/rQ=";
+    };
+    date = "2024-09-07";
+  };
+  mini-move = {
+    pname = "mini-move";
+    version = "4caa1c212f5ca3d1633d21cfb184808090ed74b1";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.move";
+      rev = "4caa1c212f5ca3d1633d21cfb184808090ed74b1";
+      fetchSubmodules = false;
+      sha256 = "sha256-nX0eAlhMnKhAftgM6qeHUuawagumLQMPKDkqZNPLljg=";
+    };
+    date = "2024-08-15";
+  };
+  mini-pairs = {
+    pname = "mini-pairs";
+    version = "7e834c5937d95364cc1740e20d673afe2d034cdb";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.pairs";
+      rev = "7e834c5937d95364cc1740e20d673afe2d034cdb";
+      fetchSubmodules = false;
+      sha256 = "sha256-PtHxLKU1smVTx655r5SINxuz5CJmZWnBW70T8zJ/oxM=";
+    };
+    date = "2024-10-11";
+  };
+  mini-splitjoin = {
+    pname = "mini-splitjoin";
+    version = "3e92f6764e770ba392325cad3a4497adcada695f";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.splitjoin";
+      rev = "3e92f6764e770ba392325cad3a4497adcada695f";
+      fetchSubmodules = false;
+      sha256 = "sha256-LDIbh5KfupTI4zkYOlLmVCd3DuZRhx5lTASN53VG34g=";
+    };
+    date = "2024-07-01";
+  };
   mini-surround = {
     pname = "mini-surround";
     version = "48a9795c9d352c771e1ab5dedab6063c0a2df037";
@@ -339,6 +459,18 @@
       sha256 = "sha256-Rzg2yYbOAjOPVNEiUv5qOBObqO1bcDsAgc5ned9HZQw=";
     };
     date = "2024-10-15";
+  };
+  mini-trailspace = {
+    pname = "mini-trailspace";
+    version = "3a328e62559c33014e422fb9ae97afc4208208b1";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.trailspace";
+      rev = "3a328e62559c33014e422fb9ae97afc4208208b1";
+      fetchSubmodules = false;
+      sha256 = "sha256-JKYvFz8g8kVZvxE44RhwoHXQykghXx7ebW/Mj1ZdJIw=";
+    };
+    date = "2024-09-06";
   };
   neovim-session-manager = {
     pname = "neovim-session-manager";
