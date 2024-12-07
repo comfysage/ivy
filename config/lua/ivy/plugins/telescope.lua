@@ -22,6 +22,7 @@ return {
 
       local bc = vim.g.bc
 
+      local builtin = require("telescope.builtin")
       local themes = require("telescope.themes")
 
       local M = {}
@@ -191,19 +192,15 @@ return {
         },
       })
 
-      local map = function(mode, shortcut, command, opt)
-        opt = opt or { noremap = true, silent = true }
-        vim.keymap.set(mode, shortcut, command, opt)
-      end
-
-      map("n", "<leader><leader>", "<cmd>Telescope find_files<cr>") -- find files
-      map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>") -- grep through all files
-      map("n", "<leader>fs", "<cmd>SessionManager load_session<cr>") -- Show nvim sessions
-      -- map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- search help tags
-      map("n", "<leader>fp", "<cmd>Telescope project<cr>") -- skip to project
-      map("n", "<leader>ft", "<cmd>TodoTelescope<cr>") -- live grep but for TODOs and FIXMEs
-      map("n", "<leader>fc", "<cmd>Telescope git_commits<cr>") -- git commits
-      map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<cr>") -- fuzzy find in current buffer
+      local keymaps = require("keymaps").setup({})
+      keymaps.normal["<leader><leader>"] = { builtin.find_files, "find files" }
+      keymaps.normal["<leader>fr"] = { builtin.live_grep, "grep through all files" }
+      keymaps.normal["<leader>fs"] = { "<cmd>SessionManager load_session<cr>", "show nvim sessions" }
+      keymaps.normal["<leader>fh"] = { builtin.help_tags, "search help tags" }
+      keymaps.normal["<leader>fp"] = { require("telescope").extensions.project.project, "skip to project" }
+      keymaps.normal["<leader>ft"] = { "<cmd>TodoTelescope<cr>", "live grep but for TODOs and FIXMEs" }
+      keymaps.normal["<leader>fc"] = { builtin.git_commits, "git commits" }
+      keymaps.normal["<leader>f/"] = { builtin.current_buffer_fuzzy_find, "fuzzy find in current buffer" }
     end,
   },
 }
