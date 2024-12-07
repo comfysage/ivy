@@ -22,20 +22,82 @@ return {
 
       local bc = vim.g.bc
 
-      local no_preview = function(opts)
-        local defaults = require("telescope.themes").get_dropdown({
-          borderchars = {
-            { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.topleft, bc.topright, bc.botright, bc.botleft },
-            prompt = { bc.horiz, bc.vert, " ", bc.vert, bc.topleft, bc.topright, bc.vert, bc.vert },
-            results = { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.vertright, bc.vertleft, bc.botright, bc.botleft },
-            preview = { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.topleft, bc.topright, bc.botright, bc.botleft },
-          },
-          width = 0.8,
-          previewer = false,
-          prompt_title = false,
-          results_title = false,
-        })
-        return vim.tbl_deep_extend("keep", opts or {}, defaults)
+      local themes = require("telescope.themes")
+
+      local M = {}
+
+      ---@alias TelescopeStyle 'dropdown'|'bottom'|'main'
+
+      ---@type { [TelescopeStyle]: table }
+      M.style = {}
+
+      M.style.dropdown = {
+        theme = "dropdown",
+        borderchars = {
+          { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.topleft, bc.topright, bc.botright, bc.botleft },
+          prompt = { bc.horiz, bc.vert, " ", bc.vert, bc.topleft, bc.topright, bc.vert, bc.vert },
+          results = { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.vertright, bc.vertleft, bc.botright, bc.botleft },
+          preview = { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.topleft, bc.topright, bc.botright, bc.botleft },
+        },
+        layout_config = {
+          width = function(_, max_columns, _)
+            return math.min(max_columns, 80)
+          end,
+          height = function(_, _, max_lines)
+            return math.min(max_lines, 12)
+          end,
+        },
+        results_title = false,
+        sorting_strategy = "ascending",
+        previewer = false,
+      }
+
+      M.style.bottom = themes.get_ivy({
+        theme = "bottom",
+        -- border = true,
+        preview = true,
+        shorten_path = true,
+        hidden = true,
+        prompt_title = "",
+        preview_title = "",
+        borderchars = {
+          preview = { " ", " ", " ", " ", " ", " ", " ", " " },
+        },
+      })
+
+      M.style.main = {
+        theme = "main",
+        -- winblend = 20;
+        layout_config = {
+          width = function(_, max_columns, _)
+            return math.min(math.floor(max_columns * 0.8), 160)
+          end,
+          height = function(_, _, max_lines)
+            return math.floor(max_lines * 0.9)
+          end,
+        },
+        show_line = false,
+        results_title = "",
+        prompt_prefix = "$ ",
+        prompt_position = "top",
+        prompt_title = "",
+        preview_title = "",
+        preview_width = 0.4,
+      }
+
+      ---@param name TelescopeStyle
+      ---@param opts table
+      ---@return table
+      M.get_style = function(name, opts)
+        opts = opts or {}
+        local style = M.style[name]
+        return vim.tbl_deep_extend("force", style or {}, opts)
+      end
+
+      local theme = "dropdown"
+
+      local create_theme = function(opts)
+        return M.get_style(theme, opts)
       end
 
       local project_actions = require("telescope._extensions.project.actions")
@@ -104,14 +166,14 @@ return {
           borderchars = { bc.horiz, bc.vert, bc.horiz, bc.vert, bc.topleft, bc.topright, bc.botright, bc.botleft },
         },
         pickers = {
-          find_files = no_preview(),
-          live_grep = no_preview({
+          find_files = create_theme(),
+          live_grep = create_theme({
             previewer = true,
           }),
-          load_session = no_preview(),
+          load_session = create_theme(),
         },
         extensions = {
-          ["ui-select"] = no_preview(),
+          ["ui-select"] = create_theme(),
           fzf = {
             fuzzy = true,
             override_generic_sorter = true,
