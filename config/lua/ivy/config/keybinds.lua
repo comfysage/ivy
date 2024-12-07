@@ -30,7 +30,7 @@ keymaps.normal["<leader>q"] = { vim.cmd.quitall, "quit all" }
 keymaps.visual["<leader>q"] = { vim.cmd.quitall, "quit all" }
 
 -- save file
-keymaps.normal["<C-s>"] = { vim.cmd.write, "write file" }
+keymaps.normal["<C-s>"] = { vim.cmd.update, "save file" }
 
 -- window movement
 for _, direction in ipairs({ "h", "j", "k", "l" }) do
