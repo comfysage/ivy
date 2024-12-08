@@ -11,6 +11,9 @@ keymaps.normal["<C-u>"] = { "<C-u>zz", "go up and center line" }
 keymaps.normal["n"] = { "nzzzv", "goto next search and uncover line" }
 keymaps.normal["N"] = { "Nzzzv", "goto prev search and uncover line" }
 
+keymaps.normal["<S-down>"] = { "<nop>", "remove shift down movement" }
+keymaps.normal["<S-up>"] = { "<nop>", "remove shift up movement" }
+
 -- NvimTree
 keymaps.normal["<C-N>"] = {
   function()
