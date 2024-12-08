@@ -20,7 +20,7 @@ return {
     "keymaps.nvim",
     priority = 1000,
     after = function()
-      require("keymaps").setup({})
+      require("keymaps").setup()
 
       keymaps.normal["<leader>fm"] = {
         function()

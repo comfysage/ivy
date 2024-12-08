@@ -192,7 +192,7 @@ return {
         },
       })
 
-      local keymaps = require("keymaps").setup({})
+      local keymaps = require("keymaps").setup()
       keymaps.normal["<leader><leader>"] = { builtin.find_files, "find files" }
       keymaps.normal["<leader>fr"] = { builtin.live_grep, "grep through all files" }
       keymaps.normal["<leader>fs"] = { "<cmd>SessionManager load_session<cr>", "show nvim sessions" }
