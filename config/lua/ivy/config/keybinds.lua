@@ -5,12 +5,6 @@ local keymaps = require("keymaps").setup()
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- move lines
-keymaps.normal["<A-j>"] = { "<cmd>m .+1<cr>==", "move current line down" }
-keymaps.normal["<A-k>"] = { "<cmd>m .-2<cr>==", "move current line up" }
-keymaps.visual["J"] = { "<cmd>m '>+1<CR>gv=gv", "move selection down" }
-keymaps.visual["K"] = { "<cmd>m '<-1<CR>gv=gv", "move selection up" }
-
 -- vertical movment
 keymaps.normal["<C-d>"] = { "<C-d>zz", "go down and center line" }
 keymaps.normal["<C-u>"] = { "<C-u>zz", "go up and center line" }
