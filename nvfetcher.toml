@@ -160,7 +160,7 @@ src.git = "https://github.com/echasnovski/mini.surround"
 
 [mini-trailspace]
 fetch.github = "echasnovski/mini.trailspace"
-src.git = "https://github.com/echasnovski/mini.trailspace.git"
+src.git = "https://github.com/echasnovski/mini.trailspace"
 
 [neovim-session-manager]
 fetch.github = "Shatur/neovim-session-manager"
