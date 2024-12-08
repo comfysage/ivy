@@ -10,8 +10,8 @@ return {
           icons_enabled = true,
           theme = "auto",
           disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
-          component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
           always_divide_middle = true,
           globalstatus = true,
           refresh = {
@@ -22,9 +22,34 @@ return {
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { "branch", "diff", "diagnostics" },
-          lualine_c = { "searchcount" },
-          lualine_x = { "filetype" },
+          lualine_b = { "branch" },
+          lualine_c = {
+            { "filename", path = 1 },
+            "diff",
+            "searchcount",
+          },
+          lualine_x = {
+            {
+              function()
+                local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
+                local result = vim.iter(vim.lsp.get_clients({ bufnr = 0 })):find(function(
+                  client --[[@as vim.lsp.Client]]
+                )
+                  return client.config.name ~= "null-ls"
+                    and vim.iter(ipairs(client.config.filetypes)):any(function(_, ft)
+                      return ft == buf_ft
+                    end)
+                end)
+                if result then
+                  return result.config.name
+                end
+              end,
+              draw_empty = false,
+              icon = "lsp ::",
+            },
+            "diagnostics",
+            "filetype",
+          },
           lualine_y = { "progress" },
           lualine_z = { "location" },
         },
@@ -56,12 +81,16 @@ return {
     "fidget.nvim",
     after = function()
       require("fidget").setup({
-        display = { done_icon = "󰗡" },
         notification = {
           override_vim_notify = true,
-          window = { winblend = 0 },
+          view = { group_separator_hl = "MsgSeparator" },
+          window = { normal_hl = "NonText", winblend = 0 },
         },
         progress = {
+          display = {
+            done_icon = "",
+            progress_icon = { pattern = "dots", period = 1 },
+          },
           ignore = {
             "copilot",
             "null-ls",
