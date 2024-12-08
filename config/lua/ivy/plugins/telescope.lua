@@ -193,7 +193,17 @@ return {
       })
 
       local keymaps = require("keymaps").setup()
-      keymaps.normal["<leader><leader>"] = { builtin.find_files, "find files" }
+      keymaps.normal["<leader><leader>"] = {
+        function()
+          require("telescope.builtin").find_files({
+            hidden = true,
+            follow = true,
+            no_ignore = true,
+            no_ignore_parent = true,
+          })
+        end,
+        "find files",
+      }
       keymaps.normal["<leader>fr"] = { builtin.live_grep, "grep through all files" }
       keymaps.normal["<leader>fs"] = { "<cmd>SessionManager load_session<cr>", "show nvim sessions" }
       keymaps.normal["<leader>fh"] = { builtin.help_tags, "search help tags" }
