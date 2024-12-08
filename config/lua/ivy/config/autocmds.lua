@@ -52,3 +52,18 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end, { buffer = ev.buf, expr = true })
   end,
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  desc = "create path to file",
+  callback = function()
+    local dir = vim.fn.expand("<afile>:p:h")
+
+    if dir:find("%l+://") == 1 then
+      return
+    end
+
+    if vim.fn.isdirectory(dir) == 0 then
+      vim.fn.mkdir(dir, "p")
+    end
+  end,
+})
