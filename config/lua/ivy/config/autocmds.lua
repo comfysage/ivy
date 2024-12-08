@@ -20,13 +20,6 @@ vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
   desc = "Notify when recording macro",
 })
 
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.tmpl",
-  callback = function()
-    vim.bo.filetype = "gohtmltmpl"
-  end,
-})
-
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "BufWinEnter", "WinEnter" }, {
   pattern = "term://*",
   callback = function()
