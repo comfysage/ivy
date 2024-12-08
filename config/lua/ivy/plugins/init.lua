@@ -12,6 +12,14 @@ return {
         },
         modified = { enable = true },
       })
+
+      vim.api.nvim_create_autocmd("WinEnter", {
+        pattern = "NvimTree_*",
+        group = vim.api.nvim_create_augroup("filetype:nvimtree:options", { clear = true }),
+        callback = function(ev)
+          vim.api.nvim_set_option_value("sidescrolloff", 0, { win = ev.win })
+        end,
+      })
     end,
   },
 
