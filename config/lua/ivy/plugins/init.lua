@@ -205,7 +205,17 @@ return {
       })
     end,
   },
-  { "mini.trailspace", event = "BufAdd" },
+  {
+    "mini.trailspace",
+    event = "BufAdd",
+    after = function()
+      require("mini.trailspace").setup({
+        -- highlight only in normal buffers (ones with empty 'buftype'). this is
+        -- useful to not show trailing whitespace where it usually doesn't matter.
+        only_in_normal_buffers = true,
+      })
+    end,
+  },
 
   -- lsp
   { "rainbow-delimiters.nvim" },
