@@ -6,6 +6,8 @@ vim.opt.titlestring = "%f · nvim"
 vim.opt.errorbells = false
 vim.opt.mouse = "nv"
 
+vim.opt.keywordprg = ":vertical botright help"
+
 -- true colors
 vim.opt.termguicolors = true
 
