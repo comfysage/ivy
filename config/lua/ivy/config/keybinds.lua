@@ -14,13 +14,6 @@ keymaps.normal["N"] = { "Nzzzv", "goto prev search and uncover line" }
 keymaps.normal["<S-down>"] = { "<nop>", "remove shift down movement" }
 keymaps.normal["<S-up>"] = { "<nop>", "remove shift up movement" }
 
--- NvimTree
-keymaps.normal["<C-N>"] = {
-  function()
-    require("nvim-tree.api").tree.open()
-  end,
-  "open nvim tree",
-}
 
 -- quit all
 keymaps.normal["<leader>q"] = { vim.cmd.quitall, "quit all" }

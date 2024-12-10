@@ -13,6 +13,14 @@ return {
         modified = { enable = true },
       })
 
+      local keymaps = require("keymaps").setup()
+      keymaps.normal["<c-n>"] = {
+        function()
+          require("nvim-tree.api").tree.open()
+        end,
+        "open nvim tree",
+      }
+
       vim.api.nvim_create_autocmd("WinEnter", {
         pattern = "NvimTree_*",
         group = vim.api.nvim_create_augroup("filetype:nvimtree:options", { clear = true }),
