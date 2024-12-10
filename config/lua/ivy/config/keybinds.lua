@@ -152,3 +152,17 @@ vim.keymap.set("o", ";", "iw", { desc = "select inside word" })
 vim.keymap.set("v", ";", "iw", { desc = "select inside word" })
 
 keymaps.normal["D"] = { "0d$", "clear current line", group = "edit" }
+
+kmgroup({
+  group = "diagnostics",
+  { "normal", "<a-j>", vim.diagnostic.goto_next, "goto next diagnostic" },
+  { "normal", "<a-k>", vim.diagnostic.goto_prev, "goto prev diagnostic" },
+  {
+    "normal",
+    "L",
+    function()
+      vim.diagnostic.open_float({})
+    end,
+    "goto prev diagnostic",
+  },
+})
