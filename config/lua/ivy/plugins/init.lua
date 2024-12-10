@@ -14,7 +14,7 @@ return {
       })
 
       local keymaps = require("keymaps").setup()
-      keymaps.normal["<c-n>"] = {
+      keymaps.normal["<space>n"] = {
         function()
           require("nvim-tree.api").tree.open()
         end,
