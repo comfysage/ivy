@@ -13,6 +13,18 @@
     };
     date = "2024-11-14";
   };
+  bqf = {
+    pname = "bqf";
+    version = "1b24dc6050c34e8cd377b6b4cd6abe40509e0187";
+    src = fetchFromGitHub {
+      owner = "kevinhwang91";
+      repo = "nvim-bqf";
+      rev = "1b24dc6050c34e8cd377b6b4cd6abe40509e0187";
+      fetchSubmodules = false;
+      sha256 = "sha256-k7/fQ19w2wGiyVbPsbcI/mhR+8pf25U6vDShqkSv8Hg=";
+    };
+    date = "2024-06-04";
+  };
   catppuccin = {
     pname = "catppuccin";
     version = "faf15ab0201b564b6368ffa47b56feefc92ce3f4";

@@ -19,6 +19,26 @@
         },
         "version": "de72250e054e5e691b9736ee30db72c65d560771"
     },
+    "bqf": {
+        "cargoLocks": null,
+        "date": "2024-06-04",
+        "extract": null,
+        "name": "bqf",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "kevinhwang91",
+            "repo": "nvim-bqf",
+            "rev": "1b24dc6050c34e8cd377b6b4cd6abe40509e0187",
+            "sha256": "sha256-k7/fQ19w2wGiyVbPsbcI/mhR+8pf25U6vDShqkSv8Hg=",
+            "type": "github"
+        },
+        "version": "1b24dc6050c34e8cd377b6b4cd6abe40509e0187"
+    },
     "catppuccin": {
         "cargoLocks": null,
         "date": "2024-11-24",
