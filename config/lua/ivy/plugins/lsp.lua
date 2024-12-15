@@ -492,4 +492,10 @@ return {
     end,
   },
   { "guihua.lua" },
+  {
+    "quill.nvim",
+    after = function()
+      require("quill").setup()
+    end,
+  },
 }
