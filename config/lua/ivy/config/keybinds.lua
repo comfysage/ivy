@@ -166,3 +166,9 @@ kmgroup({
     "goto prev diagnostic",
   },
 })
+
+kmgroup({
+  group = "recording",
+  { "normal", "q", "<nop>", "fixup q" },
+  { "normal", "Q", "q", "record macro" },
+})
