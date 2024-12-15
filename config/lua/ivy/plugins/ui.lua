@@ -217,4 +217,15 @@ return {
       require("todo-comments").setup()
     end,
   },
+
+  {
+    "which-key.nvim",
+    event = "DeferredUIEnter",
+    after = function()
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>f", group = "find" },
+      })
+    end,
+  },
 }

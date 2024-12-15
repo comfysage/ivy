@@ -809,6 +809,18 @@
     };
     date = "2024-04-29";
   };
+  which-key = {
+    pname = "which-key";
+    version = "8ab96b38a2530eacba5be717f52e04601eb59326";
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "which-key.nvim";
+      rev = "8ab96b38a2530eacba5be717f52e04601eb59326";
+      fetchSubmodules = false;
+      sha256 = "sha256-f/+sYMDEguB5ZDiYiQAsDvdF/2cVcWnLBU+9qwigk4s=";
+    };
+    date = "2024-12-15";
+  };
   zk-nvim = {
     pname = "zk-nvim";
     version = "42dc341d897ac4da3d4a9c5c506a36153473f021";
