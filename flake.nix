@@ -13,6 +13,16 @@
     };
 
     systems.url = "github:nix-systems/default";
+
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs = {
+        hercules-ci-effects.follows = "";
+        flake-compat.follows = "";
+        git-hooks.follows = "";
+        treefmt-nix.follows = "";
+      };
+    };
   };
 
   outputs =
@@ -21,6 +31,7 @@
       nixpkgs,
       systems,
       beapkgs,
+      neovim-nightly-overlay,
       ...
     }:
     let
@@ -45,7 +56,9 @@
       packages = forAllSystems (
         pkgs:
         let
-          neovim = pkgs.callPackage ./pkgs/neovim.nix { };
+          neovim = pkgs.callPackage ./pkgs/neovim.nix {
+            basePackage = neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+          };
         in
         {
           inherit neovim;
