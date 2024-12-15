@@ -585,26 +585,6 @@
         },
         "version": "26111a737494bc39576ad67b52bbc2638ca23553"
     },
-    "mini-animate": {
-        "cargoLocks": null,
-        "date": "2024-12-01",
-        "extract": null,
-        "name": "mini-animate",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "echasnovski",
-            "repo": "mini.animate",
-            "rev": "d14190ac3040116540889e2ebc25f488b195799e",
-            "sha256": "sha256-ZePmJuHCCymTgaK46nSg5tRloxs+UKrVgVmT++rGKpc=",
-            "type": "github"
-        },
-        "version": "d14190ac3040116540889e2ebc25f488b195799e"
-    },
     "mini-bracketed": {
         "cargoLocks": null,
         "date": "2024-09-27",

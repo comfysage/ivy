@@ -122,10 +122,6 @@ src.git = "https://github.com/echasnovski/mini.ai"
 fetch.github = "echasnovski/mini.align"
 src.git = "https://github.com/echasnovski/mini.align"
 
-[mini-animate]
-fetch.github = "echasnovski/mini.animate"
-src.git = "https://github.com/echasnovski/mini.animate"
-
 [mini-bracketed]
 fetch.github = "echasnovski/mini.bracketed"
 src.git = "https://github.com/echasnovski/mini.bracketed"

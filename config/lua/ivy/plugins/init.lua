@@ -79,13 +79,6 @@ return {
     end,
   },
   {
-    "mini.animate",
-    event = "UIEnter",
-    after = function()
-      require("mini.animate").setup()
-    end,
-  },
-  {
     "mini.bracketed",
     event = "UIEnter",
     after = function()

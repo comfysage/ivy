@@ -352,18 +352,6 @@
     };
     date = "2024-09-05";
   };
-  mini-animate = {
-    pname = "mini-animate";
-    version = "d14190ac3040116540889e2ebc25f488b195799e";
-    src = fetchFromGitHub {
-      owner = "echasnovski";
-      repo = "mini.animate";
-      rev = "d14190ac3040116540889e2ebc25f488b195799e";
-      fetchSubmodules = false;
-      sha256 = "sha256-ZePmJuHCCymTgaK46nSg5tRloxs+UKrVgVmT++rGKpc=";
-    };
-    date = "2024-12-01";
-  };
   mini-bracketed = {
     pname = "mini-bracketed";
     version = "daf2bff8172bc84bfb934f765275618f5e7844a8";
