@@ -106,6 +106,24 @@ return {
     after = function()
       require("ibl").setup({
         scope = { enabled = false },
+        indent = {
+          highlight = {
+            "IblIndent",
+            "RainbowRed",
+            "IblIndent",
+            "RainbowOrange",
+            "IblIndent",
+            "RainbowYellow",
+            "IblIndent",
+            "RainbowGreen",
+            "IblIndent",
+            "RainbowAqua",
+            "IblIndent",
+            "RainbowBlue",
+            "IblIndent",
+            "RainbowPurple",
+          },
+        },
         exclude = {
           filetypes = {
             "alpha",
