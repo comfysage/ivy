@@ -168,6 +168,16 @@ local borderchars = {
 
 -- my custom borderchars
 vim.g.bc = borderchars.rounded
+vim.g.bc_all = {
+  vim.g.bc.topleft,
+  vim.g.bc.horiz,
+  vim.g.bc.topright,
+  vim.g.bc.vert,
+  vim.g.bc.botright,
+  vim.g.bc.horiz,
+  vim.g.bc.botleft,
+  vim.g.bc.vert,
+}
 vim.opt.fillchars:append({
   horiz = vim.g.bc.horiz,
   horizup = vim.g.bc.horizup,

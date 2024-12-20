@@ -161,7 +161,8 @@ kmgroup({
     "normal",
     "L",
     function()
-      vim.diagnostic.open_float({})
+      ---@diagnostic disable-next-line: assign-type-mismatch
+      vim.diagnostic.open_float({border = vim.g.bc_all})
     end,
     "goto prev diagnostic",
   },
