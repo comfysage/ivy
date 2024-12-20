@@ -1,384 +1,136 @@
 return {
-  { "nvim-cmp", lazy = false },
-  { "cmp-buffer", lazy = false },
-  { "cmp-cmdline", lazy = false },
-  { "cmp-nvim-lsp", lazy = false },
-  { "cmp-path", lazy = false },
-  { "cmp_luasnip", lazy = false },
-  { "lspkind.nvim", lazy = false },
-  { "none-ls.nvim", lazy = false },
-  { "lsp-status.nvim", lazy = false },
-  { "ltex-extra.nvim", lazy = false },
-  { "schemastore.nvim", lazy = false },
-  { "py_lsp.nvim", lazy = false },
-  { "typescript-tools.nvim", lazy = false },
-  { "luasnip", lazy = false },
-
   {
-    "nvim-lspconfig",
+    "blink-cmp",
     event = "DeferredUIEnter",
     after = function()
-      local plugins = {
-        "nvim-cmp",
-        "cmp-buffer",
-        "cmp-cmdline",
-        "cmp-nvim-lsp",
-        "cmp-path",
-        "cmp_luasnip",
-        "lspkind.nvim",
-        "none-ls.nvim",
-        "lsp-status.nvim",
-        "ltex-extra.nvim",
-        "schemastore.nvim",
-        "py_lsp.nvim",
-        "typescript-tools.nvim",
-        "luasnip",
-      }
+      require("blink.cmp").setup({
+        -- 'default' for mappings similar to built-in completion
+        -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+        -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
+        -- see the "default configuration" section below for full documentation on how to define
+        -- your own keymap.
+        keymap = {
+          ["<c-space>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
+          ["<C-e>"] = { "hide" },
 
-      for _, plugin in ipairs(plugins) do
-        require("lz.n").trigger_load({ plugin })
-      end
+          ["<tab>"] = {
+            "select_and_accept",
+            "snippet_forward",
+            "fallback",
+          },
+          ["<s-tab>"] = { "snippet_backward", "fallback" },
+          ["<down>"] = { "select_next", "fallback" },
+          ["<up>"] = { "select_prev", "fallback" },
 
-      local lsp_present, lspconfig = pcall(require, "lspconfig")
-      local cmp_present, cmp = pcall(require, "cmp")
-      local navic_present, navic = pcall(require, "nvim-navic")
-      local luasnip_present, luasnip = pcall(require, "luasnip")
-
-      if not lsp_present then
-        vim.notify("lspnot present", vim.log.levels.ERROR)
-        return
-      end
-
-      if not cmp_present then
-        vim.notify("cmp not present", vim.log.levels.ERROR)
-        return
-      end
-
-      if not luasnip_present then
-        vim.notify("luasnip not present", vim.log.levels.ERROR)
-        return
-      end
-
-      vim.opt.completeopt = "menu,menuone,noselect"
-      require("luasnip.loaders.from_vscode").lazy_load()
-
-      -- border style
-      require("lspconfig.ui.windows").default_options.border = vim.g.bc.style
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = vim.g.bc.style,
-      })
-      local cmp_borders = {
-        border = {
-          vim.g.bc.topleft,
-          vim.g.bc.horiz,
-          vim.g.bc.topright,
-          vim.g.bc.vert,
-          vim.g.bc.botright,
-          vim.g.bc.horiz,
-          vim.g.bc.botleft,
-          vim.g.bc.vert,
+          ["<c-j>"] = { "scroll_documentation_down", "fallback" },
+          ["<c-k>"] = { "scroll_documentation_up", "fallback" },
         },
-        winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
-      }
 
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
+        appearance = {},
+
+        completion = {
+          list = {
+            cycle = {
+              from_top = false,
+              from_bottom = false,
+            },
+          },
         },
-        window = {
-          completion = cmp_borders,
-          documentation = cmp_borders,
+
+        menu = {
+          min_width = vim.o.pumwidth,
+          max_height = vim.o.pumheight,
+          scrolloff = 0,
+
+          draw = {
+            align_to_component = "label", -- or 'none' to disable
+            padding = 1,
+            gap = 1,
+            treesitter = { "buffer", "lsp" },
+            columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source_name" } },
+            components = {
+              source_name = {
+                width = { max = 30 },
+                text = function(ctx)
+                  return string.format("(%s)", ctx.source_name)
+                end,
+                highlight = "BlinkCmpSource",
+              },
+            },
+          },
+
+          ghost_text = {
+            enabled = true,
+          },
         },
-        mapping = cmp.mapping.preset.insert({
-          ["<CR>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              if luasnip.expandable() then
-                luasnip.expand()
-              else
-                cmp.confirm({
-                  select = true,
-                })
-              end
-            else
-              fallback()
-            end
-          end),
 
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.locally_jumpable(1) then
-              luasnip.jump(1)
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-        }),
-        sources = cmp.config.sources({
-          -- { name = "copilot" },
-          { name = "nvim_lsp" },
-          { name = "path" },
-          { name = "luasnip" },
-        }, {
-          { name = "buffer" },
-        }),
-        formatting = {
-          fields = { "kind", "abbr", "menu" },
-          format = function(entry, vim_item)
-            local kind = require("lspkind").cmp_format({
-              mode = "symbol_text",
-              ellipsis_char = "…",
-              maxwidth = 50,
-              symbol_map = { Copilot = "" },
-            })(entry, vim_item)
-            local strings = vim.split(kind.kind, "%s", { trimempty = true })
-
-            kind.kind = " " .. (strings[1] or "") .. " "
-            kind.menu = "   (" .. (strings[2] or "") .. ")"
-
-            return kind
-          end,
-        },
-      })
-
-      vim.api.nvim_create_autocmd("BufRead", {
-        group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
-        pattern = "Cargo.toml",
-        callback = function()
-          cmp.setup.buffer({ sources = { { name = "crates" } } })
-        end,
-      })
-
-      cmp.setup.cmdline({ "/", "?" }, {
-        mapping = cmp.mapping.preset.cmdline(),
+        -- default list of enabled providers defined so that you can extend it
+        -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
-          { name = "buffer" },
-        },
-      })
+          default = { "lsp", "path", "snippets", "buffer" },
 
-      cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = "path", option = { trailing_slash = true } },
-        }, {
-          { name = "cmdline" },
-        }),
-      })
-
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-        callback = function(ev)
-          local client = vim.lsp.get_client_by_id(ev.data.client_id)
-
-          if client == nil then
-            return
-          end
-
-          if navic_present and client.server_capabilities.documentSymbolProvider then
-            navic.attach(client, ev.buf)
-          end
-
-          if client.server_capabilities.inlayHintProvider then
-            vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
-          end
-
-          local opts = { buffer = ev.buf }
-          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-          vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-          vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
-          vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-          vim.keymap.set("n", "<space>fm", function()
-            vim.lsp.buf.format({ async = true })
-          end, opts)
-        end,
-      })
-
-      local common = { capabilities = capabilities }
-
-      -- setup python
-      pcall(require("py_lsp").setup, common)
-
-      require("typescript-tools").setup({
-        single_file_support = false,
-        root_dir = function(fname)
-          local root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json")(fname)
-
-          -- this is needed to make sure we don't pick up root_dir inside node_modules
-          local node_modules_index = root_dir and root_dir:find("node_modules", 1, true)
-          if node_modules_index and node_modules_index > 0 then
-            ---@diagnostic disable-next-line: need-check-nil
-            root_dir = root_dir:sub(1, node_modules_index - 2)
-          end
-
-          return root_dir
-        end,
-        settings = {
-          expose_as_code_action = {
-            "add_missing_imports",
-            "fix_all",
-            "remove_unused",
-          },
-          tsserver_path = vim.fn.resolve(
-            vim.fn.exepath("tsserver") .. "/../../lib/node_modules/typescript/bin/tsserver"
-          ),
-        },
-      })
-
-      local servers = {
-        astro = {},
-        bashls = {},
-        cssls = {},
-        denols = {
-          root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-          single_file_support = false,
-        },
-        dockerls = {},
-        emmet_language_server = {
-          filetypes = {
-            "astro",
-            "css",
-            "eruby",
-            "html",
-            "javascript",
-            "javascriptreact",
-            "less",
-            "sass",
-            "scss",
-            "pug",
-            "typescriptreact",
-          },
-        },
-        graphql = {
-          filetypes = {
-            "graphql",
-            "typescriptreact",
-            "javascriptreact",
-            "typescript",
-          },
-        },
-        helm_ls = {},
-        hls = {},
-        html = {},
-        intelephense = {},
-        jqls = {},
-        jsonls = {
-          settings = {
-            json = {
-              schemas = require("schemastore").json.schemas(),
-              validate = { enable = true },
-            },
-          },
-        },
-        lua_ls = {
-          capabilities = capabilities,
-          settings = {
-            Lua = {
-              diagnostics = {
-                globals = { "vim" },
-              },
-            },
-          },
-        },
-        ltex = {
-          on_attach = function()
-            require("ltex_extra").setup({
-              load_langs = { "en-US", "en-GB" },
-              init_check = true,
-              path = vim.fn.stdpath("data") .. "/dictionary",
-            })
+          -- -- By default, we choose providers for the cmdline based on the current cmdtype
+          -- You may disable cmdline completions by replacing this with an empty table
+          cmdline = function()
+            local type = vim.fn.getcmdtype()
+            -- Search forward and backward
+            if type == "/" or type == "?" then
+              return { "buffer", "lsp" }
+            end
+            -- Commands
+            if type == ":" then
+              return { "cmdline" }
+            end
+            return {}
           end,
-          settings = {
-            ltex = {
-              language = "en-US",
-              additionalRules = {
-                enablePickyRules = true,
-                motherTongue = "en_GB",
-              },
-            },
-          },
-        },
-        marksman = {},
-        nil_ls = {
-          autostart = true,
-          capabilities = capabilities,
-          cmd = { "nil" },
-          settings = {
-            ["nil"] = {
-              formatting = {
-                command = { "nixfmt" },
-              },
-              nix = { maxMemoryMB = nil },
-            },
-          },
-        },
-        nushell = {},
-        serve_d = {},
-        sourcekit = {},
-        taplo = {},
-        teal_ls = {},
-        tailwindcss = {
-          filetypes = {
-            "astro",
-            "javascriptreact",
-            "typescriptreact",
-            "html",
-            "css",
-          },
-        },
-        volar = {
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = {
-                dynamicRegistration = true,
-              },
-            },
-          },
-          root_dir = require("lspconfig.util").root_pattern("package.json"),
-        },
-        yamlls = {
-          settings = {
-            yaml = {
-              completion = true,
-              validate = true,
-              suggest = {
-                parentSkeletonSelectedFirst = true,
-              },
-              schemas = vim.tbl_extend("keep", {
-                ["https://json.schemastore.org/github-action"] = ".github/action.{yaml,yml}",
-                ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*",
-                ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "*lab-ci.{yaml,yml}",
-                ["https://json.schemastore.org/helmfile"] = "helmfile.{yaml,yml}",
-                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yml,yaml}",
-                ["https://goreleaser.com/static/schema.json"] = ".goreleaser.{yml,yaml}",
-              }, require("schemastore").yaml.schemas()),
-            },
-            redhat = {
-              telemetry = {
-                enabled = false,
-              },
-            },
-          },
-        },
-      }
 
-      for server, config in pairs(servers) do
-        lspconfig[server].setup(vim.tbl_extend("force", common, config))
-      end
+          transform_items = function(_, items)
+            return vim
+                .iter(ipairs(items))
+                :map(function(_, item)
+                  if item.kind == require("blink.cmp.types").CompletionItemKind.Snippet then
+                    item.score_offset = item.score_offset + 1
+                  end
+                  return item
+                end)
+                :totable()
+          end,
+          min_keyword_length = function()
+            local default = 1
+            return vim.bo.filetype == "markdown" and 2 or default
+          end,
+        },
 
-      -- null ls stuff
+        -- experimental signature help support
+        signature = {
+          enabled = true,
+        },
+
+        fuzzy = {
+          -- when enabled, allows for a number of typos relative to the length of the query
+          -- disabling this matches the behavior of fzf
+          use_typo_resistance = false,
+          -- frecency tracks the most recently/frequently used items and boosts the score of the item
+          use_frecency = false,
+          -- proximity bonus boosts the score of items matching nearby words
+          use_proximity = true,
+
+          prebuilt_binaries = {
+            download = false,
+          },
+        },
+      })
+    end,
+  },
+  {
+    "none-ls.nvim",
+    event = "DeferredUIEnter",
+    after = function()
       local null_present, null = pcall(require, "null-ls")
 
       if not null_present then
         return
       end
-
-      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
       local sources = {
         -- general
@@ -421,9 +173,8 @@ return {
         sources = sources,
         on_attach = function(client, bufnr)
           if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
             vim.api.nvim_create_autocmd("BufWritePre", {
-              group = augroup,
+              group = vim.api.nvim_create_augroup(("null:formatting:%d"):format(bufnr), { clear = true }),
               buffer = bufnr,
               callback = function()
                 vim.lsp.buf.format({
@@ -438,16 +189,287 @@ return {
         end,
       })
 
-      local toggle_formatters = function()
-        null.toggle({ methods = null.methods.FORMATTING })
+      vim.api.nvim_create_user_command("NullToggle", function(ev)
+        if not ev.args or #ev.args ~= 1 or not ev.args[1] then
+          return
+        end
+        local method_name = string.upper(ev.args[1])
+        local ok, nll = pcall(require, "null-ls")
+
+        if not ok then
+          return
+        end
+        local method = null.methods[method_name]
+        if method then
+          nll.toggle({ methods = method })
+        end
+      end, {
+        nargs = 1,
+        complete = function(_, _, _)
+          local ok, nll = pcall(require, "null-ls")
+
+          if not ok then
+            return
+          end
+          local methods = vim
+              .iter(pairs(nll.methods))
+              :map(function(k, _)
+                return string.lower(k)
+              end)
+              :totable()
+          return methods
+        end,
+      })
+    end,
+  },
+
+  {
+    "nvim-lspconfig",
+    event = "DeferredUIEnter",
+    after = function()
+      local plugins = {
+        { "blink-cmp" },
+        { "lsp-status.nvim" },
+        { "ltex-extra.nvim" },
+        { "schemastore.nvim" },
+        { "py_lsp.nvim" },
+        { "typescript-tools.nvim" },
+        { "go.nvim" },
+      }
+      require("lz.n").load(plugins)
+
+      local lsp_present, lspconfig = pcall(require, "lspconfig")
+      local navic_present, navic = pcall(require, "nvim-navic")
+
+      if not lsp_present then
+        vim.notify("lspnot present", vim.log.levels.ERROR)
+        return
       end
 
-      local toggle_diagnostics = function()
-        null.toggle({ methods = null.methods.DIAGNOSTICS })
-      end
+      -- border style
+      require("lspconfig.ui.windows").default_options.border = vim.g.bc.style
 
-      vim.api.nvim_create_user_command("ToggleFormatters", toggle_formatters, {})
-      vim.api.nvim_create_user_command("ToggleDiagnostics", toggle_diagnostics, {})
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
+        callback = function(ev)
+          local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+          if client == nil then
+            return
+          end
+
+          if navic_present and client.server_capabilities.documentSymbolProvider then
+            navic.attach(client, ev.buf)
+          end
+
+          if client.server_capabilities.inlayHintProvider then
+            vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
+          end
+
+          local opts = { buffer = ev.buf }
+          local function use_border(cb)
+            return function()
+              cb { border = vim.g.bc.style }
+            end
+          end
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+          vim.keymap.set("n", "K", use_border(vim.lsp.buf.hover), opts)
+          vim.keymap.set("i", "<C-k>", use_border(vim.lsp.buf.signature_help), opts)
+          vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+          vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+          vim.keymap.set("n", "<localleader>f", function()
+            vim.lsp.buf.format({ async = true })
+          end, opts)
+        end,
+      })
+
+      local capabilities = require("blink.cmp").get_lsp_capabilities({}, true)
+
+      local common = { capabilities = capabilities }
+
+      -- setup python
+      pcall(require("py_lsp").setup, common)
+
+      require("typescript-tools").setup({
+        single_file_support = false,
+        root_dir = function(fname)
+          local root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json")(fname)
+
+          -- this is needed to make sure we don't pick up root_dir inside node_modules
+          local node_modules_index = root_dir and root_dir:find("node_modules", 1, true)
+          if node_modules_index and node_modules_index > 0 then
+            ---@diagnostic disable-next-line: need-check-nil
+            root_dir = root_dir:sub(1, node_modules_index - 2)
+          end
+
+          return root_dir
+        end,
+        settings = {
+          expose_as_code_action = {
+            "add_missing_imports",
+            "fix_all",
+            "remove_unused",
+          },
+          tsserver_path = vim.fn.resolve(
+            vim.fn.exepath("tsserver") .. "/../../lib/node_modules/typescript/bin/tsserver"
+          ),
+        },
+      })
+
+      local go_present, go_lsp = pcall(require, "go.lsp")
+      local go_config = go_present and (
+        function()
+          local ok, config = pcall(go_lsp.config)
+          if ok then
+            return config
+          end
+          return {}
+        end
+      )() or {}
+
+      local servers = {
+        astro = {},
+        bashls = {},
+        cssls = {},
+        denols = {
+          root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+          single_file_support = false,
+        },
+        dockerls = {},
+        emmet_language_server = {
+          filetypes = {
+            "astro",
+            "css",
+            "eruby",
+            "html",
+            "javascript",
+            "javascriptreact",
+            "less",
+            "sass",
+            "scss",
+            "pug",
+            "typescriptreact",
+          },
+        },
+        gopls = go_config,
+        graphql = {
+          filetypes = {
+            "graphql",
+            "typescriptreact",
+            "javascriptreact",
+            "typescript",
+          },
+        },
+        helm_ls = {},
+        hls = {},
+        html = {},
+        intelephense = {},
+        jqls = {},
+        jsonls = {
+          settings = {
+            json = {
+              schemas = require("schemastore").json.schemas(),
+              validate = { enable = true },
+            },
+          },
+        },
+        lua_ls = {
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = { "vim", "package", "table" },
+              },
+            },
+          },
+        },
+        ltex = {
+          on_attach = function()
+            require("ltex_extra").setup({
+              load_langs = { "en-US", "en-GB" },
+              init_check = true,
+              path = vim.fn.stdpath("data") .. "/dictionary",
+            })
+          end,
+          settings = {
+            ltex = {
+              language = "en-US",
+              additionalRules = {
+                enablePickyRules = true,
+                motherTongue = "en_GB",
+              },
+            },
+          },
+        },
+        marksman = {},
+        nil_ls = {
+          autostart = true,
+          cmd = { "nil" },
+          settings = {
+            ["nil"] = {
+              formatting = {
+                command = { "nixfmt" },
+              },
+              nix = { maxMemoryMB = nil },
+            },
+          },
+        },
+        nushell = {},
+        serve_d = {},
+        sourcekit = {},
+        taplo = {},
+        teal_ls = {},
+        tailwindcss = {
+          filetypes = {
+            "astro",
+            "javascriptreact",
+            "typescriptreact",
+            "html",
+            "css",
+            "tera",
+          },
+        },
+        volar = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+          root_dir = require("lspconfig.util").root_pattern("package.json"),
+        },
+        yamlls = {
+          settings = {
+            yaml = {
+              completion = true,
+              validate = true,
+              suggest = {
+                parentSkeletonSelectedFirst = true,
+              },
+              schemas = vim.tbl_extend("keep", {
+                ["https://json.schemastore.org/github-action"] = ".github/action.{yaml,yml}",
+                ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+                ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] =
+                "*lab-ci.{yaml,yml}",
+                ["https://json.schemastore.org/helmfile"] = "helmfile.{yaml,yml}",
+                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] =
+                "docker-compose.{yml,yaml}",
+                ["https://goreleaser.com/static/schema.json"] = ".goreleaser.{yml,yaml}",
+              }, require("schemastore").yaml.schemas()),
+            },
+            redhat = {
+              telemetry = {
+                enabled = false,
+              },
+            },
+          },
+        },
+      }
+
+      for server, config in pairs(servers) do
+        lspconfig[server].setup(vim.tbl_extend("force", common, config))
+      end
     end,
   },
 
@@ -470,7 +492,6 @@ return {
       "gotexttmpl",
     },
     after = function()
-      -- setup go stuff
       require("go").setup({
         disable_defaults = false,
         icons = {
@@ -487,15 +508,13 @@ return {
           style = "inlay",
         },
       })
-
-      require("lspconfig").gopls.setup(require("go.lsp").config())
     end,
   },
   { "guihua.lua" },
   {
     "quill.nvim",
     after = function()
-      require("quill").setup()
+      -- require("quill").setup()
     end,
   },
 }
