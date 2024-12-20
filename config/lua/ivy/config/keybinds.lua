@@ -31,6 +31,12 @@ local function kmgroup(props)
   end)
 end
 
+local function cbcall(fn, props)
+  return function()
+    pcall(fn, props)
+  end
+end
+
 -- set space as leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " m"
@@ -101,9 +107,9 @@ kmgroup({
   group = "tabs",
   { "normal", "<space><tab>]", vim.cmd.tabnext, "next tab" },
   { "normal", "<space><tab>[", vim.cmd.tabprev, "prev tab" },
-  { "normal", "<space><tab>n", ":$tabedit<CR>", "open new tab" },
-  { "normal", "<space><tab>d", ":tabclose<CR>", "close current tab" },
-  { "normal", "<space><tab>x", ":tabclose<CR>", "close current tab" },
+  { "normal", "<space><tab>n", vim.cmd([[$tabedit]]), "open new tab" },
+  { "normal", "<space><tab>d", vim.cmd.tabclose, "close current tab" },
+  { "normal", "<space><tab>x", vim.cmd.tabclose, "close current tab" },
   {
     "normal",
     "<space><tab><",
@@ -127,7 +133,9 @@ kmgroup({
   {
     "normal",
     "<C-\\>",
-    ":vs<CR>:wincmd l<CR>",
+    function()
+      vim.cmd([[vs | wincmd l]])
+    end,
     "split file vertically",
   },
   { "normal", "<C-h>", "<C-w>h", "switch window left" },
@@ -155,14 +163,14 @@ keymaps.normal["D"] = { "0d$", "clear current line", group = "edit" }
 
 kmgroup({
   group = "diagnostics",
-  { "normal", "<a-j>", vim.diagnostic.goto_next, "goto next diagnostic" },
-  { "normal", "<a-k>", vim.diagnostic.goto_prev, "goto prev diagnostic" },
+  { "normal", "<m-l>", cbcall(vim.diagnostic.jump, { count = 1 }), "goto next diagnostic" },
+  { "normal", "<m-h>", cbcall(vim.diagnostic.jump, { count = -1 }), "goto prev diagnostic" },
   {
     "normal",
     "L",
     function()
       ---@diagnostic disable-next-line: assign-type-mismatch
-      vim.diagnostic.open_float({border = vim.g.bc_all})
+      vim.diagnostic.open_float({ border = vim.g.bc_all })
     end,
     "goto prev diagnostic",
   },
