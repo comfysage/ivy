@@ -138,10 +138,6 @@ src.git = "https://github.com/echasnovski/mini.surround"
 fetch.github = "echasnovski/mini.trailspace"
 src.git = "https://github.com/echasnovski/mini.trailspace"
 
-[neovim-session-manager]
-fetch.github = "Shatur/neovim-session-manager"
-src.git = "https://github.com/Shatur/neovim-session-manager"
-
 [none-ls]
 fetch.github = "nvimtools/none-ls.nvim"
 src.git = "https://github.com/nvimtools/none-ls.nvim"

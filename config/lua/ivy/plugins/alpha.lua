@@ -1,19 +1,7 @@
 return {
   {
-    "neovim-session-manager",
-    lazy = false,
-    after = function()
-      require("session_manager").setup({
-        autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir,
-      })
-    end,
-  },
-
-  {
     "alpha-nvim",
     after = function()
-      require("lz.n").trigger_load({ "neovim-session-manager" })
-
       local function apply_gradient_hl(text)
         local lines = {}
         for i, line in ipairs(text) do
@@ -72,7 +60,6 @@ return {
           dashboard.button("n", "  New file", ":ene <bar> startinsert <cr>"),
           dashboard.button("f", "  Find file", ":Telescope find_files<cr>"),
           dashboard.button("g", "  Live grep", ":Telescope live_grep<cr>"),
-          dashboard.button("s", "  Show sessions", ":SessionManager load_session<cr>"),
           dashboard.button("p", "  Projects", ":Telescope project<CR>"),
           dashboard.button("q", "  Quit", ":qa<CR>"),
         },

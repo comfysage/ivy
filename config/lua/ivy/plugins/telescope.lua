@@ -171,7 +171,6 @@ return {
           live_grep = create_theme({
             previewer = true,
           }),
-          load_session = create_theme(),
         },
         extensions = {
           ["ui-select"] = create_theme(),
@@ -205,7 +204,6 @@ return {
         "find files",
       }
       keymaps.normal["<leader>fr"] = { builtin.live_grep, "grep through all files" }
-      keymaps.normal["<leader>fs"] = { "<cmd>SessionManager load_session<cr>", "show nvim sessions" }
       keymaps.normal["<leader>fh"] = { builtin.help_tags, "search help tags" }
       keymaps.normal["<leader>fp"] = { require("telescope").extensions.project.project, "skip to project" }
       keymaps.normal["<leader>ft"] = { "<cmd>TodoTelescope<cr>", "live grep but for TODOs and FIXMEs" }
