@@ -95,7 +95,7 @@ vim.opt.timeoutlen = 300
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 vim.opt.showcmd = false
-vim.o.showtabline = 0
+vim.o.showtabline = 1
 vim.o.cmdheight = 0
 -- global statusline
 vim.o.laststatus = 3
