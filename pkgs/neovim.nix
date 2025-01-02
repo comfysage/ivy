@@ -18,6 +18,7 @@
   extraLuaPackages ? lp: [ ],
 
   # path, see there explanation below
+  fzf,
   fd,
   ripgrep,
   stylua,
@@ -116,6 +117,7 @@ let
 
   externalDeps = [
     # external deps
+    fzf
     fd
     ripgrep
 
@@ -202,7 +204,6 @@ let
     # extra plugsns beacuse they often fail or need extra steps
     vimPlugins.blink-cmp
     vimPlugins.cord-nvim
-    vimPlugins.telescope-fzf-native-nvim
   ];
 
   rc = writeText "rc.vim" ''

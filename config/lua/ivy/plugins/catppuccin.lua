@@ -41,7 +41,7 @@ return {
             },
           },
           telescope = {
-            enabled = true,
+            enabled = false,
           },
           cmp = true,
           lsp_trouble = true,

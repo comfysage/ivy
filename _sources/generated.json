@@ -201,6 +201,26 @@
         },
         "version": "65c6e693a1d8ebd816bd3076350efa8e080c1c4a"
     },
+    "fzf-lua": {
+        "cargoLocks": null,
+        "date": "2025-01-01",
+        "extract": null,
+        "name": "fzf-lua",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ibhagwan",
+            "repo": "fzf-lua",
+            "rev": "b622a443ecfb40b54ec6c0114c31eed5b9b10b53",
+            "sha256": "sha256-AvHEJuNtmUKHVYDhomNbXDC5Z3hgt0Pfb9KWceE/Au8=",
+            "type": "github"
+        },
+        "version": "b622a443ecfb40b54ec6c0114c31eed5b9b10b53"
+    },
     "go-nvim": {
         "cargoLocks": null,
         "date": "2024-12-01",
@@ -1026,66 +1046,6 @@
             "type": "github"
         },
         "version": "d312053f78b4fb55523def179ac502438dd93193"
-    },
-    "telescope": {
-        "cargoLocks": null,
-        "date": "2024-11-29",
-        "extract": null,
-        "name": "telescope",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-telescope",
-            "repo": "telescope.nvim",
-            "rev": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc",
-            "sha256": "sha256-npb61MZYAotz71Co5G1dUeIqWt7GVeqZNz0A2Yz2dy4=",
-            "type": "github"
-        },
-        "version": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc"
-    },
-    "telescope-project": {
-        "cargoLocks": null,
-        "date": "2024-12-01",
-        "extract": null,
-        "name": "telescope-project",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-telescope",
-            "repo": "telescope-project.nvim",
-            "rev": "1d7920e799fc5001dffc7bd10909a86e0358eaf4",
-            "sha256": "sha256-qEORRWYKBpK7fn7se8g+5uuVBJNu0T4JHSc0C2QzNDY=",
-            "type": "github"
-        },
-        "version": "1d7920e799fc5001dffc7bd10909a86e0358eaf4"
-    },
-    "telescope-ui-select": {
-        "cargoLocks": null,
-        "date": "2023-12-04",
-        "extract": null,
-        "name": "telescope-ui-select",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-telescope",
-            "repo": "telescope-ui-select.nvim",
-            "rev": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
-            "sha256": "sha256-YRhNmmG4gx9Ht8JwjQfbTjJyTHEuZmtP6lqnhOsk8bE=",
-            "type": "github"
-        },
-        "version": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2"
     },
     "todo-comments": {
         "cargoLocks": null,

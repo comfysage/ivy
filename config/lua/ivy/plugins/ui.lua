@@ -133,7 +133,6 @@ return {
             "NvimTree",
             "ToggleTerm",
             "LazyGit",
-            "TelescopePrompt",
             "prompt",
             "code-action-menu-menu",
             "code-action-menu-warning-message",

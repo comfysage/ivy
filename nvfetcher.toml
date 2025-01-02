@@ -40,6 +40,10 @@ src.branch = "legacy"
 fetch.github = "charm-community/freeze.nvim"
 src.git = "https://github.com/charm-community/freeze.nvim"
 
+[fzf-lua]
+fetch.github = "ibhagwan/fzf-lua"
+src.git = "https://github.com/ibhagwan/fzf-lua"
+
 [go-nvim]
 fetch.github = "ray-x/go.nvim"
 src.git = "https://github.com/ray-x/go.nvim"
@@ -206,18 +210,6 @@ src.git = "https://github.com/comfysage/shelf.nvim"
 [snacks-nvim]
 fetch.github = "folke/snacks.nvim"
 src.git = "https://github.com/folke/snacks.nvim"
-
-[telescope]
-fetch.github = "nvim-telescope/telescope.nvim"
-src.git = "https://github.com/nvim-telescope/telescope.nvim"
-
-[telescope-project]
-fetch.github = "nvim-telescope/telescope-project.nvim"
-src.git = "https://github.com/nvim-telescope/telescope-project.nvim"
-
-[telescope-ui-select]
-fetch.github = "nvim-telescope/telescope-ui-select.nvim"
-src.git = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
 
 [todo-comments]
 fetch.github = "folke/todo-comments.nvim"

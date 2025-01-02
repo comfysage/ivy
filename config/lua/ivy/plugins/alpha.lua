@@ -58,9 +58,8 @@ return {
         position = "center",
         val = {
           dashboard.button("n", "  New file", ":ene <bar> startinsert <cr>"),
-          dashboard.button("f", "  Find file", ":Telescope find_files<cr>"),
-          dashboard.button("g", "  Live grep", ":Telescope live_grep<cr>"),
-          dashboard.button("p", "  Projects", ":Telescope project<CR>"),
+          dashboard.button("f", "  Find file", ":FzfLua files<cr>"),
+          dashboard.button("g", "  Live grep", ":FzfLua live_grep<cr>"),
           dashboard.button("q", "  Quit", ":qa<CR>"),
         },
       }

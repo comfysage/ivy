@@ -122,6 +122,18 @@
     };
     date = "2024-12-28";
   };
+  fzf-lua = {
+    pname = "fzf-lua";
+    version = "b622a443ecfb40b54ec6c0114c31eed5b9b10b53";
+    src = fetchFromGitHub {
+      owner = "ibhagwan";
+      repo = "fzf-lua";
+      rev = "b622a443ecfb40b54ec6c0114c31eed5b9b10b53";
+      fetchSubmodules = false;
+      sha256 = "sha256-AvHEJuNtmUKHVYDhomNbXDC5Z3hgt0Pfb9KWceE/Au8=";
+    };
+    date = "2025-01-01";
+  };
   go-nvim = {
     pname = "go-nvim";
     version = "c6d5ca26377d01c4de1f7bff1cd62c8b43baa6bc";
@@ -616,42 +628,6 @@
       sha256 = "sha256-wvd3Hb5of/luB6/Psw4SLcxl9h9NnpTPOqw57jY8Ufc=";
     };
     date = "2024-12-31";
-  };
-  telescope = {
-    pname = "telescope";
-    version = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc";
-    src = fetchFromGitHub {
-      owner = "nvim-telescope";
-      repo = "telescope.nvim";
-      rev = "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc";
-      fetchSubmodules = false;
-      sha256 = "sha256-npb61MZYAotz71Co5G1dUeIqWt7GVeqZNz0A2Yz2dy4=";
-    };
-    date = "2024-11-29";
-  };
-  telescope-project = {
-    pname = "telescope-project";
-    version = "1d7920e799fc5001dffc7bd10909a86e0358eaf4";
-    src = fetchFromGitHub {
-      owner = "nvim-telescope";
-      repo = "telescope-project.nvim";
-      rev = "1d7920e799fc5001dffc7bd10909a86e0358eaf4";
-      fetchSubmodules = false;
-      sha256 = "sha256-qEORRWYKBpK7fn7se8g+5uuVBJNu0T4JHSc0C2QzNDY=";
-    };
-    date = "2024-12-01";
-  };
-  telescope-ui-select = {
-    pname = "telescope-ui-select";
-    version = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2";
-    src = fetchFromGitHub {
-      owner = "nvim-telescope";
-      repo = "telescope-ui-select.nvim";
-      rev = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2";
-      fetchSubmodules = false;
-      sha256 = "sha256-YRhNmmG4gx9Ht8JwjQfbTjJyTHEuZmtP6lqnhOsk8bE=";
-    };
-    date = "2023-12-04";
   };
   todo-comments = {
     pname = "todo-comments";
