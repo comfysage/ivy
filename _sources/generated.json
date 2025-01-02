@@ -1,24 +1,4 @@
 {
-    "alpha": {
-        "cargoLocks": null,
-        "date": "2024-11-14",
-        "extract": null,
-        "name": "alpha",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "goolord",
-            "repo": "alpha-nvim",
-            "rev": "de72250e054e5e691b9736ee30db72c65d560771",
-            "sha256": "sha256-sNi5qarejYqM4/J7lBZI3gjVLxer5FBPq8K6qjqcMjA=",
-            "type": "github"
-        },
-        "version": "de72250e054e5e691b9736ee30db72c65d560771"
-    },
     "bqf": {
         "cargoLocks": null,
         "date": "2024-12-20",

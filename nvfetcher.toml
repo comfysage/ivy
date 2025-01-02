@@ -1,7 +1,3 @@
-[alpha]
-fetch.github = "goolord/alpha-nvim"
-src.git = "https://github.com/goolord/alpha-nvim"
-
 [bqf]
 fetch.github = "kevinhwang91/nvim-bqf"
 src.git = "https://github.com/kevinhwang91/nvim-bqf"
