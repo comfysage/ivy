@@ -1,6 +1,6 @@
 return {
   {
-    "blink-cmp",
+    "blink.cmp",
     event = "DeferredUIEnter",
     after = function()
       require("blink.cmp").setup({
@@ -35,26 +35,26 @@ return {
               from_bottom = false,
             },
           },
-        },
 
-        menu = {
-          min_width = vim.o.pumwidth,
-          max_height = vim.o.pumheight,
-          scrolloff = 0,
+          menu = {
+            min_width = vim.o.pumwidth,
+            max_height = vim.o.pumheight,
+            scrolloff = 0,
 
-          draw = {
-            align_to_component = "label", -- or 'none' to disable
-            padding = 1,
-            gap = 1,
-            treesitter = { "buffer", "lsp" },
-            columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source_name" } },
-            components = {
-              source_name = {
-                width = { max = 30 },
-                text = function(ctx)
-                  return string.format("(%s)", ctx.source_name)
-                end,
-                highlight = "BlinkCmpSource",
+            draw = {
+              align_to_component = "label", -- or 'none' to disable
+              padding = 1,
+              gap = 1,
+              treesitter = { "buffer", "lsp" },
+              columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "source_name" } },
+              components = {
+                source_name = {
+                  width = { max = 30 },
+                  text = function(ctx)
+                    return string.format("(%s)", ctx.source_name)
+                  end,
+                  highlight = "BlinkCmpSource",
+                },
               },
             },
           },
@@ -86,14 +86,14 @@ return {
 
           transform_items = function(_, items)
             return vim
-                .iter(ipairs(items))
-                :map(function(_, item)
-                  if item.kind == require("blink.cmp.types").CompletionItemKind.Snippet then
-                    item.score_offset = item.score_offset + 1
-                  end
-                  return item
-                end)
-                :totable()
+              .iter(ipairs(items))
+              :map(function(_, item)
+                if item.kind == require("blink.cmp.types").CompletionItemKind.Snippet then
+                  item.score_offset = item.score_offset + 1
+                end
+                return item
+              end)
+              :totable()
           end,
           min_keyword_length = function()
             local default = 1
@@ -212,11 +212,11 @@ return {
             return
           end
           local methods = vim
-              .iter(pairs(nll.methods))
-              :map(function(k, _)
-                return string.lower(k)
-              end)
-              :totable()
+            .iter(pairs(nll.methods))
+            :map(function(k, _)
+              return string.lower(k)
+            end)
+            :totable()
           return methods
         end,
       })
@@ -228,7 +228,7 @@ return {
     event = "DeferredUIEnter",
     after = function()
       local plugins = {
-        { "blink-cmp" },
+        { "blink.cmp" },
         { "lsp-status.nvim" },
         { "ltex-extra.nvim" },
         { "schemastore.nvim" },
@@ -269,7 +269,7 @@ return {
           local opts = { buffer = ev.buf }
           local function use_border(cb)
             return function()
-              cb { border = vim.g.bc.style }
+              cb({ border = vim.g.bc.style })
             end
           end
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -318,15 +318,15 @@ return {
       })
 
       local go_present, go_lsp = pcall(require, "go.lsp")
-      local go_config = go_present and (
-        function()
-          local ok, config = pcall(go_lsp.config)
-          if ok then
-            return config
-          end
-          return {}
-        end
-      )() or {}
+      local go_config = go_present
+          and (function()
+            local ok, config = pcall(go_lsp.config)
+            if ok then
+              return config
+            end
+            return {}
+          end)()
+        or {}
 
       local servers = {
         astro = {},
@@ -450,11 +450,9 @@ return {
               schemas = vim.tbl_extend("keep", {
                 ["https://json.schemastore.org/github-action"] = ".github/action.{yaml,yml}",
                 ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*",
-                ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] =
-                "*lab-ci.{yaml,yml}",
+                ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "*lab-ci.{yaml,yml}",
                 ["https://json.schemastore.org/helmfile"] = "helmfile.{yaml,yml}",
-                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] =
-                "docker-compose.{yml,yaml}",
+                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yml,yaml}",
                 ["https://goreleaser.com/static/schema.json"] = ".goreleaser.{yml,yaml}",
               }, require("schemastore").yaml.schemas()),
             },
