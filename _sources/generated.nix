@@ -76,15 +76,15 @@
   };
   evergarden = {
     pname = "evergarden";
-    version = "3cd3437ad80883300ee57aeba6116229fb988972";
+    version = "aaffacc5d276946ff03e90f5abe5eb0f9885a856";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "evergarden";
-      rev = "3cd3437ad80883300ee57aeba6116229fb988972";
+      rev = "aaffacc5d276946ff03e90f5abe5eb0f9885a856";
       fetchSubmodules = false;
-      sha256 = "sha256-rsZmTs8Dmhya57j46bGf1ZjLWGhFcK5ajurUJnkCBvA=";
+      sha256 = "sha256-sKrN5zbt39kp3INPnbdohFx/k1yV1nQjUUSvkSUd/kc=";
     };
-    date = "2024-12-09";
+    date = "2025-01-02";
   };
   fidget = {
     pname = "fidget";
