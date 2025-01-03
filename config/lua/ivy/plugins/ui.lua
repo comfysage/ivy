@@ -238,7 +238,7 @@ return {
 
   {
     "which-key.nvim",
-    event = "DeferredUIEnter",
+    priority = 1000,
     after = function()
       local wk = require("which-key")
       wk.add({
