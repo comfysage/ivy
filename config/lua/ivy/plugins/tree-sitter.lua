@@ -29,4 +29,37 @@ return {
       vim.api.nvim_del_user_command("TSUninstall")
     end,
   },
+
+  {
+    "neogen",
+    event = "BufAdd",
+    after = function()
+      require("neogen").setup({})
+
+      local function cbcall(fn, ...)
+        local props = { ... }
+        return function()
+          pcall(fn, unpack(props))
+        end
+      end
+      local keymaps = require("keymaps").setup()
+      require("which-key").add({ "<localleader>a", group = "annotate" })
+      keymaps.normal["<localleader>af"] = {
+        cbcall(require("neogen").generate, { type = "func" }),
+        "[func] create annotation",
+      }
+      keymaps.normal["<localleader>ac"] = {
+        cbcall(require("neogen").generate, { type = "class" }),
+        "[class] create annotation",
+      }
+      keymaps.normal["<localleader>at"] = {
+        cbcall(require("neogen").generate, { type = "type" }),
+        "[type] create annotation",
+      }
+      keymaps.normal["<localleader>aF"] = {
+        cbcall(require("neogen").generate, { type = "file" }),
+        "[File] create annotation",
+      }
+    end,
+  },
 }

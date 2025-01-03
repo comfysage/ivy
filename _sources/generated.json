@@ -685,6 +685,26 @@
         },
         "version": "3a328e62559c33014e422fb9ae97afc4208208b1"
     },
+    "neogen": {
+        "cargoLocks": null,
+        "date": "2024-12-27",
+        "extract": null,
+        "name": "neogen",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "danymat",
+            "repo": "neogen",
+            "rev": "dd0301bfba1f83a3bc009b5430fce7aa3cee6941",
+            "sha256": "sha256-EzAbn9oDnzgi5ajNulzFz2thGoSlpr/if3xSpY57BG4=",
+            "type": "github"
+        },
+        "version": "dd0301bfba1f83a3bc009b5430fce7aa3cee6941"
+    },
     "none-ls": {
         "cargoLocks": null,
         "date": "2024-12-31",

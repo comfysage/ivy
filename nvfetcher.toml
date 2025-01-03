@@ -138,6 +138,10 @@ src.git = "https://github.com/echasnovski/mini.surround"
 fetch.github = "echasnovski/mini.trailspace"
 src.git = "https://github.com/echasnovski/mini.trailspace"
 
+[neogen]
+fetch.github = "danymat/neogen"
+src.git = "https://github.com/danymat/neogen"
+
 [none-ls]
 fetch.github = "nvimtools/none-ls.nvim"
 src.git = "https://github.com/nvimtools/none-ls.nvim"

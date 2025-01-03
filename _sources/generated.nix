@@ -412,6 +412,18 @@
     };
     date = "2024-09-06";
   };
+  neogen = {
+    pname = "neogen";
+    version = "dd0301bfba1f83a3bc009b5430fce7aa3cee6941";
+    src = fetchFromGitHub {
+      owner = "danymat";
+      repo = "neogen";
+      rev = "dd0301bfba1f83a3bc009b5430fce7aa3cee6941";
+      fetchSubmodules = false;
+      sha256 = "sha256-EzAbn9oDnzgi5ajNulzFz2thGoSlpr/if3xSpY57BG4=";
+    };
+    date = "2024-12-27";
+  };
   none-ls = {
     pname = "none-ls";
     version = "caf85560cfcfa62ad3a4c15433db4a8f9ddf934a";
