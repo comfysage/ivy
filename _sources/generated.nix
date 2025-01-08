@@ -76,13 +76,13 @@
   };
   evergarden = {
     pname = "evergarden";
-    version = "7622188718ad1e2f280daa14b490870cdb5dd8d0";
+    version = "999f4b24be7fe70989be977db929b45bb40d1009";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "evergarden";
-      rev = "7622188718ad1e2f280daa14b490870cdb5dd8d0";
+      rev = "999f4b24be7fe70989be977db929b45bb40d1009";
       fetchSubmodules = false;
-      sha256 = "sha256-ydmSoU2z9acsPgftXZZ0bV0BEVC5rwycEy9ImUZKJ9g=";
+      sha256 = "sha256-eev4EqTaHgmFSrMQXTDlNswwpNWEEhhf5vA0EIJgxw4=";
     };
     date = "2025-01-08";
   };

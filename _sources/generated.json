@@ -135,11 +135,11 @@
             "name": null,
             "owner": "comfysage",
             "repo": "evergarden",
-            "rev": "7622188718ad1e2f280daa14b490870cdb5dd8d0",
-            "sha256": "sha256-ydmSoU2z9acsPgftXZZ0bV0BEVC5rwycEy9ImUZKJ9g=",
+            "rev": "999f4b24be7fe70989be977db929b45bb40d1009",
+            "sha256": "sha256-eev4EqTaHgmFSrMQXTDlNswwpNWEEhhf5vA0EIJgxw4=",
             "type": "github"
         },
-        "version": "7622188718ad1e2f280daa14b490870cdb5dd8d0"
+        "version": "999f4b24be7fe70989be977db929b45bb40d1009"
     },
     "fidget": {
         "cargoLocks": null,
