@@ -266,6 +266,26 @@ return {
             vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
           end
 
+          if client.server_capabilities.documentHighlightProvider then
+            local group =
+              vim.api.nvim_create_augroup(string.format("lsp:document_highlight:%d", ev.buf), { clear = true })
+            vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+              group = group,
+              callback = function()
+                vim.lsp.buf.clear_references()
+                vim.lsp.buf.document_highlight()
+              end,
+              desc = "highlight lsp reference",
+            })
+            vim.api.nvim_create_autocmd("CursorMoved", {
+              group = group,
+              callback = function()
+                vim.lsp.buf.clear_references()
+              end,
+              desc = "clear lsp references",
+            })
+          end
+
           local opts = { buffer = ev.buf }
           local function use_border(cb)
             return function()
