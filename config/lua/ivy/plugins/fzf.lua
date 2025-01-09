@@ -3,76 +3,41 @@ return {
     "fzf-lua",
     event = "DeferredUIEnter",
     after = function()
-      vim.api.nvim_set_hl(0, 'FzfLuaBorder', {link = 'FloatBorder'})
-      local M = {}
-      M.style = {}
+      vim.api.nvim_set_hl(0, "FzfLuaBorder", { link = "FloatBorder" })
 
-      M.style.dropdown = {
-        winopts_fn = function()
+      require("fzf-lua").setup({
+        winopts = function(opts)
+          opts = opts or {}
+          local size = 28
+          if opts.previewer == false then
+            size = 12
+          end
+          local bottom_border = { vim.g.bc.horiz, vim.g.bc.horiz, vim.g.bc.horiz, "", "", "", "", "" }
           return {
-            width = math.min(vim.o.columns, 80),
-            height = math.min(vim.o.lines, 12),
-            border = vim.g.bc_all,
-          }
-        end,
-        previewer = false,
-      }
-
-      M.style.bottom = {
-        winopts_fn = function()
-          return {
-            split = "botright 28new", -- open in a full-width split on the bottom
+            height = size,
+            width = 1.0,
+            col = 0,
+            row = vim.o.lines - size,
             preview = {
+              winopts = {
+                cursorline = false,
+              },
               layout = "vertical",
               vertical = "up:60%",
               title_pos = "left",
             },
+            backdrop = 100,
+            border = bottom_border,
           }
         end,
         fzf_opts = {
-          ['--layout'] = 'reverse-list',
-          ['--info'] = 'inline-right',
-          ['--no-separator'] = '',
-        }
-      }
-
-      M.style.main = {
-        winopts_fn = function()
-          return {
-            width = math.min(math.floor(vim.o.columns * 0.8), 160),
-            height = math.floor(vim.o.lines * 0.9),
-            border = vim.g.bc_all,
-          }
-        end,
-      }
-
-      ---@param name string
-      ---@param opts table
-      ---@return table
-      M.get_style = function(name, opts)
-        opts = opts or {}
-        local style = M.style[name]
-        return vim.tbl_deep_extend("force", style or {}, opts)
-      end
-
-      M.theme = "bottom"
-
-      local create_theme = function(opts)
-        return M.get_style(M.theme, opts)
-      end
-
-      require("fzf-lua").setup(create_theme({
-        winopts = {
-          backdrop = 100,
-          preview = {
-            winopts = {
-              cursorline = false,
-            },
-          },
+          ["--layout"] = "reverse-list",
+          ["--info"] = "inline-right",
+          ["--no-separator"] = "",
         },
         file_icon_padding = " ",
         prompt = " ",
-        previewer = 'builtin',
+        previewer = "builtin",
         files = {
           cwd_prompt = false,
           previewer = false,
@@ -132,7 +97,7 @@ return {
           "_sources/",
           "tmp/",
         },
-      }))
+      })
 
       require("fzf-lua").register_ui_select()
 
