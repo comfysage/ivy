@@ -107,7 +107,7 @@ kmgroup({
   group = "tabs",
   { "normal", "<space><tab>]", vim.cmd.tabnext, "next tab" },
   { "normal", "<space><tab>[", vim.cmd.tabprev, "prev tab" },
-  { "normal", "<space><tab>n", vim.cmd([[$tabedit]]), "open new tab" },
+  { "normal", "<space><tab>n", cbcall(vim.cmd, [[$tabedit]]), "open new tab" },
   { "normal", "<space><tab>d", vim.cmd.tabclose, "close current tab" },
   { "normal", "<space><tab>x", vim.cmd.tabclose, "close current tab" },
   {
