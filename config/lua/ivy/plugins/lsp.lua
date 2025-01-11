@@ -271,6 +271,7 @@ return {
               vim.api.nvim_create_augroup(string.format("lsp:document_highlight:%d", ev.buf), { clear = true })
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               group = group,
+              buffer = ev.buf,
               callback = function()
                 vim.lsp.buf.clear_references()
                 vim.lsp.buf.document_highlight()
@@ -279,6 +280,7 @@ return {
             })
             vim.api.nvim_create_autocmd("CursorMoved", {
               group = group,
+              buffer = ev.buf,
               callback = function()
                 vim.lsp.buf.clear_references()
               end,
