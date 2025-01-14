@@ -19,6 +19,26 @@
         },
         "version": "ebb6d2689e4427452180f17c53f29f7e460236f1"
     },
+    "bufferline": {
+        "cargoLocks": null,
+        "date": "2025-01-11",
+        "extract": null,
+        "name": "bufferline",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "akinsho",
+            "repo": "bufferline.nvim",
+            "rev": "17083c826a004bcb87d3a830c7710d0796a73bbf",
+            "sha256": "sha256-b37kggjW7hjPx1VwxDLzWcU2wlEOsx/yrhcg1YeqHtY=",
+            "type": "github"
+        },
+        "version": "17083c826a004bcb87d3a830c7710d0796a73bbf"
+    },
     "catppuccin": {
         "cargoLocks": null,
         "date": "2024-12-27",

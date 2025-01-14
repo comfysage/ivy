@@ -78,6 +78,57 @@ return {
   },
 
   {
+    "bufferline.nvim",
+    event = "DeferredUIEnter",
+    after = function()
+      local ok, bufferline = pcall(require, "bufferline")
+      if not ok then
+        return
+      end
+
+      bufferline.setup({
+        options = {
+          mode = "tabs",
+          style_preset = bufferline.style_preset.default,
+          themeable = true,
+          numbers = "none",
+          modified_icon = "● ",
+          buffer_close_icon = "󰅖",
+          close_icon = "󰖭",
+          left_trunc_marker = " ",
+          right_trunc_marker = " ",
+          diagnostics = "nvim_lsp",
+          offsets = {
+            {
+              filetype = "NvimTree",
+              text = "File Explorer",
+              text_align = "left",
+              separator = false,
+            },
+            {
+              filetype = "NeoTree",
+              text = "File Explorer",
+              text_align = "left",
+              separator = false,
+            },
+          },
+          color_icons = true,
+          get_element_icon = function(element)
+            local icon, hl = require("nvim-web-devicons").get_icon_by_filetype(element.filetype, { default = false })
+            return icon, hl
+          end,
+          show_buffer_close_icons = false,
+          hover = {
+            enabled = true,
+            delay = 200,
+            reveal = { "close" },
+          },
+        },
+      })
+    end,
+  },
+
+  {
     "fidget.nvim",
     after = function()
       require("fidget").setup({
