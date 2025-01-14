@@ -163,8 +163,8 @@ keymaps.normal["D"] = { "0d$", "clear current line", group = "edit" }
 
 kmgroup({
   group = "diagnostics",
-  { "normal", "<m-l>", cbcall(vim.diagnostic.jump, { count = 1 }), "goto next diagnostic" },
-  { "normal", "<m-h>", cbcall(vim.diagnostic.jump, { count = -1 }), "goto prev diagnostic" },
+  { "normal", "<leader>dj", cbcall(vim.diagnostic.jump, { count = 1 }), "goto next diagnostic" },
+  { "normal", "<leader>dk", cbcall(vim.diagnostic.jump, { count = -1 }), "goto prev diagnostic" },
   {
     "normal",
     "L",

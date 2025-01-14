@@ -243,6 +243,7 @@ return {
       local wk = require("which-key")
       wk.add({
         { "<leader>f", group = "find" },
+        { "<leader>d", group = "diagnostic" },
       })
     end,
   },
