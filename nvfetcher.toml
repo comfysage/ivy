@@ -219,6 +219,10 @@ src.git = "https://github.com/folke/todo-comments.nvim"
 fetch.github = "akinsho/toggleterm.nvim"
 src.git = "https://github.com/akinsho/toggleterm.nvim"
 
+[treewalker]
+fetch.github = "aaronik/treewalker.nvim"
+src.git = "https://github.com/aaronik/treewalker.nvim"
+
 [trouble]
 fetch.github = "folke/trouble.nvim"
 src.git = "https://github.com/folke/trouble.nvim"

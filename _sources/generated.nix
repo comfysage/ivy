@@ -653,6 +653,18 @@
     };
     date = "2024-12-30";
   };
+  treewalker = {
+    pname = "treewalker";
+    version = "dc55ab606d21cb112dbf2a96546d1b46f6d63dfc";
+    src = fetchFromGitHub {
+      owner = "aaronik";
+      repo = "treewalker.nvim";
+      rev = "dc55ab606d21cb112dbf2a96546d1b46f6d63dfc";
+      fetchSubmodules = false;
+      sha256 = "sha256-Vi++8+OFpwevBpN9lTnk2JgOf0YfPNmZST4GO3YH32Q=";
+    };
+    date = "2025-01-13";
+  };
   trouble = {
     pname = "trouble";
     version = "46cf952fc115f4c2b98d4e208ed1e2dce08c9bf6";

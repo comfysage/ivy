@@ -1087,6 +1087,26 @@
         },
         "version": "e76134e682c1a866e3dfcdaeb691eb7b01068668"
     },
+    "treewalker": {
+        "cargoLocks": null,
+        "date": "2025-01-13",
+        "extract": null,
+        "name": "treewalker",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "aaronik",
+            "repo": "treewalker.nvim",
+            "rev": "dc55ab606d21cb112dbf2a96546d1b46f6d63dfc",
+            "sha256": "sha256-Vi++8+OFpwevBpN9lTnk2JgOf0YfPNmZST4GO3YH32Q=",
+            "type": "github"
+        },
+        "version": "dc55ab606d21cb112dbf2a96546d1b46f6d63dfc"
+    },
     "trouble": {
         "cargoLocks": null,
         "date": "2024-11-27",
