@@ -641,6 +641,18 @@
     };
     date = "2025-01-06";
   };
+  symbol-usage = {
+    pname = "symbol-usage";
+    version = "0f9b3da014b7e41559b643e7461fcabb2a7dc83a";
+    src = fetchFromGitHub {
+      owner = "Wansmer";
+      repo = "symbol-usage.nvim";
+      rev = "0f9b3da014b7e41559b643e7461fcabb2a7dc83a";
+      fetchSubmodules = false;
+      sha256 = "sha256-vNVrh8MV7KZoh2MtP+hAr6Uz20qMMMUcbua/W71lRn0=";
+    };
+    date = "2024-09-13";
+  };
   todo-comments = {
     pname = "todo-comments";
     version = "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0";
