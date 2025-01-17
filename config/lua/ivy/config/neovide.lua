@@ -34,8 +34,18 @@ vim.api.nvim_exec_autocmds("ColorScheme", {})
 -- font & cursor --
 
 vim.g.fontsize = 14
+local fonts = {
+  { family = "Maple Mono" },
+  { family = "Symbols Nerd Font", size = 13 },
+}
+vim.o.guifont = vim.iter(fonts):fold("", function(acc, font)
+  if #acc > 0 then
+    acc = acc .. ","
+  end
+  return acc .. string.format("%s:h%d", font.family, font.size or vim.g.fontsize)
+end)
 vim.g.lineheight = 1.2
-vim.o.guifont = string.format("Maple Mono NF:h%d", vim.g.fontsize)
+
 vim.opt.linespace = math.floor((vim.g.lineheight - 1) * vim.g.fontsize)
 
 -- behavior --
