@@ -230,7 +230,6 @@ return {
       local plugins = {
         { "blink.cmp" },
         { "lsp-status.nvim" },
-        { "ltex-extra.nvim" },
         { "schemastore.nvim" },
         { "py_lsp.nvim" },
         { "typescript-tools.nvim" },
@@ -441,24 +440,6 @@ return {
               hint = {
                 enable = true,
                 arrayIndex = "Disable",
-              },
-            },
-          },
-        },
-        ltex = {
-          on_attach = function()
-            require("ltex_extra").setup({
-              load_langs = { "en-US", "en-GB" },
-              init_check = true,
-              path = vim.fn.stdpath("data") .. "/dictionary",
-            })
-          end,
-          settings = {
-            ltex = {
-              language = "en-US",
-              additionalRules = {
-                enablePickyRules = true,
-                motherTongue = "en_GB",
               },
             },
           },
