@@ -6,10 +6,7 @@
 
     beapkgs = {
       url = "github:isabelroses/beapkgs";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     systems.url = "github:nix-systems/default";
