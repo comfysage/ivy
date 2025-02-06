@@ -107,9 +107,7 @@ return {
         },
 
         fuzzy = {
-          -- when enabled, allows for a number of typos relative to the length of the query
-          -- disabling this matches the behavior of fzf
-          use_typo_resistance = false,
+          max_typos = 0,
           -- frecency tracks the most recently/frequently used items and boosts the score of the item
           use_frecency = false,
           -- proximity bonus boosts the score of items matching nearby words
