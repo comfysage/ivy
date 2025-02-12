@@ -135,7 +135,6 @@ let
     nodePackages.graphql-language-service-cli
 
     # markdown / latex
-    nodePackages.alex
     marksman
     zk
 
