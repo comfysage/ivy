@@ -40,6 +40,7 @@ return {
             min_width = vim.o.pumwidth,
             max_height = vim.o.pumheight,
             scrolloff = 0,
+            border = { "▄", "▄", "▄", "█", "▀", "▀", "▀", "█" },
 
             draw = {
               -- align_to = "label", -- or 'none' to disable, or 'cursor' to align to the cursor
