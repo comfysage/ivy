@@ -3,7 +3,9 @@ return {
     "blink.cmp",
     event = "DeferredUIEnter",
     after = function()
-      require("blink.cmp").setup({
+      local pmenu = vim.api.nvim_get_hl(0, { name = "Pmenu" })
+      vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = pmenu.bg })
+      local ok, result = pcall(require("blink.cmp").setup, {
         -- 'default' for mappings similar to built-in completion
         -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
         -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
@@ -55,6 +57,14 @@ return {
                     return string.format("(%s)", ctx.source_name)
                   end,
                   highlight = "BlinkCmpSource",
+                },
+                kind_icon = {
+                  text = function(ctx)
+                    if ctx.kind == "Color" then
+                      ctx.kind_icon = "󱓻"
+                    end
+                    return ctx.kind_icon .. ctx.icon_gap
+                  end,
                 },
               },
             },
@@ -121,6 +131,10 @@ return {
           },
         },
       })
+      if not ok then
+        vim.notify("error configuring blink.cmp:\n\t" .. result, vim.log.levels.ERROR)
+        return
+      end
     end,
   },
   {
