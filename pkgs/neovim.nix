@@ -27,7 +27,6 @@
   tailwindcss-language-server,
   typescript,
   vscode-langservers-extracted,
-  ltex-ls,
   marksman,
   gonvim-tools,
   # nil,
@@ -136,7 +135,6 @@ let
     nodePackages.graphql-language-service-cli
 
     # markdown / latex
-    ltex-ls
     nodePackages.alex
     marksman
     zk

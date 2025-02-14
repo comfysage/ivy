@@ -162,8 +162,8 @@ return {
           -- Move current line in Normal mode
           line_left = "",
           line_right = "",
-          line_down = "<M-j>",
-          line_up = "<M-k>",
+          line_down = "<s-m-j>",
+          line_up = "<s-m-k>",
         },
 
         -- Options which control moving behavior

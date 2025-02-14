@@ -7,9 +7,10 @@ vim.filetype.add({
     tera = "tera",
   },
   pattern = {
-    ["flake.lock"] = "json",
+    ["templates/.*.html"] = "tera",
   },
   filename = {
+    ["flake.lock"] = "json",
     [".Justfile"] = "just",
     [".justfile"] = "just",
     ["Justfile"] = "just",

@@ -6,10 +6,7 @@
 
     beapkgs = {
       url = "github:isabelroses/beapkgs";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     systems.url = "github:nix-systems/default";
@@ -17,6 +14,7 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
+        nixpkgs.follows = "nixpkgs";
         hercules-ci-effects.follows = "";
         flake-compat.follows = "";
         git-hooks.follows = "";
@@ -35,11 +33,11 @@
       ...
     }:
     let
-      inherit (nixpkgs.lib) genAttrs;
+      inherit (nixpkgs) lib;
 
       forAllSystems =
         function:
-        genAttrs (import systems) (
+        lib.genAttrs (import systems) (
           system:
           function (
             import nixpkgs {
@@ -53,20 +51,44 @@
     {
       formatter = forAllSystems (pkgs: pkgs.nixfmt-rfc-style);
 
-      packages = forAllSystems (
-        pkgs:
-        let
-          neovim = pkgs.callPackage ./pkgs/neovim.nix {
-            basePackage = neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
-          };
-        in
-        {
-          inherit neovim;
-          default = neovim;
-          nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
-          nil = pkgs.callPackage ./pkgs/nil.nix { };
-        }
-      );
+      packages = forAllSystems (pkgs: {
+        default = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
+
+        neovim = pkgs.callPackage ./pkgs/neovim.nix {
+          basePackage = neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        };
+
+        nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
+        nil = pkgs.callPackage ./pkgs/nil.nix { };
+
+        # devleopment scripts
+        generate-treesitter = pkgs.writeShellApplication {
+          name = "generate";
+          runtimeInputs = [
+            (pkgs.callPackage ./pkgs/nvim-treesitter/neovim.nix { })
+          ];
+
+          text = ''
+            nvim --headless -l ${./pkgs/nvim-treesitter/generate-nvfetcher.lua}
+          '';
+        };
+
+        update = pkgs.writeShellApplication {
+          name = "update";
+          runtimeInputs = [
+            pkgs.nvfetcher
+            self.packages.${pkgs.stdenv.hostPlatform.system}.generate-treesitter
+          ];
+
+          text = ''
+            nvfetcher
+            pushd pkgs/nvim-treesitter
+            generate
+            nvfetcher
+            popd
+          '';
+        };
+      });
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShellNoCC {
@@ -74,22 +96,9 @@
             self.formatter.${pkgs.stdenv.hostPlatform.system}
             pkgs.selene
             pkgs.stylua
+            self.packages.${pkgs.stdenv.hostPlatform.system}.update
+            self.packages.${pkgs.stdenv.hostPlatform.system}.generate-treesitter
           ] ++ nixpkgs.lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
-        };
-
-        generate-treesitter = pkgs.mkShellNoCC {
-          packages = [
-            pkgs.nvfetcher
-
-            (pkgs.writeShellApplication {
-              name = "generate";
-              runtimeInputs = [ (pkgs.callPackage ./pkgs/nvim-treesitter/neovim.nix { }) ];
-
-              text = ''
-                nvim --headless -l ${./pkgs/nvim-treesitter/generate-nvfetcher.lua}
-              '';
-            })
-          ];
         };
       });
     };

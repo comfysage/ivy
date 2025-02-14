@@ -3,7 +3,9 @@ return {
     "blink.cmp",
     event = "DeferredUIEnter",
     after = function()
-      require("blink.cmp").setup({
+      local pmenu = vim.api.nvim_get_hl(0, { name = "Pmenu" })
+      vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = pmenu.bg })
+      local ok, result = pcall(require("blink.cmp").setup, {
         -- 'default' for mappings similar to built-in completion
         -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
         -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
@@ -40,6 +42,7 @@ return {
             min_width = vim.o.pumwidth,
             max_height = vim.o.pumheight,
             scrolloff = 0,
+            border = { "▄", "▄", "▄", "█", "▀", "▀", "▀", "█" },
 
             draw = {
               -- align_to = "label", -- or 'none' to disable, or 'cursor' to align to the cursor
@@ -54,6 +57,14 @@ return {
                     return string.format("(%s)", ctx.source_name)
                   end,
                   highlight = "BlinkCmpSource",
+                },
+                kind_icon = {
+                  text = function(ctx)
+                    if ctx.kind == "Color" then
+                      ctx.kind_icon = "󱓻"
+                    end
+                    return ctx.kind_icon .. ctx.icon_gap
+                  end,
                 },
               },
             },
@@ -107,9 +118,9 @@ return {
         },
 
         fuzzy = {
-          -- when enabled, allows for a number of typos relative to the length of the query
-          -- disabling this matches the behavior of fzf
-          use_typo_resistance = false,
+          max_typos = function(_)
+            return 0
+          end,
           -- frecency tracks the most recently/frequently used items and boosts the score of the item
           use_frecency = false,
           -- proximity bonus boosts the score of items matching nearby words
@@ -120,6 +131,10 @@ return {
           },
         },
       })
+      if not ok then
+        vim.notify("error configuring blink.cmp:\n\t" .. result, vim.log.levels.ERROR)
+        return
+      end
     end,
   },
   {
@@ -230,7 +245,6 @@ return {
       local plugins = {
         { "blink.cmp" },
         { "lsp-status.nvim" },
-        { "ltex-extra.nvim" },
         { "schemastore.nvim" },
         { "py_lsp.nvim" },
         { "typescript-tools.nvim" },
@@ -445,24 +459,6 @@ return {
             },
           },
         },
-        ltex = {
-          on_attach = function()
-            require("ltex_extra").setup({
-              load_langs = { "en-US", "en-GB" },
-              init_check = true,
-              path = vim.fn.stdpath("data") .. "/dictionary",
-            })
-          end,
-          settings = {
-            ltex = {
-              language = "en-US",
-              additionalRules = {
-                enablePickyRules = true,
-                motherTongue = "en_GB",
-              },
-            },
-          },
-        },
         marksman = {},
         nil_ls = {
           autostart = true,
@@ -575,6 +571,24 @@ return {
     "quill.nvim",
     after = function()
       -- require("quill").setup()
+    end,
+  },
+  {
+    "symbol-usage.nvim",
+    after = function()
+      local SymbolKind = vim.lsp.protocol.SymbolKind
+
+      ---@diagnostic disable-next-line: missing-fields
+      require("symbol-usage").setup({
+        hl = { link = "LspInlayHint" },
+        ---@type lsp.SymbolKind[] Symbol kinds what need to be count (see `lsp.SymbolKind`)
+        kinds = { SymbolKind.Function, SymbolKind.Method, SymbolKind.Constant },
+        ---@type 'above'|'end_of_line'|'textwidth'|'signcolumn' `above` by default
+        vt_position = "end_of_line",
+        -- Recommended to use with `above` vt_position to avoid "jumping lines"
+        ---@type string|table|false
+        request_pending_text = false, -- "loading...",
+      })
     end,
   },
 }

@@ -2,6 +2,10 @@
 fetch.github = "kevinhwang91/nvim-bqf"
 src.git = "https://github.com/kevinhwang91/nvim-bqf"
 
+[bufferline]
+fetch.github = "akinsho/bufferline.nvim"
+src.git = "https://github.com/akinsho/bufferline.nvim"
+
 [catppuccin]
 fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"
@@ -71,10 +75,6 @@ src.git = "https://github.com/nvim-lua/lsp-status.nvim"
 [lspkind]
 fetch.github = "onsails/lspkind.nvim"
 src.git = "https://github.com/onsails/lspkind.nvim"
-
-[ltex-extra]
-fetch.github = "barreiroleo/ltex-extra.nvim"
-src.git = "https://github.com/barreiroleo/ltex-extra.nvim"
 
 [lualine]
 fetch.github = "nvim-lualine/lualine.nvim"
@@ -211,6 +211,10 @@ src.git = "https://github.com/comfysage/shelf.nvim"
 fetch.github = "folke/snacks.nvim"
 src.git = "https://github.com/folke/snacks.nvim"
 
+[symbol-usage]
+fetch.github = "Wansmer/symbol-usage.nvim"
+src.git = "https://github.com/Wansmer/symbol-usage.nvim"
+
 [todo-comments]
 fetch.github = "folke/todo-comments.nvim"
 src.git = "https://github.com/folke/todo-comments.nvim"
@@ -218,6 +222,10 @@ src.git = "https://github.com/folke/todo-comments.nvim"
 [toggleterm]
 fetch.github = "akinsho/toggleterm.nvim"
 src.git = "https://github.com/akinsho/toggleterm.nvim"
+
+[treewalker]
+fetch.github = "aaronik/treewalker.nvim"
+src.git = "https://github.com/aaronik/treewalker.nvim"
 
 [trouble]
 fetch.github = "folke/trouble.nvim"
