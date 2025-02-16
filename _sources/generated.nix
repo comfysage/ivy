@@ -158,6 +158,18 @@
     };
     date = "2024-11-02";
   };
+  hunk-nvim = {
+    pname = "hunk-nvim";
+    version = "b475ba0011e4b8ef7d7ddecd9764ee1a5f41366d";
+    src = fetchFromGitHub {
+      owner = "julienvincent";
+      repo = "hunk.nvim";
+      rev = "b475ba0011e4b8ef7d7ddecd9764ee1a5f41366d";
+      fetchSubmodules = false;
+      sha256 = "sha256-CKQe3kv7bX21DDqSV2S093Afs8jiAzZiLHByjWFSWDQ=";
+    };
+    date = "2025-02-08";
+  };
   img-clip-nvim = {
     pname = "img-clip-nvim";
     version = "5ded6f468d633ccfb315905fe8901d6c95ae8f29";
@@ -435,6 +447,18 @@
       sha256 = "sha256-87CesyVClrFa3I5xczS4+3l/JRmKDKB6ZXrQnNPGxZ0=";
     };
     date = "2025-02-10";
+  };
+  nui = {
+    pname = "nui";
+    version = "53e907ffe5eedebdca1cd503b00aa8692068ca46";
+    src = fetchFromGitHub {
+      owner = "MunifTanjim";
+      repo = "nui.nvim";
+      rev = "53e907ffe5eedebdca1cd503b00aa8692068ca46";
+      fetchSubmodules = false;
+      sha256 = "sha256-6U7E/i5FuNXQy+sF4C5DVxuTPqNKD5wxUgFohpOjm9Q=";
+    };
+    date = "2024-12-11";
   };
   nvim-colorizer = {
     pname = "nvim-colorizer";

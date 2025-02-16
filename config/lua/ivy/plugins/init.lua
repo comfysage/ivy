@@ -267,6 +267,16 @@ return {
     end,
   },
 
+  {
+    "hunk.nvim",
+    cmd = { "DiffEditor" },
+    after = function()
+      require("lz.n").trigger_load("nui")
+
+      require("hunk").setup()
+    end,
+  },
+
   -- discord integration
   {
     "cord.nvim",
@@ -276,5 +286,9 @@ return {
         display = { swap_icons = true }, -- place the editor image as the main image
       })
     end,
+  },
+
+  {
+    "nui.nvim",
   },
 }

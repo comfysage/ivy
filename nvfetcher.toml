@@ -52,6 +52,10 @@ src.git = "https://github.com/ray-x/go.nvim"
 fetch.github = "ray-x/guihua.lua"
 src.git = "https://github.com/ray-x/guihua.lua"
 
+[hunk-nvim]
+fetch.github = "julienvincent/hunk.nvim"
+src.git = "https://github.com/julienvincent/hunk.nvim"
+
 [img-clip-nvim]
 fetch.github = "HakonHarnes/img-clip.nvim"
 src.git = "https://github.com/HakonHarnes/img-clip.nvim"
@@ -145,6 +149,10 @@ src.git = "https://github.com/danymat/neogen"
 [none-ls]
 fetch.github = "nvimtools/none-ls.nvim"
 src.git = "https://github.com/nvimtools/none-ls.nvim"
+
+[nui]
+fetch.github = "MunifTanjim/nui.nvim"
+src.git = "https://github.com/MunifTanjim/nui.nvim"
 
 [nvim-colorizer]
 fetch.github = "nvchad/nvim-colorizer.lua"

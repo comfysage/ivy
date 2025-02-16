@@ -274,6 +274,27 @@
         },
         "version": "d783191eaa75215beae0c80319fcce5e6b3beeda"
     },
+    "hunk-nvim": {
+        "cargoLocks": null,
+        "date": "2025-02-08",
+        "extract": null,
+        "name": "hunk-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "julienvincent",
+            "repo": "hunk.nvim",
+            "rev": "b475ba0011e4b8ef7d7ddecd9764ee1a5f41366d",
+            "sha256": "sha256-CKQe3kv7bX21DDqSV2S093Afs8jiAzZiLHByjWFSWDQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b475ba0011e4b8ef7d7ddecd9764ee1a5f41366d"
+    },
     "img-clip-nvim": {
         "cargoLocks": null,
         "date": "2025-01-30",
@@ -760,6 +781,27 @@
             "type": "github"
         },
         "version": "02f5275d8a5546092f01306f162c00c71d6e0281"
+    },
+    "nui": {
+        "cargoLocks": null,
+        "date": "2024-12-11",
+        "extract": null,
+        "name": "nui",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "MunifTanjim",
+            "repo": "nui.nvim",
+            "rev": "53e907ffe5eedebdca1cd503b00aa8692068ca46",
+            "sha256": "sha256-6U7E/i5FuNXQy+sF4C5DVxuTPqNKD5wxUgFohpOjm9Q=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "53e907ffe5eedebdca1cd503b00aa8692068ca46"
     },
     "nvim-colorizer": {
         "cargoLocks": null,
