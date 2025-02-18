@@ -424,14 +424,6 @@ return {
           },
         },
         gopls = go_config,
-        graphql = {
-          filetypes = {
-            "graphql",
-            "typescriptreact",
-            "javascriptreact",
-            "typescript",
-          },
-        },
         helm_ls = {},
         hls = {},
         html = {},
