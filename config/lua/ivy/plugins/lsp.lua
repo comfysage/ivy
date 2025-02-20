@@ -553,7 +553,6 @@ return {
           currentpos = " ",
         },
         trouble = true,
-        luasnip = true,
         dap_debug_keymap = false,
         lsp_cfg = false,
         lsp_keymaps = false,
