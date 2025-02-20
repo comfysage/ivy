@@ -44,6 +44,7 @@
   nodePackages,
   nodejs-slim,
   tinymist,
+  typstyle,
   zk,
 
   # for our extra plugins
@@ -141,6 +142,7 @@ let
 
     # typst
     tinymist
+    typstyle
 
     # go
     gonvim-tools

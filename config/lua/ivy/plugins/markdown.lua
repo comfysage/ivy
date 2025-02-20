@@ -35,6 +35,9 @@ return {
             pad_amount = 1,
           },
         },
+        typst = {
+          enable = false,
+        },
       })
     end,
   },
