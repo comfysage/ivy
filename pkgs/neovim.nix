@@ -92,6 +92,7 @@
       "tsv"
       "tsx"
       "typescript"
+      "typst"
       "vue"
       "yaml"
       "yuck"
