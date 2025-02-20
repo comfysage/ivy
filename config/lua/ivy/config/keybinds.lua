@@ -181,3 +181,8 @@ kmgroup({
   { "normal", "q", "<nop>", "fixup q" },
   { "normal", "Q", "q", "record macro" },
 })
+
+kmgroup({
+  group = "treesitter",
+  { "normal", "gm", vim.show_pos, "inspect treesitter node" },
+})
