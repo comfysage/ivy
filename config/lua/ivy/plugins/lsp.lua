@@ -49,6 +49,10 @@ return {
         appearance = {},
 
         completion = {
+          trigger = {
+            show_on_keyword = true,
+          },
+
           list = {
             cycle = {
               from_top = false,
