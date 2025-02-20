@@ -6,6 +6,24 @@ return {
       local pmenu = vim.api.nvim_get_hl(0, { name = "Pmenu" })
       vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = pmenu.bg })
       local ok, result = pcall(require("blink.cmp").setup, {
+        cmdline = {
+          -- By default, we choose providers for the cmdline based on the current cmdtype
+          -- You may disable cmdline completions by replacing this with an empty table
+          sources = {
+            default = function()
+              local type = vim.fn.getcmdtype()
+              -- Search forward and backward
+              if type == "/" or type == "?" then
+                return { "buffer", "lsp" }
+              end
+              -- Commands
+              if type == ":" then
+                return { "cmdline" }
+              end
+              return {}
+            end,
+          },
+        },
         -- 'default' for mappings similar to built-in completion
         -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
         -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
@@ -79,21 +97,6 @@ return {
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
           default = { "lsp", "path", "snippets", "buffer" },
-
-          -- -- By default, we choose providers for the cmdline based on the current cmdtype
-          -- You may disable cmdline completions by replacing this with an empty table
-          cmdline = function()
-            local type = vim.fn.getcmdtype()
-            -- Search forward and backward
-            if type == "/" or type == "?" then
-              return { "buffer", "lsp" }
-            end
-            -- Commands
-            if type == ":" then
-              return { "cmdline" }
-            end
-            return {}
-          end,
 
           transform_items = function(_, items)
             return vim
