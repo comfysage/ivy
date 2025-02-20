@@ -99,6 +99,11 @@ return {
     end,
   },
 
+  { "lsp-status.nvim" },
+  { "schemastore.nvim" },
+  { "py_lsp.nvim" },
+  { "typescript-tools.nvim" },
+
   {
     "nvim-lspconfig",
     event = "DeferredUIEnter",
