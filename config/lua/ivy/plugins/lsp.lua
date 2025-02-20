@@ -344,6 +344,12 @@ return {
             "tera",
           },
         },
+        tinymist = {
+          settings = {
+            formatterMode = "typstyle",
+            exportPdf = "onDocumentHasTitle",
+          },
+        },
         volar = {
           capabilities = {
             workspace = {

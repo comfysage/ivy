@@ -43,6 +43,7 @@
   lazygit,
   nodePackages,
   nodejs-slim,
+  tinymist,
   zk,
 
   # for our extra plugins
@@ -136,6 +137,9 @@ let
     # markdown / latex
     marksman
     zk
+
+    # typst
+    tinymist
 
     # go
     gonvim-tools
