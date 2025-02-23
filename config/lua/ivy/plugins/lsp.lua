@@ -1,5 +1,27 @@
 return {
   {
+    "mossy.nvim",
+    event = "DeferredUIEnter",
+    after = function()
+      require("mossy").setup({})
+      local ft = require("mossy.ft")
+      ft("*"):use("treefmt")
+      ft("c"):use("clang-format")
+      ft({ "html", "markdown", "astro", "vue" }):use("prettier")
+      ft("nix"):use("nixfmt")
+      ft("go"):use("gofumpt")
+      ft({ "sh", "bash" }):use({
+        cmd = "shfmt",
+        args = function(params)
+          local filename = vim.api.nvim_buf_get_name(params.buf)
+          return { "-filename", filename }
+        end,
+        stdin = false,
+      })
+      ft("lua"):use("stylua")
+    end,
+  },
+  {
     "none-ls.nvim",
     event = "DeferredUIEnter",
     after = function()
@@ -10,35 +32,8 @@ return {
       end
 
       local sources = {
-        -- general
-        null.builtins.formatting.treefmt.with({
-          condition = function(utils)
-            return utils.root_has_file("treefmt.toml")
-          end,
-        }),
-
-        -- nix
-        null.builtins.formatting.nixfmt,
         null.builtins.diagnostics.statix,
         null.builtins.diagnostics.deadnix,
-
-        -- go
-        null.builtins.formatting.gofumpt,
-
-        -- webdev
-        null.builtins.formatting.prettier.with({
-          filetypes = {
-            "html",
-            "astro",
-            "vue",
-          },
-        }),
-
-        -- shell
-        null.builtins.formatting.shfmt,
-
-        -- lua
-        null.builtins.formatting.stylua,
         null.builtins.diagnostics.selene,
 
         -- docs
@@ -47,22 +42,6 @@ return {
 
       null.setup({
         sources = sources,
-        on_attach = function(client, bufnr)
-          if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              group = vim.api.nvim_create_augroup(("null:formatting:%d"):format(bufnr), { clear = true }),
-              buffer = bufnr,
-              callback = function()
-                vim.lsp.buf.format({
-                  bufnr = bufnr,
-                  filter = function(c)
-                    return c.name == "null-ls"
-                  end,
-                })
-              end,
-            })
-          end
-        end,
       })
 
       vim.api.nvim_create_user_command("NullToggle", function(ev)

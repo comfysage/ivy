@@ -411,6 +411,18 @@
     };
     date = "2025-01-31";
   };
+  mossy-nvim = {
+    pname = "mossy-nvim";
+    version = "86cc8c2379c59368d06297b4a3a6dea3e899dfd4";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "mossy.nvim";
+      rev = "86cc8c2379c59368d06297b4a3a6dea3e899dfd4";
+      fetchSubmodules = false;
+      sha256 = "sha256-oI4iY9EOE2L1boTLrqHvqiBf1e3dt6M7riLx03nWNNE=";
+    };
+    date = "2025-02-24";
+  };
   neogen = {
     pname = "neogen";
     version = "05d754004da8c89115b291f2a23ca530a8cac8fd";
