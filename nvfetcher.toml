@@ -218,6 +218,10 @@ src.git = "https://github.com/folke/snacks.nvim"
 fetch.github = "Wansmer/symbol-usage.nvim"
 src.git = "https://github.com/Wansmer/symbol-usage.nvim"
 
+[mossy-nvim]
+fetch.github = "comfysage/mossy.nvim"
+src.git = "https://github.com/comfysage/mossy.nvim"
+
 [todo-comments]
 fetch.github = "folke/todo-comments.nvim"
 src.git = "https://github.com/folke/todo-comments.nvim"
