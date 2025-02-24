@@ -122,6 +122,20 @@ vim.opt.undofile = true
 vim.opt.hidden = true
 
 local borderchars = {
+  solid = {
+    style = "solid",
+    vert = "█",
+    vertleft = "█",
+    vertright = "█",
+    horiz = "▄",
+    horizup = "▀",
+    horizdown = "▄",
+    verthoriz = "█",
+    topleft = "▄",
+    topright = "▄",
+    botleft = "▀",
+    botright = "▀",
+  },
   single = {
     style = "single",
     vert = "│",
@@ -167,7 +181,7 @@ local borderchars = {
 }
 
 -- my custom borderchars
-vim.g.bc = borderchars.rounded
+vim.g.bc = borderchars.solid
 vim.g.bc_all = {
   vim.g.bc.topleft,
   vim.g.bc.horiz,
