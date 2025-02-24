@@ -8,22 +8,23 @@ return {
       require("fzf-lua").setup({
         winopts = function(opts)
           opts = opts or {}
-          local size = 28
+          local size = 30
+          local preview_size = size / 2
           if opts.previewer == false then
-            size = 12
+            size = size / 2
           end
           local bottom_border = { vim.g.bc.horiz, vim.g.bc.horiz, vim.g.bc.horiz, "", "", "", "", "" }
           return {
             height = size,
             width = 1.0,
             col = 0,
-            row = vim.o.lines - size,
+            row = vim.o.lines - size - 1 - vim.o.cmdheight, -- offset to avoid covering statusline
             preview = {
               winopts = {
                 cursorline = false,
               },
               layout = "vertical",
-              vertical = "up:60%",
+              vertical = "up:" .. preview_size,
               title_pos = "left",
             },
             backdrop = 100,
