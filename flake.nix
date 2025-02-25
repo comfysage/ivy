@@ -4,11 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    beapkgs = {
-      url = "github:isabelroses/beapkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     systems.url = "github:nix-systems/default";
 
     neovim-nightly-overlay = {
@@ -28,7 +23,6 @@
       self,
       nixpkgs,
       systems,
-      beapkgs,
       neovim-nightly-overlay,
       ...
     }:
@@ -43,7 +37,7 @@
             import nixpkgs {
               inherit system;
               config.allowUnfree = true;
-              overlays = [ beapkgs.overlays.default ];
+              overlays = [ ];
             }
           )
         );
