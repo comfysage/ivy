@@ -28,7 +28,6 @@
   typescript,
   vscode-langservers-extracted,
   marksman,
-  gonvim-tools,
   # nil,
   statix,
   deadnix,
@@ -143,9 +142,6 @@ let
     # typst
     tinymist
     typstyle
-
-    # go
-    gonvim-tools
 
     # nix
     (callPackage ./nil.nix { })

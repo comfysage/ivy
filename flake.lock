@@ -1,25 +1,5 @@
 {
   "nodes": {
-    "beapkgs": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1740012032,
-        "narHash": "sha256-RNi36E7gTu3QyJHpFsW3WeK+Qz93RmDSLe00my60uU8=",
-        "owner": "isabelroses",
-        "repo": "beapkgs",
-        "rev": "584cfb0337c8d99a82cc2544cdb1bf84fc08d264",
-        "type": "github"
-      },
-      "original": {
-        "owner": "isabelroses",
-        "repo": "beapkgs",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -101,7 +81,6 @@
     },
     "root": {
       "inputs": {
-        "beapkgs": "beapkgs",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs",
         "systems": "systems"
