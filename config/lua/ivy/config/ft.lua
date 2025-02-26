@@ -7,7 +7,7 @@ vim.filetype.add({
     tera = "tera",
   },
   pattern = {
-    ["templates/.*.html"] = "tera",
+    ["templates/.*%.html"] = "tera",
     ["shaders/.*%.[vf]sh"] = "glsl",
   },
   filename = {
