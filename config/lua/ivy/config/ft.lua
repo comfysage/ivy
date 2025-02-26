@@ -8,6 +8,7 @@ vim.filetype.add({
   },
   pattern = {
     ["templates/.*.html"] = "tera",
+    ["shaders/.*%.[vf]sh"] = "glsl",
   },
   filename = {
     ["flake.lock"] = "json",
