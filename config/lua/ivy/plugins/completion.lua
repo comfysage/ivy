@@ -3,8 +3,12 @@ return {
     "blink.cmp",
     event = "DeferredUIEnter",
     after = function()
-      local pmenu = vim.api.nvim_get_hl(0, { name = "Pmenu" })
-      vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = pmenu.bg })
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+          local pmenu = vim.api.nvim_get_hl(0, { name = "Pmenu" })
+          vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = pmenu.bg })
+        end,
+      })
       local ok, result = pcall(require("blink.cmp").setup, {
         cmdline = {
           -- By default, we choose providers for the cmdline based on the current cmdtype
