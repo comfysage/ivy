@@ -37,7 +37,7 @@ vim.o.splitright = true
 
 -- search settings
 vim.opt.incsearch = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- substitution with preview window
