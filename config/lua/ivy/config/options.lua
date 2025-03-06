@@ -121,6 +121,7 @@ vim.opt.undofile = true
 -- dont unload abandoned buffers
 vim.opt.hidden = true
 
+---@type { [string]: { style: string, ['vert'|'vertleft'|'vertright'|'horiz'|'horizup'|'horizdown'|'verthoriz'|'topleft'|'topright'|'botleft'|'botright']: string, bottom?: string } }
 local borderchars = {
   solid = {
     style = "solid",
@@ -135,6 +136,7 @@ local borderchars = {
     topright = "▄",
     botleft = "▀",
     botright = "▀",
+    bottom = "▀",
   },
   single = {
     style = "single",
@@ -184,11 +186,11 @@ local borderchars = {
 vim.g.bc = borderchars.solid
 vim.g.bc_all = {
   vim.g.bc.topleft,
-  vim.g.bc.horiz,
+  vim.g.bc.top or vim.g.bc.horiz,
   vim.g.bc.topright,
   vim.g.bc.vert,
   vim.g.bc.botright,
-  vim.g.bc.horiz,
+  vim.g.bc.bottom or vim.g.bc.horiz,
   vim.g.bc.botleft,
   vim.g.bc.vert,
 }
