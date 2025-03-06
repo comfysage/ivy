@@ -186,3 +186,70 @@ kmgroup({
   group = "treesitter",
   { "normal", "gm", vim.show_pos, "inspect treesitter node" },
 })
+
+kmgroup({
+  group = "windows",
+  {
+    "normal",
+    "<c-w><m-h>",
+    "<plug>(expand-window-left)",
+    "expand window left",
+  },
+  {
+    "normal",
+    "<c-w><m-j>",
+    "<plug>(expand-window-down)",
+    "expand window down",
+  },
+  {
+    "normal",
+    "<c-w><m-k>",
+    "<plug>(expand-window-up)",
+    "expand window up",
+  },
+  {
+    "normal",
+    "<c-w><m-l>",
+    "<plug>(expand-window-right)",
+    "expand window right",
+  },
+})
+kmgroup({
+  group = "windows",
+  {
+    "normal",
+    "<plug>(expand-window-left)",
+    function()
+      if vim.fn.winnr() == vim.fn.winnr("h") then
+        vim.fn.win_move_separator(vim.fn.winnr("h"), -1)
+      end
+    end,
+    "expand window left",
+  },
+  {
+    "normal",
+    "<plug>(expand-window-down)",
+    function()
+      vim.fn.win_move_statusline(vim.fn.winnr(), 1)
+    end,
+    "expand window down",
+  },
+  {
+    "normal",
+    "<plug>(expand-window-up)",
+    function()
+      if vim.fn.winnr() == vim.fn.winnr("k") then
+        vim.fn.win_move_statusline(vim.fn.winnr("k"), -1)
+      end
+    end,
+    "expand window up",
+  },
+  {
+    "normal",
+    "<plug>(expand-window-right)",
+    function()
+      vim.fn.win_move_separator(vim.fn.winnr(), 1)
+    end,
+    "expand window right",
+  },
+})
