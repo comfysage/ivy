@@ -44,14 +44,6 @@ src.git = "https://github.com/charm-community/freeze.nvim"
 fetch.github = "ibhagwan/fzf-lua"
 src.git = "https://github.com/ibhagwan/fzf-lua"
 
-[go-nvim]
-fetch.github = "ray-x/go.nvim"
-src.git = "https://github.com/ray-x/go.nvim"
-
-[guihua-lua]
-fetch.github = "ray-x/guihua.lua"
-src.git = "https://github.com/ray-x/guihua.lua"
-
 [hunk-nvim]
 fetch.github = "julienvincent/hunk.nvim"
 src.git = "https://github.com/julienvincent/hunk.nvim"

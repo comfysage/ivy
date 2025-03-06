@@ -114,7 +114,6 @@ return {
         "schemastore.nvim",
         "py_lsp.nvim",
         "typescript-tools.nvim",
-        "go.nvim",
       })
 
       local lsp_present, lspconfig = pcall(require, "lspconfig")
@@ -242,17 +241,6 @@ return {
         },
       })
 
-      local go_present, go_lsp = pcall(require, "go.lsp")
-      local go_config = go_present
-          and (function()
-            local ok, config = pcall(go_lsp.config)
-            if ok then
-              return config
-            end
-            return {}
-          end)()
-        or {}
-
       local servers = {
         astro = {},
         bashls = {},
@@ -289,7 +277,35 @@ return {
             "typescriptreact",
           },
         },
-        gopls = go_config,
+        gopls = {
+          single_file_support = true,
+          filetypes = { "go", "gomod", "gosum", "gotmpl", "gohtmltmpl", "gotexttmpl" },
+          cmd = {
+            "gopls", -- share the gopls instance if there is one already
+            "-remote.debug=:0",
+          },
+          settings = {
+            gopls = {
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              },
+              usePlaceholders = true,
+              completeUnimported = true,
+              staticcheck = true,
+              matcher = "Fuzzy",
+              diagnosticsDelay = "500ms",
+              symbolMatcher = "fuzzy",
+              semanticTokens = true,
+              gofumpt = true,
+            },
+          },
+        },
         helm_ls = {},
         hls = {},
         html = {},
@@ -400,35 +416,6 @@ return {
     event = "BufRead Cargo.toml",
   },
 
-  {
-    "go.nvim",
-    ft = {
-      "go",
-      "gomod",
-      "gosum",
-      "gotmpl",
-      "gohtmltmpl",
-      "gotexttmpl",
-    },
-    after = function()
-      require("go").setup({
-        disable_defaults = false,
-        icons = {
-          breakpoint = " ",
-          currentpos = " ",
-        },
-        trouble = true,
-        dap_debug_keymap = false,
-        lsp_cfg = false,
-        lsp_keymaps = false,
-        lsp_inlay_hints = {
-          enable = true,
-          style = "inlay",
-        },
-      })
-    end,
-  },
-  { "guihua.lua" },
   {
     "quill.nvim",
     after = function()
