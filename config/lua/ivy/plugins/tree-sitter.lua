@@ -68,14 +68,9 @@ return {
     event = "BufAdd",
     after = function()
       require("treewalker").setup({
-        -- Whether to briefly highlight the node after jumping to it
+        -- briefly highlight the node after jumping to it
         highlight = true,
-
-        -- How long should above highlight last (in ms)
         highlight_duration = 250,
-
-        -- The color of the above highlight. Must be a valid vim highlight group.
-        -- (see :h highlight-group for options)
         highlight_group = "CursorLine",
       })
 
@@ -89,6 +84,10 @@ return {
       keymaps.normal["<m-k>"] = { cbcall(vim.cmd, [[Treewalker Up]]) }
       keymaps.normal["<m-l>"] = { cbcall(vim.cmd, [[Treewalker Right]]) }
       keymaps.normal["<m-h>"] = { cbcall(vim.cmd, [[Treewalker Left]]) }
+      keymaps.visual["<m-j>"] = { cbcall(vim.cmd, [[Treewalker Down]]) }
+      keymaps.visual["<m-k>"] = { cbcall(vim.cmd, [[Treewalker Up]]) }
+      keymaps.visual["<m-l>"] = { cbcall(vim.cmd, [[Treewalker Right]]) }
+      keymaps.visual["<m-h>"] = { cbcall(vim.cmd, [[Treewalker Left]]) }
     end,
   },
 }
