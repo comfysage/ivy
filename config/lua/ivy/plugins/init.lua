@@ -90,7 +90,7 @@ return {
         excluded_filetypes = {},
         -- disables mark tracking for specific buftypes. default {}
         excluded_buftypes = {
-          "nofile"
+          "nofile",
         },
       })
     end,

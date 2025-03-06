@@ -4,7 +4,7 @@ return {
     ft = "qf",
     after = function()
       ---@diagnostic disable: missing-fields
-      require('bqf').setup({
+      require("bqf").setup({
         preview = {
           border = {
             vim.g.bc.topleft,
@@ -17,7 +17,7 @@ return {
             vim.g.bc.vert,
           },
           winblend = 0,
-        }
+        },
       })
     end,
   },

@@ -220,10 +220,10 @@ vim.g.markdown_recommended_style = 0
 -- cursor
 local guicursor_opts = {
   normal = {
-    type = 'block',
+    type = "block",
   },
   insert = {
-    type = 'vertical',
+    type = "vertical",
     size = 200,
     animate = {
       wait = 50,
@@ -232,16 +232,16 @@ local guicursor_opts = {
     },
   },
   replace = {
-    type = 'horizontal',
-    size = 20
+    type = "horizontal",
+    size = 20,
   },
   operator = {
-    type = 'horizontal',
+    type = "horizontal",
     size = 50,
   },
   showmatch = {
-    type = 'block',
-  }
+    type = "block",
+  },
 }
 
 local mode_lookup = {
@@ -249,52 +249,51 @@ local mode_lookup = {
   insert = "i-ci-ve",
   replace = "r-cr",
   operator = "o",
-  showmatch = "sm"
+  showmatch = "sm",
 }
 local type_lookup = {
-  block = 'block',
-  vertical = 'ver',
-  horizontal = 'hor'
+  block = "block",
+  vertical = "ver",
+  horizontal = "hor",
 }
 local guicusor = vim.iter(pairs(guicursor_opts)):fold("", function(str, mode, opts)
-  vim.validate('mode', mode, function(v)
-    return vim.tbl_contains({ 'normal', 'insert', 'replace', 'operator', 'showmatch' }, v)
-  end, 'valid mode')
-  vim.validate('opts', opts, function(v)
-    vim.validate('type', v.type, function(t)
-      return vim.tbl_contains({ 'block', 'vertical', 'horizontal' }, t)
-    end, 'valid type')
-    if v.type ~= 'block' then
-      vim.validate('size', v.size, function(s)
-        return type(s) == 'number'
-      end, 'valid size with type ~= block')
+  vim.validate("mode", mode, function(v)
+    return vim.tbl_contains({ "normal", "insert", "replace", "operator", "showmatch" }, v)
+  end, "valid mode")
+  vim.validate("opts", opts, function(v)
+    vim.validate("type", v.type, function(t)
+      return vim.tbl_contains({ "block", "vertical", "horizontal" }, t)
+    end, "valid type")
+    if v.type ~= "block" then
+      vim.validate("size", v.size, function(s)
+        return type(s) == "number"
+      end, "valid size with type ~= block")
     end
 
     if v.animate then
-      vim.validate('animate', v.animate, function(anim)
-        vim.validate('wait', anim.wait, 'number')
-        vim.validate('on', anim.on, 'number')
-        vim.validate('off', anim.off, 'number')
+      vim.validate("animate", v.animate, function(anim)
+        vim.validate("wait", anim.wait, "number")
+        vim.validate("on", anim.on, "number")
+        vim.validate("off", anim.off, "number")
         return true
-      end, 'valid animation')
+      end, "valid animation")
     end
 
     return true
-  end, 'valid opts')
+  end, "valid opts")
   if #str > 0 then
-    str = str .. ','
+    str = str .. ","
   end
-  local s = string.format("%s:%s",
+  local s = string.format(
+    "%s:%s",
     mode_lookup[mode],
-    opts.type ~= 'block' and
-    string.format("%s%d", type_lookup[opts.type], opts.size) or
-    type_lookup[opts.type]
+    opts.type ~= "block" and string.format("%s%d", type_lookup[opts.type], opts.size) or type_lookup[opts.type]
   )
 
   if opts.animate then
     local anim = opts.animate
     local anim_str = string.format("blinkwait%d-blinkon%d-blinkoff%d", anim.wait, anim.on, anim.off)
-    s = s .. '-' .. anim_str
+    s = s .. "-" .. anim_str
   end
 
   return str .. s

@@ -4,14 +4,14 @@ return {
     event = "DeferredUIEnter",
     after = function()
       require("mossy").setup()
-      local sources = require('mossy.sources')
-      sources:setup {
+      local sources = require("mossy.sources")
+      sources:setup({
         "treefmt",
         "clang-format",
         "nixfmt",
         "shfmt",
         "stylua",
-      }
+      })
       ---@diagnostic disable-next-line: missing-fields
       sources:add("stylua"):with({
         filetypes = { "lua" },
@@ -20,7 +20,7 @@ return {
       sources:add("prettier"):with({
         filetypes = { "html", "markdown", "astro", "vue" },
       })
-      vim.keymap.set('n', '<localleader>mf', require('mossy').format)
+      vim.keymap.set("n", "<localleader>mf", require("mossy").format)
     end,
   },
   {
