@@ -52,6 +52,10 @@
           basePackage = neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
 
+        neovimMinimal = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim.override {
+          includePerLanguageTooling = false;
+        };
+
         nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
         nil = pkgs.callPackage ./pkgs/nil.nix { };
 
