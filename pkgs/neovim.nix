@@ -18,6 +18,7 @@
   ripgrep,
   stylua,
   lua-language-server,
+  selene,
   emmet-language-server,
   tailwindcss-language-server,
   typescript,
@@ -134,6 +135,53 @@ let
     ;
 
   wrapNeovim = callPackage ./wrapper/package.nix;
+  externalDeps = [
+    # external deps
+    fzf
+    fd
+    ripgrep
+
+    # needed for copilot
+    nodejs-slim
+
+    # lua
+    stylua
+    lua-language-server
+    selene
+
+    # webdev
+    emmet-language-server
+    tailwindcss-language-server
+    typescript
+    vscode-langservers-extracted
+
+    # markdown / latex
+    marksman
+    zk
+
+    # typst
+    tinymist
+    typstyle
+
+    # nix
+    (callPackage ./nil.nix { })
+    statix
+    deadnix
+    nixfmt-rfc-style
+
+    # shell
+    shfmt
+    shellcheck
+    bash-language-server
+
+    # etc
+    nodePackages.prettier
+    proselint
+    taplo # toml
+    yaml-language-server # yaml
+    dockerfile-language-server-nodejs
+    lazygit
+  ];
 
   nv = removeAttrs (callPackage ../_sources/generated.nix { }) [
     "override"
