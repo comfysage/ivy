@@ -113,6 +113,10 @@ src.git = "https://github.com/echasnovski/mini-git"
 fetch.github = "echasnovski/mini.move"
 src.git = "https://github.com/echasnovski/mini.move"
 
+[mini-operators]
+fetch.github = "echasnovski/mini.operators"
+src.git = "https://github.com/echasnovski/mini.operators"
+
 [mini-pairs]
 fetch.github = "echasnovski/mini.pairs"
 src.git = "https://github.com/echasnovski/mini.pairs"

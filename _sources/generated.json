@@ -591,6 +591,27 @@
         },
         "version": "c8b30e92dd2668dd6e56a9a23cb7d4ee38c2266d"
     },
+    "mini-operators": {
+        "cargoLocks": null,
+        "date": "2025-02-04",
+        "extract": null,
+        "name": "mini-operators",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.operators",
+            "rev": "81e5059268154f5a8b594c95748968febdd539e3",
+            "sha256": "sha256-sB4gEjFH+T4ySR7lmqiqj01YKCtmoXZGWDdlbgSB1Rg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "81e5059268154f5a8b594c95748968febdd539e3"
+    },
     "mini-pairs": {
         "cargoLocks": null,
         "date": "2025-01-31",

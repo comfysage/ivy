@@ -175,6 +175,13 @@ return {
     end,
   },
   {
+    "mini.operators",
+    event = "BufAdd",
+    after = function()
+      require("mini.operators").setup()
+    end,
+  },
+  {
     "mini.pairs",
     event = "InsertEnter",
     after = function()

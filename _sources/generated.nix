@@ -339,6 +339,18 @@
     };
     date = "2025-01-31";
   };
+  mini-operators = {
+    pname = "mini-operators";
+    version = "81e5059268154f5a8b594c95748968febdd539e3";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.operators";
+      rev = "81e5059268154f5a8b594c95748968febdd539e3";
+      fetchSubmodules = false;
+      sha256 = "sha256-sB4gEjFH+T4ySR7lmqiqj01YKCtmoXZGWDdlbgSB1Rg=";
+    };
+    date = "2025-02-04";
+  };
   mini-pairs = {
     pname = "mini-pairs";
     version = "1a3e73649c0eaef2f6c48ce1e761c6f0a7c11918";
