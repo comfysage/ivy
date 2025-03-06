@@ -243,6 +243,18 @@
     start = "true";
     date = "2025-03-09";
   };
+  markit-nvim = {
+    pname = "markit-nvim";
+    version = "9b031afab214aa6e6467f275f55640989f438925";
+    src = fetchFromGitHub {
+      owner = "2KAbhishek";
+      repo = "markit.nvim";
+      rev = "9b031afab214aa6e6467f275f55640989f438925";
+      fetchSubmodules = false;
+      sha256 = "sha256-LCvACs8hHxquwBcCthfrdWQAQd8jrOwhsuZAkjqCZSQ=";
+    };
+    date = "2025-02-23";
+  };
   markview = {
     pname = "markview";
     version = "739813a087d94ff0fdab84457654d81d1c6dc455";

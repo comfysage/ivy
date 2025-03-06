@@ -423,6 +423,27 @@
         },
         "version": "5d4e1bbb67d48aa852343efa9cfc89aea2d29cda"
     },
+    "markit-nvim": {
+        "cargoLocks": null,
+        "date": "2025-02-23",
+        "extract": null,
+        "name": "markit-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "2KAbhishek",
+            "repo": "markit.nvim",
+            "rev": "9b031afab214aa6e6467f275f55640989f438925",
+            "sha256": "sha256-LCvACs8hHxquwBcCthfrdWQAQd8jrOwhsuZAkjqCZSQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "9b031afab214aa6e6467f275f55640989f438925"
+    },
     "markview": {
         "cargoLocks": null,
         "date": "2025-03-11",
