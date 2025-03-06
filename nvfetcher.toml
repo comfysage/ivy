@@ -81,6 +81,10 @@ fetch.github = "nvim-neorocks/lz.n"
 src.git = "https://github.com/nvim-neorocks/lz.n"
 passthru.start = "true"
 
+[markit-nvim]
+fetch.github = "2KAbhishek/markit.nvim"
+src.git = "https://github.com/2KAbhishek/markit.nvim"
+
 [markview]
 fetch.github = "OXY2DEV/markview.nvim"
 src.git = "https://github.com/OXY2DEV/markview.nvim"

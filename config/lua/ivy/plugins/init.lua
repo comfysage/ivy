@@ -40,6 +40,60 @@ return {
     end,
   },
 
+  {
+    "markit.nvim",
+    event = "BufAdd",
+    after = function()
+      require("markit").setup({
+        -- whether to map keybinds or not. default true
+        default_mappings = false,
+        mappings = {
+          set = "m", -- Sets a letter mark (will wait for input).
+          set_next = "m,", -- Set next available lowercase mark at cursor.
+          toggle = "m;", -- Toggle next available mark at cursor.
+          toggle_mark = "M", -- Toggle a mark at the current line.
+          next = "]m", -- Goes to next mark in buffer.
+          prev = "[m", -- Goes to previous mark in buffer.
+
+          preview = "m:", -- Previews mark (will wait for user input). press <cr> to just preview the next mark.
+          annotate = "m<cr>", -- Prompts the user for a virtual line annotation that is then placed above the bookmark. Requires neovim 0.6+ and is not mapped by default.
+
+          delete = "dm", -- Delete a letter mark (will wait for input).
+          delete_line = "dm-", -- Deletes all marks on current line.
+          delete_buf = "dm<space>", -- Deletes all marks in current buffer.
+
+          -- set_bookmark[0-9] = "m", -- Sets a bookmark from group[0-9].
+          -- delete_bookmark[0-9] = "dm", -- Deletes all bookmarks from group[0-9].
+          -- delete_bookmark = "dm=", -- Deletes the bookmark under the cursor.
+          -- next_bookmark = "}m", -- Moves to the next bookmark having the same type as the bookmark under the cursor.
+          -- prev_bookmark = "{m", -- Moves to the previous bookmark having the same type as the bookmark under the cursor.
+          -- next_bookmark[0-9] = "", -- Moves to the next bookmark of the same group type. Works by first going according to line number, and then according to buffer number.
+          -- prev_bookmark[0-9] = "", -- Moves to the previous bookmark of the same group type. Works by first going according to line number, and then according to buffer number.
+        },
+        -- which builtin marks to show. default {}
+        builtin_marks = { ".", "<", ">", "^" },
+        -- whether movements cycle back to the beginning/end of buffer. default true
+        cyclic = true,
+        -- whether the shada file is updated after modifying uppercase marks. default false
+        force_write_shada = false,
+        -- how often (in ms) to redraw signs/recompute mark positions.
+        -- higher value means better performance but may cause visual lag,
+        -- while lower value may cause performance penalties. default 150.
+        refresh_interval = 150,
+        -- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
+        -- marks, and bookmarks.
+        -- can be either a table with all/none of the keys, or a single number, in which case
+        -- the priority applies to all marks.
+        -- default 10.
+        sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
+        -- disables mark tracking for specific filetypes. default {}
+        excluded_filetypes = {},
+        -- disables mark tracking for specific buftypes. default {}
+        excluded_buftypes = {},
+      })
+    end,
+  },
+
   -- mini
   {
     "mini.ai",
