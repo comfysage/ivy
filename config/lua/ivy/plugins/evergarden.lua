@@ -4,17 +4,22 @@ return {
     priority = 1200,
     after = function()
       require("evergarden").setup({
-        transparent_background = false,
-        variant = "medium",
-        override_terminal = true,
+        theme = {
+          variant = "fall",
+        },
+        editor = {
+          transparent_background = false,
+          sign = {},
+          float = {},
+          completion = {},
+        },
         style = {
           tabline = { "reverse" },
-          search = {},
+          search = { "reverse" },
           incsearch = { "reverse" },
           types = { "italic" },
           keyword = { "italic" },
           comment = {},
-          sign = { highlight = false },
         },
         overrides = {}, -- add custom overrides
       })
