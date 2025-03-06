@@ -2,20 +2,15 @@
   # extra utils for building the derivation
   lib,
   callPackage,
-  runCommandLocal,
-  runCommand,
-  makeBinaryWrapper,
-  writeText,
 
-  # neovim
-  pname ? "ivy",
-  basePackage ? neovim-unwrapped, # you can choose the base, i choose neovim-unwrapped
-  neovim-unwrapped,
+  # get extra plugins we don't want to build
+  vimPlugins,
+
+  # we need to build some plugins
   vimUtils,
 
-  lua ? basePackage.lua,
-  luaEnv ? lua.withPackages extraLuaPackages,
-  extraLuaPackages ? lp: [ ],
+  basePackage ? neovim-unwrapped,
+  neovim-unwrapped,
 
   # path, see there explanation below
   fzf,
@@ -45,9 +40,6 @@
   tinymist,
   typstyle,
   zk,
-
-  # for our extra plugins
-  vimPlugins,
 
   # our custom treesitter plugin
   treesitter ? (callPackage ./nvim-treesitter { }).override {
@@ -99,76 +91,30 @@
       "zig"
     ];
   },
-  ...
+
+  # settings
+  includePerLanguageTooling ? true,
 }:
 let
-  inherit (lib.lists) flatten;
-  inherit (lib.meta) getExe;
-  inherit (lib.strings) concatMapStringsSep makeBinPath escapeShellArgs;
+  inherit (lib.lists) flatten optionals;
+  inherit (lib.trivial) importTOML;
   inherit (builtins)
     baseNameOf
-    typeOf
     mapAttrs
-    readFile
-    fromTOML
     fromJSON
     attrValues
     removeAttrs
+    replaceStrings
     ;
 
-  externalDeps = [
-    # external deps
-    fzf
-    fd
-    ripgrep
-
-    # needed for copilot
-    nodejs-slim
-
-    # lua
-    stylua
-    lua-language-server
-
-    # webdev
-    emmet-language-server
-    tailwindcss-language-server
-    typescript
-    vscode-langservers-extracted
-
-    # markdown / latex
-    marksman
-    zk
-
-    # typst
-    tinymist
-    typstyle
-
-    # nix
-    (callPackage ./nil.nix { })
-    statix
-    deadnix
-    nixfmt-rfc-style
-
-    # shell
-    shfmt
-    shellcheck
-    bash-language-server
-
-    # etc
-    nodePackages.prettier
-    proselint
-    taplo # toml
-    yaml-language-server # yaml
-    dockerfile-language-server-nodejs
-    lazygit
-  ];
+  wrapNeovim = callPackage ./wrapper/package.nix;
 
   nv = removeAttrs (callPackage ../_sources/generated.nix { }) [
     "override"
     "overrideDerivation"
   ];
 
-  toml = fromTOML (readFile ../nvfetcher.toml);
+  toml = importTOML ../nvfetcher.toml;
 
   nvPlugins = mapAttrs mkPlugin nv;
 
@@ -179,22 +125,21 @@ let
     in
     vimUtils.buildVimPlugin {
       pname = old.passthru.as or (baseNameOf old.src.git);
-      inherit (attrs) src version;
+      version = replaceStrings [ "-" ] [ "." ] attrs.date;
+
+      inherit (attrs) src;
+
       doCheck = false;
+
       passthru.start = if (attrs ? start) then fromJSON attrs.start else false;
     };
+in
+wrapNeovim {
+  pname = "ivy";
 
-  packDir = runCommandLocal "packdir" { } ''
-    mkdir -pv $out/pack/${pname}/{start,opt}
+  userConfig = ../config;
 
-    ${concatMapStringsSep "\n" (p: ''
-      ln -vsfT ${p} $out/pack/${pname}/${if (p.passthru.start or false) then "start" else "opt"}/${
-        if typeOf p == "path" then baseNameOf p else (p.pname or p.name)
-      }
-    '') plugins}
-
-    ln -vsfT ${../config} $out/pack/${pname}/start/init-plugin
-  '';
+  inherit basePackage;
 
   plugins = flatten [
     (attrValues nvPlugins)
@@ -205,47 +150,52 @@ let
     vimPlugins.cord-nvim
   ];
 
-  rc = writeText "rc.vim" ''
-    lua package.path = "${lua.pkgs.luaLib.genLuaPathAbsStr luaEnv}"; package.cpath = "${lua.pkgs.luaLib.genLuaCPathAbsStr luaEnv}"
-    set packpath^=${packDir} | set runtimepath^=${packDir}
+  extraPackages =
+    [
+      # external deps
+      fzf
+      fd
+      ripgrep
+    ]
+    ++ optionals includePerLanguageTooling [
+      # needed for copilot
+      nodejs-slim
 
-    lua vim.loader.enable()
-    lua vim.g.loaded_node_provider = 0
-    lua vim.g.loaded_perl_provider = 0
-    lua vim.g.loaded_python_provider = 0
-    lua vim.g.loaded_python3_provider = 0
-    lua vim.g.loaded_ruby_provider = 0
-  '';
-in
-runCommand pname
-  {
-    __structuredAttrs = true;
+      # lua
+      stylua
+      lua-language-server
 
-    nativeBuildInputs = [ makeBinaryWrapper ];
+      # webdev
+      emmet-language-server
+      tailwindcss-language-server
+      typescript
+      vscode-langservers-extracted
 
-    wrapperArgs = [
-      "--suffix"
-      "PATH"
-      ":"
-      (makeBinPath externalDeps)
+      # markdown / latex
+      marksman
+      zk
 
-      "--add-flags"
-      (escapeShellArgs [
-        "-u"
-        (toString rc)
-      ])
+      # typst
+      tinymist
+      typstyle
 
-      "--set"
-      "NVIM_APPNAME"
-      pname
+      # nix
+      (callPackage ./nil.nix { })
+      statix
+      deadnix
+      nixfmt-rfc-style
+
+      # shell
+      shfmt
+      shellcheck
+      bash-language-server
+
+      # etc
+      nodePackages.prettier
+      proselint
+      taplo # toml
+      yaml-language-server # yaml
+      dockerfile-language-server-nodejs
+      lazygit
     ];
-
-    meta = {
-      inherit (basePackage.meta) description mainProgram;
-    };
-  }
-  ''
-    makeWrapper ${getExe basePackage} $out/bin/nvim "''${wrapperArgs[@]}"
-
-    ln -s $out/bin/nvim $out/bin/${pname}
-  ''
+}
