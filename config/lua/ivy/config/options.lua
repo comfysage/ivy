@@ -285,3 +285,21 @@ local guicusor = vim.iter(pairs(guicursor_opts)):fold("", function(str, mode, op
 end)
 
 vim.opt.guicursor = guicusor
+
+-- lsp
+vim.diagnostic.config({
+  virtual_text = {
+    hl_mode = "combine",
+  },
+  -- virtual_lines = {
+  --   current_line = true,
+  -- },
+  signs = true,
+  float = {
+    border = vim.g.bc_all,
+    header = "",
+    prefix = function(_, i)
+      return string.format("%d. ", i), "LineNr"
+    end,
+  },
+})
