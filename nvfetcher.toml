@@ -11,6 +11,12 @@ fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"
 passthru.as = "catppuccin"
 
+[chai-nvim]
+fetch.github = "comfysage/chai.nvim"
+src.git = "https://github.com/comfysage/chai.nvim"
+passthru.as = "chai"
+passthru.start = "true"
+
 [cloak]
 fetch.github = "laytan/cloak.nvim"
 src.git = "https://github.com/laytan/cloak.nvim"

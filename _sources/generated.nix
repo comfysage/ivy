@@ -38,6 +38,20 @@
     as = "catppuccin";
     date = "2025-03-01";
   };
+  chai-nvim = {
+    pname = "chai-nvim";
+    version = "e22272a743d13d4a29289b14ba379620b18bf5a3";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "chai.nvim";
+      rev = "e22272a743d13d4a29289b14ba379620b18bf5a3";
+      fetchSubmodules = false;
+      sha256 = "sha256-bUOZ3D68t6iGXl39uxY/aVLcEegmn22Bl40rOHqU6os=";
+    };
+    start = "true";
+    as = "chai";
+    date = "2025-03-18";
+  };
   cloak = {
     pname = "cloak";
     version = "648aca6d33ec011dc3166e7af3b38820d01a71e4";

@@ -64,6 +64,30 @@
         },
         "version": "5b5e3aef9ad7af84f463d17b5479f06b87d5c429"
     },
+    "chai-nvim": {
+        "cargoLocks": null,
+        "date": "2025-03-18",
+        "extract": null,
+        "name": "chai-nvim",
+        "passthru": {
+            "as": "chai",
+            "start": "true"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "comfysage",
+            "repo": "chai.nvim",
+            "rev": "e22272a743d13d4a29289b14ba379620b18bf5a3",
+            "sha256": "sha256-bUOZ3D68t6iGXl39uxY/aVLcEegmn22Bl40rOHqU6os=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "e22272a743d13d4a29289b14ba379620b18bf5a3"
+    },
     "cloak": {
         "cargoLocks": null,
         "date": "2024-06-12",
