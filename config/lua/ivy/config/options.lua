@@ -183,7 +183,7 @@ local borderchars = {
 }
 
 -- my custom borderchars
-vim.g.bc = borderchars.solid
+vim.g.bc = borderchars.single
 vim.g.bc_all = {
   vim.g.bc.topleft,
   vim.g.bc.top or vim.g.bc.horiz,
