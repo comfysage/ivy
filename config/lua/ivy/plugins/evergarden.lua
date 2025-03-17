@@ -10,7 +10,7 @@ return {
         editor = {
           transparent_background = false,
           sign = {},
-          float = { invert_border = true },
+          float = {},
           completion = {},
         },
         style = {
