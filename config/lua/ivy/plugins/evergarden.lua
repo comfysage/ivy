@@ -8,7 +8,7 @@ return {
           variant = "fall",
         },
         editor = {
-          transparent_background = false,
+          transparent_background = true,
           sign = {},
           float = {},
           completion = {},
