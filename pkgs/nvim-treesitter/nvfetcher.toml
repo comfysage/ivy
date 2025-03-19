@@ -566,6 +566,10 @@ src.git = "https://github.com/tree-sitter/tree-sitter-julia"
 fetch.git = "https://github.com/IndianBoy42/tree-sitter-just"
 src.git = "https://github.com/IndianBoy42/tree-sitter-just"
 
+[treesitter-grammar-kcl]
+fetch.git = "https://github.com/kcl-lang/tree-sitter-kcl"
+src.git = "https://github.com/kcl-lang/tree-sitter-kcl"
+
 [treesitter-grammar-kconfig]
 fetch.git = "https://github.com/amaanq/tree-sitter-kconfig"
 src.git = "https://github.com/amaanq/tree-sitter-kconfig"
@@ -751,10 +755,6 @@ generate = "true"
 [treesitter-grammar-odin]
 fetch.git = "https://github.com/amaanq/tree-sitter-odin"
 src.git = "https://github.com/amaanq/tree-sitter-odin"
-
-[treesitter-grammar-org]
-fetch.git = "https://github.com/milisims/tree-sitter-org"
-src.git = "https://github.com/milisims/tree-sitter-org"
 
 [treesitter-grammar-pascal]
 fetch.git = "https://github.com/Isopod/tree-sitter-pascal"
