@@ -3,14 +3,32 @@ return {
     "blink.cmp",
     event = "DeferredUIEnter",
     after = function()
-      vim.api.nvim_create_autocmd("ColorScheme", {
-        callback = function()
-          local pmenu = vim.api.nvim_get_hl(0, { name = "Pmenu" })
-          vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = pmenu.bg })
-        end,
-      })
+      local keymap = {
+        ["<c-space>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
+        ["<C-e>"] = { "hide" },
+
+        ["<tab>"] = {
+          "select_and_accept",
+          "snippet_forward",
+          "fallback",
+        },
+        ["<s-tab>"] = { "snippet_backward", "fallback" },
+        ["<down>"] = { "select_next", "fallback" },
+        ["<up>"] = { "select_prev", "fallback" },
+
+        ["<c-j>"] = { "scroll_documentation_down", "fallback" },
+        ["<c-k>"] = { "scroll_documentation_up", "fallback" },
+      }
+
       local ok, result = pcall(require("blink.cmp").setup, {
         cmdline = {
+          enabled = true,
+          completion = {
+            menu = {
+              auto_show = true,
+            },
+          },
+          keymap = keymap,
           -- By default, we choose providers for the cmdline based on the current cmdtype
           -- You may disable cmdline completions by replacing this with an empty table
           sources = {
@@ -22,7 +40,7 @@ return {
               end
               -- Commands
               if type == ":" then
-                return { "cmdline" }
+                return { "path" }
               end
               return {}
             end,
@@ -33,22 +51,7 @@ return {
         -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
         -- see the "default configuration" section below for full documentation on how to define
         -- your own keymap.
-        keymap = {
-          ["<c-space>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
-          ["<C-e>"] = { "hide" },
-
-          ["<tab>"] = {
-            "select_and_accept",
-            "snippet_forward",
-            "fallback",
-          },
-          ["<s-tab>"] = { "snippet_backward", "fallback" },
-          ["<down>"] = { "select_next", "fallback" },
-          ["<up>"] = { "select_prev", "fallback" },
-
-          ["<c-j>"] = { "scroll_documentation_down", "fallback" },
-          ["<c-k>"] = { "scroll_documentation_up", "fallback" },
-        },
+        keymap = keymap,
 
         appearance = {},
 
@@ -68,7 +71,6 @@ return {
             min_width = vim.o.pumwidth,
             max_height = vim.o.pumheight,
             scrolloff = 0,
-            border = vim.g.bc_all,
 
             draw = {
               -- align_to = "label", -- or 'none' to disable, or 'cursor' to align to the cursor
