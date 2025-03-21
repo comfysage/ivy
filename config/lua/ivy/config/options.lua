@@ -124,7 +124,7 @@ return {
     -- indent blank line imporvments
     vim.opt.list = true
 
-    vim.opt.shell = vim.env["SHELL"] or "/usr/bin/bash"
+    vim.opt.shell = os.getenv("SHELL") or "/bin/sh"
 
     -- disable swap & backup, and configure undo files
     vim.opt.swapfile = false
