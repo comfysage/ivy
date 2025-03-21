@@ -36,30 +36,6 @@ require("lz.n").load({
             end,
             servers = function()
               return {
-                astro = {},
-                bashls = {},
-                cssls = {},
-                dockerls = {},
-                emmet_language_server = {
-                  filetypes = {
-                    "astro",
-                    "css",
-                    "eruby",
-                    "html",
-                    "javascript",
-                    "javascriptreact",
-                    "less",
-                    "sass",
-                    "scss",
-                    "pug",
-                    "typescriptreact",
-                  },
-                },
-                helm_ls = {},
-                hls = {},
-                html = {},
-                intelephense = {},
-                jqls = {},
                 jsonls = {
                   settings = {
                     json = {
@@ -68,59 +44,16 @@ require("lz.n").load({
                     },
                   },
                 },
-                marksman = {},
-                nushell = {},
-                serve_d = {},
-                sourcekit = {},
-                taplo = {},
-                teal_ls = {},
-                tailwindcss = {
-                  filetypes = {
-                    "astro",
-                    "javascriptreact",
-                    "typescriptreact",
-                    "html",
-                    "css",
-                    "tera",
-                  },
-                },
-                tinymist = {
-                  settings = {
-                    formatterMode = "typstyle",
-                    exportPdf = "onDocumentHasTitle",
-                  },
-                },
-                volar = {
-                  capabilities = {
-                    workspace = {
-                      didChangeWatchedFiles = {
-                        dynamicRegistration = true,
-                      },
-                    },
-                  },
-                  root_markers = { "package.json" },
-                },
                 yamlls = {
                   settings = {
                     yaml = {
-                      completion = true,
-                      validate = true,
-                      suggest = {
-                        parentSkeletonSelectedFirst = true,
-                      },
                       schemas = vim.tbl_extend("keep", {
                         ["https://json.schemastore.org/github-action"] = ".github/action.{yaml,yml}",
                         ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*",
                         ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "*lab-ci.{yaml,yml}",
-                        ["https://json.schemastore.org/helmfile"] = "helmfile.{yaml,yml}",
                         ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yml,yaml}",
                         ["https://goreleaser.com/static/schema.json"] = ".goreleaser.{yml,yaml}",
                       }, require("schemastore").yaml.schemas()),
-                    },
-                    redhat = {
-                      telemetry = {
-                        enabled = false,
-                      },
                     },
                   },
                 },

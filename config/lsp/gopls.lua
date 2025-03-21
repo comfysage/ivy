@@ -1,10 +1,11 @@
 return {
-  single_file_support = true,
-  filetypes = { "go", "gomod", "gosum", "gotmpl", "gohtmltmpl", "gotexttmpl" },
   cmd = {
     "gopls", -- share the gopls instance if there is one already
     "-remote.debug=:0",
   },
+  filetypes = { "go", "gomod", "gosum", "gotmpl", "gohtmltmpl", "gotexttmpl" },
+  single_file_support = true,
+  root_markers = { "go.work", "go.mod", ".git" },
   settings = {
     gopls = {
       hints = {

@@ -25,11 +25,11 @@
   gopls,
   haskell-language-server,
   lua-language-server,
+  luajitPackages,
   marksman,
   selene,
   tailwindcss-language-server,
   taplo,
-  teal-language-server,
   tinymist,
   typescript-language-server,
   vscode-langservers-extracted,
@@ -194,7 +194,7 @@ let
     nodePackages.prettier
     proselint
     taplo # toml
-    teal-language-server
+    luajitPackages.teal-language-server
     yaml-language-server # yaml
     dockerfile-language-server-nodejs
     lazygit
