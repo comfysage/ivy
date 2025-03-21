@@ -13,34 +13,46 @@
   neovim-unwrapped,
 
   # path, see there explanation below
-  fzf,
   fd,
+  fzf,
   ripgrep,
-  stylua,
-  lua-language-server,
-  selene,
+
+  # lsp
+  bash-language-server,
+  clang-tools,
+  dockerfile-language-server-nodejs,
   emmet-language-server,
-  tailwindcss-language-server,
-  typescript,
-  vscode-langservers-extracted,
+  gopls,
+  haskell-language-server,
+  lua-language-server,
   marksman,
-  # nil,
+  selene,
+  tailwindcss-language-server,
+  taplo,
+  teal-language-server,
+  tinymist,
+  typescript-language-server,
+  vscode-langservers-extracted,
+  vue-language-server,
+  yaml-language-server,
+  zk,
+
+  # nix,
   statix,
   deadnix,
   nixfmt-rfc-style,
-  shfmt,
-  shellcheck,
-  bash-language-server,
+
+  # linting
   proselint,
-  taplo,
-  yaml-language-server,
-  dockerfile-language-server-nodejs,
+  shellcheck,
+  shfmt,
+  stylua,
+  typstyle,
+
+  deno,
   lazygit,
   nodePackages,
   nodejs-slim,
-  tinymist,
-  typstyle,
-  zk,
 
   # our custom treesitter plugin
   treesitter ? (callPackage ./nvim-treesitter { }).override {
@@ -152,8 +164,9 @@ let
     # webdev
     emmet-language-server
     tailwindcss-language-server
-    typescript
+    typescript-language-server
     vscode-langservers-extracted
+    vue-language-server
 
     # markdown / latex
     marksman
@@ -175,12 +188,17 @@ let
     bash-language-server
 
     # etc
+    clang-tools
+    gopls
+    haskell-language-server
     nodePackages.prettier
     proselint
     taplo # toml
+    teal-language-server
     yaml-language-server # yaml
     dockerfile-language-server-nodejs
     lazygit
+    deno
   ];
 
   nv = removeAttrs (callPackage ../_sources/generated.nix { }) [
@@ -231,45 +249,5 @@ wrapNeovim {
       fd
       ripgrep
     ]
-    ++ optionals includePerLanguageTooling [
-      # needed for copilot
-      nodejs-slim
-
-      # lua
-      stylua
-      lua-language-server
-
-      # webdev
-      emmet-language-server
-      tailwindcss-language-server
-      typescript
-      vscode-langservers-extracted
-
-      # markdown / latex
-      marksman
-      zk
-
-      # typst
-      tinymist
-      typstyle
-
-      # nix
-      (callPackage ./nil.nix { })
-      statix
-      deadnix
-      nixfmt-rfc-style
-
-      # shell
-      shfmt
-      shellcheck
-      bash-language-server
-
-      # etc
-      nodePackages.prettier
-      proselint
-      taplo # toml
-      yaml-language-server # yaml
-      dockerfile-language-server-nodejs
-      lazygit
-    ];
+    ++ optionals includePerLanguageTooling externalDeps;
 }
