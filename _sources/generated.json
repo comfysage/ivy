@@ -66,7 +66,7 @@
     },
     "chai-nvim": {
         "cargoLocks": null,
-        "date": "2025-03-18",
+        "date": "2025-03-21",
         "extract": null,
         "name": "chai-nvim",
         "passthru": {
@@ -81,12 +81,12 @@
             "name": null,
             "owner": "comfysage",
             "repo": "chai.nvim",
-            "rev": "e22272a743d13d4a29289b14ba379620b18bf5a3",
-            "sha256": "sha256-bUOZ3D68t6iGXl39uxY/aVLcEegmn22Bl40rOHqU6os=",
+            "rev": "5b3142493114ade681dfad63417e5989c11f0f6d",
+            "sha256": "sha256-T2KHSYdRNbqAPpZrzzRBkTmhS8YV1eiHfnRR1QG5D9k=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e22272a743d13d4a29289b14ba379620b18bf5a3"
+        "version": "5b3142493114ade681dfad63417e5989c11f0f6d"
     },
     "cloak": {
         "cargoLocks": null,
