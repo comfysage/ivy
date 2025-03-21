@@ -5,18 +5,23 @@ return {
     common = makeopt({
       {},
       "common server config",
-      { "table", "callable" },
+      function(v)
+        local ok, _ = pcall(vim.validate, "common server configuration", v, { "table", "function" })
+        return ok
+      end,
     }),
     servers = makeopt({
       {},
       "lsp servers to configure",
-      { "table", "callable" },
+      function(v)
+        local ok, _ = pcall(vim.validate, "server configurations", v, { "table", "function" })
+        return ok
+      end,
     }),
     on_attach = makeopt({
-      default = nil,
-      description = "callback after lsp attaches",
-      validator = "callable",
-      optional = true,
+      function() end,
+      "callback after lsp attaches",
+      "function",
     }),
   },
   setup = function(props)
