@@ -570,18 +570,6 @@
     start = "true";
     date = "2025-02-11";
   };
-  py_lsp = {
-    pname = "py_lsp";
-    version = "63169f3c63896e1286ffdfe06642cab55eaa6b3c";
-    src = fetchFromGitHub {
-      owner = "hallerpatrick";
-      repo = "py_lsp.nvim";
-      rev = "63169f3c63896e1286ffdfe06642cab55eaa6b3c";
-      fetchSubmodules = false;
-      sha256 = "sha256-80zbogGoR1prFo0rHZEme3ILsBOJM9YcJkerylxDGEk=";
-    };
-    date = "2025-03-11";
-  };
   quill-nvim = {
     pname = "quill-nvim";
     version = "08103ea02643a93065fe7dbc4ed22275719fc338";
@@ -725,18 +713,6 @@
       sha256 = "sha256-au9wp88a0CutEf2f8Bi0vFTUR0zvQKgFX1vMVg4myGI=";
     };
     date = "2025-02-12";
-  };
-  typescript-tools = {
-    pname = "typescript-tools";
-    version = "35e397ce467bedbbbb5bfcd0aa79727b59a08d4a";
-    src = fetchFromGitHub {
-      owner = "pmizio";
-      repo = "typescript-tools.nvim";
-      rev = "35e397ce467bedbbbb5bfcd0aa79727b59a08d4a";
-      fetchSubmodules = false;
-      sha256 = "sha256-x32NzZYFK6yovlvE3W8NevYA0UT0qvwKle1irFwmuvM=";
-    };
-    date = "2024-12-04";
   };
   undotree = {
     pname = "undotree";

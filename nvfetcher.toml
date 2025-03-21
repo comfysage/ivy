@@ -188,10 +188,6 @@ fetch.github = "nvim-lua/plenary.nvim"
 src.git = "https://github.com/nvim-lua/plenary.nvim"
 passthru.start = "true"
 
-[py_lsp]
-fetch.github = "hallerpatrick/py_lsp.nvim"
-src.git = "https://github.com/hallerpatrick/py_lsp.nvim"
-
 [quill-nvim]
 fetch.github = "comfysage/quill.nvim"
 src.git = "https://github.com/comfysage/quill.nvim"
@@ -243,10 +239,6 @@ src.git = "https://github.com/aaronik/treewalker.nvim"
 [trouble]
 fetch.github = "folke/trouble.nvim"
 src.git = "https://github.com/folke/trouble.nvim"
-
-[typescript-tools]
-fetch.github = "pmizio/typescript-tools.nvim"
-src.git = "https://github.com/pmizio/typescript-tools.nvim"
 
 [undotree]
 fetch.github = "mbbill/undotree"
