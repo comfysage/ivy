@@ -44,5 +44,14 @@ return {
 
     ---@diagnostic disable-next-line: param-type-mismatch
     vim.iter(pairs(servers)):each(vim.lsp.config)
+
+    local lsp_names = vim
+      .iter(ipairs(vim.api.nvim_get_runtime_file("lsp/*.lua", true)))
+      :map(function(_, filepath)
+        local name = vim.fs.basename(filepath):match("([^.]+)%.lua")
+        return name ~= "*" and name or nil
+      end)
+      :totable()
+    vim.lsp.enable(lsp_names)
   end,
 }
