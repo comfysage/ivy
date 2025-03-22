@@ -22,6 +22,7 @@
   clang-tools,
   dockerfile-language-server-nodejs,
   emmet-language-server,
+  fennel-ls,
   gopls,
   haskell-language-server,
   lua-language-server,
@@ -189,6 +190,7 @@ let
 
     # etc
     clang-tools
+    fennel-ls
     gopls
     haskell-language-server
     nodePackages.prettier
