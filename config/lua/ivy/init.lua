@@ -1,4 +1,4 @@
-require("ivy.config.disable")
+require("ivy.disable")
 
 require('lz.n').load({
   'hotpot.nvim',
