@@ -53,6 +53,8 @@ src.git = "https://github.com/ibhagwan/fzf-lua"
 [hotpot]
 fetch.github = "rktjmp/hotpot.nvim"
 src.git = "https://github.com/rktjmp/hotpot.nvim"
+passthru.as = "hotpot"
+passthru.start = "true"
 
 [hunk-nvim]
 fetch.github = "julienvincent/hunk.nvim"

@@ -261,7 +261,10 @@
         "date": "2025-02-21",
         "extract": null,
         "name": "hotpot",
-        "passthru": null,
+        "passthru": {
+            "as": "hotpot",
+            "start": "true"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,

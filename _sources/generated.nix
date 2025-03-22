@@ -158,6 +158,8 @@
       fetchSubmodules = false;
       sha256 = "sha256-bM3Pr+RPJrUTsnfqyJao2dXOoACcU3qQqiBaCUsbPCc=";
     };
+    start = "true";
+    as = "hotpot";
     date = "2025-02-21";
   };
   hunk-nvim = {
