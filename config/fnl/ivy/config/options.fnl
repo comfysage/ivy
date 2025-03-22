@@ -1,4 +1,4 @@
-(local makeopt (. (require :chai.options) :makeopt))
+(local { : makeopt } (require :chai.options))
 
 {:options {:float_border (makeopt [:single
                                    "border for floating windows"
