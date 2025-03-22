@@ -148,6 +148,20 @@
     };
     date = "2025-03-18";
   };
+  hibiscus = {
+    pname = "hibiscus";
+    version = "573b37c2f6ed79a6b3e3c6bd18bb305a72db4dc6";
+    src = fetchFromGitHub {
+      owner = "udayvir-singh";
+      repo = "hibiscus.nvim";
+      rev = "573b37c2f6ed79a6b3e3c6bd18bb305a72db4dc6";
+      fetchSubmodules = false;
+      sha256 = "sha256-e38fDLHq1ne7qZsOhfaPOAi3/4/TFNIITt2JF1m0v0s=";
+    };
+    start = "true";
+    as = "hibiscus";
+    date = "2024-06-21";
+  };
   hotpot = {
     pname = "hotpot";
     version = "c6026bedbc593ce5c00399ccfb1cf964180f529b";

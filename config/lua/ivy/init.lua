@@ -10,6 +10,11 @@ require('lz.n').load({
   end
 })
 
+require('lz.n').load({
+  'hibiscus.nvim',
+  lazy = false,
+})
+
 require("lz.n").load({
   "chai.nvim",
   lazy = false,

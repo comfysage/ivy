@@ -256,6 +256,30 @@
         },
         "version": "54005a680b8115a3596c845c6e448299601c09eb"
     },
+    "hibiscus": {
+        "cargoLocks": null,
+        "date": "2024-06-21",
+        "extract": null,
+        "name": "hibiscus",
+        "passthru": {
+            "as": "hibiscus",
+            "start": "true"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "udayvir-singh",
+            "repo": "hibiscus.nvim",
+            "rev": "573b37c2f6ed79a6b3e3c6bd18bb305a72db4dc6",
+            "sha256": "sha256-e38fDLHq1ne7qZsOhfaPOAi3/4/TFNIITt2JF1m0v0s=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "573b37c2f6ed79a6b3e3c6bd18bb305a72db4dc6"
+    },
     "hotpot": {
         "cargoLocks": null,
         "date": "2025-02-21",

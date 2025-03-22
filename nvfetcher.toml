@@ -56,6 +56,12 @@ src.git = "https://github.com/rktjmp/hotpot.nvim"
 passthru.as = "hotpot"
 passthru.start = "true"
 
+[hibiscus]
+fetch.github = "udayvir-singh/hibiscus.nvim"
+src.git = "https://github.com/udayvir-singh/hibiscus.nvim"
+passthru.as = "hibiscus"
+passthru.start = "true"
+
 [hunk-nvim]
 fetch.github = "julienvincent/hunk.nvim"
 src.git = "https://github.com/julienvincent/hunk.nvim"
