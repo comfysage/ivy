@@ -256,6 +256,27 @@
         },
         "version": "54005a680b8115a3596c845c6e448299601c09eb"
     },
+    "hotpot": {
+        "cargoLocks": null,
+        "date": "2025-02-21",
+        "extract": null,
+        "name": "hotpot",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rktjmp",
+            "repo": "hotpot.nvim",
+            "rev": "c6026bedbc593ce5c00399ccfb1cf964180f529b",
+            "sha256": "sha256-bM3Pr+RPJrUTsnfqyJao2dXOoACcU3qQqiBaCUsbPCc=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "c6026bedbc593ce5c00399ccfb1cf964180f529b"
+    },
     "hunk-nvim": {
         "cargoLocks": null,
         "date": "2025-02-08",

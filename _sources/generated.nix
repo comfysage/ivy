@@ -148,6 +148,18 @@
     };
     date = "2025-03-18";
   };
+  hotpot = {
+    pname = "hotpot";
+    version = "c6026bedbc593ce5c00399ccfb1cf964180f529b";
+    src = fetchFromGitHub {
+      owner = "rktjmp";
+      repo = "hotpot.nvim";
+      rev = "c6026bedbc593ce5c00399ccfb1cf964180f529b";
+      fetchSubmodules = false;
+      sha256 = "sha256-bM3Pr+RPJrUTsnfqyJao2dXOoACcU3qQqiBaCUsbPCc=";
+    };
+    date = "2025-02-21";
+  };
   hunk-nvim = {
     pname = "hunk-nvim";
     version = "b475ba0011e4b8ef7d7ddecd9764ee1a5f41366d";

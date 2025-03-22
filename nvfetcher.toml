@@ -50,6 +50,10 @@ src.git = "https://github.com/charm-community/freeze.nvim"
 fetch.github = "ibhagwan/fzf-lua"
 src.git = "https://github.com/ibhagwan/fzf-lua"
 
+[hotpot]
+fetch.github = "rktjmp/hotpot.nvim"
+src.git = "https://github.com/rktjmp/hotpot.nvim"
+
 [hunk-nvim]
 fetch.github = "julienvincent/hunk.nvim"
 src.git = "https://github.com/julienvincent/hunk.nvim"

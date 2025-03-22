@@ -1,5 +1,15 @@
 require("ivy.config.disable")
 
+require('lz.n').load({
+  'hotpot.nvim',
+  lazy = false,
+  after = function()
+    require('hotpot').setup({
+      enable_hotpot_diagnostics = true,
+    })
+  end
+})
+
 require("lz.n").load({
   "chai.nvim",
   lazy = false,
