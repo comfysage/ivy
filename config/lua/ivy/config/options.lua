@@ -170,10 +170,36 @@ local borderchars = {
     botleft = "╰",
     botright = "╯",
   },
+  none = {
+    vert = "",
+    vertleft = "",
+    vertright = "",
+    horiz = "",
+    horizup = "",
+    horizdown = "",
+    verthoriz = "",
+    topleft = "",
+    topright = "",
+    botleft = "",
+    botright = "",
+  },
+  bold = {
+    vert = "┃",
+    vertleft = "┫",
+    vertright = "┣",
+    horiz = "━",
+    horizup = "┻",
+    horizdown = "┳",
+    topleft = "┏",
+    topright = "┓",
+    botright = "┛",
+    botleft = "┗",
+  },
 }
 
+vim.g.border_style = 'single'
 -- my custom borderchars
-vim.g.bc = borderchars.single
+vim.g.bc = borderchars[vim.g.border_style]
 vim.g.bc_all = {
   vim.g.bc.topleft,
   vim.g.bc.top or vim.g.bc.horiz,
@@ -193,6 +219,8 @@ vim.opt.fillchars:append({
   vertleft = vim.g.bc.vertleft,
   verthoriz = vim.g.bc.verthoriz,
 })
+
+vim.opt.winborder = vim.g.border_style
 
 -- rust save
 vim.g.rustfmt_autosave = 1
