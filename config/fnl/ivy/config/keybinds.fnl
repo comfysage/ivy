@@ -1,6 +1,10 @@
 {:setup (fn []
   (local keymaps ((. (require :keymaps) :setup)))
 
+  (import-macros { : map! } :macros.maps)
+
+  (map! [n] "<leader>,l" (fn [] (print :test)))
+
   (fn kmgroup [props]
     (when (not props.group)
       (vim.notify (string.format "[%s] %s" :globals.keymap
