@@ -80,14 +80,36 @@ return {
         end
       end
       local keymaps = require("keymaps").setup()
-      keymaps.normal["<m-j>"] = { cbcall(vim.cmd, [[Treewalker Down]]) }
-      keymaps.normal["<m-k>"] = { cbcall(vim.cmd, [[Treewalker Up]]) }
-      keymaps.normal["<m-l>"] = { cbcall(vim.cmd, [[Treewalker Right]]) }
-      keymaps.normal["<m-h>"] = { cbcall(vim.cmd, [[Treewalker Left]]) }
       keymaps.visual["<m-j>"] = { cbcall(vim.cmd, [[Treewalker Down]]) }
       keymaps.visual["<m-k>"] = { cbcall(vim.cmd, [[Treewalker Up]]) }
       keymaps.visual["<m-l>"] = { cbcall(vim.cmd, [[Treewalker Right]]) }
       keymaps.visual["<m-h>"] = { cbcall(vim.cmd, [[Treewalker Left]]) }
+
+      local ns = vim.api.nvim_create_namespace("treewalker-mode")
+      keymaps.normal["<leader><m-t>"] = {
+        function()
+          vim.on_key(function(key, typed)
+            local switch = {
+              ["h"] = cbcall(vim.cmd, [[Treewalker Left]]),
+              ["j"] = cbcall(vim.cmd, [[Treewalker Down]]),
+              ["k"] = cbcall(vim.cmd, [[Treewalker Up]]),
+              ["l"] = cbcall(vim.cmd, [[Treewalker Right]]),
+            }
+
+            local k = vim.fn.keytrans(typed)
+            if k == "<Esc>" then
+              vim.on_key(nil, ns)
+            elseif vim.tbl_contains(vim.tbl_keys(switch), k) then
+              local fn = switch[k]
+              if fn and type(fn) == "function" then
+                fn()
+              end
+            end
+            return ""
+          end, ns)
+        end,
+        "enter treewalker mode",
+      }
     end,
   },
 }
