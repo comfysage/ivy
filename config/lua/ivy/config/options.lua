@@ -14,7 +14,7 @@ return {
     vim.opt.encoding = "utf-8"
 
     vim.opt.title = true
-    vim.opt.titlestring = "%f · nvim"
+    vim.opt.titlestring = '%{expand("%:p:~:.")} · nvim'
     vim.opt.errorbells = false
     vim.opt.mouse = "nv"
 
