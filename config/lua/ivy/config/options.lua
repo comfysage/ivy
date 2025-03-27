@@ -36,12 +36,7 @@ return {
     vim.o.pumheight = 15
     vim.opt.wildoptions = { "fuzzy", "pum", "tagfile" }
     vim.opt.wildmode = "longest:full,full"
-
-    vim.iter(ipairs({ "menu", "menuone", "noselect", "preview" })):each(function(_, option)
-      if not vim.tbl_contains(vim.opt.completeopt:get(), option) then
-        vim.opt.completeopt:append(option)
-      end
-    end)
+    vim.opt.completeopt = { "fuzzy", "menu", "menuone", "noinsert", "preview" }
 
     -- split directions
     vim.o.splitbelow = true
