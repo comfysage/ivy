@@ -27,6 +27,7 @@
   lua-language-server,
   luajitPackages,
   marksman,
+  nil_ls ? (callPackage ./nil.nix { }),
   selene,
   tailwindcss-language-server,
   taplo,
@@ -177,7 +178,7 @@ let
     typstyle
 
     # nix
-    (callPackage ./nil.nix { })
+    nil_ls
     statix
     deadnix
     nixfmt-rfc-style
