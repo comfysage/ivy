@@ -4,20 +4,21 @@ return {
     event = "DeferredUIEnter",
     after = function()
       local keymap = {
-        ["<c-space>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
-        ["<C-e>"] = { "hide" },
+        ["<c-space>"] = { "show", "show_documentation", "hide_documentation" },
+        ['<C-e>'] = { 'hide' },
+        ['<CR>'] = { 'accept', 'fallback' },
 
         ["<tab>"] = {
-          "select_and_accept",
+          "select_next",
           "snippet_forward",
           "fallback",
         },
-        ["<s-tab>"] = { "snippet_backward", "fallback" },
+        ["<s-tab>"] = { "select_prev", "snippet_backward", "fallback" },
         ["<down>"] = { "select_next", "fallback" },
         ["<up>"] = { "select_prev", "fallback" },
 
-        ["<c-j>"] = { "scroll_documentation_down", "fallback" },
-        ["<c-k>"] = { "scroll_documentation_up", "fallback" },
+        ['<c-b>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<c-f>'] = { 'scroll_documentation_down', 'fallback' },
       }
 
       local ok, result = pcall(require("blink.cmp").setup, {
