@@ -106,6 +106,7 @@ return {
       group = "windows",
       { "normal", "sv", vim.cmd.vsplit, "split window vertical" },
       { "normal", "sh", vim.cmd.split, "split window horizontal" },
+      { "normal", "q", cbcall(vim.cmd.wincmd, "q"), "close window" },
     })
 
     kmgroup({
@@ -173,7 +174,6 @@ return {
 
     kmgroup({
       group = "recording",
-      { "normal", "q", "<nop>", "fixup q" },
       { "normal", "Q", "q", "record macro" },
     })
 
