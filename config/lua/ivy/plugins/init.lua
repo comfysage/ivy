@@ -235,9 +235,9 @@ return {
     event = "BufAdd",
     after = function()
       require("mini.operators").setup({
-        exchange = { prefix = 'cx' },
-        multiply = { prefix = 'cm' },
-        replace = { prefix = 'cr' },
+        exchange = { prefix = 'Cx' },
+        multiply = { prefix = 'Cm' },
+        replace = { prefix = 'Cr' },
         sort = { prefix = '' },
       })
     end,
