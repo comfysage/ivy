@@ -28,24 +28,27 @@ return {
             menu = {
               auto_show = true,
             },
+            list = {
+              selection = {
+                preselect = false,
+              },
+            },
           },
           keymap = keymap,
           -- By default, we choose providers for the cmdline based on the current cmdtype
           -- You may disable cmdline completions by replacing this with an empty table
-          sources = {
-            default = function()
-              local type = vim.fn.getcmdtype()
-              -- Search forward and backward
-              if type == "/" or type == "?" then
-                return { "buffer", "lsp" }
-              end
-              -- Commands
-              if type == ":" then
-                return { "path" }
-              end
-              return {}
-            end,
-          },
+          sources = function()
+            local type = vim.fn.getcmdtype()
+            -- Search forward and backward
+            if type == "/" or type == "?" then
+              return { "buffer", "lsp" }
+            end
+            -- Commands
+            if type == ":" then
+              return { "cmdline", "path" }
+            end
+            return {}
+          end,
         },
         -- 'default' for mappings similar to built-in completion
         -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
