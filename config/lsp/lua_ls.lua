@@ -15,6 +15,17 @@ return {
   log_level = vim.lsp.protocol.MessageType.Warning,
   settings = {
     Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+          -- Depending on the usage, you might want to add additional paths here.
+          -- "${3rd}/luv/library"
+        },
+      },
       diagnostics = {
         globals = { "vim", "package", "table" },
       },
