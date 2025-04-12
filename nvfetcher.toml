@@ -34,8 +34,9 @@ fetch.github = "NotAShelf/direnv.nvim"
 src.git = "https://github.com/NotAShelf/direnv.nvim"
 
 [evergarden]
-fetch.github = "comfysage/evergarden"
-src.git = "https://github.com/comfysage/evergarden"
+fetch.github = "everviolet/nvim"
+src.git = "https://github.com/everviolet/nvim"
+passthru.as = "evergarden"
 
 [fidget]
 fetch.github = "j-hui/fidget.nvim"
