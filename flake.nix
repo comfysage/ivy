@@ -37,7 +37,7 @@
             import nixpkgs {
               inherit system;
               config.allowUnfree = true;
-              overlays = [ ];
+              overlays = [ neovim-nightly-overlay.overlays.default ];
             }
           )
         );
@@ -45,48 +45,9 @@
     {
       formatter = forAllSystems (pkgs: pkgs.nixfmt-rfc-style);
 
-      packages = forAllSystems (pkgs: {
-        default = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
+      packages = forAllSystems (pkgs: import ./default.nix { inherit pkgs; });
 
-        neovim = pkgs.callPackage ./pkgs/neovim.nix {
-          basePackage = neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
-        };
-
-        neovimMinimal = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim.override {
-          includePerLanguageTooling = false;
-        };
-
-        nvim-treesitter = pkgs.callPackage ./pkgs/nvim-treesitter { };
-        nil = pkgs.callPackage ./pkgs/nil.nix { };
-
-        # devleopment scripts
-        generate-treesitter = pkgs.writeShellApplication {
-          name = "generate";
-          runtimeInputs = [
-            (pkgs.callPackage ./pkgs/nvim-treesitter/neovim.nix { })
-          ];
-
-          text = ''
-            nvim --headless -l ${./pkgs/nvim-treesitter/generate-nvfetcher.lua}
-          '';
-        };
-
-        update = pkgs.writeShellApplication {
-          name = "update";
-          runtimeInputs = [
-            pkgs.nvfetcher
-            self.packages.${pkgs.stdenv.hostPlatform.system}.generate-treesitter
-          ];
-
-          text = ''
-            nvfetcher
-            pushd pkgs/nvim-treesitter
-            generate
-            nvfetcher
-            popd
-          '';
-        };
-      });
+      overlays.default = _: prev: import ./default.nix { pkgs = prev; };
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShellNoCC {
@@ -94,9 +55,7 @@
             self.formatter.${pkgs.stdenv.hostPlatform.system}
             pkgs.selene
             pkgs.stylua
-            self.packages.${pkgs.stdenv.hostPlatform.system}.update
-            self.packages.${pkgs.stdenv.hostPlatform.system}.generate-treesitter
-          ] ++ nixpkgs.lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
+          ] ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
         };
       });
     };

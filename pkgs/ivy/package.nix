@@ -1,16 +1,8 @@
 {
-  # extra utils for building the derivation
   lib,
-  callPackage,
 
   # get extra plugins we don't want to build
   vimPlugins,
-
-  # we need to build some plugins
-  vimUtils,
-
-  basePackage ? neovim-unwrapped,
-  neovim-unwrapped,
 
   # path, see there explanation below
   fd,
@@ -27,7 +19,7 @@
   lua-language-server,
   luajitPackages,
   marksman,
-  nil_ls ? (callPackage ./nil.nix { }),
+  nil,
   selene,
   tailwindcss-language-server,
   taplo,
@@ -55,8 +47,18 @@
   nodePackages,
   nodejs-slim,
 
-  # our custom treesitter plugin
-  treesitter ? (callPackage ./nvim-treesitter { }).override {
+  # our beatiful wrapper
+  wrapNeovim,
+
+  # settings
+  includePerLanguageTooling ? true,
+  ivyPlugins,
+
+  basePackage ? neovim-unwrapped,
+  neovim-unwrapped,
+
+  nvim-treesitter,
+  treesitter ? nvim-treesitter.override {
     grammars = [
       "astro"
       "bash"
@@ -129,113 +131,29 @@
       "yaml"
       "yuck"
       "zig"
+
     ];
   },
-
-  # settings
-  includePerLanguageTooling ? true,
 }:
 let
   inherit (lib.lists) flatten optionals;
-  inherit (lib.trivial) importTOML;
-  inherit (builtins)
-    baseNameOf
-    mapAttrs
-    fromJSON
-    attrValues
-    removeAttrs
-    replaceStrings
-    ;
-
-  wrapNeovim = callPackage ./wrapper/package.nix;
-  externalDeps = [
-    # external deps
-    fzf
-    fd
-    ripgrep
-
-    # needed for copilot
-    nodejs-slim
-
-    # lua
-    stylua
-    lua-language-server
-    selene
-
-    # webdev
-    emmet-language-server
-    tailwindcss-language-server
-    typescript-language-server
-    vscode-langservers-extracted
-    vue-language-server
-
-    # markdown / latex
-    marksman
-    zk
-
-    # typst
-    tinymist
-    typstyle
-
-    # nix
-    nil_ls
-    statix
-    deadnix
-    nixfmt-rfc-style
-
-    # shell
-    shfmt
-    shellcheck
-    bash-language-server
-
-    # etc
-    clang-tools
-    gopls
-    haskell-language-server
-    nodePackages.prettier
-    proselint
-    taplo # toml
-    luajitPackages.teal-language-server
-    yaml-language-server # yaml
-    dockerfile-language-server-nodejs
-    lazygit
-    deno
-  ];
-
-  nv = removeAttrs (callPackage ../_sources/generated.nix { }) [
-    "override"
-    "overrideDerivation"
-  ];
-
-  toml = importTOML ../nvfetcher.toml;
-
-  nvPlugins = mapAttrs mkPlugin nv;
-
-  mkPlugin =
-    name: attrs:
-    let
-      old = toml.${name};
-    in
-    vimUtils.buildVimPlugin {
-      pname = old.passthru.as or (baseNameOf old.src.git);
-      version = replaceStrings [ "-" ] [ "." ] attrs.date;
-
-      inherit (attrs) src;
-
-      doCheck = false;
-
-      passthru.start = if (attrs ? start) then fromJSON attrs.start else false;
-    };
+  inherit (builtins) attrValues removeAttrs;
 in
 wrapNeovim {
   pname = "ivy";
 
-  userConfig = ../config;
+  userConfig = ../../config;
 
   inherit basePackage;
 
   plugins = flatten [
-    (attrValues nvPlugins)
+    (attrValues (
+      removeAttrs ivyPlugins [
+        "override"
+        "overrideDerivation"
+      ]
+    ))
+
     treesitter
 
     # extra plugsns beacuse they often fail or need extra steps
@@ -250,5 +168,52 @@ wrapNeovim {
       fd
       ripgrep
     ]
-    ++ optionals includePerLanguageTooling externalDeps;
+    ++ optionals includePerLanguageTooling [
+      # needed for copilot
+      nodejs-slim
+
+      # lua
+      stylua
+      lua-language-server
+      selene
+
+      # webdev
+      emmet-language-server
+      tailwindcss-language-server
+      typescript-language-server
+      vscode-langservers-extracted
+      vue-language-server
+
+      # markdown / latex
+      marksman
+      zk
+
+      # typst
+      tinymist
+      typstyle
+
+      # nix
+      nil
+      statix
+      deadnix
+      nixfmt-rfc-style
+
+      # shell
+      shfmt
+      shellcheck
+      bash-language-server
+
+      # etc
+      clang-tools
+      gopls
+      haskell-language-server
+      nodePackages.prettier
+      proselint
+      taplo # toml
+      luajitPackages.teal-language-server
+      yaml-language-server # yaml
+      dockerfile-language-server-nodejs
+      lazygit
+      deno
+    ];
 }
