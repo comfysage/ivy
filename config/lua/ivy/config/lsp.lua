@@ -1,5 +1,15 @@
 local makeopt = require("chai.options").makeopt
 
+local function setup_ls(name, cfg)
+  ---@diagnostic disable-next-line: param-type-mismatch
+  local ok, result = pcall(vim.lsp.config, name, cfg)
+  if not ok then
+    vim.notify(('unable to configure lsp server %s:\n\t%s'):format(name, result))
+    return
+  end
+  vim.lsp.enable(name)
+end
+
 return {
   options = {
     common = makeopt({
@@ -43,15 +53,6 @@ return {
     end
 
     ---@diagnostic disable-next-line: param-type-mismatch
-    vim.iter(pairs(servers)):each(vim.lsp.config)
-
-    local lsp_names = vim
-      .iter(ipairs(vim.api.nvim_get_runtime_file("lsp/*.lua", true)))
-      :map(function(_, filepath)
-        local name = vim.fs.basename(filepath):match("([^.]+)%.lua")
-        return name ~= "*" and name or nil
-      end)
-      :totable()
-    vim.lsp.enable(lsp_names)
+    vim.iter(pairs(servers)):each(setup_ls)
   end,
 }

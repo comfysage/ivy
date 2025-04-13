@@ -36,6 +36,16 @@ require("lz.n").load({
             end,
             servers = function()
               return {
+                astro = {},
+                bashls = {},
+                clangd = {},
+                cssls = {},
+                denols = {},
+                dockerls = {},
+                emmet_language_server = {},
+                gopls = {},
+                hls = {},
+                html = {},
                 jsonls = {
                   settings = {
                     json = {
@@ -44,6 +54,39 @@ require("lz.n").load({
                     },
                   },
                 },
+                lua_ls = {
+                  settings = {
+                    Lua = {
+                      runtime = {
+                        version = 'LuaJIT',
+                      },
+                      workspace = {
+                        checkThirdParty = false,
+                        library = {
+                          vim.env.VIMRUNTIME
+                          -- Depending on the usage, you might want to add additional paths here.
+                          -- "${3rd}/luv/library"
+                        },
+                      },
+                      diagnostics = {
+                        globals = { "vim", "package", "table" },
+                      },
+                      hint = {
+                        enable = true,
+                        arrayIndex = "Disable",
+                      },
+                    },
+                  },
+                },
+                marksman = {},
+                nil_ls = {},
+                nushell = {},
+                taplo = {},
+                teal_ls = {},
+                tinymist = {},
+                ts_ls = {},
+                tailwindcss = {},
+                volar = {},
                 yamlls = {
                   settings = {
                     yaml = {
@@ -57,6 +100,7 @@ require("lz.n").load({
                     },
                   },
                 },
+                zk = {},
               }
             end,
             on_attach = function(ev)

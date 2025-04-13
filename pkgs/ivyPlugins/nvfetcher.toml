@@ -163,6 +163,7 @@ src.git = "https://github.com/nvchad/nvim-colorizer.lua"
 [nvim-lspconfig]
 fetch.github = "neovim/nvim-lspconfig"
 src.git = "https://github.com/neovim/nvim-lspconfig"
+passthru.start = "true"
 
 [nvim-navic]
 fetch.github = "SmiteshP/nvim-navic"
