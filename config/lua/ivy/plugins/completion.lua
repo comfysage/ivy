@@ -3,6 +3,11 @@ return {
     "blink.cmp",
     event = "DeferredUIEnter",
     after = function()
+      local ok, icons = pcall(require, 'mini.icons')
+      if not ok then
+        vim.notify('could not find `mini.icons` module', vim.log.leves.WARN)
+      end
+
       local keymap = {
         ["<c-space>"] = { "show", "show_documentation", "hide_documentation" },
         ['<C-e>'] = { 'hide' },
@@ -57,7 +62,35 @@ return {
         -- your own keymap.
         keymap = keymap,
 
-        appearance = {},
+        appearance = {
+          kind_icons = {
+            Class = icons.get('lsp', 'class'),
+            Color = icons.get('lsp', 'color'),
+            Constant = icons.get('lsp', 'constant'),
+            Constructor = icons.get('lsp', 'constructor'),
+            Enum = icons.get('lsp', 'enum'),
+            EnumMember = icons.get('lsp', 'enummember'),
+            Event = icons.get('lsp', 'event'),
+            Field = icons.get('lsp', 'field'),
+            File = icons.get('lsp', 'file'),
+            Folder = icons.get('lsp', 'folder'),
+            Function = icons.get('lsp', 'function'),
+            Interface = icons.get('lsp', 'interface'),
+            Keyword = icons.get('lsp', 'keyword'),
+            Method = icons.get('lsp', 'method'),
+            Module = icons.get('lsp', 'module'),
+            Operator = icons.get('lsp', 'operator'),
+            Property = icons.get('lsp', 'property'),
+            Reference = icons.get('lsp', 'reference'),
+            Snippet = icons.get('lsp', 'snippet'),
+            Struct = icons.get('lsp', 'struct'),
+            Text = icons.get('lsp', 'text'),
+            TypeParameter = icons.get('lsp', 'typeparameter'),
+            Unit = icons.get('lsp', 'unit'),
+            Value = icons.get('lsp', 'value'),
+            Variable = icons.get('lsp', 'variable'),
+          },
+        },
 
         completion = {
           trigger = {
@@ -92,12 +125,23 @@ return {
                 },
                 kind_icon = {
                   text = function(ctx)
+                    local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
                     if ctx.kind == "Color" then
-                      ctx.kind_icon = "󱓻"
+                      kind_icon = "󱓻"
                     end
-                    return ctx.kind_icon .. ctx.icon_gap
+                    return kind_icon .. ctx.icon_gap
+                  end,
+                  highlight = function(ctx)
+                    local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+                    return hl
                   end,
                 },
+                kind = {
+                  highlight = function(ctx)
+                    local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+                    return hl
+                  end,
+                }
               },
             },
           },
