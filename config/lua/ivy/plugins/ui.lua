@@ -19,7 +19,10 @@ return {
         options = {
           icons_enabled = true,
           theme = "auto",
-          disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
+          disabled_filetypes = {
+            statusline = { "dashboard", "alpha", "ministarter" },
+            winbar = { "NvimTree" },
+          },
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
           always_divide_middle = true,
