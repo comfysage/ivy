@@ -5,6 +5,16 @@ return {
       local lualine_require = require("lualine_require")
       lualine_require.require = require
 
+      local winbar = {
+        lualine_c = {
+          { function()
+            return "▌"
+          end, color = "MiniIconsAzure" },
+          { "filename", path = 1 },
+          "searchcount",
+        },
+      }
+
       require("lualine").setup({
         options = {
           icons_enabled = true,
@@ -54,24 +64,8 @@ return {
           lualine_z = { "location" },
         },
         tabline = {},
-        winbar = {
-          lualine_c = { "navic" },
-          lualine_x = {
-            {
-              function()
-                return "  "
-              end,
-              cond = function()
-                local present, navic = pcall(require, "nvim-navic")
-                if not present then
-                  return false
-                end
-                return navic.is_available()
-              end,
-            },
-          },
-        },
-        inactive_winbar = {},
+        winbar = winbar,
+        inactive_winbar = winbar,
         extensions = {},
       })
     end,
