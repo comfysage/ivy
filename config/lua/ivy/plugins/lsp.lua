@@ -82,6 +82,7 @@ return {
 
   { "lsp-status.nvim" },
   { "schemastore.nvim" },
+  { "nvim-navic" },
 
   {
     "crates.nvim",
