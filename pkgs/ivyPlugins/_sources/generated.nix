@@ -354,6 +354,18 @@
     };
     date = "2025-04-06";
   };
+  mini-icons = {
+    pname = "mini-icons";
+    version = "397ed3807e96b59709ef3292f0a3e253d5c1dc0a";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.icons";
+      rev = "397ed3807e96b59709ef3292f0a3e253d5c1dc0a";
+      fetchSubmodules = false;
+      sha256 = "sha256-/sdLtMOOGeVvFDBB9N4CyUHpGXtUi1ZJ9dIpvxZ9C4Q=";
+    };
+    date = "2025-04-01";
+  };
   mini-move = {
     pname = "mini-move";
     version = "4fe4a855fee53c66b0f3255a4b54ddc2ae6b308c";
@@ -546,18 +558,6 @@
       sha256 = "sha256-gCCxRnWMSd/GZzAGpTau4nwWM/bI/lbhhvShEv5anak=";
     };
     date = "2025-04-07";
-  };
-  nvim-web-devicons = {
-    pname = "nvim-web-devicons";
-    version = "c90dee4e930ab9f49fa6d77f289bff335b49e972";
-    src = fetchFromGitHub {
-      owner = "nvim-tree";
-      repo = "nvim-web-devicons";
-      rev = "c90dee4e930ab9f49fa6d77f289bff335b49e972";
-      fetchSubmodules = false;
-      sha256 = "sha256-TKP6wH/fPEBgHjq0knAYDfq4uFQ1LscSYTc7xYRrgUQ=";
-    };
-    date = "2025-04-11";
   };
   plenary = {
     pname = "plenary";

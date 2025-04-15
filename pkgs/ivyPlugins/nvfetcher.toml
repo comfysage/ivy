@@ -120,6 +120,10 @@ src.git = "https://github.com/echasnovski/mini.files"
 fetch.github = "echasnovski/mini-git"
 src.git = "https://github.com/echasnovski/mini-git"
 
+[mini-icons]
+fetch.github = "echasnovski/mini.icons"
+src.git = "https://github.com/echasnovski/mini.icons"
+
 [mini-move]
 fetch.github = "echasnovski/mini.move"
 src.git = "https://github.com/echasnovski/mini.move"
@@ -180,10 +184,6 @@ src.git = "https://github.com/nvim-tree/nvim-tree.lua"
 [nvim-treesitter]
 fetch.github = "nvim-treesitter/nvim-treesitter"
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
-
-[nvim-web-devicons]
-fetch.github = "nvim-tree/nvim-web-devicons"
-src.git = "https://github.com/nvim-tree/nvim-web-devicons"
 
 [plenary]
 fetch.github = "nvim-lua/plenary.nvim"

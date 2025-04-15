@@ -617,6 +617,27 @@
         },
         "version": "a0ddc6302f654523053c28109e8b6dbbf05c08f8"
     },
+    "mini-icons": {
+        "cargoLocks": null,
+        "date": "2025-04-01",
+        "extract": null,
+        "name": "mini-icons",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.icons",
+            "rev": "397ed3807e96b59709ef3292f0a3e253d5c1dc0a",
+            "sha256": "sha256-/sdLtMOOGeVvFDBB9N4CyUHpGXtUi1ZJ9dIpvxZ9C4Q=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "397ed3807e96b59709ef3292f0a3e253d5c1dc0a"
+    },
     "mini-move": {
         "cargoLocks": null,
         "date": "2025-04-01",
@@ -954,27 +975,6 @@
             "type": "github"
         },
         "version": "0e21ee8df6235511c02bab4a5b391d18e165a58d"
-    },
-    "nvim-web-devicons": {
-        "cargoLocks": null,
-        "date": "2025-04-11",
-        "extract": null,
-        "name": "nvim-web-devicons",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-tree",
-            "repo": "nvim-web-devicons",
-            "rev": "c90dee4e930ab9f49fa6d77f289bff335b49e972",
-            "sha256": "sha256-TKP6wH/fPEBgHjq0knAYDfq4uFQ1LscSYTc7xYRrgUQ=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "c90dee4e930ab9f49fa6d77f289bff335b49e972"
     },
     "plenary": {
         "cargoLocks": null,

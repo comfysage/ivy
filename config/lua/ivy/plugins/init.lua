@@ -204,6 +204,41 @@ return {
     end,
   },
   {
+    "mini.icons",
+    event = "VimEnter",
+    after = function()
+      local justfile = {
+        glyph = "󰚩",
+        hl = "MiniIconsOrange",
+      }
+      require("mini.icons").setup({
+        file = {
+          [".ecrc"] = {
+            glyph = "",
+            hl = "MiniIconsGreen",
+          },
+          [".envrc"] = {
+            glyph = "",
+            hl = "MiniIconsYellow",
+          },
+          [".editorconfig"] = {
+            glyph = "",
+            hl = "MiniIconsGreen",
+          },
+          [".luacheckrc"] = {
+            glyph = "󰢱",
+            hl = "MiniIconsBlue",
+          },
+          [".Justfile"] = justfile,
+          [".justfile"] = justfile,
+          ["Justfile"] = justfile,
+          ["justfile"] = justfile,
+        }
+      })
+      require("mini.icons").mock_nvim_web_devicons()
+    end,
+  },
+  {
     "mini.move",
     event = "BufAdd",
     after = function()
