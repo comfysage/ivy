@@ -2,10 +2,6 @@
 fetch.github = "kevinhwang91/nvim-bqf"
 src.git = "https://github.com/kevinhwang91/nvim-bqf"
 
-[bufferline]
-fetch.github = "akinsho/bufferline.nvim"
-src.git = "https://github.com/akinsho/bufferline.nvim"
-
 [catppuccin]
 fetch.github = "catppuccin/nvim"
 src.git = "https://github.com/catppuccin/nvim"
@@ -225,6 +221,10 @@ src.git = "https://github.com/Wansmer/symbol-usage.nvim"
 [mossy-nvim]
 fetch.github = "comfysage/mossy.nvim"
 src.git = "https://github.com/comfysage/mossy.nvim"
+
+[tabby-nvim]
+fetch.github = "nanozuki/tabby.nvim"
+src.git = "https://github.com/nanozuki/tabby.nvim"
 
 [todo-comments]
 fetch.github = "folke/todo-comments.nvim"

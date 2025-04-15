@@ -13,18 +13,6 @@
     };
     date = "2025-03-29";
   };
-  bufferline = {
-    pname = "bufferline";
-    version = "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3";
-    src = fetchFromGitHub {
-      owner = "akinsho";
-      repo = "bufferline.nvim";
-      rev = "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3";
-      fetchSubmodules = false;
-      sha256 = "sha256-ae4MB6+6v3awvfSUWlau9ASJ147ZpwuX1fvJdfMwo1Q=";
-    };
-    date = "2025-01-14";
-  };
   catppuccin = {
     pname = "catppuccin";
     version = "5b5e3aef9ad7af84f463d17b5479f06b87d5c429";
@@ -667,6 +655,18 @@
       sha256 = "sha256-/yRi4Tby+jQMW4MbSC6Ag8FPBCr2TlY4QhibagHC57I=";
     };
     date = "2025-04-13";
+  };
+  tabby-nvim = {
+    pname = "tabby-nvim";
+    version = "6362aa9595428cefbb6556c05390e8444d1bcd12";
+    src = fetchFromGitHub {
+      owner = "nanozuki";
+      repo = "tabby.nvim";
+      rev = "6362aa9595428cefbb6556c05390e8444d1bcd12";
+      fetchSubmodules = false;
+      sha256 = "sha256-5aV7SgduOca9oOl8bdtBnQMoXFXD7uPNUcqN14ZGL8s=";
+    };
+    date = "2025-04-04";
   };
   todo-comments = {
     pname = "todo-comments";

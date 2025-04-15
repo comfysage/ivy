@@ -72,56 +72,67 @@ return {
   },
 
   {
-    "bufferline.nvim",
+    "tabby.nvim",
     event = "DeferredUIEnter",
     after = function()
-      local ok, bufferline = pcall(require, "bufferline")
-      if not ok then
-        return
+      local left_sep = ''
+      local right_sep = ''
+
+      local C = require('evergarden.colors').get()
+      local tab_hl = { fg = C.subtext0, bg = C.surface1 }
+      local cur_hl = { fg = C.crust, bg = C.green }
+      local o = {
+        theme = {
+          fill = { fg = C.overlay0 },
+          head = tab_hl,
+          current_tab = cur_hl,
+          tab = tab_hl,
+          current_win = cur_hl,
+          win = tab_hl,
+          tail = tab_hl,
+        },
+      }
+
+      local function preset_tab(line, tab, opt)
+        local hl = tab.is_current() and opt.theme.current_tab or opt.theme.tab
+        return {
+          line.sep(left_sep, hl, opt.theme.fill),
+          tab.in_jump_mode() and tab.jump_key() or {
+            tab.number(),
+            margin = ' ',
+          },
+          line.sep(right_sep, hl, opt.theme.fill),
+          hl = hl,
+          margin = ' ',
+        }
       end
 
-      bufferline.setup({
-        options = {
-          mode = "tabs",
-          style_preset = bufferline.style_preset.default,
-          themeable = true,
-          numbers = "none",
-          modified_icon = "● ",
-          buffer_close_icon = "󰅖",
-          close_icon = "󰖭",
-          left_trunc_marker = " ",
-          right_trunc_marker = " ",
-          diagnostics = "nvim_lsp",
-          offsets = {
-            {
-              filetype = "NvimTree",
-              text = "File Explorer",
-              text_align = "left",
-              separator = false,
-              highlight = "NvimTreeNormal",
-            },
-            {
-              filetype = "NeoTree",
-              text = "File Explorer",
-              text_align = "left",
-              separator = false,
-              highlight = "NeoTreeNormal",
-            },
-          },
-          color_icons = true,
-          get_element_icon = function(element)
-            local icon, hl = require("nvim-web-devicons").get_icon_by_filetype(element.filetype, { default = false })
-            return icon, hl
-          end,
-          show_buffer_close_icons = false,
-          hover = {
-            enabled = true,
-            delay = 200,
-            reveal = { "close" },
-          },
-        },
+      local function preset_win(line, tab, win, opt)
+        local hl = (tab.is_current() and win.is_current()) and opt.theme.current_win or opt.theme.win
+        return {
+          line.sep(left_sep, hl, opt.theme.fill),
+          win.buf_name(),
+          line.sep(right_sep, hl, opt.theme.fill),
+          hl = hl,
+          margin = ' ',
+        }
+      end
+      require("tabby").setup({
+        line = function(line)
+          return {
+            line.tabs().foreach(function(tab)
+              return {
+                preset_tab(line, tab, o),
+                tab.wins().foreach(function(win)
+                  return preset_win(line, tab, win, o)
+                end),
+              }
+            end),
+            hl = o.theme.fill,
+          }
+        end,
       })
-    end,
+    end
   },
 
   {

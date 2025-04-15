@@ -20,27 +20,6 @@
         },
         "version": "e20417d5e589e03eaaaadc4687904528500608be"
     },
-    "bufferline": {
-        "cargoLocks": null,
-        "date": "2025-01-14",
-        "extract": null,
-        "name": "bufferline",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "akinsho",
-            "repo": "bufferline.nvim",
-            "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
-            "sha256": "sha256-ae4MB6+6v3awvfSUWlau9ASJ147ZpwuX1fvJdfMwo1Q=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3"
-    },
     "catppuccin": {
         "cargoLocks": null,
         "date": "2025-03-01",
@@ -1166,6 +1145,27 @@
             "type": "github"
         },
         "version": "e43bab292418b228d0e777913c86ecf81fc18291"
+    },
+    "tabby-nvim": {
+        "cargoLocks": null,
+        "date": "2025-04-04",
+        "extract": null,
+        "name": "tabby-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nanozuki",
+            "repo": "tabby.nvim",
+            "rev": "6362aa9595428cefbb6556c05390e8444d1bcd12",
+            "sha256": "sha256-5aV7SgduOca9oOl8bdtBnQMoXFXD7uPNUcqN14ZGL8s=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "6362aa9595428cefbb6556c05390e8444d1bcd12"
     },
     "todo-comments": {
         "cargoLocks": null,
