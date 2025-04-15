@@ -76,6 +76,8 @@ return {
       group = "fixup",
       { "normal", "<S-down>", "<nop>", "remove shift down movement" },
       { "normal", "<S-up>", "<nop>", "remove shift up movement" },
+      { "visual", "<S-down>", "<nop>", "remove shift down movement" },
+      { "visual", "<S-up>", "<nop>", "remove shift up movement" },
     })
 
     kmgroup({
