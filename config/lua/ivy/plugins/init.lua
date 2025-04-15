@@ -233,7 +233,21 @@ return {
           [".justfile"] = justfile,
           ["Justfile"] = justfile,
           ["justfile"] = justfile,
-        }
+        },
+        lsp = {
+          color        = { glyph = '󰏘' },
+          constant     = { glyph = '󰏿' },
+          constructor  = { glyph = '󰒓' },
+          event        = { glyph = '󱐋' },
+          file         = { glyph = '󰈔' },
+          folder       = { glyph = '󰉋' },
+          ['function'] = { glyph = '󰊕' },
+          property     = { glyph = '󰖷' },
+          snippet      = { glyph = '󱄽' },
+          string       = { glyph = '“' },
+          value        = { glyph = '󰦨' },
+          variable     = { glyph = '󰆦' },
+        },
       })
       require("mini.icons").mock_nvim_web_devicons()
     end,
