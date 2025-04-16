@@ -1,0 +1,41 @@
+name: Build and populate cache
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build (${{ matrix.system }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            system: x86_64-linux
+          - os: macos-latest
+            system: aarch64-darwin
+          - os: ubuntu-24.04-arm
+            system: aarch64-linux
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.ref && inputs.ref || github.ref_name }}
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Build
+        run: nix build -L

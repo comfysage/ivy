@@ -4,13 +4,23 @@ on:
   schedule:
     - cron: "0 2 * * 3" # 02:00 on Wednesday
 
+permissions: {}
+
 jobs:
   update-lockfile:
     runs-on: ubuntu-latest
 
+    permissions:
+      pull-requests: write
+      contents: write
+
+    outputs:
+      pr: ${{ steps.pr.outputs.pull-request-url }}
+      branch: ${{ steps.pr.outputs.pull-request-branch }}
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4.1.0
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@main
@@ -20,12 +30,40 @@ jobs:
 
       - name: Update Sources
         run: |
-          nix run nixpkgs#nvfetcher
-          pushd pkgs/nvim-treesitter
-          nix run nixpkgs#nvfetcher
-          popd
+          nix run .#update
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Create Pull request
+        id: pr
+        uses: peter-evans/create-pull-request@v7
         with:
-          commit_message: "chore: update flake inputs"
-          commit_user_name: GitHub Actions
+          title: "chore: update flake inputs"
+          commit-message: "chore: update flake inputs"
+          branch: update-flake-inputs
+          token: ${{ github.token }}
+
+  build:
+    name: Build
+    needs: update-lockfile
+
+    permissions:
+      contents: read
+
+    uses: ./.github/workflows/build.yml
+    with:
+      ref: ${{ needs.update-lockfile.outputs.branch }}
+
+  merge:
+    name: Merge Pull Request
+    needs: [update-lockfile, build]
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - name: Merge Pull Request
+        run: gh pr merge --rebase --auto --delete-branch "$PR"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ needs.update-lockfile.outputs.pr }}
