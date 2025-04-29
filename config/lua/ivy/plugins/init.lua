@@ -212,6 +212,9 @@ return {
         hl = "MiniIconsOrange",
       }
       require("mini.icons").setup({
+        extension = {
+          tera = { glyph = '󰅩', hl = 'MiniIconsOrange'  },
+        },
         file = {
           [".ecrc"] = {
             glyph = "",
