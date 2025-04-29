@@ -26,7 +26,7 @@ return {
       vim.keymap.set("n", "<leader>gg", function()
         lazygit:toggle()
       end, { noremap = true, silent = true })
-      vim.keymap.set("n", "<c-t>", "<cmd>ToggleTerm<cr>", { noremap = true, silent = true })
+      vim.keymap.set("n", "<a-`>", "<cmd>ToggleTerm<cr>", { noremap = true, silent = true })
     end,
   },
 }
