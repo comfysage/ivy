@@ -82,8 +82,8 @@ return {
       local right_sep = ''
 
       local C = require('evergarden.colors').get()
-      local tab_hl = { fg = C.subtext0, bg = C.surface1 }
-      local cur_hl = { fg = C.crust, bg = C.green }
+      local tab_hl = 'TabLine'
+      local cur_hl = 'TabLineSel'
       local o = {
         theme = {
           fill = { fg = C.overlay0 },
