@@ -158,7 +158,9 @@ wrapNeovim {
 
     # extra plugsns beacuse they often fail or need extra steps
     vimPlugins.blink-cmp
-    vimPlugins.cord-nvim
+    (vimPlugins.cord-nvim.overrideAttrs {
+      nvimRequireCheck = "cord";
+    })
   ];
 
   extraPackages =
