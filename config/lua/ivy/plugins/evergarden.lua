@@ -1,6 +1,7 @@
 return {
   {
     "evergarden",
+    lazy = false,
     priority = 1200,
     after = function()
       require("evergarden").setup({

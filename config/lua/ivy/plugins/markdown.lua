@@ -2,6 +2,7 @@ return {
   {
     "markview.nvim",
     lazy = false, -- this plugin does its own lazy loading
+    priority = 1200,
     after = function()
       local p = require("markview.presets")
 

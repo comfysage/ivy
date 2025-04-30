@@ -205,7 +205,8 @@ return {
   },
   {
     "mini.icons",
-    event = "VimEnter",
+    lazy = false,
+    priority = 1000,
     after = function()
       local justfile = {
         glyph = "󰚩",
