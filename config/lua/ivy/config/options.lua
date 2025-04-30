@@ -94,9 +94,9 @@ return {
 
     -- Decrease update time
     vim.opt.updatetime = 250
-    -- Decrease mapped sequence wait time
-    -- Displays which-key popup sooner
+
     vim.opt.timeout = false
+    -- Decrease mapped sequence wait time - displays which-key popup sooner
     vim.opt.timeoutlen = 0
 
     -- Don't show the mode, since it's already in the status line

@@ -43,7 +43,6 @@ return {
         end
       end
       local keymaps = require("keymaps").setup()
-      require("which-key").add({ "<localleader>a", group = "annotate" })
       keymaps.normal["<localleader>af"] = {
         cbcall(require("neogen").generate, { type = "func" }),
         "[func] create annotation",

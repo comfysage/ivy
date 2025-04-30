@@ -247,16 +247,4 @@ return {
       require("todo-comments").setup()
     end,
   },
-
-  {
-    "which-key.nvim",
-    priority = 1000,
-    after = function()
-      local wk = require("which-key")
-      wk.add({
-        { "<leader>f", group = "find" },
-        { "<leader>d", group = "diagnostic" },
-      })
-    end,
-  },
 }

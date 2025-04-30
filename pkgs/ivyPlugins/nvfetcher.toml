@@ -255,10 +255,6 @@ pinned = true
 fetch.github = "wakatime/vim-wakatime"
 src.git = "https://github.com/wakatime/vim-wakatime"
 
-[which-key]
-fetch.github = "folke/which-key.nvim"
-src.git = "https://github.com/folke/which-key.nvim"
-
 [zk-nvim]
 fetch.github = "mickael-menu/zk-nvim"
 src.git = "https://github.com/mickael-menu/zk-nvim"
