@@ -450,18 +450,6 @@
     };
     date = "2025-02-20";
   };
-  none-ls = {
-    pname = "none-ls";
-    version = "786460723170bda9e9f95c55a382d21436575297";
-    src = fetchFromGitHub {
-      owner = "nvimtools";
-      repo = "none-ls.nvim";
-      rev = "786460723170bda9e9f95c55a382d21436575297";
-      fetchSubmodules = false;
-      sha256 = "sha256-7r/XAsKJIHk5V1QaVOgtUhFaXXVTCVOdlcSciu3r+nA=";
-    };
-    date = "2025-04-22";
-  };
   nui = {
     pname = "nui";
     version = "8d3bce9764e627b62b07424e0df77f680d47ffdb";

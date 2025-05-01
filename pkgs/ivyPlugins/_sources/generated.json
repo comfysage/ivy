@@ -785,27 +785,6 @@
         },
         "version": "05d754004da8c89115b291f2a23ca530a8cac8fd"
     },
-    "none-ls": {
-        "cargoLocks": null,
-        "date": "2025-04-22",
-        "extract": null,
-        "name": "none-ls",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvimtools",
-            "repo": "none-ls.nvim",
-            "rev": "786460723170bda9e9f95c55a382d21436575297",
-            "sha256": "sha256-7r/XAsKJIHk5V1QaVOgtUhFaXXVTCVOdlcSciu3r+nA=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "786460723170bda9e9f95c55a382d21436575297"
-    },
     "nui": {
         "cargoLocks": null,
         "date": "2025-03-06",
