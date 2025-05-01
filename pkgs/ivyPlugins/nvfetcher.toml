@@ -222,6 +222,10 @@ src.git = "https://github.com/Wansmer/symbol-usage.nvim"
 fetch.github = "comfysage/mossy.nvim"
 src.git = "https://github.com/comfysage/mossy.nvim"
 
+[nvim-lint]
+fetch.github = "mfussenegger/nvim-lint"
+src.git = "https://github.com/mfussenegger/nvim-lint"
+
 [tabby-nvim]
 fetch.github = "nanozuki/tabby.nvim"
 src.git = "https://github.com/nanozuki/tabby.nvim"

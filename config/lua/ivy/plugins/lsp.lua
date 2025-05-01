@@ -24,57 +24,19 @@ return {
     end,
   },
   {
-    "none-ls.nvim",
-    event = "DeferredUIEnter",
+    "nvim-lint",
+    event = "BufAdd",
     after = function()
-      local null_present, null = pcall(require, "null-ls")
-
-      if not null_present then
-        return
-      end
-
-      local sources = {
-        null.builtins.diagnostics.statix,
-        null.builtins.diagnostics.deadnix,
-        null.builtins.diagnostics.selene,
-
-        -- docs
-        null.builtins.diagnostics.proselint,
+      require('lint').linters_by_ft = {
+        nix = { 'deadnix', 'statix' },
+        lua = { 'selene' },
+        markdown = { 'proselint' },
       }
 
-      null.setup({
-        sources = sources,
-      })
-
-      vim.api.nvim_create_user_command("NullToggle", function(ev)
-        if not ev.args or #ev.args ~= 1 or not ev.args[1] then
-          return
-        end
-        local method_name = string.upper(ev.args[1])
-        local ok, nll = pcall(require, "null-ls")
-
-        if not ok then
-          return
-        end
-        local method = null.methods[method_name]
-        if method then
-          nll.toggle({ methods = method })
-        end
-      end, {
-        nargs = 1,
-        complete = function(_, _, _)
-          local ok, nll = pcall(require, "null-ls")
-
-          if not ok then
-            return
-          end
-          local methods = vim
-            .iter(pairs(nll.methods))
-            :map(function(k, _)
-              return string.lower(k)
-            end)
-            :totable()
-          return methods
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        group = vim.api.nvim_create_augroup('nvim-lint:try_lint', { clear = true }),
+        callback = function()
+          require("lint").try_lint()
         end,
       })
     end,

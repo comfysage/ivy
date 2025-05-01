@@ -848,6 +848,27 @@
         },
         "version": "517df88cf2afb36652830df2c655df2da416a0ae"
     },
+    "nvim-lint": {
+        "cargoLocks": null,
+        "date": "2025-04-23",
+        "extract": null,
+        "name": "nvim-lint",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mfussenegger",
+            "repo": "nvim-lint",
+            "rev": "9dfb77ef6c5092a19502883c02dc5a02ec648729",
+            "sha256": "sha256-QN2gnCx5cSpFOi8dkq9wM4iFD1iCxbvh3pnJBOhb4hw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "9dfb77ef6c5092a19502883c02dc5a02ec648729"
+    },
     "nvim-lspconfig": {
         "cargoLocks": null,
         "date": "2025-04-22",

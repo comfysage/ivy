@@ -486,6 +486,18 @@
     };
     date = "2025-03-01";
   };
+  nvim-lint = {
+    pname = "nvim-lint";
+    version = "9dfb77ef6c5092a19502883c02dc5a02ec648729";
+    src = fetchFromGitHub {
+      owner = "mfussenegger";
+      repo = "nvim-lint";
+      rev = "9dfb77ef6c5092a19502883c02dc5a02ec648729";
+      fetchSubmodules = false;
+      sha256 = "sha256-QN2gnCx5cSpFOi8dkq9wM4iFD1iCxbvh3pnJBOhb4hw=";
+    };
+    date = "2025-04-23";
+  };
   nvim-lspconfig = {
     pname = "nvim-lspconfig";
     version = "5af60bbb835d5b6efdc64cdff2a5b27cde4120de";
