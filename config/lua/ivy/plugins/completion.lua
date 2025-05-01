@@ -23,6 +23,8 @@ return {
         ["<s-tab>"] = { "select_prev", "snippet_backward", "fallback" },
         ["<down>"] = { "select_next", "fallback" },
         ["<up>"] = { "select_prev", "fallback" },
+        ["<left>"] = { "fallback" },
+        ["<right>"] = { "fallback" },
 
         ['<c-b>'] = { 'scroll_documentation_up', 'fallback' },
         ['<c-f>'] = { 'scroll_documentation_down', 'fallback' },
