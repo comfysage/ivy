@@ -8,6 +8,8 @@ return {
         vim.notify('could not find `mini.icons` module', vim.log.leves.WARN)
       end
 
+      require('lz.n').trigger_load({'windsurf.nvim'})
+
       local keymap = {
         ["<c-space>"] = { "show", "show_documentation", "hide_documentation" },
         ['<C-e>'] = { 'hide' },
@@ -154,7 +156,13 @@ return {
         -- default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
-          default = { "lsp", "path", "snippets", "buffer" },
+          default = { "lsp", "path", "snippets", "buffer", "windsurf" },
+
+          providers = {
+            windsurf = {
+              name = 'windsurf', module = 'codeium.blink', async = true
+            },
+          },
 
           transform_items = function(_, items)
             return vim
@@ -162,6 +170,9 @@ return {
               :map(function(_, item)
                 if item.kind == require("blink.cmp.types").CompletionItemKind.Snippet then
                   item.score_offset = item.score_offset + 1
+                end
+                if item.source == 'windsurf' then
+                  item.score_offset = item.score_offset + 2
                 end
                 return item
               end)
@@ -196,6 +207,16 @@ return {
         vim.notify("error configuring blink.cmp:\n\t" .. result, vim.log.levels.ERROR)
         return
       end
+    end,
+  },
+
+  -- sources
+  {
+    'windsurf.nvim',
+    after = function()
+      require('codeium').setup({
+        enable_cmp_source = false,
+      })
     end,
   },
 }
