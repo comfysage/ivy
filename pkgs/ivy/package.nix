@@ -1,5 +1,6 @@
 {
   lib,
+  fetchFromGitHub,
 
   # get extra plugins we don't want to build
   vimPlugins,
@@ -160,6 +161,14 @@ wrapNeovim {
     vimPlugins.blink-cmp
     (vimPlugins.cord-nvim.overrideAttrs {
       nvimRequireCheck = "cord";
+    })
+    (vimPlugins.windsurf-nvim.overrideAttrs {
+      src = fetchFromGitHub {
+        owner = "exafunction";
+        repo = "windsurf.nvim";
+        rev = "821b570b526dbb05b57aa4ded578b709a704a38a";
+        hash = "sha256-TWezce2+XrkzaiW/V3VgfX3FMdS8qFE8/FfPEK/Ii84=";
+      };
     })
   ];
 
