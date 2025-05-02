@@ -185,18 +185,6 @@
     };
     date = "2025-03-17";
   };
-  lazydev = {
-    pname = "lazydev";
-    version = "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c";
-    src = fetchFromGitHub {
-      owner = "folke";
-      repo = "lazydev.nvim";
-      rev = "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c";
-      fetchSubmodules = false;
-      sha256 = "sha256-LoxziiV9jlHuU4vRVFfKtVLI45ouJcuyXC6DIyQKlew=";
-    };
-    date = "2025-02-20";
-  };
   lsp-status = {
     pname = "lsp-status";
     version = "54f48eb5017632d81d0fd40112065f1d062d0629";

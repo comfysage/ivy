@@ -349,17 +349,6 @@ return {
     ft = "rust",
   },
 
-  {
-    "lazydev.nvim",
-    after = function()
-      require("lazydev").setup({
-        library = {
-          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-        },
-      })
-    end,
-  },
-
   -- add better undo history
   {
     "undotree",

@@ -321,27 +321,6 @@
         },
         "version": "221a1015f5c5f2530379983e1dc200a202f487dd"
     },
-    "lazydev": {
-        "cargoLocks": null,
-        "date": "2025-02-20",
-        "extract": null,
-        "name": "lazydev",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "folke",
-            "repo": "lazydev.nvim",
-            "rev": "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c",
-            "sha256": "sha256-LoxziiV9jlHuU4vRVFfKtVLI45ouJcuyXC6DIyQKlew=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c"
-    },
     "lsp-status": {
         "cargoLocks": null,
         "date": "2022-08-03",
