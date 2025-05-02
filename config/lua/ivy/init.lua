@@ -102,6 +102,7 @@ require("lz.n").load({
                   },
                 },
                 zk = {},
+                zls = {},
               }
             end,
             on_attach = function(ev)

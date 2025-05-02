@@ -31,6 +31,7 @@
   vue-language-server,
   yaml-language-server,
   zk,
+  zls,
 
   # nix,
   statix,
@@ -228,5 +229,6 @@ wrapNeovim {
       dockerfile-language-server-nodejs
       lazygit
       deno
+      zls
     ];
 }
