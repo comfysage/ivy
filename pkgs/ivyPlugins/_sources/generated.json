@@ -321,27 +321,6 @@
         },
         "version": "54f48eb5017632d81d0fd40112065f1d062d0629"
     },
-    "lspkind": {
-        "cargoLocks": null,
-        "date": "2024-12-05",
-        "extract": null,
-        "name": "lspkind",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "onsails",
-            "repo": "lspkind.nvim",
-            "rev": "d79a1c3299ad0ef94e255d045bed9fa26025dab6",
-            "sha256": "sha256-OCvKUBGuzwy8OWOL1x3Z3fo+0+GyBMI9TX41xSveqvE=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "d79a1c3299ad0ef94e255d045bed9fa26025dab6"
-    },
     "lualine": {
         "cargoLocks": null,
         "date": "2025-04-22",
@@ -828,27 +807,6 @@
             "type": "github"
         },
         "version": "94d0fec9135719e046903bbbbf8f39e3d3436d4e"
-    },
-    "nvim-notify": {
-        "cargoLocks": null,
-        "date": "2025-04-13",
-        "extract": null,
-        "name": "nvim-notify",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "rcarriga",
-            "repo": "nvim-notify",
-            "rev": "b5825cf9ee881dd8e43309c93374ed5b87b7a896",
-            "sha256": "sha256-m4dQ8KuMhbEpRh6zLTlIUDN9ojFj69LZnXXLepmdFI8=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "b5825cf9ee881dd8e43309c93374ed5b87b7a896"
     },
     "nvim-tree": {
         "cargoLocks": null,

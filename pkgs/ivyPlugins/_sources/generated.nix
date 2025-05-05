@@ -185,18 +185,6 @@
     };
     date = "2022-08-03";
   };
-  lspkind = {
-    pname = "lspkind";
-    version = "d79a1c3299ad0ef94e255d045bed9fa26025dab6";
-    src = fetchFromGitHub {
-      owner = "onsails";
-      repo = "lspkind.nvim";
-      rev = "d79a1c3299ad0ef94e255d045bed9fa26025dab6";
-      fetchSubmodules = false;
-      sha256 = "sha256-OCvKUBGuzwy8OWOL1x3Z3fo+0+GyBMI9TX41xSveqvE=";
-    };
-    date = "2024-12-05";
-  };
   lualine = {
     pname = "lualine";
     version = "15884cee63a8c205334ab13ab1c891cd4d27101a";
@@ -474,18 +462,6 @@
     };
     start = "true";
     date = "2025-04-30";
-  };
-  nvim-notify = {
-    pname = "nvim-notify";
-    version = "b5825cf9ee881dd8e43309c93374ed5b87b7a896";
-    src = fetchFromGitHub {
-      owner = "rcarriga";
-      repo = "nvim-notify";
-      rev = "b5825cf9ee881dd8e43309c93374ed5b87b7a896";
-      fetchSubmodules = false;
-      sha256 = "sha256-m4dQ8KuMhbEpRh6zLTlIUDN9ojFj69LZnXXLepmdFI8=";
-    };
-    date = "2025-04-13";
   };
   nvim-tree = {
     pname = "nvim-tree";

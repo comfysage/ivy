@@ -63,10 +63,6 @@ src.git = "https://github.com/comfysage/keymaps.nvim"
 fetch.github = "nvim-lua/lsp-status.nvim"
 src.git = "https://github.com/nvim-lua/lsp-status.nvim"
 
-[lspkind]
-fetch.github = "onsails/lspkind.nvim"
-src.git = "https://github.com/onsails/lspkind.nvim"
-
 [lualine]
 fetch.github = "nvim-lualine/lualine.nvim"
 src.git = "https://github.com/nvim-lualine/lualine.nvim"
@@ -152,10 +148,6 @@ src.git = "https://github.com/nvchad/nvim-colorizer.lua"
 fetch.github = "neovim/nvim-lspconfig"
 src.git = "https://github.com/neovim/nvim-lspconfig"
 passthru.start = "true"
-
-[nvim-notify]
-fetch.github = "rcarriga/nvim-notify"
-src.git = "https://github.com/rcarriga/nvim-notify"
 
 [nvim-tree]
 fetch.github = "nvim-tree/nvim-tree.lua"
