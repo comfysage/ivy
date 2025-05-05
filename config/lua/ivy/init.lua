@@ -112,12 +112,6 @@ require("lz.n").load({
                 return
               end
 
-              local navic_present, navic = pcall(require, "nvim-navic")
-
-              if navic_present and client.server_capabilities.documentSymbolProvider then
-                navic.attach(client, ev.buf)
-              end
-
               if client.server_capabilities.inlayHintProvider then
                 vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
               end

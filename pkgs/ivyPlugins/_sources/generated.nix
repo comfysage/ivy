@@ -475,18 +475,6 @@
     start = "true";
     date = "2025-04-30";
   };
-  nvim-navic = {
-    pname = "nvim-navic";
-    version = "d0a8c17c4dc721b00bc2ac305c6ffbb036beeb74";
-    src = fetchFromGitHub {
-      owner = "SmiteshP";
-      repo = "nvim-navic";
-      rev = "d0a8c17c4dc721b00bc2ac305c6ffbb036beeb74";
-      fetchSubmodules = false;
-      sha256 = "sha256-7L1rww1Z6NfcaOV5LUjspfwDhOk0asii8DdHmTe3ulc=";
-    };
-    date = "2025-04-30";
-  };
   nvim-notify = {
     pname = "nvim-notify";
     version = "b5825cf9ee881dd8e43309c93374ed5b87b7a896";

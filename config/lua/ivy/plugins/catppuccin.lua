@@ -52,7 +52,7 @@ return {
             colored_indent_levels = true,
           },
           navic = {
-            enabled = true,
+            enabled = false,
             custom_bg = "NONE",
           },
           gitsigns = false,
