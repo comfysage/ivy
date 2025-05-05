@@ -160,6 +160,10 @@ return {
         sources = {
           default = { "lsp", "path", "snippets", "buffer", "windsurf" },
 
+          per_filetype = {
+            minifiles = { "path", "buffer" },
+          },
+
           providers = {
             windsurf = {
               name = 'windsurf', module = 'codeium.blink', async = true
