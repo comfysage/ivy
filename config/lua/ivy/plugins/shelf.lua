@@ -4,6 +4,8 @@ return {
   after = function()
     require("shelf").setup({})
 
+    local keymaps = require("keymaps").setup()
+
     -- toggle shelf ui
     keymaps.normal["<leader>p"] = {
       function()
