@@ -153,7 +153,6 @@ return {
             progress_icon = { pattern = "dots", period = 1 },
           },
           ignore = {
-            "copilot",
             "null-ls",
           },
         },

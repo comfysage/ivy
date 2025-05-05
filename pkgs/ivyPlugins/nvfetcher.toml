@@ -17,10 +17,6 @@ passthru.start = "true"
 fetch.github = "laytan/cloak.nvim"
 src.git = "https://github.com/laytan/cloak.nvim"
 
-[copilot-lua]
-fetch.github = "zbirenbaum/copilot.lua"
-src.git = "https://github.com/zbirenbaum/copilot.lua"
-
 [crates]
 fetch.github = "saecki/crates.nvim"
 src.git = "https://github.com/saecki/crates.nvim"

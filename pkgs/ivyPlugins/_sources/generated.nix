@@ -52,18 +52,6 @@
     };
     date = "2024-06-12";
   };
-  copilot-lua = {
-    pname = "copilot-lua";
-    version = "a5c390f8d8e85b501b22dcb2f30e0cbbd69d5ff0";
-    src = fetchFromGitHub {
-      owner = "zbirenbaum";
-      repo = "copilot.lua";
-      rev = "a5c390f8d8e85b501b22dcb2f30e0cbbd69d5ff0";
-      fetchSubmodules = false;
-      sha256 = "sha256-8zXdRLugrLRK+sg9k9I1MSE5KAdnY017IkquCQisZt4=";
-    };
-    date = "2025-04-25";
-  };
   crates = {
     pname = "crates";
     version = "2c8f4fab02e3e9ea42c6ad9b547e4207a914a397";
