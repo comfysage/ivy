@@ -246,4 +246,7 @@ return {
       require("todo-comments").setup()
     end,
   },
+
+  -- dependencies
+  { "yosu.nvim" },
 }

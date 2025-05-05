@@ -692,6 +692,18 @@
     };
     date = "2024-04-29";
   };
+  yosu-nvim = {
+    pname = "yosu-nvim";
+    version = "553c8c526975c5107efde17950417f3738fbb72d";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "yosu.nvim";
+      rev = "553c8c526975c5107efde17950417f3738fbb72d";
+      fetchSubmodules = false;
+      sha256 = "sha256-bic9o81gkDLFV2K1HeSMg4xHofOzqebfvSqHl41XHps=";
+    };
+    date = "2024-06-17";
+  };
   zk-nvim = {
     pname = "zk-nvim";
     version = "d9e7442075d2241b90fc788a149c509ebc45f3cb";

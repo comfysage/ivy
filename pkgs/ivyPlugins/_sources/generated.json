@@ -1209,6 +1209,27 @@
         },
         "version": "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23"
     },
+    "yosu-nvim": {
+        "cargoLocks": null,
+        "date": "2024-06-17",
+        "extract": null,
+        "name": "yosu-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "comfysage",
+            "repo": "yosu.nvim",
+            "rev": "553c8c526975c5107efde17950417f3738fbb72d",
+            "sha256": "sha256-bic9o81gkDLFV2K1HeSMg4xHofOzqebfvSqHl41XHps=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "553c8c526975c5107efde17950417f3738fbb72d"
+    },
     "zk-nvim": {
         "cargoLocks": null,
         "date": "2025-05-01",
