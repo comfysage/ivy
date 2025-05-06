@@ -129,11 +129,10 @@ return {
                 },
                 kind_icon = {
                   text = function(ctx)
-                    local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
                     if ctx.kind == "Color" then
-                      kind_icon = "󱓻"
+                      ctx.kind_icon = "󱓻"
                     end
-                    return kind_icon .. ctx.icon_gap
+                    return ctx.kind_icon .. ctx.icon_gap
                   end,
                   highlight = function(ctx)
                     local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
