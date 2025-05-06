@@ -166,7 +166,8 @@ return {
 
           providers = {
             windsurf = {
-              name = 'windsurf', module = 'codeium.blink', async = true
+              name = 'windsurf', module = 'codeium.blink', async = true,
+              max_items = 2,
             },
           },
 
