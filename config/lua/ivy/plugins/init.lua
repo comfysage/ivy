@@ -34,6 +34,7 @@ return {
   -- keymaps
   {
     "keymaps.nvim",
+    lazy = false,
     priority = 1000,
     after = function()
       require("keymaps").setup()

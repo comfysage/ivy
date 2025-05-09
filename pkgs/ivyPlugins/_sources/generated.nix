@@ -562,15 +562,15 @@
   };
   shelf-nvim = {
     pname = "shelf-nvim";
-    version = "c580fbffa2599ab6236486d35102c30598f60812";
+    version = "6de47a367bc39eb058dd030be5b45c731314701d";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "shelf.nvim";
-      rev = "c580fbffa2599ab6236486d35102c30598f60812";
+      rev = "6de47a367bc39eb058dd030be5b45c731314701d";
       fetchSubmodules = false;
-      sha256 = "sha256-phO1/tOZ9Qq3M7no+G9PFPB+Gqf0eHSWnBw15SMEX3w=";
+      sha256 = "sha256-XNohRWnDq0Iu8Qn37o7hUVLyFLfwHXCyo/cNBuC0wg8=";
     };
-    date = "2024-06-24";
+    date = "2025-05-09";
   };
   snacks-nvim = {
     pname = "snacks-nvim";

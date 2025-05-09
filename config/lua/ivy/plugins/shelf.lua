@@ -1,6 +1,5 @@
 return {
-  "shelf.nvim",
-  event = "BufAdd",
+  "shelf.nvim", lazy = false, -- lazy-loading is handled by the plugin
   after = function()
     require("shelf").setup({})
 
