@@ -463,6 +463,18 @@
     start = "true";
     date = "2025-05-10";
   };
+  nvim-nio = {
+    pname = "nvim-nio";
+    version = "21f5324bfac14e22ba26553caf69ec76ae8a7662";
+    src = fetchFromGitHub {
+      owner = "nvim-neotest";
+      repo = "nvim-nio";
+      rev = "21f5324bfac14e22ba26553caf69ec76ae8a7662";
+      fetchSubmodules = false;
+      sha256 = "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8=";
+    };
+    date = "2025-01-20";
+  };
   nvim-tree = {
     pname = "nvim-tree";
     version = "e7d1b7dadc62fe2eccc17d814354b0a5688621ce";
