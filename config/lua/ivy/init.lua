@@ -81,7 +81,6 @@ require("lz.n").load({
                 marksman = {},
                 nil_ls = {},
                 nushell = {},
-                ols = {},
                 taplo = {},
                 teal_ls = {},
                 tinymist = {},

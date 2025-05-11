@@ -21,7 +21,6 @@
   luajitPackages,
   marksman,
   nil,
-  ols,
   selene,
   tailwindcss-language-server,
   taplo,
@@ -108,7 +107,6 @@
       "markdown_inline"
       "nix"
       "nu"
-      "odin"
       "properties"
       "python"
       "rasi"
@@ -222,7 +220,6 @@ wrapNeovim {
       haskell-language-server
       nodePackages.prettier
       proselint
-      ols
       taplo # toml
       luajitPackages.teal-language-server
       yaml-language-server # yaml
