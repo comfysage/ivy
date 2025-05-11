@@ -162,10 +162,10 @@ wrapNeovim {
     vimPlugins.cord-nvim
     (vimPlugins.windsurf-nvim.overrideAttrs {
       src = fetchFromGitHub {
-        owner = "exafunction";
+        owner = "Kurama622";
         repo = "windsurf.nvim";
-        rev = "821b570b526dbb05b57aa4ded578b709a704a38a";
-        hash = "sha256-TWezce2+XrkzaiW/V3VgfX3FMdS8qFE8/FfPEK/Ii84=";
+        rev = "729cdb4c8f10ea6d926d47937541591518ce4732";
+        hash = "sha256-EcG/oxWh1gKliqvaPDGPeqeaYdLklQl9Pb3ATh7i/Wg=";
       };
     })
   ];
