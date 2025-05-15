@@ -21,7 +21,7 @@ return {
           theme = "auto",
           disabled_filetypes = {
             statusline = { "dashboard", "alpha", "ministarter" },
-            winbar = { "NvimTree" },
+            winbar = { },
           },
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
@@ -67,8 +67,8 @@ return {
           lualine_z = { "location" },
         },
         tabline = {},
-        winbar = winbar,
-        inactive_winbar = winbar,
+        winbar = {},
+        inactive_winbar = {},
         extensions = {},
       })
     end,
