@@ -1,14 +1,5 @@
 vim.g.lsp_config = {
-  common = function()
-    require("lz.n").trigger_load({
-      "blink.cmp",
-      "lsp-status.nvim",
-      "schemastore.nvim",
-    })
-    local capabilities = require("blink.cmp").get_lsp_capabilities({}, true)
-
-    return { capabilities = capabilities }
-  end,
+  common = {},
   servers = function()
     return {
       astro = {},
