@@ -43,7 +43,7 @@ return {
 
   {
     "markit.nvim",
-    event = "BufAdd",
+    event = "UIEnter",
     after = function()
       require("markit").setup({
         -- whether to map keybinds or not. default true
