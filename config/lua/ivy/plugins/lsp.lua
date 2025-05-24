@@ -13,10 +13,6 @@ return {
         "stylua",
       })
       ---@diagnostic disable-next-line: missing-fields
-      sources:add("stylua"):with({
-        filetypes = { "lua" },
-      })
-      ---@diagnostic disable-next-line: missing-fields
       sources:add("prettier"):with({
         filetypes = { "html", "markdown", "astro", "vue" },
       })
