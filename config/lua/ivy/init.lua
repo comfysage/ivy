@@ -140,7 +140,7 @@ vim.iter(ipairs({
   {'cmds', event = 'VimEnter'},
   {'ft'},
   {'keybinds', event = 'UIEnter'},
-  {'lsp', event = 'BufEnter'},
+  {'lsp', event = { 'BufReadPre', 'BufNewFile' }},
   {'neovide', event = 'VimEnter'},
   {'options'},
 })):each(function(_, opts)
@@ -150,7 +150,7 @@ vim.iter(ipairs({
   end
   if opts.event then
     vim.api.nvim_create_autocmd(opts.event, {
-      group = vim.api.nvim_create_augroup('ivy:' .. opts.event .. '[' .. name .. ']', { clear = true }),
+      group = vim.api.nvim_create_augroup('ivy:' .. vim.inspect(opts.event) .. '[' .. name .. ']', { clear = true }),
       callback = function(_)
         load_cfg(name)
       end,
