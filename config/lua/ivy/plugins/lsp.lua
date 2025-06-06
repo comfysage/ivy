@@ -18,6 +18,13 @@ return {
       sources:add("prettier"):with({
         filetypes = { "html", "markdown", "astro", "vue" },
       })
+      sources:add({
+        name = "typstyle",
+        cmd = "typstyle",
+        method = "formatting",
+        filetypes = { "typst" },
+        stdin = true,
+      })
       vim.keymap.set("n", "<localleader>f", require("mossy").format)
     end,
   },
