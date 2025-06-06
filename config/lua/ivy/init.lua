@@ -141,7 +141,7 @@ vim.iter(ipairs({
   {'ft'},
   {'keybinds', event = 'UIEnter'},
   {'lsp', event = { 'BufReadPre', 'BufNewFile' }},
-  {'neovide', event = 'VimEnter'},
+  {'neovide', event = 'UIEnter'},
   {'options'},
 })):each(function(_, opts)
   local name = opts[1]
