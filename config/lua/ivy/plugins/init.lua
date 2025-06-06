@@ -2,6 +2,7 @@ return {
   -- tree view
   {
     "nvim-tree.lua",
+    event = "DeferredUIEnter",
     after = function()
       require("nvim-tree").setup({
         sync_root_with_cwd = true,
@@ -353,6 +354,7 @@ return {
   -- add better undo history
   {
     "undotree",
+    event = 'BufReadPost',
     after = function()
       vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
     end,

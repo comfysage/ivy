@@ -1,6 +1,7 @@
 return {
   {
     "catppuccin",
+    lazy = false,
     priority = 1000,
     after = function()
       require("catppuccin").setup({

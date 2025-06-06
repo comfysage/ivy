@@ -1,6 +1,7 @@
 return {
   {
     "lualine.nvim",
+    event = 'DeferredUIEnter',
     after = function()
       local lualine_require = require("lualine_require")
       lualine_require.require = require
@@ -140,6 +141,7 @@ return {
 
   {
     "fidget.nvim",
+    event = 'DeferredUIEnter',
     after = function()
       require("fidget").setup({
         notification = {

@@ -51,12 +51,14 @@ return {
 
   {
     "quill.nvim",
+    event = 'DeferredUIEnter',
     after = function()
       -- require("quill").setup()
     end,
   },
   {
     "symbol-usage.nvim",
+    event = 'BufReadPost',
     after = function()
       local SymbolKind = vim.lsp.protocol.SymbolKind
 
