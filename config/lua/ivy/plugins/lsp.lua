@@ -16,7 +16,7 @@ return {
       sources:add("prettier"):with({
         filetypes = { "html", "markdown", "astro", "vue" },
       })
-      vim.keymap.set("n", "<localleader>mf", require("mossy").format)
+      vim.keymap.set("n", "<localleader>f", require("mossy").format)
     end,
   },
   {

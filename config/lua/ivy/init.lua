@@ -121,9 +121,6 @@ vim.g.lsp_config = {
 
     local opts = { buffer = ev.buf }
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "<localleader>f", function()
-      vim.lsp.buf.format({ async = true })
-    end, opts)
   end,
 }
 
