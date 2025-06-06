@@ -407,7 +407,7 @@ return {
     "hunk.nvim",
     cmd = { "DiffEditor" },
     after = function()
-      require("lz.n").trigger_load("nui")
+      require("lz.n").trigger_load("nui.nvim")
 
       require("hunk").setup()
     end,
