@@ -3,6 +3,8 @@ return {
     "mossy.nvim",
     event = "DeferredUIEnter",
     after = function()
+      require("lz.n").trigger_load("nvim-nio")
+
       require("mossy").setup()
       local sources = require("mossy.sources")
       sources:setup({
