@@ -402,6 +402,18 @@
     };
     date = "2025-05-14";
   };
+  neo-tree = {
+    pname = "neo-tree";
+    version = "b287285c24ee5dca63d0000230a5a04e681b8db6";
+    src = fetchFromGitHub {
+      owner = "nvim-neo-tree";
+      repo = "neo-tree.nvim";
+      rev = "b287285c24ee5dca63d0000230a5a04e681b8db6";
+      fetchSubmodules = false;
+      sha256 = "sha256-rbIoXLGlldcgga58aLYaPYEqcch1GfJqJF8E7M8f3xo=";
+    };
+    date = "2025-06-06";
+  };
   neogen = {
     pname = "neogen";
     version = "d7f9461727751fb07f82011051338a9aba07581d";
@@ -474,18 +486,6 @@
       sha256 = "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8=";
     };
     date = "2025-01-20";
-  };
-  nvim-tree = {
-    pname = "nvim-tree";
-    version = "1c733e8c1957dc67f47580fe9c458a13b5612d5b";
-    src = fetchFromGitHub {
-      owner = "nvim-tree";
-      repo = "nvim-tree.lua";
-      rev = "1c733e8c1957dc67f47580fe9c458a13b5612d5b";
-      fetchSubmodules = false;
-      sha256 = "sha256-iCtFRqBhgpjHnTPNN3jagfm+qAGkb3glMxqRHJb+Iqk=";
-    };
-    date = "2025-06-02";
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";

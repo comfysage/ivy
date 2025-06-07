@@ -701,6 +701,27 @@
         },
         "version": "c53caee82da149b5355cf5f3189d2f341649d8e0"
     },
+    "neo-tree": {
+        "cargoLocks": null,
+        "date": "2025-06-06",
+        "extract": null,
+        "name": "neo-tree",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nvim-neo-tree",
+            "repo": "neo-tree.nvim",
+            "rev": "b287285c24ee5dca63d0000230a5a04e681b8db6",
+            "sha256": "sha256-rbIoXLGlldcgga58aLYaPYEqcch1GfJqJF8E7M8f3xo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b287285c24ee5dca63d0000230a5a04e681b8db6"
+    },
     "neogen": {
         "cargoLocks": null,
         "date": "2025-05-03",
@@ -828,27 +849,6 @@
             "type": "github"
         },
         "version": "21f5324bfac14e22ba26553caf69ec76ae8a7662"
-    },
-    "nvim-tree": {
-        "cargoLocks": null,
-        "date": "2025-06-02",
-        "extract": null,
-        "name": "nvim-tree",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-tree",
-            "repo": "nvim-tree.lua",
-            "rev": "1c733e8c1957dc67f47580fe9c458a13b5612d5b",
-            "sha256": "sha256-iCtFRqBhgpjHnTPNN3jagfm+qAGkb3glMxqRHJb+Iqk=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "1c733e8c1957dc67f47580fe9c458a13b5612d5b"
     },
     "nvim-treesitter": {
         "cargoLocks": null,

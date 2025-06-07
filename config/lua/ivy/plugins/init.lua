@@ -1,30 +1,53 @@
 return {
   -- tree view
   {
-    "nvim-tree.lua",
+    "neo-tree.nvim",
     event = "DeferredUIEnter",
     after = function()
-      require("nvim-tree").setup({
-        sync_root_with_cwd = true,
-        diagnostics = { enable = true },
-        renderer = {
-          indent_markers = { enable = true },
-          icons = { web_devicons = { folder = { enable = true } } },
+      require("lz.n").trigger_load("nui.nvim")
+      require("neo-tree").setup({
+        popup_border_style = "", -- use 'winborder'
+        filesystem = {
+          use_libuv_file_watcher = true,
         },
-        modified = { enable = true },
-      })
+        default_component_configs = {
+          icon = {
+            provider = function(icon, node) -- setup a custom icon provider
+              local text, hl
+              local mini_icons = require("mini.icons")
+              if node.type == "file" then -- if it's a file, set the text/hl
+                text, hl = mini_icons.get("file", node.name)
+              elseif node.type == "directory" then -- get directory icons
+                text, hl = mini_icons.get("directory", node.name)
+                -- only set the icon text if it is not expanded
+                if node:is_expanded() then
+                  text = nil
+                end
+              end
 
+              -- set the icon text/highlight only if it exists
+              if text then
+                icon.text = text
+              end
+              if hl then
+                icon.highlight = hl
+              end
+            end,
+          },
+          kind_icon = {
+            provider = function(icon, node)
+              local mini_icons = require("mini.icons")
+              icon.text, icon.highlight = mini_icons.get("lsp", node.extra.kind.name)
+            end,
+          },
+        },
+      })
       local keymaps = require("keymaps").setup()
-      keymaps.normal["<space>n"] = {
-        function()
-          require("nvim-tree.api").tree.open()
-        end,
-        "open nvim tree",
-      }
+      keymaps.normal["<space>n"] = { "<cmd>Neotree<cr>", "open tree view" }
 
       vim.api.nvim_create_autocmd("WinEnter", {
-        pattern = "NvimTree_*",
-        group = vim.api.nvim_create_augroup("filetype:nvimtree:options", { clear = true }),
+        pattern = "neo-tree *",
+        group = vim.api.nvim_create_augroup("filetype:neo-tree:options", { clear = true }),
         callback = function(ev)
           vim.api.nvim_set_option_value("sidescrolloff", 0, { win = ev.win })
         end,
@@ -216,7 +239,7 @@ return {
       }
       require("mini.icons").setup({
         extension = {
-          tera = { glyph = '󰅩', hl = 'MiniIconsOrange'  },
+          tera = { glyph = "󰅩", hl = "MiniIconsOrange" },
         },
         file = {
           [".ecrc"] = {
@@ -241,18 +264,18 @@ return {
           ["justfile"] = justfile,
         },
         lsp = {
-          color        = { glyph = '󰏘' },
-          constant     = { glyph = '󰏿' },
-          constructor  = { glyph = '󰒓' },
-          event        = { glyph = '󱐋' },
-          file         = { glyph = '󰈔' },
-          folder       = { glyph = '󰉋' },
-          ['function'] = { glyph = '󰊕' },
-          property     = { glyph = '󰖷' },
-          snippet      = { glyph = '󱄽' },
-          string       = { glyph = '“' },
-          value        = { glyph = '󰦨' },
-          variable     = { glyph = '󰆦' },
+          color = { glyph = "󰏘" },
+          constant = { glyph = "󰏿" },
+          constructor = { glyph = "󰒓" },
+          event = { glyph = "󱐋" },
+          file = { glyph = "󰈔" },
+          folder = { glyph = "󰉋" },
+          ["function"] = { glyph = "󰊕" },
+          property = { glyph = "󰖷" },
+          snippet = { glyph = "󱄽" },
+          string = { glyph = "“" },
+          value = { glyph = "󰦨" },
+          variable = { glyph = "󰆦" },
         },
       })
       require("mini.icons").mock_nvim_web_devicons()
@@ -290,10 +313,10 @@ return {
     event = "BufAdd",
     after = function()
       require("mini.operators").setup({
-        exchange = { prefix = 'Cx' },
-        multiply = { prefix = 'Cm' },
-        replace = { prefix = 'Cr' },
-        sort = { prefix = '' },
+        exchange = { prefix = "Cx" },
+        multiply = { prefix = "Cm" },
+        replace = { prefix = "Cr" },
+        sort = { prefix = "" },
       })
     end,
   },
@@ -354,7 +377,7 @@ return {
   -- add better undo history
   {
     "undotree",
-    event = 'BufReadPost',
+    event = "BufReadPost",
     after = function()
       vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
     end,

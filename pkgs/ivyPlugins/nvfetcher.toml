@@ -136,6 +136,10 @@ src.git = "https://github.com/echasnovski/mini.trailspace"
 fetch.github = "danymat/neogen"
 src.git = "https://github.com/danymat/neogen"
 
+[neo-tree]
+fetch.github = "nvim-neo-tree/neo-tree.nvim"
+src.git = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+
 [nui]
 fetch.github = "MunifTanjim/nui.nvim"
 src.git = "https://github.com/MunifTanjim/nui.nvim"
@@ -148,10 +152,6 @@ src.git = "https://github.com/nvchad/nvim-colorizer.lua"
 fetch.github = "neovim/nvim-lspconfig"
 src.git = "https://github.com/neovim/nvim-lspconfig"
 passthru.start = "true"
-
-[nvim-tree]
-fetch.github = "nvim-tree/nvim-tree.lua"
-src.git = "https://github.com/nvim-tree/nvim-tree.lua"
 
 [nvim-treesitter]
 fetch.github = "nvim-treesitter/nvim-treesitter"
