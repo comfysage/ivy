@@ -25,7 +25,9 @@ return {
         filetypes = { "typst" },
         stdin = true,
       })
-      vim.keymap.set("n", "<localleader>f", require("mossy").format)
+      vim.keymap.set({ "n", "v" }, "<localleader>f", function()
+        require("mossy").format()
+      end)
     end,
   },
   {
