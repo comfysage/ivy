@@ -154,6 +154,7 @@ vim.iter(ipairs({
       callback = function(_)
         load_cfg(name)
       end,
+      once = true,
     })
     return
   end
