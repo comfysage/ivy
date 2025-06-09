@@ -156,6 +156,7 @@ passthru.start = "true"
 [nvim-treesitter]
 fetch.github = "nvim-treesitter/nvim-treesitter"
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
+src.branch = "main"
 
 [plenary]
 fetch.github = "nvim-lua/plenary.nvim"

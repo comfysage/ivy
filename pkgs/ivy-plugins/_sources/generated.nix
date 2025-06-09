@@ -489,15 +489,15 @@
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "42fc28ba918343ebfd5565147a42a26580579482";
+    version = "04935dec426a366f097ec8ae78dab6cc02ddafa0";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "42fc28ba918343ebfd5565147a42a26580579482";
+      rev = "04935dec426a366f097ec8ae78dab6cc02ddafa0";
       fetchSubmodules = false;
-      sha256 = "sha256-CVs9FTdg3oKtRjz2YqwkMr0W5qYLGfVyxyhE3qnGYbI=";
+      sha256 = "sha256-n5PGGMaibIgcDo1FU/kgwzqboYup7PXwb2d9D8r8JsU=";
     };
-    date = "2025-05-24";
+    date = "2025-07-03";
   };
   plenary = {
     pname = "plenary";
