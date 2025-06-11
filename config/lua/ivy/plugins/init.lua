@@ -194,6 +194,10 @@ return {
           goto_last = "]H",
         },
       })
+
+      vim.keymap.set("n", "zd", function()
+        require("mini.diff").toggle_overlay()
+      end, { desc = "toggle diff overlay" })
     end,
   },
   {
