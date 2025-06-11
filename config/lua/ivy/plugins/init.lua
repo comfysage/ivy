@@ -223,6 +223,9 @@ return {
       })
       local keymaps = require("keymaps").setup()
       keymaps.normal["<space>sp"] = { require("mini.files").open, "Open Files", group = "UI" }
+      keymaps.normal["-"] = { function()
+        require("mini.files").open(vim.api.nvim_buf_get_name(0))
+      end }
     end,
   },
   {
