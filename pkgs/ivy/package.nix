@@ -109,6 +109,7 @@
       "nu"
       "properties"
       "python"
+      "qmljs"
       "rasi"
       "regex"
       "robots"
