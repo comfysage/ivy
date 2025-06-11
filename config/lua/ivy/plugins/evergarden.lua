@@ -9,7 +9,7 @@ return {
           variant = "fall",
         },
         editor = {
-          transparent_background = true,
+          transparent_background = not vim.g.neovide,
           sign = {},
           float = {},
           completion = {},

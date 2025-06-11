@@ -3,7 +3,7 @@ if not vim.g.neovide then
 end
 
 -- background --
-vim.g.neovide_transparency = 1.0
+vim.g.neovide_opacity = 1.0
 
 _G.neovide_alpha = function()
   return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
@@ -22,28 +22,27 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   group = vim.api.nvim_create_augroup("neovide:background", { clear = true }),
   callback = function()
     local normal = vim.api.nvim_get_hl(0, { name = "Normal" }) or { bg = 0, fg = 0 }
-    local bg = string.format("%x", normal.bg)
-    local fg = string.format("%x", normal.fg)
-    vim.g.neovide_background_color = bg .. _G.neovide_alpha()
-    vim.g.neovide_title_background_color = bg
-    vim.g.neovide_title_text_color = fg
+    local bg = normal.bg and string.format("%x", normal.bg)
+    local fg = normal.fg and string.format("%x", normal.fg)
+    if bg then
+      vim.g.neovide_background_color = bg .. _G.neovide_alpha()
+      vim.g.neovide_title_background_color = bg
+    end
+    if fg then
+      vim.g.neovide_title_text_color = fg
+    end
   end,
 })
 vim.api.nvim_exec_autocmds("ColorScheme", {})
 
 -- font & cursor --
 
-vim.g.fontsize = 14
-local fonts = {
-  { family = "Maple Mono" },
-  { family = "Symbols Nerd Font", size = 13 },
+vim.g.fontsize = 12
+vim.opt.guifont = {
+  "Maple Mono",
+  "Symbols Nerd Font",
+  string.format(":h%d", vim.g.fontsize)
 }
-vim.o.guifont = vim.iter(fonts):fold("", function(acc, font)
-  if #acc > 0 then
-    acc = acc .. ","
-  end
-  return acc .. string.format("%s:h%d", font.family, font.size or vim.g.fontsize)
-end)
 vim.g.lineheight = 1.2
 
 vim.opt.linespace = math.floor((vim.g.lineheight - 1) * vim.g.fontsize)
