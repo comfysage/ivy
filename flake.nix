@@ -2,7 +2,7 @@
   description = "comfysage's neovim config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
 
     systems.url = "github:nix-systems/default";
 
@@ -41,13 +41,23 @@
             }
           )
         );
+
+      mkPackages =
+        default: pkgs:
+        let
+          generatedPackages = import ./default.nix { inherit pkgs self; };
+          defaultPackage = lib.optionalAttrs default { default = generatedPackages.ivy; };
+        in
+        generatedPackages // defaultPackage;
     in
     {
-      formatter = forAllSystems (pkgs: pkgs.nixfmt-rfc-style);
+      formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
 
-      packages = forAllSystems (pkgs: import ./default.nix { inherit pkgs; });
+      packages = forAllSystems (mkPackages true);
 
-      overlays.default = _: prev: import ./default.nix { pkgs = prev; };
+      homeModules.default = import ./modules/home-manager.nix self;
+
+      overlays.default = _: mkPackages false;
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShellNoCC {
@@ -56,6 +66,24 @@
             pkgs.selene
             pkgs.stylua
           ] ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
+        };
+      });
+
+      apps = forAllSystems (pkgs: {
+        update = {
+          type = "app";
+          program = lib.getExe (
+            pkgs.writeShellApplication {
+              name = "update";
+              runtimeInputs = [ pkgs.nvfetcher ];
+
+              text = ''
+                pushd pkgs/ivy-plugins
+                nvfetcher
+                popd
+              '';
+            }
+          );
         };
       });
     };

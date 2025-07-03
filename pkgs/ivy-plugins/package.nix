@@ -1,10 +1,11 @@
 {
   lib,
+  newScope,
   vimUtils,
-  fetchpatch,
   callPackage,
 }:
 let
+  inherit (lib) makeScope;
   inherit (lib.trivial) importTOML;
   inherit (builtins)
     baseNameOf
@@ -48,8 +49,20 @@ let
 
   generatedPlugins = mapAttrs mkPlugin sources;
 
-  madePlugins = { };
+  madePlugins = {
+    nvim-treesitter = mkPlugin "nvim-treesitter" (
+      sources.nvim-treesitter
+      // {
+        postPatch = ''
+          shopt -s extglob
+          rm -rf -- !(runtime)
+          shopt -u extglob
+          mv runtime/queries queries
+        '';
+      }
+    );
+  };
 
   plugins = generatedPlugins // madePlugins;
 in
-plugins
+makeScope newScope (_: plugins)

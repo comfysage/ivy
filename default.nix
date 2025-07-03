@@ -6,11 +6,16 @@
   },
   lib ? pkgs.lib,
   system ? builtins.currentSystem,
+
+  # wow this is hacky
+  self ? { },
+  ivyVersion ? self.shortRev or self.dirtyRev or "unknown",
 }:
 let
-  packages = lib.packagesFromDirectoryRecursive {
-    directory = ./pkgs;
-    callPackage = lib.callPackageWith (pkgs // packages);
-  };
+  packages = lib.makeScope pkgs.newScope (self: {
+    ivy = self.callPackage ./pkgs/ivy/package.nix { inherit ivyVersion; };
+    ivyPlugins = self.callPackage ./pkgs/ivy-plugins/package.nix { };
+    wrapNeovim = self.callPackage ./pkgs/wrap-neovim/package.nix { };
+  });
 in
 packages
