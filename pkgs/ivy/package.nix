@@ -48,7 +48,7 @@
 
   deno,
   lazygit,
-  nodePackages,
+  prettier,
   nodejs-slim,
 
   # our beatiful wrapper
@@ -245,7 +245,7 @@ wrapNeovim {
       clang-tools
       gopls
       haskell-language-server
-      nodePackages.prettier
+      prettier
       proselint
       taplo # toml
       luajitPackages.teal-language-server
