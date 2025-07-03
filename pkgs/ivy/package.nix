@@ -1,6 +1,7 @@
 {
   lib,
   fetchFromGitHub,
+  stdenvNoCC,
 
   # get extra plugins we don't want to build
   vimPlugins,
@@ -9,6 +10,7 @@
   fd,
   fzf,
   ripgrep,
+  inotify-tools,
 
   # lsp
   bash-language-server,
@@ -55,108 +57,130 @@
   # settings
   includePerLanguageTooling ? true,
   ivyPlugins,
-
-  basePackage ? neovim-unwrapped,
   neovim-unwrapped,
-
-  nvim-treesitter,
-  treesitter ? nvim-treesitter.override {
-    grammars = [
-      "astro"
-      "bash"
-      "c"
-      "cmake"
-      "comment"
-      "commonlisp"
-      "cpp"
-      "css"
-      "csv"
-      "diff"
-      "dockerfile"
-      "editorconfig"
-      "fennel"
-      "fish"
-      "gdscript"
-      "git_config"
-      "git_rebase"
-      "gitattributes"
-      "gitcommit"
-      "gitignore"
-      "glsl"
-      "go"
-      "gomod"
-      "gosum"
-      "gotmpl"
-      "graphql"
-      "haskell"
-      "hlsl"
-      "html"
-      "hyprlang"
-      "ini"
-      "javascript"
-      "jsdoc"
-      "json"
-      "jsonc"
-      "just"
-      "lua"
-      "luadoc"
-      "luau"
-      "latex"
-      "make"
-      "markdown"
-      "markdown_inline"
-      "nix"
-      "nu"
-      "properties"
-      "python"
-      "qmljs"
-      "rasi"
-      "regex"
-      "robots"
-      "rust"
-      "scss"
-      "ssh_config"
-      "svelte"
-      "tera"
-      "tmux"
-      "toml"
-      "tsv"
-      "tsx"
-      "typescript"
-      "typst"
-      "udev"
-      "uxntal"
-      "vhs"
-      "vue"
-      "wgsl"
-      "wgsl_bevy"
-      "yaml"
-      "yuck"
-      "zig"
-
-    ];
-  },
+  basePackage ? neovim-unwrapped,
+  ivyVersion ? "unstable",
 }:
 let
-  inherit (lib.lists) flatten optionals;
-  inherit (builtins) attrValues removeAttrs;
+  inherit (lib)
+    pipe
+    isDerivation
+    flatten
+    optionals
+    attrValues
+    filter
+    filterAttrs
+    elem
+    partition
+    ;
+
+  partionPlugins =
+    plugins:
+    let
+      parts = partition (elem: elem.passthru.start or false) plugins;
+    in
+    {
+      start = parts.right;
+      opt = parts.wrong;
+    };
+
+  patrionedPlugins = pipe ivyPlugins [
+    attrValues
+    (filter isDerivation)
+    partionPlugins
+  ];
+
+  grammarsNames = [
+    "astro"
+    "bash"
+    "c"
+    "cmake"
+    "comment"
+    "commonlisp"
+    "cpp"
+    "css"
+    "csv"
+    "diff"
+    "dockerfile"
+    "editorconfig"
+    "fennel"
+    "fish"
+    "gdscript"
+    "git_config"
+    "git_rebase"
+    "gitattributes"
+    "gitcommit"
+    "gitignore"
+    "glsl"
+    "go"
+    "gomod"
+    "gosum"
+    "gotmpl"
+    "graphql"
+    "haskell"
+    "hlsl"
+    "html"
+    "hyprlang"
+    "ini"
+    "javascript"
+    "jsdoc"
+    "json"
+    "jsonc"
+    "just"
+    "lua"
+    "luadoc"
+    "luau"
+    "latex"
+    "make"
+    "markdown"
+    "markdown_inline"
+    "nix"
+    "nu"
+    "properties"
+    "python"
+    "qmljs"
+    "rasi"
+    "regex"
+    "robots"
+    "rust"
+    "scss"
+    "ssh_config"
+    "svelte"
+    "tera"
+    "tmux"
+    "toml"
+    "tsv"
+    "tsx"
+    "typescript"
+    "typst"
+    "udev"
+    "uxntal"
+    "vhs"
+    "vue"
+    "wgsl"
+    "wgsl_bevy"
+    "yaml"
+    "yuck"
+    "zig"
+  ];
 in
 wrapNeovim {
   pname = "ivy";
+  versionSuffix = ivyVersion;
 
   userConfig = ../../config;
 
   inherit basePackage;
 
-  plugins = flatten [
-    (attrValues (
-      removeAttrs ivyPlugins [
-        "override"
-        "overrideDerivation"
-      ]
-    ))
+  startPlugins = flatten [
+    patrionedPlugins.start
 
-    treesitter
+    # install our treesitter grammars
+    (attrValues (filterAttrs (n: _: elem n grammarsNames) vimPlugins.nvim-treesitter.grammarPlugins))
+  ];
+
+  optPlugins = flatten [
+    patrionedPlugins.opt
 
     # extra plugsns beacuse they often fail or need extra steps
     vimPlugins.blink-cmp
@@ -170,14 +194,19 @@ wrapNeovim {
     })
   ];
 
-  extraPackages =
+  extraPackages = flatten [
     [
       # external deps
       fzf
       fd
       ripgrep
     ]
-    ++ optionals includePerLanguageTooling [
+
+    (optionals stdenvNoCC.hostPlatform.isLinux [
+      inotify-tools # for file watching, the defaults kinda slow
+    ])
+
+    (optionals includePerLanguageTooling [
       # needed for copilot
       nodejs-slim
 
@@ -225,5 +254,6 @@ wrapNeovim {
       lazygit
       deno
       zls
-    ];
+    ])
+  ];
 }
