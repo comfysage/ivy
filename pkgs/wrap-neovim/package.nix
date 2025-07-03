@@ -105,6 +105,10 @@ lib.extendMkDerivation {
               path="''${resultingPaths[$i]}"
               dest="$out/$path"
 
+              if [[ -d "$dest" ]]; then
+                continue
+              fi
+
               mkdir -pv "$dest"
 
               tolink=("$source/"!(parser))
