@@ -43,10 +43,6 @@ vim.opt.foldlevelstart = 0
 vim.opt.foldnestmax = 4
 -- vim.opt.foldmethod = 'marker'
 
--- enable treesitter folds
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
 -- redefine word boundaries - '_' is a word separator, this helps with snake_case
 vim.opt.iskeyword:remove("_")
 
