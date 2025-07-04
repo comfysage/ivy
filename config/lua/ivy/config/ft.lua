@@ -18,3 +18,17 @@ vim.filetype.add({
     ["justfile"] = "just",
   },
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function(ev)
+    local ok = vim.treesitter.get_parser(ev.buf, nil, { error = false })
+    if not ok then
+      return
+    end
+
+    vim.api.nvim_buf_call(ev.buf, function()
+      vim.treesitter.start()
+    end)
+  end,
+})
