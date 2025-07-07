@@ -22,6 +22,10 @@ vim.filetype.add({
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   callback = function(ev)
+    if not vim.api.nvim_buf_is_loaded(ev.buf) then
+      return
+    end
+
     local ok = vim.treesitter.get_parser(ev.buf, nil, { error = false })
     if not ok then
       return
