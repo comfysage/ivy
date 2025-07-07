@@ -366,7 +366,11 @@ return {
   },
 
   -- lsp
-  { "rainbow-delimiters.nvim" },
+  { "rainbow-delimiters.nvim", before = function ()
+    vim.g.rainbow_delimiters = {
+      blacklist = { 'markdown', 'markdown_inline', 'help' },
+    }
+  end },
 
   -- rust lsp + formmating
   {
