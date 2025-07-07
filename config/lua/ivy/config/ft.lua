@@ -5,6 +5,7 @@ vim.filetype.add({
     rasi = "scss",
     envrc = "bash",
     tera = "tera",
+    qml = "qmljs",
   },
   pattern = {
     ["templates/.*%.html"] = "tera",
