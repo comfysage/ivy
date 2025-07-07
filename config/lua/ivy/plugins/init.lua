@@ -238,7 +238,8 @@ return {
         hl = "MiniIconsOrange",
       }
       require("mini.icons").setup({
-        extension = {
+        filetype = {
+          qmljs = { glyph = '󰫾', hl = 'MiniIconsAzure'  },
           tera = { glyph = "󰅩", hl = "MiniIconsOrange" },
         },
         file = {
