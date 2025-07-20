@@ -37,7 +37,7 @@
   # nix,
   statix,
   deadnix,
-  nixfmt-rfc-style,
+  nixfmt,
 
   # linting
   proselint,
@@ -234,7 +234,7 @@ wrapNeovim {
       nil
       statix
       deadnix
-      nixfmt-rfc-style
+      nixfmt
 
       # shell
       shfmt
