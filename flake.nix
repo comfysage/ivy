@@ -4,7 +4,10 @@
   inputs = {
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
 
-    systems.url = "github:nix-systems/default";
+    gift-wrap = {
+      url = "github:tgirlcloud/gift-wrap";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
@@ -19,10 +22,9 @@
   };
 
   outputs =
-    {
+    inputs@{
       self,
       nixpkgs,
-      systems,
       neovim-nightly-overlay,
       ...
     }:
@@ -30,10 +32,10 @@
       inherit (nixpkgs) lib;
 
       forAllSystems =
-        function:
-        lib.genAttrs (import systems) (
+        f:
+        lib.genAttrs lib.systems.flakeExposed (
           system:
-          function (
+          f (
             import nixpkgs {
               inherit system;
               config.allowUnfree = true;
@@ -45,7 +47,7 @@
       mkPackages =
         default: pkgs:
         let
-          generatedPackages = import ./default.nix { inherit pkgs self; };
+          generatedPackages = import ./default.nix { inherit pkgs inputs; };
           defaultPackage = lib.optionalAttrs default { default = generatedPackages.ivy; };
         in
         generatedPackages // defaultPackage;
@@ -55,7 +57,7 @@
 
       packages = forAllSystems (mkPackages true);
 
-      homeModules.default = import ./modules/home-manager.nix self;
+      homeModules.default = import ./modules/home-manager.nix inputs;
 
       overlays.default = _: mkPackages false;
 
@@ -65,7 +67,8 @@
             self.formatter.${pkgs.stdenv.hostPlatform.system}
             pkgs.selene
             pkgs.stylua
-          ] ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
+          ]
+          ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.nvfetcher;
         };
       });
 
