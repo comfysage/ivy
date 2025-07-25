@@ -202,3 +202,6 @@ keymaps.normal["<space>w"] = {
 
 -- [terminal]
 keymaps.terminal["<esc><esc>"] = { [[<C-\><C-n>]], "escape terminal mode" }
+
+-- [editing]
+keymaps.normal["g."] = { [[:%s/<c-r>"/<c-r>./g<cr>]], "repeat last edit for file" }
