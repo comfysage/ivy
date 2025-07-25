@@ -15,6 +15,9 @@ vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.numberwidth = 3
 
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "both"
+
 -- scroll offsets
 vim.o.scrolloff = 5
 vim.o.sidescrolloff = 15
