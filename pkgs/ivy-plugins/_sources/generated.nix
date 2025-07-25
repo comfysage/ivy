@@ -149,18 +149,6 @@
     };
     date = "2025-06-08";
   };
-  indent-blankline = {
-    pname = "indent-blankline";
-    version = "005b56001b2cb30bfa61b7986bc50657816ba4ba";
-    src = fetchFromGitHub {
-      owner = "lukas-reineke";
-      repo = "indent-blankline.nvim";
-      rev = "005b56001b2cb30bfa61b7986bc50657816ba4ba";
-      fetchSubmodules = false;
-      sha256 = "sha256-0q/V+b4UrDRnaC/eRWOi9HU9a61vQSAM9/C8ZQyKt+Y=";
-    };
-    date = "2025-03-18";
-  };
   keymaps-nvim = {
     pname = "keymaps-nvim";
     version = "221a1015f5c5f2530379983e1dc200a202f487dd";

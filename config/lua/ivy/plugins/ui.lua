@@ -163,49 +163,6 @@ return {
   },
 
   {
-    "indent-blankline.nvim",
-    event = "DeferredUIEnter",
-    after = function()
-      require("ibl").setup({
-        scope = { enabled = false },
-        indent = {
-          highlight = {
-            "IblIndent",
-            "RainbowRed",
-            "IblIndent",
-            "RainbowOrange",
-            "IblIndent",
-            "RainbowYellow",
-            "IblIndent",
-            "RainbowGreen",
-            "IblIndent",
-            "RainbowAqua",
-            "IblIndent",
-            "RainbowBlue",
-            "IblIndent",
-            "RainbowPurple",
-          },
-        },
-        exclude = {
-          filetypes = {
-            "alpha",
-            "fugitive",
-            "help",
-            "lazy",
-            "NvimTree",
-            "ToggleTerm",
-            "LazyGit",
-            "prompt",
-            "code-action-menu-menu",
-            "code-action-menu-warning-message",
-            "Trouble",
-          },
-        },
-      })
-    end,
-  },
-
-  {
     "nvim-colorizer.lua",
     event = "DeferredUIEnter",
     after = function()

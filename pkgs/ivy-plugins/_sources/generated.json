@@ -258,27 +258,6 @@
         },
         "version": "d8b6b030672f9f551a0e3526347699985a779d93"
     },
-    "indent-blankline": {
-        "cargoLocks": null,
-        "date": "2025-03-18",
-        "extract": null,
-        "name": "indent-blankline",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "lukas-reineke",
-            "repo": "indent-blankline.nvim",
-            "rev": "005b56001b2cb30bfa61b7986bc50657816ba4ba",
-            "sha256": "sha256-0q/V+b4UrDRnaC/eRWOi9HU9a61vQSAM9/C8ZQyKt+Y=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "005b56001b2cb30bfa61b7986bc50657816ba4ba"
-    },
     "keymaps-nvim": {
         "cargoLocks": null,
         "date": "2025-03-17",
