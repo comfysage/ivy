@@ -41,6 +41,7 @@ in
     programs.ivy = {
       package = pkgs'.ivy.override {
         inherit (cfg) includePerLanguageTooling;
+        basePackage = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
       };
 
       gui.package = pkgs.symlinkJoin {
