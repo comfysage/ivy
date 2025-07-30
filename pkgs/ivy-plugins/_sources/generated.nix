@@ -681,18 +681,6 @@
     };
     date = "2025-07-15";
   };
-  wakatime = {
-    pname = "wakatime";
-    version = "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23";
-    src = fetchFromGitHub {
-      owner = "wakatime";
-      repo = "vim-wakatime";
-      rev = "3cb40867cb5a3120f9bef76eff88edc7f1dc1a23";
-      fetchSubmodules = false;
-      sha256 = "sha256-HxLmX+qws8A6+mFBGMdru2E3NXJ91P0HtDKMX8ryMzI=";
-    };
-    date = "2024-04-29";
-  };
   yosu-nvim = {
     pname = "yosu-nvim";
     version = "b92a8d9e294025f1d249a24f0b2538c9a8a14007";

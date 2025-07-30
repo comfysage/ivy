@@ -394,14 +394,6 @@ return {
     end,
   },
 
-  -- track my time coding
-  {
-    "vim-wakatime",
-    enabled = function()
-      return vim.fn.glob("~/.wakatime.cfg") ~= "" or vim.fn.glob("$WAKATIME_HOME/.wakatime.cfg") ~= ""
-    end,
-  },
-
   {
     "direnv.nvim",
     enabled = function()
