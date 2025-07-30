@@ -147,7 +147,7 @@ return {
         notification = {
           override_vim_notify = true,
           view = { group_separator_hl = "MsgSeparator" },
-          window = { normal_hl = "NonText", winblend = 0 },
+          window = { normal_hl = "MsgArea", winblend = 100 },
         },
         progress = {
           display = {
