@@ -136,6 +136,7 @@ local load_cfg = function(name)
 end
 
 vim.iter(ipairs({
+  {'disable'},
   {'autocmds'},
   {'cmds', event = 'VimEnter'},
   {'ft'},
