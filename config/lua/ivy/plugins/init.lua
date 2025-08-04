@@ -417,6 +417,11 @@ return {
   },
 
   {
+    "vim-startuptime",
+    lazy = false,
+  },
+
+  {
     "nui.nvim",
   },
 

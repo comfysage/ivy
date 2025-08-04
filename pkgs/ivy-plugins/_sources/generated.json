@@ -1190,6 +1190,27 @@
         },
         "version": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4"
     },
+    "vim-startuptime": {
+        "cargoLocks": null,
+        "date": "2025-02-17",
+        "extract": null,
+        "name": "vim-startuptime",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "dstein64",
+            "repo": "vim-startuptime",
+            "rev": "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6",
+            "sha256": "sha256-0YLDkU1y89O5z7tgxaH5USQpJDfTuN0fsPJOAp6pa5Y=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6"
+    },
     "yosu-nvim": {
         "cargoLocks": null,
         "date": "2025-05-09",

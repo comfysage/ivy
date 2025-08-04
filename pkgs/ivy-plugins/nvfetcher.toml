@@ -232,6 +232,10 @@ src.git = "https://github.com/mbbill/undotree"
 fetch.github = "tpope/vim-fugitive"
 src.git = "https://github.com/tpope/vim-fugitive"
 
+[vim-startuptime]
+fetch.github = "dstein64/vim-startuptime"
+src.git = "https://github.com/dstein64/vim-startuptime"
+
 [yosu-nvim]
 fetch.github = "comfysage/yosu.nvim"
 src.git = "https://github.com/comfysage/yosu.nvim"

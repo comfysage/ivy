@@ -681,6 +681,18 @@
     };
     date = "2025-07-15";
   };
+  vim-startuptime = {
+    pname = "vim-startuptime";
+    version = "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6";
+    src = fetchFromGitHub {
+      owner = "dstein64";
+      repo = "vim-startuptime";
+      rev = "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6";
+      fetchSubmodules = false;
+      sha256 = "sha256-0YLDkU1y89O5z7tgxaH5USQpJDfTuN0fsPJOAp6pa5Y=";
+    };
+    date = "2025-02-17";
+  };
   yosu-nvim = {
     pname = "yosu-nvim";
     version = "b92a8d9e294025f1d249a24f0b2538c9a8a14007";
