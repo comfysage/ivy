@@ -9,35 +9,39 @@ winbar.default = {
 }
 vim.g.winbar_config = vim.tbl_deep_extend("force", winbar.default, vim.g.winbar_config or {})
 
-if winbar.loaded then
+if vim.g.winbar_loaded then
   return
 end
 
-winbar.loaded = true
+vim.g.winbar_loaded = true
 
 vim.api.nvim_create_autocmd(
   { "DirChanged", "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" },
   {
     group = vim.api.nvim_create_augroup("ivy:winbar", { clear = true }),
-    callback = function()
-      winbar.show()
+    callback = function(ev)
+      winbar.enable(ev.buf)
     end,
   }
 )
 
-winbar.show = function()
+winbar.enable = function(buf)
+  buf = buf or 0
   if
-    vim.tbl_contains(vim.g.winbar_config.exclude.buftype, vim.bo.buftype)
-    or vim.tbl_contains(vim.g.winbar_config.exclude.filetype, vim.bo.filetype)
+    vim.tbl_contains(vim.g.winbar_config.exclude.buftype, vim.bo[buf].buftype)
+    or vim.tbl_contains(vim.g.winbar_config.exclude.filetype, vim.bo[buf].filetype)
   then
     return
   end
 
-  local value = winbar.get()
-  local status_ok, _ = pcall(vim.api.nvim_set_option_value, "winbar", value or '', { scope = "local" })
-  if not status_ok then
+  local name = vim.api.nvim_buf_get_name(buf)
+  local m = string.match(name, '^%w+://')
+  if m ~= 'file://' then
     return
   end
+
+  vim.g.winbar = winbar.current
+  vim.api.nvim_set_option_value("winbar", '%!v:lua.vim.g.winbar()', { scope = "local" })
 end
 
 local function getfilename()
@@ -79,4 +83,10 @@ winbar.get = function()
   local p = vim.g.winbar_config.prefix
   local prefix = "%#" .. p[2] .. "#" .. p[1] .. "%*"
   return prefix .. " " .. getfilepath() .. getfilename()
+end
+
+winbar.current = function()
+  local win = vim.g.statusline_winid or 0
+  local buf = vim.api.nvim_win_get_buf(win)
+  return vim.api.nvim_buf_call(buf, winbar.get)
 end
