@@ -38,10 +38,6 @@ local function cbcall(fn, props)
   end
 end
 
--- set space as leader
-vim.g.mapleader = " "
-vim.g.maplocalleader = " m"
-
 -- [movement]
 kmgroup({
   { { "n", "v" }, "W", "g_", "goto last non empty of line" },

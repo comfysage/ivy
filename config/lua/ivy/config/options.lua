@@ -5,6 +5,10 @@ vim.opt.titlestring = '%{expand("%:p:~:.")} · nvim'
 vim.opt.errorbells = false
 vim.opt.mouse = "nv"
 
+-- set space as leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = " m"
+
 vim.opt.keywordprg = ":vertical botright help"
 
 -- true colors
