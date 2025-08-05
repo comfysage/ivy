@@ -961,7 +961,7 @@
     },
     "shelf-nvim": {
         "cargoLocks": null,
-        "date": "2025-08-01",
+        "date": "2025-08-05",
         "extract": null,
         "name": "shelf-nvim",
         "passthru": null,
@@ -973,12 +973,12 @@
             "name": null,
             "owner": "comfysage",
             "repo": "shelf.nvim",
-            "rev": "821ef0da188bc0e910d699416a2677699d7edcb6",
-            "sha256": "sha256-xbSGt7MziT/01ivdsYB3EV1dbsxKDCRaHagBEXpaeo4=",
+            "rev": "a6a5d5eb82cf7775d9a2c0db5d9589653763feae",
+            "sha256": "sha256-80StdDir85AnahxPYK9OqWcoW9F0/gpkWJVFNzcfGsw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "821ef0da188bc0e910d699416a2677699d7edcb6"
+        "version": "a6a5d5eb82cf7775d9a2c0db5d9589653763feae"
     },
     "snacks-nvim": {
         "cargoLocks": null,
