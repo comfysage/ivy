@@ -7,8 +7,6 @@ return {
     })
 
     -- toggle shelf ui
-    vim.keymap.set("n", "<leader>p", function()
-      require("shelf.ui").open()
-    end, { desc = "show bufferlist" })
+    vim.keymap.set("n", "<leader>p", "<Plug>(shelf-open)", { desc = "show bufferlist", silent = true })
   end,
 }
