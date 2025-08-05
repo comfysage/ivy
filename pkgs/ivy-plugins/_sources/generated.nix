@@ -210,18 +210,6 @@
     };
     date = "2025-07-21";
   };
-  markview = {
-    pname = "markview";
-    version = "ec33f2aa333ca1d76f51847922578434d7aeadf7";
-    src = fetchFromGitHub {
-      owner = "OXY2DEV";
-      repo = "markview.nvim";
-      rev = "ec33f2aa333ca1d76f51847922578434d7aeadf7";
-      fetchSubmodules = false;
-      sha256 = "sha256-mjofgl6B+NcvYFwRY1q2zeOMgiRGeV52dR0LzFhDhQ0=";
-    };
-    date = "2025-07-16";
-  };
   mini-ai = {
     pname = "mini-ai";
     version = "1cd4f021a05c29acd4ab511c0981da14217daf38";

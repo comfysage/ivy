@@ -1,49 +1,5 @@
 return {
   {
-    "markview.nvim",
-    lazy = false, -- this plugin does its own lazy loading
-    priority = 1200,
-    after = function()
-      local p = require("markview.presets")
-
-      require("markview").setup({
-        -- allows us to use hybrid mode
-        preview = {
-          modes = { "n", "i", "no", "c" },
-          hybrid_modes = { "i" },
-          callbacks = {
-            on_enable = function(_, win)
-              vim.wo[win].conceallevel = 2
-              vim.wo[win].concealcursor = "nc"
-            end,
-          },
-        },
-
-        markdown_inline = {
-          checkboxes = p.checkboxes.nerd,
-        },
-        markdown = {
-          headings = p.headings.glow,
-          list_items = {
-            -- indent_size = 0,
-            marker_minus = { add_padding = false },
-            marker_plus = { add_padding = false },
-            marker_star = { add_padding = false },
-            marker_dot = { add_padding = false },
-          },
-          horizontal_rules = p.horizontal_rules.thin,
-          code_blocks = {
-            pad_amount = 1,
-          },
-        },
-        typst = {
-          enable = false,
-        },
-      })
-    end,
-  },
-
-  {
     "zk-nvim",
     ft = "markdown",
     after = function()

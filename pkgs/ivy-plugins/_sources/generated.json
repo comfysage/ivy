@@ -365,27 +365,6 @@
         },
         "version": "6dc7f4c4f09f40fdf8d01f81a99518db2a4efa2d"
     },
-    "markview": {
-        "cargoLocks": null,
-        "date": "2025-07-16",
-        "extract": null,
-        "name": "markview",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "OXY2DEV",
-            "repo": "markview.nvim",
-            "rev": "ec33f2aa333ca1d76f51847922578434d7aeadf7",
-            "sha256": "sha256-mjofgl6B+NcvYFwRY1q2zeOMgiRGeV52dR0LzFhDhQ0=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "ec33f2aa333ca1d76f51847922578434d7aeadf7"
-    },
     "mini-ai": {
         "cargoLocks": null,
         "date": "2025-07-22",
