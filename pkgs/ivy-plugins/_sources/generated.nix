@@ -3,28 +3,28 @@
 {
   bqf = {
     pname = "bqf";
-    version = "dd17c73912487dccb372deff85d4262d2b89bc2b";
+    version = "17680cda3538913e88dd4c6456c837db9ace40ae";
     src = fetchFromGitHub {
       owner = "kevinhwang91";
       repo = "nvim-bqf";
-      rev = "dd17c73912487dccb372deff85d4262d2b89bc2b";
+      rev = "17680cda3538913e88dd4c6456c837db9ace40ae";
       fetchSubmodules = false;
-      sha256 = "sha256-WJrTOqqO4w9YRErTr6rGb8RxJA+HxKaZGlV2mGl64GM=";
+      sha256 = "sha256-ls7hlXRSO+Dhd8l+qRAMUF/MkuMuiYXkV6hyCyAKxcc=";
     };
-    date = "2025-07-20";
+    date = "2025-08-03";
   };
   catppuccin = {
     pname = "catppuccin";
-    version = "94f6e8a06b6bb7b8e5529cf9f93adb4654534241";
+    version = "76a8d0515024cc55d8bd26fc13f1af88faef3ebf";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "nvim";
-      rev = "94f6e8a06b6bb7b8e5529cf9f93adb4654534241";
+      rev = "76a8d0515024cc55d8bd26fc13f1af88faef3ebf";
       fetchSubmodules = false;
-      sha256 = "sha256-lnIlYUhUQXuoVWv000n5Ev4YNSZY+U70b3npZbMUDg4=";
+      sha256 = "sha256-3NVbHXmfaK/UmGz+EfLAT6iYV9F4CUGw/hB4RRccLGA=";
     };
     as = "catppuccin";
-    date = "2025-07-29";
+    date = "2025-08-04";
   };
   chai-nvim = {
     pname = "chai-nvim";
@@ -54,15 +54,15 @@
   };
   crates = {
     pname = "crates";
-    version = "c915ab5334a46178f64ce17ab606a79454bcd14f";
+    version = "fe66681d97a1eefddb5d7e48bd427b2cb0271881";
     src = fetchFromGitHub {
       owner = "saecki";
       repo = "crates.nvim";
-      rev = "c915ab5334a46178f64ce17ab606a79454bcd14f";
+      rev = "fe66681d97a1eefddb5d7e48bd427b2cb0271881";
       fetchSubmodules = false;
-      sha256 = "sha256-5Vu3VG6Ab1Rpqzeqoa0S9sfzco7wykrSt2eSXOajm14=";
+      sha256 = "sha256-EEJoMjNmOR1Rpr21aBubz5RkX1HAM7ciCS+J8UwxAjc=";
     };
-    date = "2025-07-22";
+    date = "2025-08-02";
   };
   direnv = {
     pname = "direnv";
@@ -78,16 +78,16 @@
   };
   evergarden = {
     pname = "evergarden";
-    version = "2bbb39161a770c758104af27fcf3634395b6f9ce";
+    version = "d93798f679c914c635d6a5a9b16a8a481b7c0779";
     src = fetchFromGitHub {
       owner = "everviolet";
       repo = "nvim";
-      rev = "2bbb39161a770c758104af27fcf3634395b6f9ce";
+      rev = "d93798f679c914c635d6a5a9b16a8a481b7c0779";
       fetchSubmodules = false;
-      sha256 = "sha256-CGXIhDb4fInFh4wcJRdYDGWpzK09C+RJ3QjEA3dv1yw=";
+      sha256 = "sha256-eNIWjNcQ/C703wqFCBTlGu3vdtBcZMccAQHIF0o7f+M=";
     };
     as = "evergarden";
-    date = "2025-07-23";
+    date = "2025-07-31";
   };
   fidget = {
     pname = "fidget";
@@ -115,15 +115,15 @@
   };
   fzf-lua = {
     pname = "fzf-lua";
-    version = "c6efab0fd1d8548a760e837629b84e400ac76c79";
+    version = "4ee42b241e57b77b4f3c61a018f496219f246901";
     src = fetchFromGitHub {
       owner = "ibhagwan";
       repo = "fzf-lua";
-      rev = "c6efab0fd1d8548a760e837629b84e400ac76c79";
+      rev = "4ee42b241e57b77b4f3c61a018f496219f246901";
       fetchSubmodules = false;
-      sha256 = "sha256-cfmepkDkpF04UBYRw1652mMHMDbugMb+7VAFxGsDqZc=";
+      sha256 = "sha256-V2Mpjt1+mxVJ8hFOb2uj/OsTKdkoqUqcNugZi++Sk6g=";
     };
-    date = "2025-07-29";
+    date = "2025-08-05";
   };
   hunk-nvim = {
     pname = "hunk-nvim";
@@ -151,15 +151,15 @@
   };
   keymaps-nvim = {
     pname = "keymaps-nvim";
-    version = "221a1015f5c5f2530379983e1dc200a202f487dd";
+    version = "f606f66b2aafbd0dbb4328aeab2b89e5dd9d3473";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "keymaps.nvim";
-      rev = "221a1015f5c5f2530379983e1dc200a202f487dd";
+      rev = "f606f66b2aafbd0dbb4328aeab2b89e5dd9d3473";
       fetchSubmodules = false;
-      sha256 = "sha256-afMAPHITrHKxHQKd64goFUncfbKH81t6Xyh5pFCiSTg=";
+      sha256 = "sha256-pqbZRu9dUh/0zhC+JTYFfb5vyq+XXxygHPbfNwDeUYk=";
     };
-    date = "2025-03-17";
+    date = "2025-07-31";
   };
   lsp-status = {
     pname = "lsp-status";
@@ -187,16 +187,16 @@
   };
   lz-n = {
     pname = "lz-n";
-    version = "dbf512563eef47b04c24684a6d934a429a7706fc";
+    version = "da88560e12afc0fdca3dd901282fd2b95836fbb8";
     src = fetchFromGitHub {
       owner = "nvim-neorocks";
       repo = "lz.n";
-      rev = "dbf512563eef47b04c24684a6d934a429a7706fc";
+      rev = "da88560e12afc0fdca3dd901282fd2b95836fbb8";
       fetchSubmodules = false;
-      sha256 = "sha256-2zuhF3+4fdFut7DBcf7oR19wtsahhSln33BB7iUjKF8=";
+      sha256 = "sha256-uMh7Q6PspGIRQtiIaiZYTWbilrB/8WMw17kW74e/syg=";
     };
     start = "true";
-    date = "2025-07-27";
+    date = "2025-08-03";
   };
   markit-nvim = {
     pname = "markit-nvim";
@@ -368,15 +368,15 @@
   };
   mossy-nvim = {
     pname = "mossy-nvim";
-    version = "1bbe62b732ef9dde75225e1ae4676142dbea2286";
+    version = "d966db40c985e4e25d94f05053db2ce85da1ec38";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "mossy.nvim";
-      rev = "1bbe62b732ef9dde75225e1ae4676142dbea2286";
+      rev = "d966db40c985e4e25d94f05053db2ce85da1ec38";
       fetchSubmodules = false;
-      sha256 = "sha256-vzGyD1R92vasgzyDGfkaAgrd3rMmxUpVbamhxoGaCBY=";
+      sha256 = "sha256-L0rTVkl5vLHHTUCj4r5jAzoRQ92ZzOWHqJvbB28yjA8=";
     };
-    date = "2025-06-08";
+    date = "2025-08-01";
   };
   neo-tree = {
     pname = "neo-tree";
@@ -428,28 +428,28 @@
   };
   nvim-lint = {
     pname = "nvim-lint";
-    version = "9c6207559297b24f0b7c32829f8e45f7d65b991f";
+    version = "7ef127aaede2a4d5ad8df8321e2eb4e567f29594";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-lint";
-      rev = "9c6207559297b24f0b7c32829f8e45f7d65b991f";
+      rev = "7ef127aaede2a4d5ad8df8321e2eb4e567f29594";
       fetchSubmodules = false;
-      sha256 = "sha256-ly5S0KAZN8Jeag22SCX+5XKqn3d+zCRN/8Jf5HlEn9I=";
+      sha256 = "sha256-GmXScmbXJx74RMgPhkdKtdODZqkOarFHE1XOiSnt5Bo=";
     };
-    date = "2025-07-20";
+    date = "2025-07-31";
   };
   nvim-lspconfig = {
     pname = "nvim-lspconfig";
-    version = "3db16ceeea947517f0dc1404c24dcb5ab0c91d26";
+    version = "9141be4c1332afc83bdf1b0278dbb030f75ff8e3";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "3db16ceeea947517f0dc1404c24dcb5ab0c91d26";
+      rev = "9141be4c1332afc83bdf1b0278dbb030f75ff8e3";
       fetchSubmodules = false;
-      sha256 = "sha256-IsdjkpE+T5irvmH5fam5EmsCpzwxSEiXV3r2iXsOVT0=";
+      sha256 = "sha256-FJGFwDeA0HxEEawnytdH663aFdf7lKKTwDZw9XX3Jxg=";
     };
     start = "true";
-    date = "2025-07-29";
+    date = "2025-08-05";
   };
   nvim-nio = {
     pname = "nvim-nio";
@@ -465,16 +465,16 @@
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "b26b4258294c742c2613a7d98fe53014d1c8fe49";
+    version = "4d9916e477e5d4e3b245845dfd285edf429f3252";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "b26b4258294c742c2613a7d98fe53014d1c8fe49";
+      rev = "4d9916e477e5d4e3b245845dfd285edf429f3252";
       fetchSubmodules = false;
-      sha256 = "sha256-l5FP91FjwBiqmO/xjqHdjsxEawBeWHqj5W0j2g/ZPwU=";
+      sha256 = "sha256-uiM64rs87jL/5u+v3EyYci1iJpJr1bWX0oklAUHr/uE=";
     };
     start = "true";
-    date = "2025-07-26";
+    date = "2025-08-05";
   };
   plenary = {
     pname = "plenary";
@@ -491,15 +491,15 @@
   };
   quill-nvim = {
     pname = "quill-nvim";
-    version = "08103ea02643a93065fe7dbc4ed22275719fc338";
+    version = "c3e40509b6f4a428091fb1e42c3e992ba0e09fb0";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "quill.nvim";
-      rev = "08103ea02643a93065fe7dbc4ed22275719fc338";
+      rev = "c3e40509b6f4a428091fb1e42c3e992ba0e09fb0";
       fetchSubmodules = false;
-      sha256 = "sha256-SDMoqQwY3cKj5c5wHFdE+G0ZWVIeLjF6DU67tfDfi8w=";
+      sha256 = "sha256-Q5/2V+KvZSJ375/4lGC5x3CwcS0oSs1gB59PRTCXkn4=";
     };
-    date = "2024-12-10";
+    date = "2025-08-05";
   };
   rainbow-delimiters = {
     pname = "rainbow-delimiters";
@@ -515,15 +515,15 @@
   };
   rustaceanvim = {
     pname = "rustaceanvim";
-    version = "f845bb055397019c4bc70f9c76376ca490f4c783";
+    version = "1fd56eeb60dc79621b3270bc71a5384ea340a027";
     src = fetchFromGitHub {
       owner = "mrcjkb";
       repo = "rustaceanvim";
-      rev = "f845bb055397019c4bc70f9c76376ca490f4c783";
+      rev = "1fd56eeb60dc79621b3270bc71a5384ea340a027";
       fetchSubmodules = false;
-      sha256 = "sha256-Iw3W0Inn0CpZTXyxk54WRtsXP5DYm+7bKH/HSO/diBo=";
+      sha256 = "sha256-yKj3zw6BG2yAfSuQKbkGSsRIP93qhp5uietHmtEMc6M=";
     };
-    date = "2025-07-27";
+    date = "2025-08-03";
   };
   sayama-nvim = {
     pname = "sayama-nvim";
@@ -539,15 +539,15 @@
   };
   schemastore = {
     pname = "schemastore";
-    version = "3cd1c7267282b4d89618674de36a6d866981347e";
+    version = "b7e9af87f062bcaee219f9d91bc157169bb20486";
     src = fetchFromGitHub {
       owner = "b0o";
       repo = "schemastore.nvim";
-      rev = "3cd1c7267282b4d89618674de36a6d866981347e";
+      rev = "b7e9af87f062bcaee219f9d91bc157169bb20486";
       fetchSubmodules = false;
-      sha256 = "sha256-7VZmb4JPlLF4tmEuuM69etdyCIxdH1PNZlT1mijzo7o=";
+      sha256 = "sha256-P/ua72g9/T6+dwWoL3eZ3oJsf7bVU2i6JgKfsF3YDGA=";
     };
-    date = "2025-07-29";
+    date = "2025-08-04";
   };
   shelf-nvim = {
     pname = "shelf-nvim";
@@ -623,15 +623,15 @@
   };
   treewalker = {
     pname = "treewalker";
-    version = "ae229700e1cce34198280f588568dc49c52d9eb1";
+    version = "357f8e11bd4a6e0a7bb3a4e49bfe9e1ed91e55f8";
     src = fetchFromGitHub {
       owner = "aaronik";
       repo = "treewalker.nvim";
-      rev = "ae229700e1cce34198280f588568dc49c52d9eb1";
+      rev = "357f8e11bd4a6e0a7bb3a4e49bfe9e1ed91e55f8";
       fetchSubmodules = false;
-      sha256 = "sha256-sBkn56nIlVzxb4UC7/VpQPzYHHc2EdB+lgcIw3YfOQQ=";
+      sha256 = "sha256-hwFA9A0vlnA7KL9JpTxSxOtozF8WlwPHd2uqH5vZ/E8=";
     };
-    date = "2025-07-16";
+    date = "2025-07-30";
   };
   trouble = {
     pname = "trouble";
