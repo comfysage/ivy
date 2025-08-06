@@ -47,6 +47,8 @@ vim.g.lineheight = 1.2
 
 vim.opt.linespace = math.floor((vim.g.lineheight - 1) * vim.g.fontsize)
 
+vim.g.neovide_cursor_smooth_blink = true
+
 -- behavior --
 vim.g.neovide_detach_on_quit = "always_detach"
 

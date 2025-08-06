@@ -249,11 +249,11 @@ local guicursor_opts = {
   },
   insert = {
     type = "vertical",
-    size = 200,
+    size = 20,
     animate = {
       wait = 50,
-      on = 150,
-      off = 150,
+      on = 250,
+      off = 250,
     },
   },
   replace = {
@@ -270,8 +270,8 @@ local guicursor_opts = {
 }
 
 local mode_lookup = {
-  normal = "n-v-c",
-  insert = "i-ci-ve",
+  normal = "n-v",
+  insert = "i-c-ci-ve",
   replace = "r-cr",
   operator = "o",
   showmatch = "sm",
