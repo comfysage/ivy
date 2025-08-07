@@ -11,6 +11,7 @@ return {
       require('lz.n').trigger_load({'windsurf.nvim'})
 
       local keymap = {
+        preset = 'none',
         ["<c-space>"] = { "show", "show_documentation", "hide_documentation" },
         ['<C-e>'] = { 'hide' },
         ['<CR>'] = { 'accept', 'fallback' },
@@ -23,8 +24,6 @@ return {
         ["<s-tab>"] = { "select_prev", "snippet_backward", "fallback" },
         ["<down>"] = { "select_next", "fallback" },
         ["<up>"] = { "select_prev", "fallback" },
-        ["<left>"] = { "fallback" },
-        ["<right>"] = { "fallback" },
 
         ['<c-b>'] = { 'scroll_documentation_up', 'fallback' },
         ['<c-f>'] = { 'scroll_documentation_down', 'fallback' },
