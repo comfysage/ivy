@@ -49,11 +49,11 @@ return {
         row = 1,
         col = 0,
         width = 1,
-        height = 1,
+        height = theme.winopts.height * 2,
         preview = {
           layout = "vertical",
           vertical = "up:50%",
-          border = "none",
+          border = vim.o.winborder,
         },
       }
 
@@ -62,6 +62,8 @@ return {
       theme.grep = theme.blines
       theme.grep_curbuf = theme.blines
       theme.git = { blame = { winopts = up } }
+      theme.quickfix = theme.blines
+      theme.builtin = { winopts = theme.winopts }
 
       local opts = {
         fzf_opts = {
