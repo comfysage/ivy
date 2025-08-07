@@ -223,9 +223,11 @@ return {
       })
       local keymaps = require("keymaps").setup()
       keymaps.normal["<space>sp"] = { require("mini.files").open, "Open Files", group = "UI" }
-      keymaps.normal["-"] = { function()
-        require("mini.files").open(vim.api.nvim_buf_get_name(0))
-      end }
+      keymaps.normal["-"] = {
+        function()
+          require("mini.files").open(vim.api.nvim_buf_get_name(0))
+        end,
+      }
     end,
   },
   {
@@ -246,7 +248,7 @@ return {
       }
       require("mini.icons").setup({
         filetype = {
-          qmljs = { glyph = '󰫾', hl = 'MiniIconsAzure'  },
+          qmljs = { glyph = "󰫾", hl = "MiniIconsAzure" },
           tera = { glyph = "󰅩", hl = "MiniIconsOrange" },
         },
         file = {
@@ -276,7 +278,7 @@ return {
           constant = { glyph = "󰏿" },
           constructor = { glyph = "󰒓" },
           event = { glyph = "󱐋" },
-          file = { glyph = '󰈚' },
+          file = { glyph = "󰈚" },
           ["function"] = { glyph = "󰊕" },
           property = { glyph = "󰖷" },
           snippet = { glyph = "󱄽" },
@@ -373,11 +375,14 @@ return {
   },
 
   -- lsp
-  { "rainbow-delimiters.nvim", before = function ()
-    vim.g.rainbow_delimiters = {
-      blacklist = { 'markdown', 'markdown_inline', 'help' },
-    }
-  end },
+  {
+    "rainbow-delimiters.nvim",
+    before = function()
+      vim.g.rainbow_delimiters = {
+        blacklist = { "markdown", "markdown_inline", "help" },
+      }
+    end,
+  },
 
   -- rust lsp + formmating
   {

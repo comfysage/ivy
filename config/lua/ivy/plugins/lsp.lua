@@ -34,14 +34,14 @@ return {
     "nvim-lint",
     event = "BufAdd",
     after = function()
-      require('lint').linters_by_ft = {
-        nix = { 'deadnix', 'statix' },
-        lua = { 'selene' },
-        markdown = { 'proselint' },
+      require("lint").linters_by_ft = {
+        nix = { "deadnix", "statix" },
+        lua = { "selene" },
+        markdown = { "proselint" },
       }
 
       vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-        group = vim.api.nvim_create_augroup('nvim-lint:try_lint', { clear = true }),
+        group = vim.api.nvim_create_augroup("nvim-lint:try_lint", { clear = true }),
         callback = function()
           require("lint").try_lint()
         end,
@@ -62,14 +62,14 @@ return {
 
   {
     "quill.nvim",
-    event = 'DeferredUIEnter',
+    event = "DeferredUIEnter",
     after = function()
       -- require("quill").setup()
     end,
   },
   {
     "symbol-usage.nvim",
-    event = 'BufReadPost',
+    event = "BufReadPost",
     after = function()
       local SymbolKind = vim.lsp.protocol.SymbolKind
 

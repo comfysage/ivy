@@ -2,13 +2,10 @@
 local keymaps = require("keymaps").setup()
 
 local function kmgroup(mappings)
-  coroutine.wrap(function ()
+  coroutine.wrap(function()
     vim.iter(ipairs(mappings)):each(function(_, map)
       if #map < 4 then
-        vim.notify(
-          string.format("[%s] %s", "kmgroup", "requires 4 paramaters per keymap"),
-          vim.log.levels.WARN
-        )
+        vim.notify(string.format("[%s] %s", "kmgroup", "requires 4 paramaters per keymap"), vim.log.levels.WARN)
         return
       end
       local mode = map[1]
@@ -16,15 +13,15 @@ local function kmgroup(mappings)
       local rhs = map[3]
       local desc = map[4]
 
-        vim.schedule(function()
-          vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, desc = desc })
-        end)
+      vim.schedule(function()
+        vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, desc = desc })
+      end)
     end)
   end)()
 end
 
 local function directionalmap(mode, lhs, f, fmt)
-  vim.iter(ipairs({ {"h", "left"}, {"j", "down"}, {"k", "up"}, {"l", "right"} })):each(function(_, map)
+  vim.iter(ipairs({ { "h", "left" }, { "j", "down" }, { "k", "up" }, { "l", "right" } })):each(function(_, map)
     local d = map[1]
     local _lhs = lhs:format(d)
     local direction = map[2]
@@ -135,8 +132,8 @@ vim.keymap.set("o", ";", "iw", { desc = "select inside word" })
 vim.keymap.set("v", ";", "iw", { desc = "select inside word" })
 
 -- [edit]
-vim.keymap.set({'n', 'v'}, "C", "\"_c", { desc = "non-copy change" })
-vim.keymap.set({'n', 'v'}, "D", "\"_d", { desc = "non-copy delete" })
+vim.keymap.set({ "n", "v" }, "C", '"_c', { desc = "non-copy change" })
+vim.keymap.set({ "n", "v" }, "D", '"_d', { desc = "non-copy delete" })
 vim.keymap.set("n", "<leader>D", "0d$", { desc = "clear current line" })
 
 -- [quickfix]

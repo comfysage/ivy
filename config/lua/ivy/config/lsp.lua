@@ -8,7 +8,7 @@ local function setup_ls(name, cfg)
   ---@diagnostic disable-next-line: param-type-mismatch
   local ok, result = pcall(vim.lsp.config, name, cfg)
   if not ok then
-    vim.notify(('unable to configure lsp server %s:\n\t%s'):format(name, result))
+    vim.notify(("unable to configure lsp server %s:\n\t%s"):format(name, result))
     return
   end
   vim.lsp.enable(name)

@@ -35,13 +35,13 @@ winbar.enable = function(buf)
   end
 
   local name = vim.api.nvim_buf_get_name(buf)
-  local m = string.match(name, '^%w+://')
-  if m ~= 'file://' then
+  local m = string.match(name, "^%w+://")
+  if m ~= "file://" then
     return
   end
 
   vim.g.winbar = winbar.current
-  vim.api.nvim_set_option_value("winbar", '%!v:lua.vim.g.winbar()', { scope = "local" })
+  vim.api.nvim_set_option_value("winbar", "%!v:lua.vim.g.winbar()", { scope = "local" })
 end
 
 local function getfilename()

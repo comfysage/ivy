@@ -41,7 +41,7 @@ vim.g.fontsize = 12
 vim.opt.guifont = {
   "Maple Mono",
   "Symbols Nerd Font",
-  string.format(":h%d", vim.g.fontsize)
+  string.format(":h%d", vim.g.fontsize),
 }
 vim.g.lineheight = 1.2
 

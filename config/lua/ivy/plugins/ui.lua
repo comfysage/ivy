@@ -1,16 +1,19 @@
 return {
   {
     "lualine.nvim",
-    event = 'DeferredUIEnter',
+    event = "DeferredUIEnter",
     after = function()
       local lualine_require = require("lualine_require")
       lualine_require.require = require
 
       local winbar = {
         lualine_c = {
-          { function()
-            return "▌"
-          end, color = "MiniIconsAzure" },
+          {
+            function()
+              return "▌"
+            end,
+            color = "MiniIconsAzure",
+          },
           { "filename", path = 1 },
           "searchcount",
         },
@@ -22,7 +25,7 @@ return {
           theme = "auto",
           disabled_filetypes = {
             statusline = { "dashboard", "alpha", "ministarter" },
-            winbar = { },
+            winbar = {},
           },
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
@@ -79,12 +82,12 @@ return {
     "tabby.nvim",
     event = "DeferredUIEnter",
     after = function()
-      local left_sep = ''
-      local right_sep = ''
+      local left_sep = ""
+      local right_sep = ""
 
-      local C = require('evergarden.colors').get()
-      local tab_hl = 'TabLine'
-      local cur_hl = 'TabLineSel'
+      local C = require("evergarden.colors").get()
+      local tab_hl = "TabLine"
+      local cur_hl = "TabLineSel"
       local o = {
         theme = {
           fill = { fg = C.overlay0 },
@@ -103,11 +106,11 @@ return {
           line.sep(left_sep, hl, opt.theme.fill),
           tab.in_jump_mode() and tab.jump_key() or {
             tab.number(),
-            margin = ' ',
+            margin = " ",
           },
           line.sep(right_sep, hl, opt.theme.fill),
           hl = hl,
-          margin = ' ',
+          margin = " ",
         }
       end
 
@@ -118,7 +121,7 @@ return {
           win.buf_name(),
           line.sep(right_sep, hl, opt.theme.fill),
           hl = hl,
-          margin = ' ',
+          margin = " ",
         }
       end
       require("tabby").setup({
@@ -136,12 +139,12 @@ return {
           }
         end,
       })
-    end
+    end,
   },
 
   {
     "fidget.nvim",
-    event = 'DeferredUIEnter',
+    event = "DeferredUIEnter",
     after = function()
       require("fidget").setup({
         notification = {

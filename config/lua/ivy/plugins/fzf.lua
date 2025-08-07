@@ -64,8 +64,8 @@ return {
       theme.git = { blame = { winopts = up }, commits = { winopts = up } }
       theme.quickfix = theme.blines
       theme.builtin = { winopts = theme.winopts }
-      theme.colorschemes = { winopts = vim.tbl_deep_extend('force', theme.winopts, {
-        height = 6
+      theme.colorschemes = { winopts = vim.tbl_deep_extend("force", theme.winopts, {
+        height = 6,
       }) }
 
       local opts = {

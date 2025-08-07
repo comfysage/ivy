@@ -30,7 +30,7 @@ return {
   -- allow me to paste images really easy
   {
     "img-clip.nvim",
-    ft = { 'markdown' },
+    ft = { "markdown" },
     after = function()
       require("img-clip").setup({
         filetypes = {

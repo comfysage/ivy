@@ -204,7 +204,7 @@ local borderchars = {
   },
 }
 
-vim.g.border_style = 'single'
+vim.g.border_style = "single"
 -- my custom borderchars
 vim.g.bc = borderchars[vim.g.border_style]
 vim.g.bc_all = {

@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
   group = vim.api.nvim_create_augroup("editor:macro:print", { clear = true }),
   callback = function(data)
     local msg = data.event == "RecordingEnter" and "Recording macro..." or "Macro recorded"
-    vim.api.nvim_echo({ { msg, "ModeMsg" } }, false, { })
+    vim.api.nvim_echo({ { msg, "ModeMsg" } }, false, {})
   end,
   desc = "Notify when recording macro",
 })

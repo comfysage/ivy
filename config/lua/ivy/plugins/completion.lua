@@ -3,18 +3,18 @@ return {
     "blink.cmp",
     event = "DeferredUIEnter",
     after = function()
-      local ok, icons = pcall(require, 'mini.icons')
+      local ok, icons = pcall(require, "mini.icons")
       if not ok then
-        vim.notify('could not find `mini.icons` module', vim.log.leves.WARN)
+        vim.notify("could not find `mini.icons` module", vim.log.leves.WARN)
       end
 
-      require('lz.n').trigger_load({'windsurf.nvim'})
+      require("lz.n").trigger_load({ "windsurf.nvim" })
 
       local keymap = {
-        preset = 'none',
+        preset = "none",
         ["<c-space>"] = { "show", "show_documentation", "hide_documentation" },
-        ['<C-e>'] = { 'hide' },
-        ['<CR>'] = { 'accept', 'fallback' },
+        ["<C-e>"] = { "hide" },
+        ["<CR>"] = { "accept", "fallback" },
 
         ["<tab>"] = {
           "select_next",
@@ -25,8 +25,8 @@ return {
         ["<down>"] = { "select_next", "fallback" },
         ["<up>"] = { "select_prev", "fallback" },
 
-        ['<c-b>'] = { 'scroll_documentation_up', 'fallback' },
-        ['<c-f>'] = { 'scroll_documentation_down', 'fallback' },
+        ["<c-b>"] = { "scroll_documentation_up", "fallback" },
+        ["<c-f>"] = { "scroll_documentation_down", "fallback" },
       }
 
       local ok, result = pcall(require("blink.cmp").setup, {
@@ -67,31 +67,31 @@ return {
 
         appearance = {
           kind_icons = {
-            Class = icons.get('lsp', 'class'),
-            Color = icons.get('lsp', 'color'),
-            Constant = icons.get('lsp', 'constant'),
-            Constructor = icons.get('lsp', 'constructor'),
-            Enum = icons.get('lsp', 'enum'),
-            EnumMember = icons.get('lsp', 'enummember'),
-            Event = icons.get('lsp', 'event'),
-            Field = icons.get('lsp', 'field'),
-            File = icons.get('lsp', 'file'),
-            Folder = icons.get('lsp', 'folder'),
-            Function = icons.get('lsp', 'function'),
-            Interface = icons.get('lsp', 'interface'),
-            Keyword = icons.get('lsp', 'keyword'),
-            Method = icons.get('lsp', 'method'),
-            Module = icons.get('lsp', 'module'),
-            Operator = icons.get('lsp', 'operator'),
-            Property = icons.get('lsp', 'property'),
-            Reference = icons.get('lsp', 'reference'),
-            Snippet = icons.get('lsp', 'snippet'),
-            Struct = icons.get('lsp', 'struct'),
-            Text = icons.get('lsp', 'text'),
-            TypeParameter = icons.get('lsp', 'typeparameter'),
-            Unit = icons.get('lsp', 'unit'),
-            Value = icons.get('lsp', 'value'),
-            Variable = icons.get('lsp', 'variable'),
+            Class = icons.get("lsp", "class"),
+            Color = icons.get("lsp", "color"),
+            Constant = icons.get("lsp", "constant"),
+            Constructor = icons.get("lsp", "constructor"),
+            Enum = icons.get("lsp", "enum"),
+            EnumMember = icons.get("lsp", "enummember"),
+            Event = icons.get("lsp", "event"),
+            Field = icons.get("lsp", "field"),
+            File = icons.get("lsp", "file"),
+            Folder = icons.get("lsp", "folder"),
+            Function = icons.get("lsp", "function"),
+            Interface = icons.get("lsp", "interface"),
+            Keyword = icons.get("lsp", "keyword"),
+            Method = icons.get("lsp", "method"),
+            Module = icons.get("lsp", "module"),
+            Operator = icons.get("lsp", "operator"),
+            Property = icons.get("lsp", "property"),
+            Reference = icons.get("lsp", "reference"),
+            Snippet = icons.get("lsp", "snippet"),
+            Struct = icons.get("lsp", "struct"),
+            Text = icons.get("lsp", "text"),
+            TypeParameter = icons.get("lsp", "typeparameter"),
+            Unit = icons.get("lsp", "unit"),
+            Value = icons.get("lsp", "value"),
+            Variable = icons.get("lsp", "variable"),
           },
         },
 
@@ -111,7 +111,7 @@ return {
             min_width = vim.o.pumwidth,
             max_height = vim.o.pumheight,
             scrolloff = 0,
-            border = 'none',
+            border = "none",
 
             draw = {
               -- align_to = "label", -- or 'none' to disable, or 'cursor' to align to the cursor
@@ -135,16 +135,16 @@ return {
                     return ctx.kind_icon .. ctx.icon_gap
                   end,
                   highlight = function(ctx)
-                    local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+                    local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
                     return hl
                   end,
                 },
                 kind = {
                   highlight = function(ctx)
-                    local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+                    local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
                     return hl
                   end,
-                }
+                },
               },
             },
           },
@@ -165,7 +165,9 @@ return {
 
           providers = {
             windsurf = {
-              name = 'windsurf', module = 'codeium.blink', async = true,
+              name = "windsurf",
+              module = "codeium.blink",
+              async = true,
               max_items = 2,
             },
           },
@@ -177,7 +179,7 @@ return {
                 if item.kind == require("blink.cmp.types").CompletionItemKind.Snippet then
                   item.score_offset = item.score_offset + 1
                 end
-                if item.source == 'windsurf' then
+                if item.source == "windsurf" then
                   item.score_offset = item.score_offset + 2
                 end
                 return item
@@ -218,9 +220,9 @@ return {
 
   -- sources
   {
-    'windsurf.nvim',
+    "windsurf.nvim",
     after = function()
-      require('codeium').setup({
+      require("codeium").setup({
         enable_cmp_source = false,
       })
     end,
