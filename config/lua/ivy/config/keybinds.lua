@@ -139,6 +139,24 @@ vim.keymap.set({'n', 'v'}, "C", "\"_c", { desc = "non-copy change" })
 vim.keymap.set({'n', 'v'}, "D", "\"_d", { desc = "non-copy delete" })
 vim.keymap.set("n", "<leader>D", "0d$", { desc = "clear current line" })
 
+-- [quickfix]
+vim.keymap.set("n", "zq", function()
+  if vim.bo[0].buftype == "quickfix" then
+    vim.cmd([[cclose]])
+    return
+  end
+  vim.cmd([[botright copen]])
+end, { desc = "toggle quickfix" })
+
+-- [diff]
+vim.keymap.set("n", "zd", function()
+  if vim.o.diff then
+    vim.cmd([[diffoff]])
+    return
+  end
+  vim.cmd([[diffthis]])
+end, { desc = "toggle diff mode" })
+
 -- [recording]
 kmgroup({
   { "n", "Q", "q", "record macro" },
