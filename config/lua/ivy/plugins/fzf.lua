@@ -152,7 +152,7 @@ return {
         require("fzf-lua").files,
         "find files",
       }
-      keymaps.normal["<leader>fr"] = { require("fzf-lua").live_grep, "grep through all files" }
+      keymaps.normal["<leader>fg"] = { require("fzf-lua").live_grep, "grep through all files" }
       keymaps.normal["<leader>fh"] = { require("fzf-lua").helptags, "search help tags" }
       keymaps.normal["<leader>fq"] = { require("fzf-lua").quickfix, "search quick fix list" }
       keymaps.normal["<leader>ft"] = {
