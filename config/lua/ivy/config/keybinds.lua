@@ -66,6 +66,7 @@ kmgroup({
 -- [file]
 kmgroup({
   { "n", "<C-s>", vim.cmd.update, "save file" },
+  { "n", "<C-j>", "<C-^>", "edit alt file" },
 })
 
 -- [window movement]
