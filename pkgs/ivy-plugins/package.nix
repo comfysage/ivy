@@ -61,6 +61,15 @@ let
         '';
       }
     );
+
+    evergarden = generatedPlugins.evergarden.overrideAttrs (oa: {
+      postInstall = ''
+        mkdir $out/.git
+        cat > $out/.git/HEAD <<EOF
+        ${oa.src.rev}
+        EOF
+      '';
+    });
   };
 
   plugins = generatedPlugins // madePlugins;
