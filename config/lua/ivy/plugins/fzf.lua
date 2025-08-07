@@ -61,9 +61,12 @@ return {
       theme.lines = theme.blines
       theme.grep = theme.blines
       theme.grep_curbuf = theme.blines
-      theme.git = { blame = { winopts = up } }
+      theme.git = { blame = { winopts = up }, commits = { winopts = up } }
       theme.quickfix = theme.blines
       theme.builtin = { winopts = theme.winopts }
+      theme.colorschemes = { winopts = vim.tbl_deep_extend('force', theme.winopts, {
+        height = 6
+      }) }
 
       local opts = {
         fzf_opts = {
