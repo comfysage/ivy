@@ -153,7 +153,6 @@ return {
         "find files",
       }
       keymaps.normal["<leader>fr"] = { require("fzf-lua").live_grep, "grep through all files" }
-      keymaps.normal["<leader>fs"] = { "<cmd>SessionManager load_session<cr>", "show nvim sessions" }
       keymaps.normal["<leader>fh"] = { require("fzf-lua").helptags, "search help tags" }
       keymaps.normal["<leader>fq"] = { require("fzf-lua").quickfix, "search quick fix list" }
       keymaps.normal["<leader>ft"] = {
