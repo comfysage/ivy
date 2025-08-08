@@ -1,26 +1,26 @@
-vim.opt.encoding = "utf-8"
+vim.o.encoding = "utf-8"
 
-vim.opt.title = true
-vim.opt.titlestring = '%{expand("%:p:~:.")} · nvim'
-vim.opt.errorbells = false
-vim.opt.mouse = "nv"
+vim.o.title = true
+vim.o.titlestring = '%{expand("%:p:~:.")} · nvim'
+vim.o.errorbells = false
+vim.o.mouse = "nv"
 
 -- set space as leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " m"
 
-vim.opt.keywordprg = ":vertical botright help"
+vim.o.keywordprg = ":vertical botright help"
 
 -- true colors
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
 -- line numbers
-vim.opt.number = true
-vim.opt.relativenumber = false
-vim.opt.numberwidth = 3
+vim.o.number = true
+vim.o.relativenumber = false
+vim.o.numberwidth = 3
 
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = "both"
+vim.o.cursorline = true
+vim.o.cursorlineopt = "both"
 
 -- scroll offsets
 vim.o.scrolloff = 5
@@ -29,7 +29,7 @@ vim.o.sidescrolloff = 15
 -- completion height
 vim.o.pumheight = 15
 vim.opt.wildoptions = { "fuzzy", "pum", "tagfile" }
-vim.opt.wildmode = "longest:full,full"
+vim.opt.wildmode = { "longest:full", "full" }
 vim.opt.completeopt = { "fuzzy", "menu", "menuone", "noinsert", "preview" }
 
 -- split directions
@@ -37,24 +37,24 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 -- search settings
-vim.opt.incsearch = true
-vim.opt.hlsearch = true
+vim.o.incsearch = true
+vim.o.hlsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- substitution with preview window
-vim.opt.inccommand = "split"
+vim.o.inccommand = "split"
 
 -- folding
-vim.opt.foldenable = false
-vim.opt.foldlevelstart = 0
-vim.opt.foldnestmax = 4
--- vim.opt.foldmethod = 'marker'
+vim.o.foldenable = false
+vim.o.foldlevelstart = 0
+vim.o.foldnestmax = 4
+-- vim.o.foldmethod = 'marker'
 
 -- redefine word boundaries - '_' is a word separator, this helps with snake_case
 vim.opt.iskeyword:remove("_")
 
 -- allow cursor to move paste the end of the line in visual block mode
-vim.opt.virtualedit = "block"
+vim.o.virtualedit = "block"
 
 -- indentations settings
 vim.o.shiftwidth = 2
@@ -64,7 +64,7 @@ vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.smarttab = true
 -- Enable break indent
-vim.opt.breakindent = true
+vim.o.breakindent = true
 vim.o.wrap = false
 
 -- always show 1 column of sign column (gitsigns, etc.)
@@ -73,40 +73,40 @@ vim.o.signcolumn = "yes:1"
 -- hide search notices, intro
 vim.opt.shortmess:append("sI")
 
-vim.opt.formatoptions = "tcrqj"
+vim.o.formatoptions = "tcrqj"
 
 -- hide extra text
-vim.opt.conceallevel = 2
-vim.opt.concealcursor = "c"
+vim.o.conceallevel = 2
+vim.o.concealcursor = "c"
 
 -- nice font icons or something
 vim.g.have_nerd_font = true
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.o.updatetime = 250
 
-vim.opt.timeout = false
+vim.o.timeout = false
 -- Decrease mapped sequence wait time - displays which-key popup sooner
-vim.opt.timeoutlen = 0
+vim.o.timeoutlen = 0
 
 -- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
-vim.opt.showcmd = false
+vim.o.showmode = false
+vim.o.showcmd = false
 vim.o.showtabline = 2
 vim.o.cmdheight = 0
 -- global statusline
 vim.o.laststatus = 3
 
 -- use rg for grepping
-vim.opt.grepprg = vim.fn.executable("rg") == 1 and "rg --vimgrep" or "grep -n $* /dev/null"
-vim.opt.grepformat = "%f:%l:%c:%m"
+vim.o.grepprg = vim.fn.executable("rg") == 1 and "rg --vimgrep" or "grep -n $* /dev/null"
+vim.o.grepformat = "%f:%l:%c:%m"
 
 -- let me have spelling checking for english
 vim.opt.spelllang = { "en" }
 vim.opt.spelloptions:append("noplainbuffer")
 
 -- indent blank line imporvments
-vim.opt.list = true
+vim.o.list = true
 
 vim.o.shell = os.getenv("SHELL") or "/bin/sh"
 if vim.fn.has("unix") == 1 then
@@ -114,12 +114,12 @@ if vim.fn.has("unix") == 1 then
 end
 
 -- disable swap & backup, and configure undo files
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = vim.fn.stdpath("state") .. "/undodir"
-vim.opt.undofile = true
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = vim.fn.stdpath("state") .. "/undodir"
+vim.o.undofile = true
 -- dont unload abandoned buffers
-vim.opt.hidden = true
+vim.o.hidden = true
 
 ---@type { [string]: { style: string, ['vert'|'vertleft'|'vertright'|'horiz'|'horizup'|'horizdown'|'verthoriz'|'topleft'|'topright'|'botleft'|'botright']: string, bottom?: string } }
 local borderchars = {
@@ -230,7 +230,7 @@ vim.opt.fillchars:append({
   verthoriz = vim.g.bc.verthoriz,
 })
 
-vim.opt.winborder = vim.g.border_style
+vim.o.winborder = vim.g.border_style
 
 -- rust save
 vim.g.rustfmt_autosave = 1
