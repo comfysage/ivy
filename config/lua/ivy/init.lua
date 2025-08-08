@@ -87,43 +87,8 @@ vim.g.lsp_config = {
       zls = {},
     }
   end,
-  on_attach = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-
-    if client == nil then
-      return
-    end
-
-    if client.server_capabilities.inlayHintProvider then
-      vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
-    end
-
-    if client.server_capabilities.documentHighlightProvider then
-      local group = vim.api.nvim_create_augroup(string.format("lsp:document_highlight:%d", ev.buf), { clear = true })
-      vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-        group = group,
-        buffer = ev.buf,
-        callback = function()
-          vim.lsp.buf.clear_references()
-          vim.lsp.buf.document_highlight()
-        end,
-        desc = "highlight lsp reference",
-      })
-      vim.api.nvim_create_autocmd("CursorMoved", {
-        group = group,
-        buffer = ev.buf,
-        callback = function()
-          vim.lsp.buf.clear_references()
-        end,
-        desc = "clear lsp references",
-      })
-    end
-
-    if client.server_capabilities.linkedEditingRangeProvider then
-      vim.lsp.linked_editing_range.enable(true, { client_id = client.id })
-    end
-
-    local opts = { buffer = ev.buf }
+  on_attach = function(_, buf)
+    local opts = { buffer = buf }
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   end,
 }
@@ -146,7 +111,6 @@ vim
     { "cmds", event = "VimEnter" },
     { "ft" },
     { "keybinds", event = "UIEnter" },
-    { "lsp", event = { "BufReadPre", "BufNewFile" } },
     { "neovide", event = "UIEnter" },
     { "options" },
   }))
