@@ -108,7 +108,10 @@ vim.opt.spelloptions:append("noplainbuffer")
 -- indent blank line imporvments
 vim.opt.list = true
 
-vim.opt.shell = os.getenv("SHELL") or "/bin/sh"
+vim.o.shell = os.getenv("SHELL") or "/bin/sh"
+if vim.fn.has("unix") == 1 then
+  vim.o.shell = "/bin/sh"
+end
 
 -- disable swap & backup, and configure undo files
 vim.opt.swapfile = false
