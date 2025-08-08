@@ -1,3 +1,9 @@
+if vim.g.loaded_grep then
+  return
+end
+
+vim.g.loaded_grep = true
+
 local function grep(props)
   local grepcmd, n = vim.o.grepprg:gsub("%$%*", props.args)
   if n == 0 then
@@ -43,16 +49,6 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     vim.cmd([[ cclose|botright ]] .. " " .. (math.min(10, #list)) .. "cwindow")
   end,
 })
-
-vim.keymap.set("n", "<leader>/", ":Grep ", { noremap = true, silent = false })
-vim.keymap.set("x", "<leader>/", function()
-  local lines = vim.fn.getregion(vim.fn.getpos("v"), vim.fn.getpos("."), { type = vim.api.nvim_get_mode().mode })
-  if #lines ~= 1 then
-    return ":Grep "
-  end
-  local line = string.gsub(lines[1], "<", [[<lt>]])
-  return ":Grep " .. line
-end, { noremap = true, silent = false, expr = true })
 
 vim.keymap.set("n", "<leader>/", ":Grep ", { noremap = true, silent = false })
 vim.keymap.set("x", "<leader>/", function()

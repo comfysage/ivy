@@ -9,11 +9,11 @@ winbar.default = {
 }
 vim.g.winbar_config = vim.tbl_deep_extend("force", winbar.default, vim.g.winbar_config or {})
 
-if vim.g.winbar_loaded then
+if vim.g.loaded_winbar then
   return
 end
 
-vim.g.winbar_loaded = true
+vim.g.loaded_winbar = true
 
 vim.api.nvim_create_autocmd(
   { "DirChanged", "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" },
@@ -36,7 +36,7 @@ winbar.enable = function(buf)
 
   local name = vim.api.nvim_buf_get_name(buf)
   local m = string.match(name, "^%w+://")
-  if m ~= "file://" then
+  if m and m ~= "file://" then
     return
   end
 
