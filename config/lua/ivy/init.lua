@@ -119,6 +119,10 @@ vim.g.lsp_config = {
       })
     end
 
+    if client.server_capabilities.linkedEditingRangeProvider then
+      vim.lsp.linked_editing_range.enable(true, { client_id = client.id })
+    end
+
     local opts = { buffer = ev.buf }
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   end,
