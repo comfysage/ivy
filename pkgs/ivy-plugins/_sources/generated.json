@@ -132,7 +132,7 @@
     },
     "evergarden": {
         "cargoLocks": null,
-        "date": "2025-07-31",
+        "date": "2025-08-11",
         "extract": null,
         "name": "evergarden",
         "passthru": {
@@ -146,12 +146,12 @@
             "name": null,
             "owner": "everviolet",
             "repo": "nvim",
-            "rev": "d93798f679c914c635d6a5a9b16a8a481b7c0779",
-            "sha256": "sha256-eNIWjNcQ/C703wqFCBTlGu3vdtBcZMccAQHIF0o7f+M=",
+            "rev": "4041ce92cf1387f19a8006c1e36969bfb5371c50",
+            "sha256": "sha256-cPdpPSZCfJLJi0ZJEYV/HZlDK1Fjiktnqr3ELimrC+4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d93798f679c914c635d6a5a9b16a8a481b7c0779"
+        "version": "4041ce92cf1387f19a8006c1e36969bfb5371c50"
     },
     "fidget": {
         "cargoLocks": null,
