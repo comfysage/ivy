@@ -27,13 +27,6 @@ vim.api.nvim_create_autocmd("FileType", {
       return
     end
 
-    local ok = vim.treesitter.get_parser(ev.buf, nil, { error = false })
-    if not ok then
-      return
-    end
-
-    vim.api.nvim_buf_call(ev.buf, function()
-      vim.treesitter.start()
-    end)
+    pcall(vim.treesitter.start, ev.buf)
   end,
 })
