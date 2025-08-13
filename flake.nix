@@ -53,7 +53,7 @@
         generatedPackages // defaultPackage;
     in
     {
-      formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
+      formatter = forAllSystems (pkgs: pkgs.treefmt.withConfig (import ./treefmt.nix { inherit pkgs; }));
 
       packages = forAllSystems (mkPackages true);
 

@@ -91,6 +91,7 @@ let
   ];
 
   grammarsNames = [
+    # keep-sorted start
     "astro"
     "bash"
     "c"
@@ -127,11 +128,11 @@ let
     "json"
     "jsonc"
     "just"
+    "latex"
     "less"
     "lua"
     "luadoc"
     "luau"
-    "latex"
     "make"
     "markdown"
     "markdown_inline"
@@ -163,6 +164,7 @@ let
     "yaml"
     "yuck"
     "zig"
+    # keep-sorted end
   ];
 in
 wrapNeovim {
