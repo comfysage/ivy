@@ -127,6 +127,7 @@ let
     "json"
     "jsonc"
     "just"
+    "less"
     "lua"
     "luadoc"
     "luau"
