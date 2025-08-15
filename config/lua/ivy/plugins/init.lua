@@ -9,6 +9,7 @@ return {
         popup_border_style = "", -- use 'winborder'
         filesystem = {
           use_libuv_file_watcher = true,
+          hijack_netrw_behavior = "disabled",
         },
         default_component_configs = {
           icon = {
