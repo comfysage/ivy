@@ -722,27 +722,6 @@
         },
         "version": "de740991c12411b663994b2860f1a4fd0937c130"
     },
-    "nvim-colorizer": {
-        "cargoLocks": null,
-        "date": "2025-07-22",
-        "extract": null,
-        "name": "nvim-colorizer",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvchad",
-            "repo": "nvim-colorizer.lua",
-            "rev": "16597180b4dd81fa3d23d88c4d2f1b49154f9479",
-            "sha256": "sha256-xj+FwjgeQ83VT/D8EeQn1ieA+fWS5910mRskTvI5mDo=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "16597180b4dd81fa3d23d88c4d2f1b49154f9479"
-    },
     "nvim-lint": {
         "cargoLocks": null,
         "date": "2025-07-31",

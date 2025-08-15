@@ -414,18 +414,6 @@
     };
     date = "2025-06-08";
   };
-  nvim-colorizer = {
-    pname = "nvim-colorizer";
-    version = "16597180b4dd81fa3d23d88c4d2f1b49154f9479";
-    src = fetchFromGitHub {
-      owner = "nvchad";
-      repo = "nvim-colorizer.lua";
-      rev = "16597180b4dd81fa3d23d88c4d2f1b49154f9479";
-      fetchSubmodules = false;
-      sha256 = "sha256-xj+FwjgeQ83VT/D8EeQn1ieA+fWS5910mRskTvI5mDo=";
-    };
-    date = "2025-07-22";
-  };
   nvim-lint = {
     pname = "nvim-lint";
     version = "7ef127aaede2a4d5ad8df8321e2eb4e567f29594";

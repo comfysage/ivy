@@ -136,10 +136,6 @@ src.git = "https://github.com/nvim-neo-tree/neo-tree.nvim"
 fetch.github = "MunifTanjim/nui.nvim"
 src.git = "https://github.com/MunifTanjim/nui.nvim"
 
-[nvim-colorizer]
-fetch.github = "nvchad/nvim-colorizer.lua"
-src.git = "https://github.com/nvchad/nvim-colorizer.lua"
-
 [nvim-lspconfig]
 fetch.github = "neovim/nvim-lspconfig"
 src.git = "https://github.com/neovim/nvim-lspconfig"
