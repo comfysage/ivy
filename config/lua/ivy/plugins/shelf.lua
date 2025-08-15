@@ -3,7 +3,7 @@ return {
   lazy = false, -- lazy-loading is handled by the plugin
   after = function()
     require("shelf").setup({
-      restore_buffers = true,
+      restore_buffers = false,
     })
 
     -- toggle shelf ui

@@ -422,6 +422,19 @@ return {
   },
 
   {
+    "nivvie.nvim",
+    lazy = false,
+    config = function()
+      vim.api.nvim_create_autocmd("DirChanged", {
+        group = vim.api.nvim_create_augroup("nivvie:dirchanged:restore", { clear = true }),
+        callback = function()
+          require('nivvie').restore()
+        end,
+      })
+    end,
+  },
+
+  {
     "vim-startuptime",
     lazy = false,
   },

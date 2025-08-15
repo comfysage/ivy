@@ -196,6 +196,10 @@ src.git = "https://github.com/mfussenegger/nvim-lint"
 fetch.github = "nvim-neotest/nvim-nio"
 src.git = "https://github.com/nvim-neotest/nvim-nio"
 
+[nivvie-nvim]
+fetch.github = "comfysage/nivvie.nvim"
+src.git = "https://github.com/comfysage/nivvie.nvim"
+
 [tabby-nvim]
 fetch.github = "nanozuki/tabby.nvim"
 src.git = "https://github.com/nanozuki/tabby.nvim"
