@@ -19,14 +19,22 @@ return {
         cmd = "lazygit",
         direction = "float",
         float_opts = {
-          border = "rounded",
+          border = vim.o.winborder or "single",
         },
       })
 
       vim.keymap.set("n", "<leader>gg", function()
         lazygit:toggle()
       end, { noremap = true, silent = true })
-      vim.keymap.set("n", "<a-`>", "<cmd>ToggleTerm<cr>", { noremap = true, silent = true })
+
+      local shell = Terminal:new({
+        cmd = "zsh",
+        direction = "horizontal",
+        size = 15
+      })
+      vim.keymap.set("n", "<a-`>", function()
+        shell:toggle()
+      end, { noremap = true, silent = true })
     end,
   },
 }
