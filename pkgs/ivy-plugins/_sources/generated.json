@@ -703,7 +703,7 @@
     },
     "nivvie-nvim": {
         "cargoLocks": null,
-        "date": "2025-08-20",
+        "date": "2025-08-21",
         "extract": null,
         "name": "nivvie-nvim",
         "passthru": null,
@@ -715,12 +715,12 @@
             "name": null,
             "owner": "comfysage",
             "repo": "nivvie.nvim",
-            "rev": "f62ae577f18d1f1f497347c8a2833736c0804173",
-            "sha256": "sha256-S8LOGI/r7dMInksoKAHj6qLM2q5JfLv52azGQ2LIOj8=",
+            "rev": "f2ee7cd6aae80f7b3a7ed9c6f7c3b21110fb5706",
+            "sha256": "sha256-sUHC146fALmpBcyk6yW8uIdBXVzu5oBHuTr/sGMq3sc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f62ae577f18d1f1f497347c8a2833736c0804173"
+        "version": "f2ee7cd6aae80f7b3a7ed9c6f7c3b21110fb5706"
     },
     "nui": {
         "cargoLocks": null,
