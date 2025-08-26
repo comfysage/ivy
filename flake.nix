@@ -13,11 +13,17 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        neovim-src.follows = "neovim-src";
         hercules-ci-effects.follows = "";
         flake-compat.follows = "";
         git-hooks.follows = "";
         treefmt-nix.follows = "";
       };
+    };
+
+    neovim-src = {
+      url = "github:neovim/neovim";
+      flake = false;
     };
   };
 
