@@ -512,6 +512,27 @@
         },
         "version": "b8f6fa6f5a3fd0c56936252edcd691184e5aac0c"
     },
+    "mini-jump2d": {
+        "cargoLocks": null,
+        "date": "2025-08-28",
+        "extract": null,
+        "name": "mini-jump2d",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.jump2d",
+            "rev": "3710fcdfbbff539e245e16ff14f2d95ffc2fb631",
+            "sha256": "sha256-4W5mvy61KVe/T+fkkQynOMVxh/TIdjGa9Rr+UiOGrUs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3710fcdfbbff539e245e16ff14f2d95ffc2fb631"
+    },
     "mini-move": {
         "cargoLocks": null,
         "date": "2025-07-22",

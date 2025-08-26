@@ -291,6 +291,17 @@ return {
     end,
   },
   {
+    "mini.jump2d",
+    event = "BufAdd",
+    after = function()
+      require("mini.jump2d").setup({
+        view = {
+          dim = true,
+        },
+      })
+    end,
+  },
+  {
     "mini.move",
     event = "BufAdd",
     after = function()

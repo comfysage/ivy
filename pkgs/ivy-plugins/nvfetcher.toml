@@ -100,6 +100,10 @@ src.git = "https://github.com/echasnovski/mini-git"
 fetch.github = "echasnovski/mini.icons"
 src.git = "https://github.com/echasnovski/mini.icons"
 
+[mini-jump2d]
+fetch.github = "echasnovski/mini.jump2d"
+src.git = "https://github.com/echasnovski/mini.jump2d"
+
 [mini-move]
 fetch.github = "echasnovski/mini.move"
 src.git = "https://github.com/echasnovski/mini.move"

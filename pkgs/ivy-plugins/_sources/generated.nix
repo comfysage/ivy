@@ -294,6 +294,18 @@
     };
     date = "2025-07-24";
   };
+  mini-jump2d = {
+    pname = "mini-jump2d";
+    version = "3710fcdfbbff539e245e16ff14f2d95ffc2fb631";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.jump2d";
+      rev = "3710fcdfbbff539e245e16ff14f2d95ffc2fb631";
+      fetchSubmodules = false;
+      sha256 = "sha256-4W5mvy61KVe/T+fkkQynOMVxh/TIdjGa9Rr+UiOGrUs=";
+    };
+    date = "2025-08-28";
+  };
   mini-move = {
     pname = "mini-move";
     version = "819e90c3e113a3c826c3003ec07073f1e0677ea0";
