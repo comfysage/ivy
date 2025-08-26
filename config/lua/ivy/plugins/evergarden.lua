@@ -16,11 +16,13 @@ return {
         },
         style = {
           tabline = { "reverse" },
-          search = { "reverse" },
-          incsearch = { "reverse" },
+          search = { "italic", "reverse" },
+          incsearch = {},
+          diagnostics = { "undercurl" },
           types = { "italic" },
           keyword = { "italic" },
-          comment = {},
+          comment = { "italic" },
+          spell = { "underdotted" },
         },
         overrides = {}, -- add custom overrides
       })
