@@ -640,7 +640,7 @@
     },
     "mossy-nvim": {
         "cargoLocks": null,
-        "date": "2025-08-01",
+        "date": "2025-08-30",
         "extract": null,
         "name": "mossy-nvim",
         "passthru": null,
@@ -652,12 +652,12 @@
             "name": null,
             "owner": "comfysage",
             "repo": "mossy.nvim",
-            "rev": "d966db40c985e4e25d94f05053db2ce85da1ec38",
-            "sha256": "sha256-L0rTVkl5vLHHTUCj4r5jAzoRQ92ZzOWHqJvbB28yjA8=",
+            "rev": "9b8a8e04c0dea5bb909490ecabc0a0649e711d8b",
+            "sha256": "sha256-Au2a/hSqw5TrRXfLA25QNz7tacnl9+kk04PZnPRk+HY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d966db40c985e4e25d94f05053db2ce85da1ec38"
+        "version": "9b8a8e04c0dea5bb909490ecabc0a0649e711d8b"
     },
     "neo-tree": {
         "cargoLocks": null,
