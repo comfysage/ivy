@@ -1,10 +1,18 @@
 local futils = {}
 
 function futils.getfilename()
+  local _, default_file_hl = require("mini.icons").get("default", "file")
+
   local name = vim.fn.expand("%:t")
 
-  local file_icon_raw, file_icon_hl = require("mini.icons").get("file", name)
-  local _, default_file_hl = require("mini.icons").get("default", "file")
+  local file_icon_raw, file_icon_hl
+
+  if vim.bo.buftype ~= "" then
+    local filetype = vim.bo.filetype
+    file_icon_raw, file_icon_hl = require("mini.icons").get("filetype", filetype)
+  else
+    file_icon_raw, file_icon_hl = require("mini.icons").get("file", name)
+  end
 
   return { { name, default_file_hl }, { " " }, { file_icon_raw, file_icon_hl } }
 end
