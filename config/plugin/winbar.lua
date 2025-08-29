@@ -1,3 +1,9 @@
+if vim.g.loaded_winbar then
+  return
+end
+
+vim.g.loaded_winbar = true
+
 local winbar = {}
 
 winbar.default = {
@@ -8,22 +14,6 @@ winbar.default = {
   },
 }
 vim.g.winbar_config = vim.tbl_deep_extend("force", winbar.default, vim.g.winbar_config or {})
-
-if vim.g.loaded_winbar then
-  return
-end
-
-vim.g.loaded_winbar = true
-
-vim.api.nvim_create_autocmd(
-  { "DirChanged", "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" },
-  {
-    group = vim.api.nvim_create_augroup("ivy:winbar", { clear = true }),
-    callback = function(ev)
-      winbar.enable(ev.buf)
-    end,
-  }
-)
 
 winbar.enable = function(buf)
   buf = buf or 0
@@ -44,35 +34,8 @@ winbar.enable = function(buf)
   vim.api.nvim_set_option_value("winbar", "%!v:lua.vim.g.winbar()", { scope = "local" })
 end
 
-local function getfilename()
-  local name = vim.fn.expand("%:t")
-
-  local file_icon_raw, file_icon_hl = require("mini.icons").get("file", name)
-  local _, default_file_hl = require("mini.icons").get("default", "file")
-
-  local file_icon = "%#" .. file_icon_hl .. "#" .. file_icon_raw .. " %*"
-  local filename = "%#" .. default_file_hl .. "#" .. name .. "%*"
-  return filename .. " " .. file_icon
-end
-
-local function getfilepath()
-  local path = vim.fn.expand("%:p:~:.")
-
-  local file_path_list = {}
-  local _ = string.gsub(path, "[^/]+", function(w)
-    table.insert(file_path_list, w)
-  end)
-
-  local filepath = vim.iter(ipairs(file_path_list)):fold("", function(acc, i, fragment)
-    if i == #file_path_list then
-      return acc
-    end
-    acc = acc .. "%#" .. "Directory" .. "#" .. fragment .. "/" .. "%*"
-    return acc
-  end)
-
-  return filepath
-end
+local futils = require("ivy.utils.files")
+local tutils = require("ivy.utils.tables")
 
 winbar.get = function()
   local has_icons, _ = pcall(require, "mini.icons")
@@ -80,9 +43,17 @@ winbar.get = function()
     return
   end
 
-  local p = vim.g.winbar_config.prefix
-  local prefix = "%#" .. p[2] .. "#" .. p[1] .. "%*"
-  return prefix .. " " .. getfilepath() .. getfilename()
+  local prefix = vim.g.winbar_config.prefix
+  local modules = { prefix, { " " }, futils.getfilepath(), futils.getfilename() }
+  return vim.iter(tutils.flatten(modules, 1)):fold("", function(str, module)
+    if type(module) ~= "table" or #module == 0 then
+      return str
+    end
+    if #module > 1 then
+      return str .. "%#" .. module[2] .. "#" .. module[1] .. "%*"
+    end
+    return str .. "%*" .. module[1]
+  end)
 end
 
 winbar.current = function()
@@ -90,3 +61,13 @@ winbar.current = function()
   local buf = vim.api.nvim_win_get_buf(win)
   return vim.api.nvim_buf_call(buf, winbar.get)
 end
+
+vim.api.nvim_create_autocmd(
+  { "DirChanged", "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" },
+  {
+    group = vim.api.nvim_create_augroup("ivy:winbar", { clear = true }),
+    callback = function(ev)
+      winbar.enable(ev.buf)
+    end,
+  }
+)
