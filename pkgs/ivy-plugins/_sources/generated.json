@@ -300,27 +300,6 @@
         },
         "version": "54f48eb5017632d81d0fd40112065f1d062d0629"
     },
-    "lualine": {
-        "cargoLocks": null,
-        "date": "2025-08-12",
-        "extract": null,
-        "name": "lualine",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-lualine",
-            "repo": "lualine.nvim",
-            "rev": "b8c23159c0161f4b89196f74ee3a6d02cdc3a955",
-            "sha256": "sha256-lWt2kpW+hsTMWt8tar/+AISTDrIt4Jn27NmI9j+Xt4s=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "b8c23159c0161f4b89196f74ee3a6d02cdc3a955"
-    },
     "lz-n": {
         "cargoLocks": null,
         "date": "2025-08-23",

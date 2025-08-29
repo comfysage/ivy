@@ -173,18 +173,6 @@
     };
     date = "2022-08-03";
   };
-  lualine = {
-    pname = "lualine";
-    version = "b8c23159c0161f4b89196f74ee3a6d02cdc3a955";
-    src = fetchFromGitHub {
-      owner = "nvim-lualine";
-      repo = "lualine.nvim";
-      rev = "b8c23159c0161f4b89196f74ee3a6d02cdc3a955";
-      fetchSubmodules = false;
-      sha256 = "sha256-lWt2kpW+hsTMWt8tar/+AISTDrIt4Jn27NmI9j+Xt4s=";
-    };
-    date = "2025-08-12";
-  };
   lz-n = {
     pname = "lz-n";
     version = "d31d6287533b93cdf2fce4e5eb49479771af4532";
