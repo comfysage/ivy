@@ -243,36 +243,37 @@ return {
     lazy = false,
     priority = 1000,
     after = function()
-      local justfile = {
-        glyph = "󰚩",
-        hl = "MiniIconsOrange",
-      }
       require("mini.icons").setup({
         filetype = {
           qmljs = { glyph = "󰫾", hl = "MiniIconsAzure" },
           tera = { glyph = "󰅩", hl = "MiniIconsOrange" },
+          just = {
+            glyph = "󰚩",
+            hl = "MiniIconsOrange",
+          },
+
+          -- mini.nvim
+          ["minideps-confirm"] = { glyph = "", hl = "MiniIconsOrange" },
+          minifiles = { glyph = "󰙅", hl = "MiniIconsGreen" },
+          ["minifiles-help"] = { glyph = "󰙅", hl = "MiniIconsGreen" },
+          mininotify = { glyph = "", hl = "MiniIconsYellow" },
+          ["mininotify-history"] = { glyph = "", hl = "MiniIconsYellow" },
+          minipick = { glyph = "󱡠", hl = "MiniIconsCyan" },
+          ministarter = { glyph = "", hl = "MiniIconsAzure" },
+
+          -- plugins
+          bufferlist = { glyph = "󱡠", hl = "MiniIconsAzure" }, -- shelf
         },
         file = {
-          [".ecrc"] = {
-            glyph = "",
-            hl = "MiniIconsGreen",
-          },
           [".envrc"] = {
             glyph = "",
             hl = "MiniIconsYellow",
           },
-          [".editorconfig"] = {
-            glyph = "",
-            hl = "MiniIconsGreen",
-          },
-          [".luacheckrc"] = {
-            glyph = "󰢱",
-            hl = "MiniIconsBlue",
-          },
-          [".Justfile"] = justfile,
-          [".justfile"] = justfile,
-          ["Justfile"] = justfile,
-          ["justfile"] = justfile,
+          [".luacheckrc"] = "lua",
+          [".Justfile"] = "justfile",
+          [".justfile"] = "justfile",
+          ["Justfile"] = "justfile",
+          ["justfile"] = "justfile",
         },
         lsp = {
           color = { glyph = "󰏘" },
