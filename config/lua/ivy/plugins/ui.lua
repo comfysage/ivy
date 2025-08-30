@@ -1,4 +1,5 @@
 return {
+  { "lylla.nvim" },
 
   {
     "tabby.nvim",

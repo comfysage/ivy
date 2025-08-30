@@ -300,6 +300,27 @@
         },
         "version": "54f48eb5017632d81d0fd40112065f1d062d0629"
     },
+    "lylla-nvim": {
+        "cargoLocks": null,
+        "date": "2025-08-31",
+        "extract": null,
+        "name": "lylla-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "comfysage",
+            "repo": "lylla.nvim",
+            "rev": "2d41df65f2ea311423f0d4eff8e217387ac4cbec",
+            "sha256": "sha256-ikG4dc/KIZJFbu6H6/SYVOxYgzJvXlXJuzOJRMZDxOg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "2d41df65f2ea311423f0d4eff8e217387ac4cbec"
+    },
     "lz-n": {
         "cargoLocks": null,
         "date": "2025-08-23",

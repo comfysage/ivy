@@ -59,6 +59,10 @@ src.git = "https://github.com/comfysage/keymaps.nvim"
 fetch.github = "nvim-lua/lsp-status.nvim"
 src.git = "https://github.com/nvim-lua/lsp-status.nvim"
 
+[lylla-nvim]
+fetch.github = "comfysage/lylla.nvim"
+src.git = "https://github.com/comfysage/lylla.nvim"
+
 [lz-n]
 fetch.github = "nvim-neorocks/lz.n"
 src.git = "https://github.com/nvim-neorocks/lz.n"
