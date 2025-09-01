@@ -441,8 +441,37 @@ return {
       vim.api.nvim_create_autocmd("DirChanged", {
         group = vim.api.nvim_create_augroup("nivvie:dirchanged:restore", { clear = true }),
         callback = function()
-          require('nivvie').restore()
+          require("nivvie").restore()
         end,
+      })
+    end,
+  },
+
+  {
+    "cord.nvim",
+    lazy = false,
+    after = function()
+      require("cord").setup({
+        editor = {
+          tooltip = "the modal text editor of your nightmares",
+        },
+        display = {
+          -- theme = "",
+        },
+        buttons = {
+          {
+            label = "View Repository",
+            url = function(opts)
+              return opts.repo_url
+            end,
+          },
+        },
+        hooks = {
+          post_activity = function(_, activity)
+            local version = vim.version()
+            activity.assets.small_text = string.format("Neovim %s.%s.%s", version.major, version.minor, version.patch)
+          end,
+        },
       })
     end,
   },

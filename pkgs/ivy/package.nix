@@ -187,6 +187,9 @@ wrapNeovim {
 
     # extra plugsns beacuse they often fail or need extra steps
     vimPlugins.blink-cmp
+    (vimPlugins.cord-nvim.overrideAttrs {
+      doCheck = false;
+    })
     (vimPlugins.windsurf-nvim.overrideAttrs {
       src = fetchFromGitHub {
         owner = "Kurama622";
