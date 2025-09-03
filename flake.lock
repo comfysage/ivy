@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1754487366,
-        "narHash": "sha256-pHYj8gUBapuUzKV/kN/tR3Zvqc7o6gdFB9XKXIp1SQ8=",
+        "lastModified": 1756770412,
+        "narHash": "sha256-+uWLQZccFHwqpGqr2Yt5VsW/PbeJVTn9Dk6SHWhNRPw=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "af66ad14b28a127c5c0f3bbb298218fc63528a18",
+        "rev": "4524271976b625a4a605beefd893f270620fd751",
         "type": "github"
       },
       "original": {
@@ -56,11 +56,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1756193366,
-        "narHash": "sha256-QpWwQwb8PkyAw2kY0ni4/GGhIlGVxXZifhxH5dP2gII=",
+        "lastModified": 1756857991,
+        "narHash": "sha256-RCdKAApSgXHhwt7236TygtgV04qlIojySDAJXVNM1Nc=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "fe523067daca6e8dd050d07bdca0b4bddec89694",
+        "rev": "d18b36e17f51d0e5ff51d4e74f573c6683e496ab",
         "type": "github"
       },
       "original": {
@@ -72,11 +72,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1756704948,
-        "narHash": "sha256-0O9aPipgxs9ihwcq/pRLviD1T4QfoxDPUiYVa4WTSRM=",
+        "lastModified": 1756863286,
+        "narHash": "sha256-eTwX0eUsuaxDsJsGRG2dYiUwlMs1SgQhdFmvw+8n3Tw=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "3c601d02dc030fde5fc11a1b1cba01728add2197",
+        "rev": "f9ce939bf53b84f7e6e4ecca3875dd0c378991db",
         "type": "github"
       },
       "original": {
@@ -88,10 +88,10 @@
     "nixpkgs": {
       "locked": {
         "lastModified": 315532800,
-        "narHash": "sha256-lBeOsDwcj+7pQSymh++kul9ZV7shaHxmA9A2a912XWU=",
-        "rev": "84c256e42600cb0fdf25763b48d28df2f25a0c8b",
+        "narHash": "sha256-1Ayx5AcA9t6riKWsuwLNI8x9SvLXKDOeBcfY4kZb0Zs=",
+        "rev": "aaff8c16d7fc04991cac6245bee1baa31f72b1e1",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre851662.84c256e42600/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre855444.aaff8c16d7fc/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
