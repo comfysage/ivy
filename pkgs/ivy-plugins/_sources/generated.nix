@@ -573,18 +573,6 @@
     };
     date = "2025-08-07";
   };
-  snacks-nvim = {
-    pname = "snacks-nvim";
-    version = "bc0630e43be5699bb94dadc302c0d21615421d93";
-    src = fetchFromGitHub {
-      owner = "folke";
-      repo = "snacks.nvim";
-      rev = "bc0630e43be5699bb94dadc302c0d21615421d93";
-      fetchSubmodules = false;
-      sha256 = "sha256-Gw0Bp2YeoESiBLs3NPnqke3xwEjuiQDDU1CPofrhtig=";
-    };
-    date = "2025-03-01";
-  };
   symbol-usage = {
     pname = "symbol-usage";
     version = "e07c07dfe7504295a369281e95a24e1afa14b243";

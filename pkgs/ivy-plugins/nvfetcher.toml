@@ -180,10 +180,6 @@ src.git = "https://github.com/b0o/schemastore.nvim"
 fetch.github = "comfysage/shelf.nvim"
 src.git = "https://github.com/comfysage/shelf.nvim"
 
-[snacks-nvim]
-fetch.github = "folke/snacks.nvim"
-src.git = "https://github.com/folke/snacks.nvim"
-
 [symbol-usage]
 fetch.github = "Wansmer/symbol-usage.nvim"
 src.git = "https://github.com/Wansmer/symbol-usage.nvim"

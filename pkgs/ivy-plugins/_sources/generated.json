@@ -1001,27 +1001,6 @@
         },
         "version": "686c8d2cce891ab5ffd881b88f549592a8ef40a9"
     },
-    "snacks-nvim": {
-        "cargoLocks": null,
-        "date": "2025-03-01",
-        "extract": null,
-        "name": "snacks-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "folke",
-            "repo": "snacks.nvim",
-            "rev": "bc0630e43be5699bb94dadc302c0d21615421d93",
-            "sha256": "sha256-Gw0Bp2YeoESiBLs3NPnqke3xwEjuiQDDU1CPofrhtig=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "bc0630e43be5699bb94dadc302c0d21615421d93"
-    },
     "symbol-usage": {
         "cargoLocks": null,
         "date": "2025-05-03",
