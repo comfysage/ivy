@@ -10,6 +10,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " m"
 
 vim.o.keywordprg = ":vertical botright help"
+vim.o.rulerformat = "%Ll %l:%c %p%%"
 
 -- true colors
 vim.o.termguicolors = true
