@@ -237,27 +237,6 @@
         },
         "version": "1e0a4d719c780bb8b0690a54915601508ced321e"
     },
-    "img-clip-nvim": {
-        "cargoLocks": null,
-        "date": "2025-08-30",
-        "extract": null,
-        "name": "img-clip-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "HakonHarnes",
-            "repo": "img-clip.nvim",
-            "rev": "f33f3af9ba50f99d70f8fcb1a8575750ada4ea4a",
-            "sha256": "sha256-o781gHd3sJEEgAMXX+/YXi80pnn0XF35LVwJjLqc0RQ=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "f33f3af9ba50f99d70f8fcb1a8575750ada4ea4a"
-    },
     "keymaps-nvim": {
         "cargoLocks": null,
         "date": "2025-07-31",

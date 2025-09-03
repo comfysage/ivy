@@ -47,10 +47,6 @@ src.git = "https://github.com/ibhagwan/fzf-lua"
 fetch.github = "julienvincent/hunk.nvim"
 src.git = "https://github.com/julienvincent/hunk.nvim"
 
-[img-clip-nvim]
-fetch.github = "HakonHarnes/img-clip.nvim"
-src.git = "https://github.com/HakonHarnes/img-clip.nvim"
-
 [keymaps-nvim]
 fetch.github = "comfysage/keymaps.nvim"
 src.git = "https://github.com/comfysage/keymaps.nvim"

@@ -137,18 +137,6 @@
     };
     date = "2025-06-09";
   };
-  img-clip-nvim = {
-    pname = "img-clip-nvim";
-    version = "f33f3af9ba50f99d70f8fcb1a8575750ada4ea4a";
-    src = fetchFromGitHub {
-      owner = "HakonHarnes";
-      repo = "img-clip.nvim";
-      rev = "f33f3af9ba50f99d70f8fcb1a8575750ada4ea4a";
-      fetchSubmodules = false;
-      sha256 = "sha256-o781gHd3sJEEgAMXX+/YXi80pnn0XF35LVwJjLqc0RQ=";
-    };
-    date = "2025-08-30";
-  };
   keymaps-nvim = {
     pname = "keymaps-nvim";
     version = "f606f66b2aafbd0dbb4328aeab2b89e5dd9d3473";

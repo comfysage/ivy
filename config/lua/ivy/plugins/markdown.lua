@@ -26,26 +26,4 @@ return {
       })
     end,
   },
-
-  -- allow me to paste images really easy
-  {
-    "img-clip.nvim",
-    ft = { "markdown" },
-    after = function()
-      require("img-clip").setup({
-        filetypes = {
-          markdown = {
-            template = function()
-              local root_dir = vim.fs.find({ ".obsidian" }, { upward = true })
-              if vim.tbl_isempty(root_dir) then
-                return "![$CURSOR]($FILE_PATH)"
-              else
-                return "![[$FILE_PATH]]"
-              end
-            end,
-          },
-        },
-      })
-    end,
-  },
 }
