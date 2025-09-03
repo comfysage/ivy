@@ -45,10 +45,17 @@ vim.o.smartcase = true
 vim.o.inccommand = "split"
 
 -- folding
-vim.o.foldenable = false
-vim.o.foldlevelstart = 0
-vim.o.foldnestmax = 4
--- vim.o.foldmethod = 'marker'
+vim.o.foldlevelstart = 99
+vim.api.nvim_create_autocmd("WinNew", {
+  group = vim.api.nvim_create_augroup("ivy:options:folds", { clear = true }),
+  callback = function()
+    local win = vim.api.nvim_get_current_win()
+    vim.wo[win].foldcolumn = "1"
+    vim.wo[win].foldenable = true
+    vim.wo[win].foldnestmax = 1
+    vim.wo[win].foldmethod = "indent"
+  end,
+})
 
 -- redefine word boundaries - '_' is a word separator, this helps with snake_case
 vim.opt.iskeyword:remove("_")
