@@ -175,15 +175,15 @@
   };
   lylla-nvim = {
     pname = "lylla-nvim";
-    version = "2d41df65f2ea311423f0d4eff8e217387ac4cbec";
+    version = "d6a6ddfbcf4724adb14ea85c51615fb2062a846c";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "lylla.nvim";
-      rev = "2d41df65f2ea311423f0d4eff8e217387ac4cbec";
+      rev = "d6a6ddfbcf4724adb14ea85c51615fb2062a846c";
       fetchSubmodules = false;
-      sha256 = "sha256-ikG4dc/KIZJFbu6H6/SYVOxYgzJvXlXJuzOJRMZDxOg=";
+      sha256 = "sha256-ZjimevNIawlHyNkafuJZSfwYjjPGSaahIjQBXZVULzo=";
     };
-    date = "2025-08-31";
+    date = "2025-09-03";
   };
   lz-n = {
     pname = "lz-n";

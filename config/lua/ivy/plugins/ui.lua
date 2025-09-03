@@ -1,6 +1,4 @@
 return {
-  { "lylla.nvim" },
-
   {
     "tabby.nvim",
     event = "DeferredUIEnter",
