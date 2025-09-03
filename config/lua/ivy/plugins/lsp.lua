@@ -49,7 +49,6 @@ return {
     end,
   },
 
-  { "lsp-status.nvim" },
   { "schemastore.nvim" },
 
   {

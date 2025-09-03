@@ -161,18 +161,6 @@
     };
     date = "2025-07-31";
   };
-  lsp-status = {
-    pname = "lsp-status";
-    version = "54f48eb5017632d81d0fd40112065f1d062d0629";
-    src = fetchFromGitHub {
-      owner = "nvim-lua";
-      repo = "lsp-status.nvim";
-      rev = "54f48eb5017632d81d0fd40112065f1d062d0629";
-      fetchSubmodules = false;
-      sha256 = "sha256-gmLeVnDyL8Zf5ZG92tP3mb/LAt438BxFtAi/Xax2zLI=";
-    };
-    date = "2022-08-03";
-  };
   lylla-nvim = {
     pname = "lylla-nvim";
     version = "d6a6ddfbcf4724adb14ea85c51615fb2062a846c";

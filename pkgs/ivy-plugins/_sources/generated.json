@@ -279,27 +279,6 @@
         },
         "version": "f606f66b2aafbd0dbb4328aeab2b89e5dd9d3473"
     },
-    "lsp-status": {
-        "cargoLocks": null,
-        "date": "2022-08-03",
-        "extract": null,
-        "name": "lsp-status",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-lua",
-            "repo": "lsp-status.nvim",
-            "rev": "54f48eb5017632d81d0fd40112065f1d062d0629",
-            "sha256": "sha256-gmLeVnDyL8Zf5ZG92tP3mb/LAt438BxFtAi/Xax2zLI=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "54f48eb5017632d81d0fd40112065f1d062d0629"
-    },
     "lylla-nvim": {
         "cargoLocks": null,
         "date": "2025-09-03",

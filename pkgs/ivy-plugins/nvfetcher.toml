@@ -55,10 +55,6 @@ src.git = "https://github.com/HakonHarnes/img-clip.nvim"
 fetch.github = "comfysage/keymaps.nvim"
 src.git = "https://github.com/comfysage/keymaps.nvim"
 
-[lsp-status]
-fetch.github = "nvim-lua/lsp-status.nvim"
-src.git = "https://github.com/nvim-lua/lsp-status.nvim"
-
 [lylla-nvim]
 fetch.github = "comfysage/lylla.nvim"
 src.git = "https://github.com/comfysage/lylla.nvim"
