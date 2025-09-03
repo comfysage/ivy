@@ -164,10 +164,6 @@ src.git = "https://github.com/comfysage/quill.nvim"
 fetch.github = "hiphish/rainbow-delimiters.nvim"
 src.git = "https://github.com/hiphish/rainbow-delimiters.nvim"
 
-[rustaceanvim]
-fetch.github = "mrcjkb/rustaceanvim"
-src.git = "https://github.com/mrcjkb/rustaceanvim"
-
 [sayama-nvim]
 fetch.github = "comfysage/sayama.nvim"
 src.git = "https://github.com/comfysage/sayama.nvim"

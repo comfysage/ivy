@@ -917,27 +917,6 @@
         },
         "version": "97bf4b8ef9298644a29fcd9dd41a0210cf08cac7"
     },
-    "rustaceanvim": {
-        "cargoLocks": null,
-        "date": "2025-08-31",
-        "extract": null,
-        "name": "rustaceanvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "mrcjkb",
-            "repo": "rustaceanvim",
-            "rev": "12504405821c05874d2d1f6b5ec919f9808e2c99",
-            "sha256": "sha256-QpkRrjF1Am+YFgv+T8p8jhM45LGZD5UNejV5oEY4b64=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "12504405821c05874d2d1f6b5ec919f9808e2c99"
-    },
     "sayama-nvim": {
         "cargoLocks": null,
         "date": "2024-05-30",

@@ -525,18 +525,6 @@
     };
     date = "2025-07-24";
   };
-  rustaceanvim = {
-    pname = "rustaceanvim";
-    version = "12504405821c05874d2d1f6b5ec919f9808e2c99";
-    src = fetchFromGitHub {
-      owner = "mrcjkb";
-      repo = "rustaceanvim";
-      rev = "12504405821c05874d2d1f6b5ec919f9808e2c99";
-      fetchSubmodules = false;
-      sha256 = "sha256-QpkRrjF1Am+YFgv+T8p8jhM45LGZD5UNejV5oEY4b64=";
-    };
-    date = "2025-08-31";
-  };
   sayama-nvim = {
     pname = "sayama-nvim";
     version = "39175a766dfc80324d3130d27c3e7922f826226e";
