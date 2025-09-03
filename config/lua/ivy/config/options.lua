@@ -75,6 +75,14 @@ vim.o.smarttab = true
 vim.o.breakindent = true
 vim.o.wrap = false
 
+vim.opt.fillchars:append({
+  fold = " ",
+  eob = "·",
+  diff = "─",
+  foldopen = "▼",
+  foldclose = "▶",
+})
+
 -- always show 1 column of sign column (gitsigns, etc.)
 vim.o.signcolumn = "yes:1"
 
