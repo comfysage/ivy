@@ -104,6 +104,7 @@ vim.o.grepformat = "%f:%l:%c:%m"
 -- let me have spelling checking for english
 vim.opt.spelllang = { "en" }
 vim.opt.spelloptions:append("noplainbuffer")
+vim.o.spellsuggest = "double,4"
 
 -- indent blank line imporvments
 vim.o.list = true
