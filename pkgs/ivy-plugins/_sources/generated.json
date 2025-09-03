@@ -344,11 +344,11 @@
         },
         "version": "07b7f18a998733d66214da8fe322443f32476d44"
     },
-    "markit-nvim": {
+    "marks-nvim": {
         "cargoLocks": null,
-        "date": "2025-08-31",
+        "date": "2025-05-13",
         "extract": null,
-        "name": "markit-nvim",
+        "name": "marks-nvim",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -356,14 +356,14 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "2KAbhishek",
-            "repo": "markit.nvim",
-            "rev": "2543e3a720650aceef268d5120e86bc9dec8038a",
-            "sha256": "sha256-/gXbiyqNY5fhVLVobXqjDlpcCstUjjotwglSUQAzvz8=",
+            "owner": "chentoast",
+            "repo": "marks.nvim",
+            "rev": "f353e8c08c50f39e99a9ed474172df7eddd89b72",
+            "sha256": "sha256-ho2b2Ulh+GTqY0QvW7zjFOSlF5g/kaxWyOjKWhTFq7c=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2543e3a720650aceef268d5120e86bc9dec8038a"
+        "version": "f353e8c08c50f39e99a9ed474172df7eddd89b72"
     },
     "mini-ai": {
         "cargoLocks": null,

@@ -67,35 +67,13 @@ return {
   },
 
   {
-    "markit.nvim",
-    event = "UIEnter",
+    "marks.nvim",
+    lazy = false,
     after = function()
-      require("markit").setup({
+      require("marks").setup({
         -- whether to map keybinds or not. default true
         default_mappings = false,
-        mappings = {
-          set = "m", -- Sets a letter mark (will wait for input).
-          set_next = "m,", -- Set next available lowercase mark at cursor.
-          toggle = "m;", -- Toggle next available mark at cursor.
-          toggle_mark = "M", -- Toggle a mark at the current line.
-          next = "]m", -- Goes to next mark in buffer.
-          prev = "[m", -- Goes to previous mark in buffer.
-
-          preview = "m:", -- Previews mark (will wait for user input). press <cr> to just preview the next mark.
-          annotate = "m<cr>", -- Prompts the user for a virtual line annotation that is then placed above the bookmark. Requires neovim 0.6+ and is not mapped by default.
-
-          delete = "dm", -- Delete a letter mark (will wait for input).
-          delete_line = "dm-", -- Deletes all marks on current line.
-          delete_buf = "dm<space>", -- Deletes all marks in current buffer.
-
-          -- set_bookmark[0-9] = "m", -- Sets a bookmark from group[0-9].
-          -- delete_bookmark[0-9] = "dm", -- Deletes all bookmarks from group[0-9].
-          -- delete_bookmark = "dm=", -- Deletes the bookmark under the cursor.
-          -- next_bookmark = "}m", -- Moves to the next bookmark having the same type as the bookmark under the cursor.
-          -- prev_bookmark = "{m", -- Moves to the previous bookmark having the same type as the bookmark under the cursor.
-          -- next_bookmark[0-9] = "", -- Moves to the next bookmark of the same group type. Works by first going according to line number, and then according to buffer number.
-          -- prev_bookmark[0-9] = "", -- Moves to the previous bookmark of the same group type. Works by first going according to line number, and then according to buffer number.
-        },
+        mappings = {},
         -- which builtin marks to show. default {}
         builtin_marks = { ".", "<", ">", "^" },
         -- whether movements cycle back to the beginning/end of buffer. default true
@@ -119,6 +97,23 @@ return {
           "nofile",
         },
       })
+
+      vim.keymap.set("n", "m", "<Plug>(Marks-set)", { desc = "sets a letter mark (will wait for input)" })
+      vim.keymap.set("n", "m,", "<Plug>(Marks-setnext)", { desc = "set next available lowercase mark at cursor" })
+      vim.keymap.set("n", "m;", "<Plug>(Marks-toggle)", { desc = "toggle next available mark at cursor" })
+      vim.keymap.set("n", "]m", "<Plug>(Marks-next)", { desc = "goes to next mark in buffer" })
+      vim.keymap.set("n", "[m", "<Plug>(Marks-prev)", { desc = "goes to previous mark in buffer" })
+
+      vim.keymap.set(
+        "n",
+        "m:",
+        "<Plug>(Marks-preview)",
+        { desc = "previews mark (will wait for user input). press <cr> to just preview the next mark" }
+      )
+
+      vim.keymap.set("n", "dm", "<Plug>(Marks-delete)", { desc = "delete a letter mark (will wait for input)" })
+      vim.keymap.set("n", "dm-", "<Plug>(Marks-deleteline)", { desc = "deletes all marks on current line" })
+      vim.keymap.set("n", "dm<space>", "<Plug>(Marks-deletebuf)", { desc = "deletes all marks in current buffer" })
     end,
   },
 

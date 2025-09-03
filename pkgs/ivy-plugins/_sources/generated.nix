@@ -198,17 +198,17 @@
     start = "true";
     date = "2025-09-02";
   };
-  markit-nvim = {
-    pname = "markit-nvim";
-    version = "2543e3a720650aceef268d5120e86bc9dec8038a";
+  marks-nvim = {
+    pname = "marks-nvim";
+    version = "f353e8c08c50f39e99a9ed474172df7eddd89b72";
     src = fetchFromGitHub {
-      owner = "2KAbhishek";
-      repo = "markit.nvim";
-      rev = "2543e3a720650aceef268d5120e86bc9dec8038a";
+      owner = "chentoast";
+      repo = "marks.nvim";
+      rev = "f353e8c08c50f39e99a9ed474172df7eddd89b72";
       fetchSubmodules = false;
-      sha256 = "sha256-/gXbiyqNY5fhVLVobXqjDlpcCstUjjotwglSUQAzvz8=";
+      sha256 = "sha256-ho2b2Ulh+GTqY0QvW7zjFOSlF5g/kaxWyOjKWhTFq7c=";
     };
-    date = "2025-08-31";
+    date = "2025-05-13";
   };
   mini-ai = {
     pname = "mini-ai";

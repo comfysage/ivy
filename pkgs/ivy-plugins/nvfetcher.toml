@@ -68,9 +68,9 @@ fetch.github = "nvim-neorocks/lz.n"
 src.git = "https://github.com/nvim-neorocks/lz.n"
 passthru.start = "true"
 
-[markit-nvim]
-fetch.github = "2KAbhishek/markit.nvim"
-src.git = "https://github.com/2KAbhishek/markit.nvim"
+[marks-nvim]
+fetch.github = "chentoast/marks.nvim"
+src.git = "https://github.com/chentoast/marks.nvim"
 
 [mini-ai]
 fetch.github = "echasnovski/mini.ai"
