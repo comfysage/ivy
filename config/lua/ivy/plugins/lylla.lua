@@ -78,6 +78,7 @@ return {
           end, {
             events = { "DiagnosticChanged" },
           }),
+          { " " },
           component(function()
             return {
               { { "lsp :: " }, { utils.get_client() or "none" } },
