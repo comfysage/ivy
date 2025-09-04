@@ -392,12 +392,6 @@ return {
     end,
   },
 
-  -- rust lsp + formmating
-  {
-    "rustaceanvim",
-    ft = "rust",
-  },
-
   -- add better undo history
   {
     "undotree",
