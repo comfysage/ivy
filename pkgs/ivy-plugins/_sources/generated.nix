@@ -464,6 +464,18 @@
     start = "true";
     date = "2025-08-31";
   };
+  nvim-treesitter-context = {
+    pname = "nvim-treesitter-context";
+    version = "66a9b5fa9e806918b5fe3dba00c6cce7e230abd2";
+    src = fetchFromGitHub {
+      owner = "nvim-treesitter";
+      repo = "nvim-treesitter-context";
+      rev = "66a9b5fa9e806918b5fe3dba00c6cce7e230abd2";
+      fetchSubmodules = false;
+      sha256 = "sha256-jvoksYJs+U7XX3aIKewQOjIoTZ852uRmqwpXmtSJQa4=";
+    };
+    date = "2025-09-03";
+  };
   plenary = {
     pname = "plenary";
     version = "b9fd5226c2f76c951fc8ed5923d85e4de065e509";

@@ -1,5 +1,15 @@
 return {
   {
+    "nvim-treesitter-context",
+    event = "UIEnter",
+    after = function()
+      require("treesitter-context").setup({
+        mode = "topline",
+      })
+    end,
+  },
+
+  {
     "neogen",
     event = "BufAdd",
     after = function()

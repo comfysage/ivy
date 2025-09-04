@@ -143,6 +143,10 @@ src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
 src.branch = "main"
 passthru.start = "true"
 
+[nvim-treesitter-context]
+fetch.github = "nvim-treesitter/nvim-treesitter-context"
+src.git = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+
 [plenary]
 fetch.github = "nvim-lua/plenary.nvim"
 src.git = "https://github.com/nvim-lua/plenary.nvim"
