@@ -116,6 +116,7 @@ vim.o.laststatus = 3
 -- use rg for grepping
 vim.o.grepprg = vim.fn.executable("rg") == 1 and "rg --vimgrep" or "grep -n $* /dev/null"
 vim.o.grepformat = "%f:%l:%c:%m"
+vim.g.findprg = vim.fn.executable("fd") == 1 and "fd -t f --color=never" or "find . -type f"
 
 -- let me have spelling checking for english
 vim.opt.spelllang = { "en" }

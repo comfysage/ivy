@@ -36,7 +36,6 @@ local function grep(props)
   vim.system({ vim.o.shell, "-c", grepcmd }, {
     text = true,
   }, fn)
-  print(grepcmd)
 end
 
 vim.api.nvim_create_user_command("Grep", grep, { nargs = "+", complete = "file_in_path", force = true })
@@ -59,3 +58,32 @@ vim.keymap.set("x", "<leader>/", function()
   local line = string.gsub(lines[1], "<", [[<lt>]])
   return ":Grep " .. line
 end, { noremap = true, silent = false, expr = true })
+
+-- find --
+
+vim.o.findfunc = "v:lua.vim.g.findfunc"
+---@type fun(cmdarg: string, cmdcomplete: boolean): string[]
+vim.g.findfunc = function(cmdarg, _)
+  if not vim.g.findprg then
+    return {}
+  end
+  local farg = string.format("'%s'", cmdarg)
+  local findcmd, n = vim.o.grepprg:gsub("%$%*", farg)
+  if n == 0 then
+    findcmd = findcmd .. " " .. farg
+  end
+  local fn = function(o)
+    local src = o.stderr
+    if o.code == 0 then
+      src = o.stdout
+    end
+    src = src
+    local lines = vim.split(src, "\n", { trimempty = true })
+    return lines
+  end
+  return fn(vim
+    .system({ vim.o.shell, "-c", findcmd }, {
+      text = true,
+    })
+    :wait())
+end
