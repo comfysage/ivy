@@ -78,16 +78,16 @@
   };
   evergarden = {
     pname = "evergarden";
-    version = "4041ce92cf1387f19a8006c1e36969bfb5371c50";
+    version = "96492f415713b299e9a89d12d3b386e4101bc151";
     src = fetchFromGitHub {
       owner = "everviolet";
       repo = "nvim";
-      rev = "4041ce92cf1387f19a8006c1e36969bfb5371c50";
+      rev = "96492f415713b299e9a89d12d3b386e4101bc151";
       fetchSubmodules = false;
-      sha256 = "sha256-cPdpPSZCfJLJi0ZJEYV/HZlDK1Fjiktnqr3ELimrC+4=";
+      sha256 = "sha256-oyACfc9gJzQbDicRkDAkVc594RoYKwYTh/G9wFNQUWA=";
     };
     as = "evergarden";
-    date = "2025-08-11";
+    date = "2025-09-07";
   };
   fidget = {
     pname = "fidget";
