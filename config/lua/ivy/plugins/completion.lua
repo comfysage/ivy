@@ -194,7 +194,7 @@ return {
 
         -- experimental signature help support
         signature = {
-          enabled = true,
+          enabled = false,
         },
 
         fuzzy = {
