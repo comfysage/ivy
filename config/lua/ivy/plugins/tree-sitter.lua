@@ -3,8 +3,18 @@ return {
     "nvim-treesitter-context",
     event = "UIEnter",
     after = function()
+      local exclude_filetypes = { "nix" }
+
       require("treesitter-context").setup({
-        mode = "topline",
+        mode = "cursor",
+        multiwindow = true,
+        on_attach = function(buf)
+          if vim.tbl_contains(exclude_filetypes, vim.bo[buf].filetype) then
+            return false
+          end
+
+          return true
+        end
       })
     end,
   },
