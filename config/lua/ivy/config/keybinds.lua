@@ -134,7 +134,7 @@ vim.keymap.set("v", ";", "iw", { desc = "select inside word" })
 -- [edit]
 vim.keymap.set({ "n", "v" }, "C", '"_c', { desc = "non-copy change" })
 vim.keymap.set({ "n", "v" }, "D", '"_d', { desc = "non-copy delete" })
-vim.keymap.set("n", "<leader>D", "0d$", { desc = "clear current line" })
+vim.keymap.set("o", "D", "0D", { desc = "clear current line", noremap = true })
 
 -- [quickfix]
 vim.keymap.set("n", "zq", function()
