@@ -9,6 +9,8 @@ vim.o.mouse = "nv"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " m"
 
+vim.o.jumpoptions = "stack,view,clean"
+
 vim.o.keywordprg = ":vertical botright help"
 vim.o.rulerformat = "%Ll %l:%c %p%%"
 
