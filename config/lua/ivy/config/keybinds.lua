@@ -119,14 +119,6 @@ kmgroup({
   { "n", "<M-v>", "^vg_", "select contents of current line" },
 })
 
--- [fixup]
-keymaps.normal[";"] = {
-  function()
-    vim.notify("use `v;`", vim.log.levels.WARN)
-  end,
-  "fixup `v;`",
-}
-
 -- [selection]
 vim.keymap.set("o", ";", "iw", { desc = "select inside word" })
 vim.keymap.set("v", ";", "iw", { desc = "select inside word" })
