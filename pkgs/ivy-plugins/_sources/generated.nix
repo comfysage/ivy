@@ -356,15 +356,15 @@
   };
   mossy-nvim = {
     pname = "mossy-nvim";
-    version = "9f9d3244a7c49501e802fd144eb937e06c8a499d";
+    version = "1ba0b70e16bd42c95ab6dcaaf51035edc25301af";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "mossy.nvim";
-      rev = "9f9d3244a7c49501e802fd144eb937e06c8a499d";
+      rev = "1ba0b70e16bd42c95ab6dcaaf51035edc25301af";
       fetchSubmodules = false;
-      sha256 = "sha256-qrZAER6VmHAFZMCUvGy/Mz2LIJl8Z2+m/7rq7tuguRc=";
+      sha256 = "sha256-ZpemSwV/pH7cv3vC3Kv8Y6EpEiRawDQZovCWJKDiPFY=";
     };
-    date = "2025-09-04";
+    date = "2025-09-08";
   };
   neo-tree = {
     pname = "neo-tree";
