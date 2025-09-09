@@ -48,15 +48,27 @@ vim.o.smartcase = true
 vim.o.inccommand = "split"
 
 -- folding
-vim.o.foldlevelstart = 99
-vim.api.nvim_create_autocmd("WinNew", {
-  group = vim.api.nvim_create_augroup("ivy:options:folds", { clear = true }),
-  callback = function()
-    local win = vim.api.nvim_get_current_win()
-    vim.wo[win].foldcolumn = "1"
-    vim.wo[win].foldenable = true
-    vim.wo[win].foldnestmax = 1
-    vim.wo[win].foldmethod = "indent"
+local function setfolds()
+  vim.o.foldenable = vim.bo.buftype == ""
+  vim.o.foldlevel = 99
+  vim.o.foldlevelstart = 99
+  vim.o.foldcolumn = "1"
+  vim.o.foldnestmax = 1
+  vim.o.foldmethod = "indent"
+end
+
+local foldgroup = vim.api.nvim_create_augroup("ivy:folds:init", { clear = true })
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = foldgroup,
+  callback = function(ev)
+    vim.api.nvim_buf_call(ev.buf, setfolds)
+  end,
+})
+vim.api.nvim_create_autocmd("OptionSet", {
+  group = foldgroup,
+  pattern = "buftype",
+  callback = function(ev)
+    vim.api.nvim_buf_call(ev.buf, setfolds)
   end,
 })
 
