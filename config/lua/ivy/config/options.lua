@@ -152,6 +152,7 @@ vim.o.undodir = vim.fn.stdpath("state") .. "/undodir"
 vim.o.undofile = true
 -- dont unload abandoned buffers
 vim.o.hidden = true
+vim.o.sessionoptions = "help,tabpages,winsize"
 
 ---@type { [string]: { style: string, ['vert'|'vertleft'|'vertright'|'horiz'|'horizup'|'horizdown'|'verthoriz'|'topleft'|'topright'|'botleft'|'botright']: string, bottom?: string } }
 local borderchars = {
