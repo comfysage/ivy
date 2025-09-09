@@ -5,6 +5,7 @@ vim.g.lsp_config = {
       astro = {},
       bashls = {},
       clangd = {},
+      colorlsp = {},
       cssls = {},
       denols = {},
       dockerls = {},

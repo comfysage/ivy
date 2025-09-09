@@ -50,6 +50,7 @@
   lazygit,
   prettier,
   nodejs-slim,
+  color-lsp,
 
   # our beatiful wrapper
   wrapNeovim,
@@ -260,6 +261,7 @@ wrapNeovim {
       lazygit
       deno
       zls
+      color-lsp
     ])
   ];
 }

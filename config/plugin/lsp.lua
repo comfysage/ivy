@@ -50,9 +50,7 @@ local components = {
     name = "document_color",
     callback = function(client, bufnr)
       if client.server_capabilities.documentColorProvider then
-        vim.lsp.document_color.enable(true, bufnr, {
-          style = '', -- virtual
-        })
+        vim.lsp.document_color.enable(true, bufnr)
       end
     end,
   },

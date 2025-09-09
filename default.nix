@@ -16,6 +16,7 @@ let
   packages = lib.makeScope pkgs.newScope (self: {
     ivy = self.callPackage ./pkgs/ivy/package.nix { inherit ivyVersion; };
     ivyPlugins = self.callPackage ./pkgs/ivy-plugins/package.nix { };
+    color-lsp = self.callPackage ./pkgs/color-lsp/package.nix { };
     inherit (inputs.gift-wrap.legacyPackages.${pkgs.stdenv.hostPlatform.system}) wrapNeovim;
   });
 in
