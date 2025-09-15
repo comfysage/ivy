@@ -15,7 +15,6 @@
   # lsp
   bash-language-server,
   clang-tools,
-  dockerfile-language-server-nodejs,
   emmet-language-server,
   gopls,
   haskell-language-server,
@@ -257,7 +256,6 @@ wrapNeovim {
       taplo # toml
       luajitPackages.teal-language-server
       yaml-language-server # yaml
-      dockerfile-language-server-nodejs
       lazygit
       deno
       zls
