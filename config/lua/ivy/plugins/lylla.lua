@@ -1,13 +1,3 @@
----@param fn fun(): string|any[]
----@param opts? { events: string[] }
----@return table
-local function component(fn, opts)
-  local t = {}
-  t.fn = fn
-  t.opts = opts
-  return t
-end
-
 local function get_fmt()
   if not package.loaded["mossy"] then
     return
@@ -33,11 +23,18 @@ return {
     "lylla.nvim",
     lazy = false,
     after = function()
+      local lylla = require("lylla")
       local utils = require("lylla.utils")
 
-      require("lylla").setup({
+      lylla.setup({
+        hls = {
+          normal = { link = "MiniIconsAzure" },
+          visual = { link = "MiniIconsPurple" },
+          command = { link = "MiniIconsOrange" },
+          insert = { link = "MiniIconsGrey" },
+        },
         modules = {
-          component(function()
+          lylla.component(function()
             local modehl = utils.get_modehl()
             return {
               { prefix, modehl },
@@ -47,7 +44,7 @@ return {
             events = { "ModeChanged", "CmdlineEnter" },
           }),
           { " " },
-          component(function()
+          lylla.component(function()
             return {
               utils.getfilepath(),
               utils.getfilename(),
@@ -64,13 +61,13 @@ return {
             },
           }),
           { " " },
-          component(function()
+          lylla.component(function()
             return utils.get_searchcount()
           end),
           { "%=" },
           {},
           { "%=" },
-          component(function()
+          lylla.component(function()
             if not package.loaded["vim.diagnostic"] then
               return ""
             end
@@ -79,7 +76,7 @@ return {
             events = { "DiagnosticChanged" },
           }),
           { " " },
-          component(function()
+          lylla.component(function()
             return {
               { { "lsp :: " }, { utils.get_client() or "none" } },
               { " | ", "NonText" },
@@ -87,7 +84,7 @@ return {
               { " | ", "NonText" },
             }
           end, { events = { "FileType" } }),
-          component(function()
+          lylla.component(function()
             if not vim.o.ruler then
               return ""
             end
@@ -99,7 +96,7 @@ return {
           " ",
         },
         winbar = {
-          component(function()
+          lylla.component(function()
             local modehl = utils.get_modehl()
             return {
               { prefix, modehl },
@@ -108,7 +105,7 @@ return {
             events = { "ModeChanged", "CmdlineEnter" },
           }),
           " ",
-          component(function()
+          lylla.component(function()
             return {
               utils.getfilepath(),
               utils.getfilename(),
@@ -124,7 +121,7 @@ return {
             },
           }),
           { " " },
-          component(function()
+          lylla.component(function()
             return { utils.get_searchcount() }
           end),
         },
