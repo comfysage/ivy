@@ -152,8 +152,9 @@ kmgroup({
 })
 
 -- [treesitter]
+-- vim-scriptease inspired `zS`
 kmgroup({
-  { "n", "gm", vim.show_pos, "inspect treesitter node" },
+  { "n", "zS", vim.show_pos, "inspect marks" },
 })
 
 local ns = vim.api.nvim_create_namespace("resize-mode")
