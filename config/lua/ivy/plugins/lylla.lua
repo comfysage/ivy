@@ -60,6 +60,7 @@ return {
               "Filetype",
             },
           }),
+          { "%<" },
           { " " },
           lylla.component(function()
             return utils.get_searchcount()
