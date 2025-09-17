@@ -68,7 +68,7 @@ vim.g.findfunc = function(cmdarg, _)
     return {}
   end
   local farg = string.format("'%s'", cmdarg)
-  local findcmd, n = vim.o.grepprg:gsub("%$%*", farg)
+  local findcmd, n = vim.g.findprg:gsub("%$%*", farg)
   if n == 0 then
     findcmd = findcmd .. " " .. farg
   end
