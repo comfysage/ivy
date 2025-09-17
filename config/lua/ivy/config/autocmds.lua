@@ -5,15 +5,6 @@ vim.api.nvim_create_autocmd("VimResized", {
   desc = "Automatically resize windows when the host window size changes.",
 })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-  group = vim.api.nvim_create_augroup("editor:yank:highlight", { clear = true }),
-  pattern = "*",
-  callback = function()
-    vim.highlight.on_yank({ higroup = "CurSearch", timeout = 200 })
-  end,
-  desc = "Highlight yanked text",
-})
-
 vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
   group = vim.api.nvim_create_augroup("editor:macro:print", { clear = true }),
   callback = function(data)
