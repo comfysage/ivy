@@ -17,7 +17,12 @@ return {
         end,
       })
 
-      vim.api.nvim_set_hl(0, "TreesitterContext", { link = "Normal" })
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        group = vim.api.nvim_create_augroup("treesitter:context:highlight", { clear = true }),
+        callback = function()
+          vim.api.nvim_set_hl(0, "TreesitterContext", { link = "Normal" })
+        end,
+      })
     end,
   },
 
