@@ -33,7 +33,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     end
   end,
 })
-vim.api.nvim_exec_autocmds("ColorScheme", {})
 
 -- font & cursor --
 
