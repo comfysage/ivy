@@ -7,9 +7,14 @@ vim.api.nvim_create_autocmd("VimResized", {
 
 vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
   group = vim.api.nvim_create_augroup("editor:macro:print", { clear = true }),
-  callback = function(data)
-    local msg = data.event == "RecordingEnter" and "Recording macro..." or "Macro recorded"
-    vim.api.nvim_echo({ { msg, "ModeMsg" } }, false, {})
+  callback = function(ev)
+    local done = ev.event == "RecordingLeave"
+    local msg = done and "Macro recorded" or "Recording macro..."
+    vim.api.nvim_echo({ { msg, "MsgArea" } }, false, {
+      title = "Macro",
+      kind = "progress",
+      status = done and "success" or "running",
+    })
   end,
   desc = "Notify when recording macro",
 })
