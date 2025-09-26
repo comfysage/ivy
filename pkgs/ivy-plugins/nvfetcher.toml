@@ -43,9 +43,9 @@ src.git = "https://github.com/charm-community/freeze.nvim"
 fetch.github = "ibhagwan/fzf-lua"
 src.git = "https://github.com/ibhagwan/fzf-lua"
 
-[hunk-nvim]
-fetch.github = "julienvincent/hunk.nvim"
-src.git = "https://github.com/julienvincent/hunk.nvim"
+[difftool-nvim]
+fetch.github = "deathbeam/difftool.nvim"
+src.git = "https://github.com/deathbeam/difftool.nvim"
 
 [keymaps-nvim]
 fetch.github = "comfysage/keymaps.nvim"

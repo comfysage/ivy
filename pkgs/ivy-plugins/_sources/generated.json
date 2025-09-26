@@ -109,6 +109,27 @@
         },
         "version": "ac9fa498a9edb96dc3056724ff69d5f40b898453"
     },
+    "difftool-nvim": {
+        "cargoLocks": null,
+        "date": "2025-09-22",
+        "extract": null,
+        "name": "difftool-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "deathbeam",
+            "repo": "difftool.nvim",
+            "rev": "2922d00952e1aec60c345c232d9fdf6ecd1e75e6",
+            "sha256": "sha256-2ngfGWyzggZShkWxwIIGRMosLXdJ1OIN3NvfGbrn/zU=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "2922d00952e1aec60c345c232d9fdf6ecd1e75e6"
+    },
     "direnv": {
         "cargoLocks": null,
         "date": "2025-06-09",
@@ -215,27 +236,6 @@
             "type": "github"
         },
         "version": "2388dcd61731ae158bf7dad2ae0419291837e557"
-    },
-    "hunk-nvim": {
-        "cargoLocks": null,
-        "date": "2025-09-20",
-        "extract": null,
-        "name": "hunk-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "julienvincent",
-            "repo": "hunk.nvim",
-            "rev": "c21f15dbe78ddf23a4e1528a9a5370958c28b608",
-            "sha256": "sha256-xaY3s1lTAl/oFdqXAZ2KJd5/7XEsSXTIhC31NklaLvo=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "c21f15dbe78ddf23a4e1528a9a5370958c28b608"
     },
     "keymaps-nvim": {
         "cargoLocks": null,

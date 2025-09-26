@@ -64,6 +64,18 @@
     };
     date = "2025-08-23";
   };
+  difftool-nvim = {
+    pname = "difftool-nvim";
+    version = "2922d00952e1aec60c345c232d9fdf6ecd1e75e6";
+    src = fetchFromGitHub {
+      owner = "deathbeam";
+      repo = "difftool.nvim";
+      rev = "2922d00952e1aec60c345c232d9fdf6ecd1e75e6";
+      fetchSubmodules = false;
+      sha256 = "sha256-2ngfGWyzggZShkWxwIIGRMosLXdJ1OIN3NvfGbrn/zU=";
+    };
+    date = "2025-09-22";
+  };
   direnv = {
     pname = "direnv";
     version = "4dfc8758a1deab45e37b7f3661e0fd3759d85788";
@@ -124,18 +136,6 @@
       sha256 = "sha256-N9mCA2+nVAPHy+3fGa7TmgdM7jExBrIeqHucCE5II34=";
     };
     date = "2025-09-22";
-  };
-  hunk-nvim = {
-    pname = "hunk-nvim";
-    version = "c21f15dbe78ddf23a4e1528a9a5370958c28b608";
-    src = fetchFromGitHub {
-      owner = "julienvincent";
-      repo = "hunk.nvim";
-      rev = "c21f15dbe78ddf23a4e1528a9a5370958c28b608";
-      fetchSubmodules = false;
-      sha256 = "sha256-xaY3s1lTAl/oFdqXAZ2KJd5/7XEsSXTIhC31NklaLvo=";
-    };
-    date = "2025-09-20";
   };
   keymaps-nvim = {
     pname = "keymaps-nvim";

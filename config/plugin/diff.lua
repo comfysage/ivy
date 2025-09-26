@@ -10,7 +10,7 @@ local function diff()
   end
   if vim.fn.argc() > 1 then
     vim.api.nvim_cmd({
-      cmd = "DiffEditor",
+      cmd = "DiffTool",
       ---@diagnostic disable-next-line: assign-type-mismatch
       args = vim.fn.argv(),
     }, {})
