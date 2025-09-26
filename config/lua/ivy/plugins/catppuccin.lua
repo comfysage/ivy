@@ -45,7 +45,6 @@ return {
             enabled = false,
           },
           cmp = true,
-          lsp_trouble = true,
           nvimtree = true,
           which_key = false,
           indent_blankline = {

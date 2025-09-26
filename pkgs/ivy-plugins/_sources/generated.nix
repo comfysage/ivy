@@ -609,18 +609,6 @@
     };
     date = "2025-09-21";
   };
-  trouble = {
-    pname = "trouble";
-    version = "f176232e7759c4f8abd923c21e3e5a5c76cd6837";
-    src = fetchFromGitHub {
-      owner = "folke";
-      repo = "trouble.nvim";
-      rev = "f176232e7759c4f8abd923c21e3e5a5c76cd6837";
-      fetchSubmodules = false;
-      sha256 = "sha256-yxcrQs8VCd+ABCnQTcXhmIVbM+Tqdy0ZgzLvbJNysTk=";
-    };
-    date = "2025-09-19";
-  };
   undotree = {
     pname = "undotree";
     version = "fe9a9d0645f0f5532360b5e5f5c550d7bb4f1869";

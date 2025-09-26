@@ -1064,27 +1064,6 @@
         },
         "version": "51aedba5d460e777a1427a9a218aa6ca8bbbe66b"
     },
-    "trouble": {
-        "cargoLocks": null,
-        "date": "2025-09-19",
-        "extract": null,
-        "name": "trouble",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "folke",
-            "repo": "trouble.nvim",
-            "rev": "f176232e7759c4f8abd923c21e3e5a5c76cd6837",
-            "sha256": "sha256-yxcrQs8VCd+ABCnQTcXhmIVbM+Tqdy0ZgzLvbJNysTk=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "f176232e7759c4f8abd923c21e3e5a5c76cd6837"
-    },
     "undotree": {
         "cargoLocks": null,
         "date": "2025-08-30",
