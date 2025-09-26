@@ -8,7 +8,7 @@ local function diff()
   if not vim.o.diff then
     return
   end
-  if vim.fn.argc() > 1 then
+  if vim.fn.argc() == 2 then
     vim.api.nvim_cmd({
       cmd = "DiffTool",
       ---@diagnostic disable-next-line: assign-type-mismatch
