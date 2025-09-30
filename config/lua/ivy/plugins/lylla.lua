@@ -111,6 +111,7 @@ return {
               utils.getfilepath(),
               utils.getfilename(),
               { " " },
+              "%h%w%m%r",
             }
           end, {
             events = {
@@ -121,10 +122,6 @@ return {
               "Filetype",
             },
           }),
-          { " " },
-          lylla.component(function()
-            return { utils.get_searchcount() }
-          end),
         },
       })
     end,
