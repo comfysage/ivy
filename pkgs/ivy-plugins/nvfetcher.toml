@@ -21,6 +21,10 @@ src.git = "https://github.com/laytan/cloak.nvim"
 fetch.github = "saecki/crates.nvim"
 src.git = "https://github.com/saecki/crates.nvim"
 
+[difftool-nvim]
+fetch.github = "deathbeam/difftool.nvim"
+src.git = "https://github.com/deathbeam/difftool.nvim"
+
 [direnv]
 fetch.github = "NotAShelf/direnv.nvim"
 src.git = "https://github.com/NotAShelf/direnv.nvim"
@@ -42,10 +46,6 @@ src.git = "https://github.com/charm-community/freeze.nvim"
 [fzf-lua]
 fetch.github = "ibhagwan/fzf-lua"
 src.git = "https://github.com/ibhagwan/fzf-lua"
-
-[difftool-nvim]
-fetch.github = "deathbeam/difftool.nvim"
-src.git = "https://github.com/deathbeam/difftool.nvim"
 
 [keymaps-nvim]
 fetch.github = "comfysage/keymaps.nvim"
@@ -120,6 +120,10 @@ src.git = "https://github.com/echasnovski/mini.surround"
 fetch.github = "echasnovski/mini.trailspace"
 src.git = "https://github.com/echasnovski/mini.trailspace"
 
+[mossy-nvim]
+fetch.github = "comfysage/mossy.nvim"
+src.git = "https://github.com/comfysage/mossy.nvim"
+
 [neogen]
 fetch.github = "danymat/neogen"
 src.git = "https://github.com/danymat/neogen"
@@ -128,9 +132,21 @@ src.git = "https://github.com/danymat/neogen"
 fetch.github = "nvim-neo-tree/neo-tree.nvim"
 src.git = "https://github.com/nvim-neo-tree/neo-tree.nvim"
 
+[nivvie-nvim]
+fetch.github = "comfysage/nivvie.nvim"
+src.git = "https://github.com/comfysage/nivvie.nvim"
+
 [nui]
 fetch.github = "MunifTanjim/nui.nvim"
 src.git = "https://github.com/MunifTanjim/nui.nvim"
+
+[nvim-lint]
+fetch.github = "mfussenegger/nvim-lint"
+src.git = "https://github.com/mfussenegger/nvim-lint"
+
+[nvim-nio]
+fetch.github = "nvim-neotest/nvim-nio"
+src.git = "https://github.com/nvim-neotest/nvim-nio"
 
 [nvim-lspconfig]
 fetch.github = "neovim/nvim-lspconfig"
@@ -175,22 +191,6 @@ src.git = "https://github.com/comfysage/shelf.nvim"
 [symbol-usage]
 fetch.github = "Wansmer/symbol-usage.nvim"
 src.git = "https://github.com/Wansmer/symbol-usage.nvim"
-
-[mossy-nvim]
-fetch.github = "comfysage/mossy.nvim"
-src.git = "https://github.com/comfysage/mossy.nvim"
-
-[nvim-lint]
-fetch.github = "mfussenegger/nvim-lint"
-src.git = "https://github.com/mfussenegger/nvim-lint"
-
-[nvim-nio]
-fetch.github = "nvim-neotest/nvim-nio"
-src.git = "https://github.com/nvim-neotest/nvim-nio"
-
-[nivvie-nvim]
-fetch.github = "comfysage/nivvie.nvim"
-src.git = "https://github.com/comfysage/nivvie.nvim"
 
 [tabby-nvim]
 fetch.github = "nanozuki/tabby.nvim"
