@@ -25,6 +25,11 @@ return {
     event = "UIEnter",
   },
 
+  {
+    "blink.indent",
+    event = "UIEnter",
+  },
+
   -- tree view
   {
     "neo-tree.nvim",

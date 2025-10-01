@@ -1,3 +1,7 @@
+[blink-indent]
+fetch.github = "saghen/blink.indent"
+src.git = "https://github.com/saghen/blink.indent"
+
 [bqf]
 fetch.github = "kevinhwang91/nvim-bqf"
 src.git = "https://github.com/kevinhwang91/nvim-bqf"

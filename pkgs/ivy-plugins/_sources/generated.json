@@ -1,4 +1,25 @@
 {
+    "blink-indent": {
+        "cargoLocks": null,
+        "date": "2025-11-12",
+        "extract": null,
+        "name": "blink-indent",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "saghen",
+            "repo": "blink.indent",
+            "rev": "63275b3b0df71047514613353294f02dae510bfc",
+            "sha256": "sha256-gQHdna0iCtAaZNEfLfn41HKeRSL0zpKBTz/SMOFOCoA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "63275b3b0df71047514613353294f02dae510bfc"
+    },
     "bqf": {
         "cargoLocks": null,
         "date": "2025-10-06",
