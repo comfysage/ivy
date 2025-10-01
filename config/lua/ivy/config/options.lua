@@ -38,6 +38,7 @@ vim.opt.completeopt = { "fuzzy", "menu", "menuone", "noinsert", "preview" }
 -- split directions
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.splitkeep = "screen"
 
 -- search settings
 vim.o.incsearch = true
