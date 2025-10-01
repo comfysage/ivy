@@ -56,11 +56,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1758758707,
-        "narHash": "sha256-mT480aOcdXWupRXdb7K1uubLRy8f16GiCjw8qk4Gwbs=",
+        "lastModified": 1759277111,
+        "narHash": "sha256-SDLZMha2miaChOBGBkQJlTtk2kvcB7WIVVZ2l0/9byc=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "208a1694fd96add260ae4733759a70c9fe06be91",
+        "rev": "b7b3632fab34541543373254c265da03c1d0f240",
         "type": "github"
       },
       "original": {
@@ -72,11 +72,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1758756501,
-        "narHash": "sha256-g0oMlEK9ck+whsaiShlnuje5K7vVTunRNqQV3glUKKw=",
+        "lastModified": 1759281842,
+        "narHash": "sha256-fexPHQXI78SnB0bhiV1CgagLjNQsQk++LLb2NdEQLfI=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "0be3dee44f0659be58d455b067d1919525e773ee",
+        "rev": "6d550f3cdbca6091042526a0153e0db18192447e",
         "type": "github"
       },
       "original": {
@@ -88,10 +88,10 @@
     "nixpkgs": {
       "locked": {
         "lastModified": 315532800,
-        "narHash": "sha256-Ow/zsDIVKZ+GhHGZq2bY7oY+rrcUtDTUyHZq96kmw1c=",
-        "rev": "e2642aa7d5a15eae586932a56f4294934f959c14",
+        "narHash": "sha256-LzU/KC9vXI1UeKEjbz0bq0OIdv36UJpz88Sfeg991UQ=",
+        "rev": "647e5c14cbd5067f44ac86b74f014962df460840",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre866752.e2642aa7d5a1/nixexprs.tar.xz?rev=e2642aa7d5a15eae586932a56f4294934f959c14"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre868532.647e5c14cbd5/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
