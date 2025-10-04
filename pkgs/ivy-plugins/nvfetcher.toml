@@ -196,10 +196,6 @@ src.git = "https://github.com/Wansmer/symbol-usage.nvim"
 fetch.github = "nanozuki/tabby.nvim"
 src.git = "https://github.com/nanozuki/tabby.nvim"
 
-[todo-comments]
-fetch.github = "folke/todo-comments.nvim"
-src.git = "https://github.com/folke/todo-comments.nvim"
-
 [toggleterm]
 fetch.github = "akinsho/toggleterm.nvim"
 src.git = "https://github.com/akinsho/toggleterm.nvim"

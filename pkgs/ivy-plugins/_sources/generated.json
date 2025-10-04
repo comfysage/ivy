@@ -1001,27 +1001,6 @@
         },
         "version": "b3affa6db7eab80fca2a2db5b73b473144507039"
     },
-    "todo-comments": {
-        "cargoLocks": null,
-        "date": "2025-01-14",
-        "extract": null,
-        "name": "todo-comments",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "folke",
-            "repo": "todo-comments.nvim",
-            "rev": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5",
-            "sha256": "sha256-at9OSBtQqyiDdxKdNn2x6z4k8xrDD90sACKEK7uKNUM=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5"
-    },
     "toggleterm": {
         "cargoLocks": null,
         "date": "2025-03-09",

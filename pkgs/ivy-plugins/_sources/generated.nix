@@ -573,18 +573,6 @@
     };
     date = "2025-05-23";
   };
-  todo-comments = {
-    pname = "todo-comments";
-    version = "304a8d204ee787d2544d8bc23cd38d2f929e7cc5";
-    src = fetchFromGitHub {
-      owner = "folke";
-      repo = "todo-comments.nvim";
-      rev = "304a8d204ee787d2544d8bc23cd38d2f929e7cc5";
-      fetchSubmodules = false;
-      sha256 = "sha256-at9OSBtQqyiDdxKdNn2x6z4k8xrDD90sACKEK7uKNUM=";
-    };
-    date = "2025-01-14";
-  };
   toggleterm = {
     pname = "toggleterm";
     version = "9a88eae817ef395952e08650b3283726786fb5fb";

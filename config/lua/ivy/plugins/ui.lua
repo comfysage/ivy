@@ -86,15 +86,6 @@ return {
     end,
   },
 
-  -- highlight TODO, FIXME, etc.
-  {
-    "todo-comments.nvim",
-    event = "DeferredUIEnter",
-    after = function()
-      require("todo-comments").setup()
-    end,
-  },
-
   -- dependencies
   { "yosu.nvim" },
 }
