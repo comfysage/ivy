@@ -127,15 +127,15 @@
   };
   fzf-lua = {
     pname = "fzf-lua";
-    version = "4be5156ea8fae0a4914e8c3a4f005dc133019599";
+    version = "c8876889dc09755f6c950c0745f0ba2b8e59eece";
     src = fetchFromGitHub {
       owner = "ibhagwan";
       repo = "fzf-lua";
-      rev = "4be5156ea8fae0a4914e8c3a4f005dc133019599";
+      rev = "c8876889dc09755f6c950c0745f0ba2b8e59eece";
       fetchSubmodules = false;
-      sha256 = "sha256-qkXtqTC502g8FYy6xF+GDqG2hGIrue8Rs0Q3nXwUj5k=";
+      sha256 = "sha256-Q2XzLl3aiRRrJMy3oOas8r6ktLRM7VhukyR2nBWWp3c=";
     };
-    date = "2025-09-27";
+    date = "2025-10-04";
   };
   keymaps-nvim = {
     pname = "keymaps-nvim";
@@ -188,171 +188,171 @@
   };
   mini-ai = {
     pname = "mini-ai";
-    version = "e0d00c227112e942ed2789dd4c21d651002831c0";
+    version = "11c57180bc9084089206e211ac7aa598bedc9673";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.ai";
-      rev = "e0d00c227112e942ed2789dd4c21d651002831c0";
+      rev = "11c57180bc9084089206e211ac7aa598bedc9673";
       fetchSubmodules = false;
-      sha256 = "sha256-ZpRK56/VplS9C2i9uR5YOo1br4XPSmouQtXB794sJmw=";
+      sha256 = "sha256-4cYYb9wVo/g/z07QLnHJq02NNORat/984QXFUUuCr8g=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-align = {
     pname = "mini-align";
-    version = "be20e745cfa549009d1867bf55381602810250da";
+    version = "94af41078e61fbe42ec79f87e67d69c529d3c40a";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.align";
-      rev = "be20e745cfa549009d1867bf55381602810250da";
+      rev = "94af41078e61fbe42ec79f87e67d69c529d3c40a";
       fetchSubmodules = false;
-      sha256 = "sha256-t/HN1Z4o5fkKjLmjVc227Lj7M83JdFjCZjhiRA22xyk=";
+      sha256 = "sha256-knj+Fis8JeoXze1e7s9ALwi0jYC1Bve4bK4OwqQ9bS0=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-bracketed = {
     pname = "mini-bracketed";
-    version = "87cf031b49e3753227f73f433851a6a75cf31445";
+    version = "0ea3cb6478e5fdeca33b53fd08683eb2e622f6ce";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.bracketed";
-      rev = "87cf031b49e3753227f73f433851a6a75cf31445";
+      rev = "0ea3cb6478e5fdeca33b53fd08683eb2e622f6ce";
       fetchSubmodules = false;
-      sha256 = "sha256-KbYH+gcjiJ4XuXbfUMfgSWM+cVA2+yDHaHKQW/8OayU=";
+      sha256 = "sha256-dGqV5DTrhKjQUc/2ABm5Uex/CVdIQvhgmkyHhDjhb0w=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-diff = {
     pname = "mini-diff";
-    version = "faecf54385bad761d8f3f3096c6c0ea2a6e73123";
+    version = "a2df2a9a485328c20252b7cadb11feb717020e45";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.diff";
-      rev = "faecf54385bad761d8f3f3096c6c0ea2a6e73123";
+      rev = "a2df2a9a485328c20252b7cadb11feb717020e45";
       fetchSubmodules = false;
-      sha256 = "sha256-JAg4mSgme7KUHLaxpAlma4g6+hWesMtjk/JtdGp3L/0=";
+      sha256 = "sha256-F6If0wAhT26XJ10+yJNqCjiU3RkS7FYDyNsnjl4z89A=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-files = {
     pname = "mini-files";
-    version = "d22c5b74b7764d0bd33e4988e5ee00139cfe22e3";
+    version = "51db5ded1b7ac4dd8ca4c22c66f156dac5309304";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.files";
-      rev = "d22c5b74b7764d0bd33e4988e5ee00139cfe22e3";
+      rev = "51db5ded1b7ac4dd8ca4c22c66f156dac5309304";
       fetchSubmodules = false;
-      sha256 = "sha256-s32YZSNSFYQVmJuilFEnjchu3lcnanG/+LsOJ6sKunM=";
+      sha256 = "sha256-54RkSO8Fy19T2lp58xZ2iq7D3yb0DL/QwgSM2uMRqQg=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-git = {
     pname = "mini-git";
-    version = "0cdcfa1294558aad343234b928ef1c15040586ce";
+    version = "19600f7e3dee7e581479da4bd024551b080d90d4";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini-git";
-      rev = "0cdcfa1294558aad343234b928ef1c15040586ce";
+      rev = "19600f7e3dee7e581479da4bd024551b080d90d4";
       fetchSubmodules = false;
-      sha256 = "sha256-6DbdkZ+uo0GEkFb/WGNT/2a9IrS6QuN3hMD5kYtB8t0=";
+      sha256 = "sha256-ZGI8KNY2I3SZXFhmwhrQB/ZRVvcXMr0J53mc7Ch0A50=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-icons = {
     pname = "mini-icons";
-    version = "e8fae66cb400744daeedf6e387347df50271c252";
+    version = "284798619aed9f4c1ac1b9417b9a5e3b4b85ef3a";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.icons";
-      rev = "e8fae66cb400744daeedf6e387347df50271c252";
+      rev = "284798619aed9f4c1ac1b9417b9a5e3b4b85ef3a";
       fetchSubmodules = false;
-      sha256 = "sha256-0xoGP/dFn0FA+g5w19+wXhtBfZtK5/Zd6w+WsykKkCk=";
+      sha256 = "sha256-kjQ8SScf/Gi4cJPfBfMCa9oi/PcuguJdIHk1jYxMBEw=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-jump2d = {
     pname = "mini-jump2d";
-    version = "cd902f64880a0acab7595337884c5d8e381968ca";
+    version = "5ff749990336e67195724d1dcddfea4e50057a19";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.jump2d";
-      rev = "cd902f64880a0acab7595337884c5d8e381968ca";
+      rev = "5ff749990336e67195724d1dcddfea4e50057a19";
       fetchSubmodules = false;
-      sha256 = "sha256-21Jng2yVTn5lmEZvO0VR1kQ2/o/Sde33EDpQqXsNdAk=";
+      sha256 = "sha256-Bjy3rqV5rFxFk08DIFY4ECvuqRze3cK7asiqAlKFGDM=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-move = {
     pname = "mini-move";
-    version = "7231697e0e90d03f2bebab3108c5028a73af8934";
+    version = "f33406ae7d95b931c6a0d3ba11e50983fe800afb";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.move";
-      rev = "7231697e0e90d03f2bebab3108c5028a73af8934";
+      rev = "f33406ae7d95b931c6a0d3ba11e50983fe800afb";
       fetchSubmodules = false;
-      sha256 = "sha256-6uAYwY/sbzmh7EffZ3R9TWm17OhOPGUI0TXZp7by/vM=";
+      sha256 = "sha256-KODqg7QwGucuR1D+6MfQLUYkAlf6JiF8+Vz19GpZ2L8=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-operators = {
     pname = "mini-operators";
-    version = "11a340facf8fa4880efd39d4cd01333b5b79728f";
+    version = "1d0d1e1570e5bd22e6df3bcb068d0a2ac0d30710";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.operators";
-      rev = "11a340facf8fa4880efd39d4cd01333b5b79728f";
+      rev = "1d0d1e1570e5bd22e6df3bcb068d0a2ac0d30710";
       fetchSubmodules = false;
-      sha256 = "sha256-YcjDM2wqMk+rMt55h/YkNjuRm0VH0bAjFu3lnnUsvj4=";
+      sha256 = "sha256-RwHiCb1ZaH6IyJwZWJmXF/TmFS5bWVGNXZgVt2/oi9U=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-pairs = {
     pname = "mini-pairs";
-    version = "bada72fe4ec607f882a098d15aa4a3279bc6883d";
+    version = "b9aada8c0e59f2b938e98fbf4eae0799eba96ad9";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.pairs";
-      rev = "bada72fe4ec607f882a098d15aa4a3279bc6883d";
+      rev = "b9aada8c0e59f2b938e98fbf4eae0799eba96ad9";
       fetchSubmodules = false;
-      sha256 = "sha256-x3QV+5Wkv5GCX9NW3rkRbV+QTM/0MY4lg4ZxVVoRtbY=";
+      sha256 = "sha256-KFWpyITaKc9AGhvpLkeq9B3a5MELqed2UBo9X8oC6Ac=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-splitjoin = {
     pname = "mini-splitjoin";
-    version = "0826fa1cf68a2db309b6208232f41b2a45360216";
+    version = "b0d57bb5d1ed154e5902ae2745f1a320a7642443";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.splitjoin";
-      rev = "0826fa1cf68a2db309b6208232f41b2a45360216";
+      rev = "b0d57bb5d1ed154e5902ae2745f1a320a7642443";
       fetchSubmodules = false;
-      sha256 = "sha256-N5LpFTLJajB9ZjCIAhugT5xld0WPnP5tuvz4SDVNYGk=";
+      sha256 = "sha256-7Oo4I/rr3tNyEIXOki/ZBftt8vJc7koEvQTBSWqFsKo=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-surround = {
     pname = "mini-surround";
-    version = "aec6ed2902a2fd809e3c2fe79ee4568791285201";
+    version = "61db6babafbd10e862a7ac4713fa043126329247";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.surround";
-      rev = "aec6ed2902a2fd809e3c2fe79ee4568791285201";
+      rev = "61db6babafbd10e862a7ac4713fa043126329247";
       fetchSubmodules = false;
-      sha256 = "sha256-zY7yPmaLZ8iK2y5TojzZso3AIkf3CXPpueFj/D1UqGo=";
+      sha256 = "sha256-EPbOm27bl9kLnW8pOzPWaOA+dAjcxJQKNUWSVBa1Dko=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mini-trailspace = {
     pname = "mini-trailspace";
-    version = "e0265c5ad106cf3fa7194c024e48d20b13b33006";
+    version = "fab31f4955207cf84e28e7bed5cff35cccaf317f";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.trailspace";
-      rev = "e0265c5ad106cf3fa7194c024e48d20b13b33006";
+      rev = "fab31f4955207cf84e28e7bed5cff35cccaf317f";
       fetchSubmodules = false;
-      sha256 = "sha256-M/d9srGyFTRvK4nfEk8T0nTEBdoMRLf37SiW1uiOieg=";
+      sha256 = "sha256-1wonX56fOcvKSSRkRDfRrjtMHjx8nCMNv+0XKMPVWT8=";
     };
-    date = "2025-09-26";
+    date = "2025-10-03";
   };
   mossy-nvim = {
     pname = "mossy-nvim";
@@ -368,15 +368,15 @@
   };
   neo-tree = {
     pname = "neo-tree";
-    version = "8dd9f08ff086d09d112f1873f88dc0f74b598cdb";
+    version = "f14ac20f98fb62769eaf4de1dc69fbee5fcf3384";
     src = fetchFromGitHub {
       owner = "nvim-neo-tree";
       repo = "neo-tree.nvim";
-      rev = "8dd9f08ff086d09d112f1873f88dc0f74b598cdb";
+      rev = "f14ac20f98fb62769eaf4de1dc69fbee5fcf3384";
       fetchSubmodules = false;
-      sha256 = "sha256-edthaqznGTJ+VFVORK7gfHI9J14PLAghG9prsWlzXtc=";
+      sha256 = "sha256-HrF1y221FIO+92baQILYnG7TFpb/btQ/7czTgKwqkWk=";
     };
-    date = "2025-09-29";
+    date = "2025-10-04";
   };
   neogen = {
     pname = "neogen";
@@ -428,16 +428,16 @@
   };
   nvim-lspconfig = {
     pname = "nvim-lspconfig";
-    version = "db8fef885009fdec0daeff3e5dda92e1f539611e";
+    version = "e688b486fe9291f151eae7e5c0b5a5c4ef980847";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "db8fef885009fdec0daeff3e5dda92e1f539611e";
+      rev = "e688b486fe9291f151eae7e5c0b5a5c4ef980847";
       fetchSubmodules = false;
-      sha256 = "sha256-TdgwzwyUJdjHH2CuRy7v6IBqBSD7PrMydrS1VYwYURI=";
+      sha256 = "sha256-K56vjTUkQ/NdA6vq5942zUknPiCUbMByiEW540dR8R0=";
     };
     start = "true";
-    date = "2025-10-01";
+    date = "2025-10-04";
   };
   nvim-nio = {
     pname = "nvim-nio";
@@ -453,16 +453,16 @@
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "77362027f7aa850c87419fd571151e76b0b342a6";
+    version = "01ced7499fb07f6c94abd316414ef198bd6e7058";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "77362027f7aa850c87419fd571151e76b0b342a6";
+      rev = "01ced7499fb07f6c94abd316414ef198bd6e7058";
       fetchSubmodules = false;
-      sha256 = "sha256-AAX/MECcahlb9zr9MUQFxbbpxo2guKI7eT3ihA66+IQ=";
+      sha256 = "sha256-BughuOIwOvSzNyxRQy1g0X5zYFxipEaF/q4jeNKiB8g=";
     };
     start = "true";
-    date = "2025-09-28";
+    date = "2025-10-04";
   };
   nvim-treesitter-context = {
     pname = "nvim-treesitter-context";
@@ -527,15 +527,15 @@
   };
   schemastore = {
     pname = "schemastore";
-    version = "c8af3f44c68757344b4dcb82e2ac48892b1be765";
+    version = "8e17e50b519ba360bcfd5dfb5843ccac9be500ba";
     src = fetchFromGitHub {
       owner = "b0o";
       repo = "schemastore.nvim";
-      rev = "c8af3f44c68757344b4dcb82e2ac48892b1be765";
+      rev = "8e17e50b519ba360bcfd5dfb5843ccac9be500ba";
       fetchSubmodules = false;
-      sha256 = "sha256-P1NM2+U8+x4zHMCjcLf0zEdQvrsbN8gysl/q/vQ8u78=";
+      sha256 = "sha256-T6mWvScsU0IsB3wFre5+TrNIbpQCA0flf7BNrGQIb+M=";
     };
-    date = "2025-09-29";
+    date = "2025-10-03";
   };
   shelf-nvim = {
     pname = "shelf-nvim";
@@ -599,15 +599,15 @@
   };
   treewalker = {
     pname = "treewalker";
-    version = "e339e81951e96147b57f30abbb76a67d71b809ba";
+    version = "2f6fc4957bf428764863aa35f57549e9246a3943";
     src = fetchFromGitHub {
       owner = "aaronik";
       repo = "treewalker.nvim";
-      rev = "e339e81951e96147b57f30abbb76a67d71b809ba";
+      rev = "2f6fc4957bf428764863aa35f57549e9246a3943";
       fetchSubmodules = false;
-      sha256 = "sha256-L5+idIs8ykn7PurTol9wCKkMk2WwcrXP2VzEcWDIG9g=";
+      sha256 = "sha256-MymyvrCzrtzPfPHGAniwFf8VG12AQXdGJ5gq9CHX17Q=";
     };
-    date = "2025-09-29";
+    date = "2025-10-02";
   };
   undotree = {
     pname = "undotree";
