@@ -392,15 +392,6 @@ return {
     end,
   },
 
-  -- add better undo history
-  {
-    "undotree",
-    event = "BufReadPost",
-    after = function()
-      vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-    end,
-  },
-
   {
     "direnv.nvim",
     enabled = function()

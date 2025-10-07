@@ -204,10 +204,6 @@ src.git = "https://github.com/akinsho/toggleterm.nvim"
 fetch.github = "aaronik/treewalker.nvim"
 src.git = "https://github.com/aaronik/treewalker.nvim"
 
-[undotree]
-fetch.github = "mbbill/undotree"
-src.git = "https://github.com/mbbill/undotree"
-
 [vim-fugitive]
 fetch.github = "tpope/vim-fugitive"
 src.git = "https://github.com/tpope/vim-fugitive"

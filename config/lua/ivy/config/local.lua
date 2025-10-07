@@ -26,3 +26,7 @@ do
   local c = require("evergarden.colors").get()
   vim.api.nvim_set_hl(0, "@loom.indent", { fg = c.surface1 })
 end
+
+do
+  vim.cmd.packadd("nvim.undotree")
+end

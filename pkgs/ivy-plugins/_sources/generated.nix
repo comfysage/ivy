@@ -597,18 +597,6 @@
     };
     date = "2025-10-02";
   };
-  undotree = {
-    pname = "undotree";
-    version = "0f1c9816975b5d7f87d5003a19c53c6fd2ff6f7f";
-    src = fetchFromGitHub {
-      owner = "mbbill";
-      repo = "undotree";
-      rev = "0f1c9816975b5d7f87d5003a19c53c6fd2ff6f7f";
-      fetchSubmodules = false;
-      sha256 = "sha256-EWOH08KAWyoT9m45/B1d5aKQQJtd3k4orJbagVsxe08=";
-    };
-    date = "2025-09-29";
-  };
   vim-fugitive = {
     pname = "vim-fugitive";
     version = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4";
