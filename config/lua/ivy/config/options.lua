@@ -49,7 +49,10 @@ vim.o.inccommand = "split"
 
 -- folding
 local function setfolds()
-  vim.o.foldenable = vim.bo.buftype == ""
+  if vim.bo.buftype ~= "" then
+    return
+  end
+  vim.o.foldenable = true
   vim.o.foldlevel = 99
   vim.o.foldlevelstart = 99
   vim.o.foldcolumn = "1"
