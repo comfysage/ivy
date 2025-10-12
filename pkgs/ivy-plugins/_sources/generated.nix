@@ -64,18 +64,6 @@
     };
     date = "2025-08-23";
   };
-  difftool-nvim = {
-    pname = "difftool-nvim";
-    version = "2922d00952e1aec60c345c232d9fdf6ecd1e75e6";
-    src = fetchFromGitHub {
-      owner = "deathbeam";
-      repo = "difftool.nvim";
-      rev = "2922d00952e1aec60c345c232d9fdf6ecd1e75e6";
-      fetchSubmodules = false;
-      sha256 = "sha256-2ngfGWyzggZShkWxwIIGRMosLXdJ1OIN3NvfGbrn/zU=";
-    };
-    date = "2025-09-22";
-  };
   direnv = {
     pname = "direnv";
     version = "4dfc8758a1deab45e37b7f3661e0fd3759d85788";

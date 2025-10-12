@@ -109,27 +109,6 @@
         },
         "version": "ac9fa498a9edb96dc3056724ff69d5f40b898453"
     },
-    "difftool-nvim": {
-        "cargoLocks": null,
-        "date": "2025-09-22",
-        "extract": null,
-        "name": "difftool-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "deathbeam",
-            "repo": "difftool.nvim",
-            "rev": "2922d00952e1aec60c345c232d9fdf6ecd1e75e6",
-            "sha256": "sha256-2ngfGWyzggZShkWxwIIGRMosLXdJ1OIN3NvfGbrn/zU=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "2922d00952e1aec60c345c232d9fdf6ecd1e75e6"
-    },
     "direnv": {
         "cargoLocks": null,
         "date": "2025-06-09",

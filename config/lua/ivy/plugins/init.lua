@@ -405,11 +405,6 @@ return {
   },
 
   {
-    "difftool.nvim",
-    lazy = false,
-  },
-
-  {
     "nivvie.nvim",
     lazy = false,
     config = function()

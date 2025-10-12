@@ -21,10 +21,6 @@ src.git = "https://github.com/laytan/cloak.nvim"
 fetch.github = "saecki/crates.nvim"
 src.git = "https://github.com/saecki/crates.nvim"
 
-[difftool-nvim]
-fetch.github = "deathbeam/difftool.nvim"
-src.git = "https://github.com/deathbeam/difftool.nvim"
-
 [direnv]
 fetch.github = "NotAShelf/direnv.nvim"
 src.git = "https://github.com/NotAShelf/direnv.nvim"
