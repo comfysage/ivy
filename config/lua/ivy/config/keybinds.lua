@@ -78,8 +78,7 @@ vim.keymap.set("n", "s", "<nop>")
 kmgroup({
   { "n", "sv", vim.cmd.vsplit, "split window vertical" },
   { "n", "sh", vim.cmd.split, "split window horizontal" },
-  { "n", "<leader>qf", vim.cmd.fclose, "close floating window" },
-  { "n", "<leader>qp", vim.cmd.pclose, "close preview window" },
+  { "n", "q", vim.cmd.close, "close window" },
 })
 
 -- [tabs]
