@@ -60,6 +60,7 @@ kmgroup({
   { "n", "<leader>q", vim.cmd.quitall, "quit all" },
   { "n", "<C-z>", vim.cmd.detach, "detach" },
   { "n", "<leader>ft", "<Plug>(tether-select)", "select tether" },
+  { "n", "<leader>fT", "<cmd>Tether! select<cr>", "select tether and stop current" },
 })
 
 -- [file]
