@@ -155,12 +155,6 @@ return {
       keymaps.normal["<leader>fg"] = { require("fzf-lua").live_grep, "grep through all files" }
       keymaps.normal["<leader>fh"] = { require("fzf-lua").helptags, "search help tags" }
       keymaps.normal["<leader>fq"] = { require("fzf-lua").quickfix, "search quick fix list" }
-      keymaps.normal["<leader>ft"] = {
-        function()
-          vim.cmd([[TodoFzfLua]])
-        end,
-        "live grep but for TODOs and FIXMEs",
-      }
       keymaps.normal["<leader>fc"] = { require("fzf-lua").git_commits, "git commits" }
       keymaps.normal["<leader>f/"] = { require("fzf-lua").grep_curbuf, "fuzzy find in current buffer" }
     end,
