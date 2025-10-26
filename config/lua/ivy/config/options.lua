@@ -147,9 +147,6 @@ vim.o.spellsuggest = "double,4"
 vim.o.list = true
 
 vim.o.shell = os.getenv("SHELL") or "/bin/sh"
-if vim.fn.has("unix") == 1 then
-  vim.o.shell = "/bin/sh"
-end
 
 -- disable swap & backup, and configure undo files
 vim.o.swapfile = false
