@@ -58,6 +58,8 @@ kmgroup({
 -- [workspace]
 kmgroup({
   { "n", "<leader>q", vim.cmd.quitall, "quit all" },
+  { "n", "<C-z>", vim.cmd.detach, "detach" },
+  { "n", "<leader>ft", "<Plug>(tether-select)", "select tether" },
 })
 
 -- [file]
