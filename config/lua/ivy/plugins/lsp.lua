@@ -1,53 +1,4 @@
 return {
-  {
-    "mossy.nvim",
-    event = "UIEnter",
-    deps = { "nio" },
-    after = function()
-      require("mossy").setup()
-      local sources = require("mossy.sources")
-      sources:setup({
-        "treefmt",
-        "clang-format",
-        "nixfmt",
-        "shfmt",
-        "stylua",
-      })
-      ---@diagnostic disable-next-line: missing-fields
-      sources:add("prettier"):with({
-        filetypes = { "html", "markdown", "astro", "vue" },
-      })
-      sources:add({
-        name = "typstyle",
-        cmd = "typstyle",
-        method = "formatting",
-        filetypes = { "typst" },
-        stdin = true,
-      })
-      vim.keymap.set({ "n", "v" }, "<localleader>f", function()
-        require("mossy").format()
-      end)
-    end,
-  },
-  {
-    "nvim-lint",
-    event = "BufAdd",
-    after = function()
-      require("lint").linters_by_ft = {
-        nix = { "deadnix", "statix" },
-        lua = { "selene" },
-        markdown = { "proselint" },
-      }
-
-      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-        group = vim.api.nvim_create_augroup("nvim-lint:try_lint", { clear = true }),
-        callback = function()
-          require("lint").try_lint()
-        end,
-      })
-    end,
-  },
-
   { "schemastore.nvim" },
 
   {
@@ -61,9 +12,6 @@ return {
   {
     "quill.nvim",
     event = "UIEnter",
-    after = function()
-      -- require("quill").setup()
-    end,
   },
   {
     "symbol-usage.nvim",
