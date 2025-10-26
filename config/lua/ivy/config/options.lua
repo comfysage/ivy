@@ -29,6 +29,7 @@ vim.o.cursorlineopt = "both"
 -- scroll offsets
 vim.o.scrolloff = 5
 vim.o.sidescrolloff = 15
+vim.o.mousescroll = "ver:1,hor:1"
 
 -- completion height
 vim.o.pumheight = 15
