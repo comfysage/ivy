@@ -311,7 +311,6 @@ vim.diagnostic.config({
   -- },
   signs = true,
   float = {
-    border = vim.g.bc_all,
     header = "",
     prefix = function(_, i)
       return string.format("%d. ", i), "LineNr"
