@@ -4,6 +4,7 @@ vim.o.title = true
 vim.o.titlestring = "%f · nvim"
 vim.o.errorbells = false
 vim.o.mouse = "nv"
+vim.o.exrc = true
 
 -- set space as leader
 vim.g.mapleader = " "
