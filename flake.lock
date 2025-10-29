@@ -43,24 +43,20 @@
     },
     "neovim-nightly-overlay": {
       "inputs": {
-        "flake-compat": [],
         "flake-parts": "flake-parts",
-        "git-hooks": [],
-        "hercules-ci-effects": [],
         "neovim-src": [
           "neovim-src"
         ],
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "treefmt-nix": []
+        ]
       },
       "locked": {
-        "lastModified": 1761091506,
-        "narHash": "sha256-7R93o+a1A6wASuNHLkkdW1zrRmOctkAOK9d219suTe0=",
+        "lastModified": 1761696321,
+        "narHash": "sha256-UpAmPtmsO9g7+uECR+NsjuKCYPa5SFj2akkjLc51k8I=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "643f5aad118a1bb2db5caa8bfc411da794fb870f",
+        "rev": "37853aa4419e22dc2b7544e4238dd880af673bc8",
         "type": "github"
       },
       "original": {
@@ -72,11 +68,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1761068402,
-        "narHash": "sha256-Kfso8/0Q4TFsqQ6Xzfy5XNlk5oj5j31h3E6BAWK0OQw=",
+        "lastModified": 1761706269,
+        "narHash": "sha256-MAKbqdRsB5tH1VdMEyft3a3giOD6ubxPrMCTaPzT6Zg=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "cf48741227a9aa77533d5adfd2379e7c16c71363",
+        "rev": "c06f2f6b380523b93b52600ae23d458eb4c85a7e",
         "type": "github"
       },
       "original": {
@@ -88,10 +84,10 @@
     "nixpkgs": {
       "locked": {
         "lastModified": 315532800,
-        "narHash": "sha256-Zk4ebRwxwsWjR20i15LsNk13uVhgubF44pJQddcCt4w=",
-        "rev": "cb82756ecc37fa623f8cf3e88854f9bf7f64af93",
+        "narHash": "sha256-GnmOLBT/XQxd8ibn+ibtNTQqoWWyH8l52T0nH2JwPBE=",
+        "rev": "1666250dbe4141e4ca8aaf89b40a3a51c2e36144",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre880602.cb82756ecc37/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-25.11pre885555.1666250dbe41/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
