@@ -31,7 +31,7 @@ vim
     if opts.event then
       if opts.event == "ConfigDone" then
         opts.event = "User"
-        opts.pattern = "ConfigDone"
+        pattern = "ConfigDone"
       end
       vim.api.nvim_create_autocmd(opts.event, {
         group = vim.api.nvim_create_augroup("ivy:" .. vim.inspect(opts.event) .. "[" .. name .. "]", { clear = true }),
