@@ -46,7 +46,19 @@ vim
     load_cfg(name)
   end)
 
-require("lz.n").load("ivy.plugins")
+require("lynn").packdir = vim.fs.joinpath(
+  vim.iter(vim.opt.packpath:get()):find(function(v)
+    return string.match(v, "neovim%-config")
+  end),
+  "pack",
+  os.getenv("NVIM_APPNAME"),
+  "opt"
+)
+vim.iter(vim.api.nvim_get_runtime_file("lua/ivy/plugins/*.lua", true)):each(function(file)
+  local name = string.gsub(vim.fs.basename(file), "%.lua$", "")
+  require("lynn").import("ivy.plugins." .. name, true)
+end)
+require("lynn").loadall()
 
 vim.api.nvim_exec_autocmds("User", { pattern = "ConfigDone" })
 

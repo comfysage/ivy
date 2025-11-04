@@ -1,10 +1,9 @@
 return {
   {
     "mossy.nvim",
-    event = "DeferredUIEnter",
+    event = "UIEnter",
+    deps = { "nio" },
     after = function()
-      require("lz.n").trigger_load("nvim-nio")
-
       require("mossy").setup()
       local sources = require("mossy.sources")
       sources:setup({
@@ -61,7 +60,7 @@ return {
 
   {
     "quill.nvim",
-    event = "DeferredUIEnter",
+    event = "UIEnter",
     after = function()
       -- require("quill").setup()
     end,

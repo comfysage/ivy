@@ -1,7 +1,7 @@
 return {
   {
     "toggleterm.nvim",
-    event = "DeferredUIEnter",
+    event = "UIEnter",
     after = function()
       require("toggleterm").setup({
         hide_numbers = true,
@@ -30,7 +30,7 @@ return {
       local shell = Terminal:new({
         cmd = "zsh",
         direction = "horizontal",
-        size = 15
+        size = 15,
       })
       vim.keymap.set("n", "<a-`>", function()
         shell:toggle()

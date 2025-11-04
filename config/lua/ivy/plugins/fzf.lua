@@ -1,7 +1,7 @@
 return {
   {
     "fzf-lua",
-    event = "DeferredUIEnter",
+    event = "UIEnter",
     after = function()
       local theme = {
         { "default-title" },

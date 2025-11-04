@@ -2,9 +2,9 @@ return {
   -- tree view
   {
     "neo-tree.nvim",
-    event = "DeferredUIEnter",
+    event = "UIEnter",
+    deps = { "nui" },
     after = function()
-      require("lz.n").trigger_load("nui.nvim")
       require("neo-tree").setup({
         popup_border_style = "", -- use 'winborder'
         filesystem = {
@@ -419,6 +419,7 @@ return {
 
   {
     "cord.nvim",
+    name = "cord.nvim",
     lazy = false,
     after = function()
       require("cord").setup({

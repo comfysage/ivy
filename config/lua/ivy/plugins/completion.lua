@@ -1,14 +1,13 @@
 return {
   {
     "blink.cmp",
-    event = "DeferredUIEnter",
+    event = "UIEnter",
+    deps = { "windsurf.nvim" },
     after = function()
       local ok, icons = pcall(require, "mini.icons")
       if not ok then
         vim.notify("could not find `mini.icons` module", vim.log.leves.WARN)
       end
-
-      require("lz.n").trigger_load({ "windsurf.nvim" })
 
       local keymap = {
         preset = "none",
@@ -222,7 +221,7 @@ return {
 
   -- sources
   {
-    "windsurf.nvim",
+    "windsurf.nvim", name = "windsurf.nvim",
     after = function()
       require("codeium").setup({
         enable_cmp_source = false,

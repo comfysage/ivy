@@ -1,7 +1,7 @@
 return {
   {
     "tabby.nvim",
-    event = "DeferredUIEnter",
+    event = "UIEnter",
     after = function()
       local left_sep = ""
       local right_sep = ""
@@ -65,7 +65,7 @@ return {
 
   {
     "fidget.nvim",
-    event = "DeferredUIEnter",
+    event = "UIEnter",
     after = function()
       require("fidget").setup({
         notification = {

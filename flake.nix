@@ -14,10 +14,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         neovim-src.follows = "neovim-src";
-        hercules-ci-effects.follows = "";
-        flake-compat.follows = "";
-        git-hooks.follows = "";
-        treefmt-nix.follows = "";
       };
     };
 

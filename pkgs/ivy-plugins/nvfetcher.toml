@@ -1,6 +1,7 @@
 [bqf]
 fetch.github = "kevinhwang91/nvim-bqf"
 src.git = "https://github.com/kevinhwang91/nvim-bqf"
+passthru.as = "bqf"
 
 [catppuccin]
 fetch.github = "catppuccin/nvim"
@@ -16,14 +17,17 @@ passthru.start = "true"
 [cloak]
 fetch.github = "laytan/cloak.nvim"
 src.git = "https://github.com/laytan/cloak.nvim"
+passthru.as = "cloak"
 
 [crates]
 fetch.github = "saecki/crates.nvim"
 src.git = "https://github.com/saecki/crates.nvim"
+passthru.as = "crates"
 
 [direnv]
 fetch.github = "NotAShelf/direnv.nvim"
 src.git = "https://github.com/NotAShelf/direnv.nvim"
+passthru.as = "direnv"
 
 [evergarden]
 fetch.github = "everviolet/nvim"
@@ -34,31 +38,38 @@ passthru.as = "evergarden"
 fetch.github = "j-hui/fidget.nvim"
 src.git = "https://github.com/j-hui/fidget.nvim"
 src.branch = "legacy"
+passthru.as = "fidget"
 
 [freeze]
 fetch.github = "charm-community/freeze.nvim"
 src.git = "https://github.com/charm-community/freeze.nvim"
+passthru.as = "freeze"
 
 [fzf-lua]
 fetch.github = "ibhagwan/fzf-lua"
 src.git = "https://github.com/ibhagwan/fzf-lua"
+passthru.as = "fzf"
 
 [keymaps-nvim]
 fetch.github = "comfysage/keymaps.nvim"
 src.git = "https://github.com/comfysage/keymaps.nvim"
+passthru.as = "keymaps"
 
 [lylla-nvim]
 fetch.github = "comfysage/lylla.nvim"
 src.git = "https://github.com/comfysage/lylla.nvim"
+passthru.as = "lylla"
 
-[lz-n]
-fetch.github = "nvim-neorocks/lz.n"
-src.git = "https://github.com/nvim-neorocks/lz.n"
+[lynn-nvim]
+fetch.github = "comfysage/lynn.nvim"
+src.git = "https://github.com/comfysage/lynn.nvim"
 passthru.start = "true"
+passthru.as = "lynn"
 
 [marks-nvim]
 fetch.github = "chentoast/marks.nvim"
 src.git = "https://github.com/chentoast/marks.nvim"
+passthru.as = "marks"
 
 [mini-ai]
 fetch.github = "echasnovski/mini.ai"
@@ -119,6 +130,7 @@ src.git = "https://github.com/echasnovski/mini.trailspace"
 [mossy-nvim]
 fetch.github = "comfysage/mossy.nvim"
 src.git = "https://github.com/comfysage/mossy.nvim"
+passthru.as = "mossy"
 
 [neogen]
 fetch.github = "danymat/neogen"
@@ -127,90 +139,111 @@ src.git = "https://github.com/danymat/neogen"
 [neo-tree]
 fetch.github = "nvim-neo-tree/neo-tree.nvim"
 src.git = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+passthru.as = "neo-tree"
 
 [nivvie-nvim]
 fetch.github = "comfysage/nivvie.nvim"
 src.git = "https://github.com/comfysage/nivvie.nvim"
+passthru.as = "nivvie"
 
 [nui]
 fetch.github = "MunifTanjim/nui.nvim"
 src.git = "https://github.com/MunifTanjim/nui.nvim"
+passthru.as = "nui"
 
 [nvim-lint]
 fetch.github = "mfussenegger/nvim-lint"
 src.git = "https://github.com/mfussenegger/nvim-lint"
+passthru.as = "lint"
 
 [nvim-nio]
 fetch.github = "nvim-neotest/nvim-nio"
 src.git = "https://github.com/nvim-neotest/nvim-nio"
+passthru.as = "nio"
 
 [nvim-lspconfig]
 fetch.github = "neovim/nvim-lspconfig"
 src.git = "https://github.com/neovim/nvim-lspconfig"
 passthru.start = "true"
+passthru.as = "lspconfig"
 
 [nvim-treesitter]
 fetch.github = "nvim-treesitter/nvim-treesitter"
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
 src.branch = "main"
 passthru.start = "true"
+passthru.as = "treesitter"
 
 [nvim-treesitter-context]
 fetch.github = "nvim-treesitter/nvim-treesitter-context"
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+passthru.as = "treesitter-context"
 
 [plenary]
 fetch.github = "nvim-lua/plenary.nvim"
 src.git = "https://github.com/nvim-lua/plenary.nvim"
 passthru.start = "true"
+passthru.as = "plenary"
 
 [quill-nvim]
 fetch.github = "comfysage/quill.nvim"
 src.git = "https://github.com/comfysage/quill.nvim"
+passthru.as = "quill"
 
 [rainbow-delimiters]
 fetch.github = "hiphish/rainbow-delimiters.nvim"
 src.git = "https://github.com/hiphish/rainbow-delimiters.nvim"
+passthru.as = "rainbow-delimiters"
 
 [sayama-nvim]
 fetch.github = "comfysage/sayama.nvim"
 src.git = "https://github.com/comfysage/sayama.nvim"
+passthru.as = "sayama"
 
 [schemastore]
 fetch.github = "b0o/schemastore.nvim"
 src.git = "https://github.com/b0o/schemastore.nvim"
+passthru.as = "schemastore"
 
 [shelf-nvim]
 fetch.github = "comfysage/shelf.nvim"
 src.git = "https://github.com/comfysage/shelf.nvim"
+passthru.as = "shelf"
 
 [symbol-usage]
 fetch.github = "Wansmer/symbol-usage.nvim"
 src.git = "https://github.com/Wansmer/symbol-usage.nvim"
+passthru.as = "symbol-usage"
 
 [tabby-nvim]
 fetch.github = "nanozuki/tabby.nvim"
 src.git = "https://github.com/nanozuki/tabby.nvim"
+passthru.as = "tabby"
 
 [toggleterm]
 fetch.github = "akinsho/toggleterm.nvim"
 src.git = "https://github.com/akinsho/toggleterm.nvim"
+passthru.as = "toggleterm"
 
 [treewalker]
 fetch.github = "aaronik/treewalker.nvim"
 src.git = "https://github.com/aaronik/treewalker.nvim"
+passthru.as = "treewalker"
 
 [vim-fugitive]
 fetch.github = "tpope/vim-fugitive"
 src.git = "https://github.com/tpope/vim-fugitive"
+passthru.as = "fugitive"
 
 [vim-startuptime]
 fetch.github = "dstein64/vim-startuptime"
 src.git = "https://github.com/dstein64/vim-startuptime"
+passthru.as = "startuptime"
 
 [yosu-nvim]
 fetch.github = "comfysage/yosu.nvim"
 src.git = "https://github.com/comfysage/yosu.nvim"
+passthru.as = "yosu"
 
 [zk-nvim]
 fetch.github = "mickael-menu/zk-nvim"
