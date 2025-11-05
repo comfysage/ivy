@@ -368,13 +368,13 @@
   };
   neo-tree = {
     pname = "neo-tree";
-    version = "a9c9251b3c6f9d0fc5a65ed632e04169ab2bcf89";
+    version = "f3df514fff2bdd4318127c40470984137f87b62e";
     src = fetchFromGitHub {
       owner = "nvim-neo-tree";
       repo = "neo-tree.nvim";
-      rev = "a9c9251b3c6f9d0fc5a65ed632e04169ab2bcf89";
+      rev = "f3df514fff2bdd4318127c40470984137f87b62e";
       fetchSubmodules = false;
-      sha256 = "sha256-ni26KwDvNMb2TCBUJfsBT0mqy2xNjNz3zrq0kRTTlqA=";
+      sha256 = "sha256-6TABXl4Ag/W1Tc3vH2FurIPTkMrs7MfrWJgcIKk+LPo=";
     };
     as = "neo-tree";
     date = "2025-11-04";
