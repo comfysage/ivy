@@ -29,9 +29,10 @@ local function directionalmap(mode, lhs, f, fmt)
   end)
 end
 
-local function cbcall(fn, props)
+local function cbcall(fn, ...)
+  local props = { ... }
   return function()
-    pcall(fn, props)
+    pcall(fn, unpack(props))
   end
 end
 
