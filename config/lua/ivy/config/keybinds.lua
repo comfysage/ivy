@@ -66,7 +66,7 @@ kmgroup({
 
 -- [file]
 kmgroup({
-  { "n", "<C-s>", vim.cmd.update, "save file" },
+  { "n", "<C-s>", cbcall(vim._with, { noautocmd = true }, cbcall(vim.cmd, "write")), "save file" },
   { "n", "<C-j>", "<C-^>", "edit alt file" },
 })
 
