@@ -121,16 +121,16 @@
   };
   fzf-lua = {
     pname = "fzf-lua";
-    version = "a8458b79a957a6e3e217d84106a0fd4b9470ff4c";
+    version = "996b2366489324983ac1a555cf4d156fe3786fa0";
     src = fetchFromGitHub {
       owner = "ibhagwan";
       repo = "fzf-lua";
-      rev = "a8458b79a957a6e3e217d84106a0fd4b9470ff4c";
+      rev = "996b2366489324983ac1a555cf4d156fe3786fa0";
       fetchSubmodules = false;
-      sha256 = "sha256-OloQKfJZIP8Hu9O6+b2iVUtaD52dyYrfDy16Kd3KXHM=";
+      sha256 = "sha256-N9A9zh4ObITDkMg/Cz9+dW0oNyACWOOVFlfbV+/0Y00=";
     };
     as = "fzf";
-    date = "2025-10-29";
+    date = "2025-11-10";
   };
   keymaps-nvim = {
     pname = "keymaps-nvim";
@@ -235,15 +235,15 @@
   };
   mini-files = {
     pname = "mini-files";
-    version = "dce9a4e4f14b3bf469e83c78aef393a090f4d057";
+    version = "26baa6215c2e5c40ba7fe82685d827fe8e5c68c8";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.files";
-      rev = "dce9a4e4f14b3bf469e83c78aef393a090f4d057";
+      rev = "26baa6215c2e5c40ba7fe82685d827fe8e5c68c8";
       fetchSubmodules = false;
-      sha256 = "sha256-5E1TR80bLnCMbRh0keEZ2ZhHWs5QmzViJEUe76j/quY=";
+      sha256 = "sha256-kQWbf7HE01vW8KyEJfim+iHgTrgPBm4BQ++hNxMwPbE=";
     };
-    date = "2025-11-03";
+    date = "2025-11-11";
   };
   mini-git = {
     pname = "mini-git";
@@ -295,15 +295,15 @@
   };
   mini-operators = {
     pname = "mini-operators";
-    version = "0670bfbfe492f630e37f240dbc31bdc652292e4e";
+    version = "59f5fdbaaed7cce160076e70926cb16faadea78c";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.operators";
-      rev = "0670bfbfe492f630e37f240dbc31bdc652292e4e";
+      rev = "59f5fdbaaed7cce160076e70926cb16faadea78c";
       fetchSubmodules = false;
-      sha256 = "sha256-pUJH8P/47InmFYn0UVpQbUT774ijvNqK4tiv1Tc8t7A=";
+      sha256 = "sha256-3xzYbmeNnWO0LdbqMkb3vMZeJEN2DTNG+b6i4sxTrLg=";
     };
-    date = "2025-11-03";
+    date = "2025-11-08";
   };
   mini-pairs = {
     pname = "mini-pairs";
@@ -419,16 +419,16 @@
   };
   nvim-lint = {
     pname = "nvim-lint";
-    version = "8c694e1a1ee2ac14df931679cd54e6b8d402c2c2";
+    version = "8b349e822a36e9480aed96c6dd2f757f80524a35";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-lint";
-      rev = "8c694e1a1ee2ac14df931679cd54e6b8d402c2c2";
+      rev = "8b349e822a36e9480aed96c6dd2f757f80524a35";
       fetchSubmodules = false;
-      sha256 = "sha256-Uiz8u0aPz8UMVPjPrMTqI3wsBzjuikvd4MwJPpKzE9w=";
+      sha256 = "sha256-TRiTTCfOoFXQvEw6Dyjx70Y2svpP7ln0LbYLOHw2Lzw=";
     };
     as = "lint";
-    date = "2025-11-01";
+    date = "2025-11-06";
   };
   nvim-lspconfig = {
     pname = "nvim-lspconfig";
@@ -459,30 +459,30 @@
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "65a266bf693d3fc856dd341c25edea1a0917a30f";
+    version = "f46e3a09bdfd148263227cfcfdf68d19e5b0e89c";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "65a266bf693d3fc856dd341c25edea1a0917a30f";
+      rev = "f46e3a09bdfd148263227cfcfdf68d19e5b0e89c";
       fetchSubmodules = false;
-      sha256 = "sha256-VySPuAZH2XT7QFd2H81D9vZHOifsSIFFpfLWGQz/XBk=";
+      sha256 = "sha256-22EuKaAKB5CZcdZAbcnn7qan4p/vUDqjgldUqOd3TmU=";
     };
     as = "treesitter";
     start = "true";
-    date = "2025-11-03";
+    date = "2025-11-10";
   };
   nvim-treesitter-context = {
     pname = "nvim-treesitter-context";
-    version = "ec308c7827b5f8cb2dd0ad303a059c945dd21969";
+    version = "660861b1849256398f70450afdf93908d28dc945";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter-context";
-      rev = "ec308c7827b5f8cb2dd0ad303a059c945dd21969";
+      rev = "660861b1849256398f70450afdf93908d28dc945";
       fetchSubmodules = false;
-      sha256 = "sha256-QdZstxKsEILwe7eUZCmMdyLPyvNKc/e7cfdYQowHWPQ=";
+      sha256 = "sha256-ICwAUXKngSPsJ6VV+84KUPqtAwlGPrm4FIf9ioisiz8=";
     };
     as = "treesitter-context";
-    date = "2025-10-21";
+    date = "2025-11-10";
   };
   plenary = {
     pname = "plenary";
@@ -513,16 +513,16 @@
   };
   rainbow-delimiters = {
     pname = "rainbow-delimiters";
-    version = "1812e4a121cb05e1a3103acf01b2cb691cddcaf2";
+    version = "8aafe2cbd89cd4090f573a98cab6b20366576fde";
     src = fetchFromGitHub {
       owner = "hiphish";
       repo = "rainbow-delimiters.nvim";
-      rev = "1812e4a121cb05e1a3103acf01b2cb691cddcaf2";
+      rev = "8aafe2cbd89cd4090f573a98cab6b20366576fde";
       fetchSubmodules = false;
-      sha256 = "sha256-5auHyaDjuZ1oTOHL9XRPsbTPWNp1v3k6ZzK+rHuXLNY=";
+      sha256 = "sha256-nBpXrSPN+jOM10b5TvHjI0j3rpsD2gqOBXt2+qUoWDY=";
     };
     as = "rainbow-delimiters";
-    date = "2025-11-03";
+    date = "2025-11-08";
   };
   sayama-nvim = {
     pname = "sayama-nvim";
@@ -539,16 +539,16 @@
   };
   schemastore = {
     pname = "schemastore";
-    version = "e5ca2c40986f415398dd5711625f0099b80b28b0";
+    version = "976b31e094615b2c27009561b3c67a37c87c93c2";
     src = fetchFromGitHub {
       owner = "b0o";
       repo = "schemastore.nvim";
-      rev = "e5ca2c40986f415398dd5711625f0099b80b28b0";
+      rev = "976b31e094615b2c27009561b3c67a37c87c93c2";
       fetchSubmodules = false;
-      sha256 = "sha256-oIoGMHGT9xITfnnppSlzx34aQB5K9kjYzWxcHLeEWZw=";
+      sha256 = "sha256-IOwhcxwZNNH+JutxD6lARZ6OFTrsZtQ1GN0dXuPiocg=";
     };
     as = "schemastore";
-    date = "2025-11-03";
+    date = "2025-11-06";
   };
   shelf-nvim = {
     pname = "shelf-nvim";
@@ -656,14 +656,14 @@
   };
   zk-nvim = {
     pname = "zk-nvim";
-    version = "575c3e8242d925c87e9a11fd7d304bc223d2f096";
+    version = "12ea07f19db7d22242a0d40827e40bbed37320a6";
     src = fetchFromGitHub {
       owner = "mickael-menu";
       repo = "zk-nvim";
-      rev = "575c3e8242d925c87e9a11fd7d304bc223d2f096";
+      rev = "12ea07f19db7d22242a0d40827e40bbed37320a6";
       fetchSubmodules = false;
-      sha256 = "sha256-mQOalwbJ7A3GocMQmonwUveGgI3DRFKTnpen/7sQFZ4=";
+      sha256 = "sha256-h6uA4aOzWNeLiva4mozbBGjSDuF3GyGyRIM36rFxGVc=";
     };
-    date = "2025-10-13";
+    date = "2025-11-08";
   };
 }
