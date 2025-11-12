@@ -123,6 +123,7 @@ let
     "html"
     "hyprlang"
     "ini"
+    "java"
     "javascript"
     "jsdoc"
     "json"
