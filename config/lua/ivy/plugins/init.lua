@@ -24,6 +24,10 @@ return {
     "fzf-lua",
     event = "UIEnter",
   },
+  {
+    "artio",
+    lazy = false,
+  },
 
   {
     "blink.indent",

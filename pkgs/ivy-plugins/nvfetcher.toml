@@ -1,3 +1,8 @@
+[artio-nvim]
+fetch.github = "comfysage/artio.nvim"
+src.git = "https://github.com/comfysage/artio.nvim"
+passthru.as = "artio"
+
 [blink-indent]
 fetch.github = "saghen/blink.indent"
 src.git = "https://github.com/saghen/blink.indent"

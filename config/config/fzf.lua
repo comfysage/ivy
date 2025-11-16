@@ -143,7 +143,7 @@ require("fzf-lua").setup(vim.tbl_deep_extend("force", theme, opts))
 require("fzf-lua").register_ui_select()
 
 local keymaps = require("keymaps").setup()
-keymaps.normal["<leader><leader>"] = {
+keymaps.normal["<leader>ff"] = {
   require("fzf-lua").files,
   "find files",
 }
