@@ -443,6 +443,10 @@ return {
     lazy = false,
   },
 
+  -- builtin
+  { "nvim.difftool", lazy = false },
+  { "nvim.undotree", event = "UIEnter" },
+
   -- dependencies
   { "nui.nvim" },
   { "nvim-nio" },

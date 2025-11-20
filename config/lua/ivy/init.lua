@@ -18,7 +18,6 @@ vim
     { "keybinds", event = "UIEnter" },
     { "neovide", event = "UIEnter" },
     { "options" },
-    { "local", event = "ConfigDone" },
     { "lsp", event = "ConfigDone" },
   }))
   :each(function(_, opts)
