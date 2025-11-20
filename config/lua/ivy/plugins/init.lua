@@ -27,6 +27,7 @@ return {
   {
     "artio",
     lazy = false,
+    deps = { "mini.icons" },
   },
 
   {
