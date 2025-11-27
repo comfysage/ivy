@@ -3,16 +3,16 @@
 {
   artio-nvim = {
     pname = "artio-nvim";
-    version = "d8baaee551755f0a7f0a5367aac61db1cc2d407b";
+    version = "517ce960f3a1d144d85442d3f198cf291867fb29";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "artio.nvim";
-      rev = "d8baaee551755f0a7f0a5367aac61db1cc2d407b";
+      rev = "517ce960f3a1d144d85442d3f198cf291867fb29";
       fetchSubmodules = false;
-      sha256 = "sha256-uS0lBD/7OuBpcmreMIt3uG5E/dBW2VKVS0TMuoN4x6o=";
+      sha256 = "sha256-OXHten5G62oKqb1mCWho+WI9zgHuFjdnA13kmlzXoDc=";
     };
     as = "artio";
-    date = "2025-11-21";
+    date = "2025-11-29";
   };
   blink-indent = {
     pname = "blink-indent";

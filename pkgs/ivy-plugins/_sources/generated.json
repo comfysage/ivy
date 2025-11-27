@@ -1,7 +1,7 @@
 {
     "artio-nvim": {
         "cargoLocks": null,
-        "date": "2025-11-21",
+        "date": "2025-11-29",
         "extract": null,
         "name": "artio-nvim",
         "passthru": {
@@ -15,12 +15,12 @@
             "name": null,
             "owner": "comfysage",
             "repo": "artio.nvim",
-            "rev": "d8baaee551755f0a7f0a5367aac61db1cc2d407b",
-            "sha256": "sha256-uS0lBD/7OuBpcmreMIt3uG5E/dBW2VKVS0TMuoN4x6o=",
+            "rev": "517ce960f3a1d144d85442d3f198cf291867fb29",
+            "sha256": "sha256-OXHten5G62oKqb1mCWho+WI9zgHuFjdnA13kmlzXoDc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d8baaee551755f0a7f0a5367aac61db1cc2d407b"
+        "version": "517ce960f3a1d144d85442d3f198cf291867fb29"
     },
     "blink-indent": {
         "cargoLocks": null,
