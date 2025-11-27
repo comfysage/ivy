@@ -6,3 +6,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
   desc = "highlight yanked text",
 })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("editor:yank:buf", { clear = true }),
+  callback = function()
+    if vim.v.event.operator == "y" then
+      for i = 9, 1, -1 do
+        vim.fn.setreg(tostring(i), vim.fn.getreg(tostring(i - 1)))
+      end
+    end
+  end,
+})
