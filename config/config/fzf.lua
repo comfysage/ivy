@@ -145,7 +145,5 @@ keymaps.normal["<leader>ff"] = {
   require("fzf-lua").files,
   "find files",
 }
-keymaps.normal["<leader>fg"] = { require("fzf-lua").live_grep, "grep through all files" }
 keymaps.normal["<leader>fq"] = { require("fzf-lua").quickfix, "search quick fix list" }
 keymaps.normal["<leader>fc"] = { require("fzf-lua").git_commits, "git commits" }
-keymaps.normal["<leader>f/"] = { require("fzf-lua").grep_curbuf, "fuzzy find in current buffer" }
