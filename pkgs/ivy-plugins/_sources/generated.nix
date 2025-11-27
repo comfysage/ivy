@@ -3,13 +3,13 @@
 {
   artio-nvim = {
     pname = "artio-nvim";
-    version = "517ce960f3a1d144d85442d3f198cf291867fb29";
+    version = "182e518831a918ed09c13a4596808c66d1de5f67";
     src = fetchFromGitHub {
       owner = "comfysage";
       repo = "artio.nvim";
-      rev = "517ce960f3a1d144d85442d3f198cf291867fb29";
+      rev = "182e518831a918ed09c13a4596808c66d1de5f67";
       fetchSubmodules = false;
-      sha256 = "sha256-OXHten5G62oKqb1mCWho+WI9zgHuFjdnA13kmlzXoDc=";
+      sha256 = "sha256-Vawgx5gjkQIFSeoEkqukDsXRlUIw6ozX8lbJ6TRIxxE=";
     };
     as = "artio";
     date = "2025-11-29";
