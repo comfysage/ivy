@@ -35,6 +35,11 @@ return {
     event = "UIEnter",
   },
 
+  {
+    "blink.pairs",
+    event = "UIEnter",
+  },
+
   -- tree view
   {
     "neo-tree.nvim",
@@ -362,17 +367,6 @@ return {
         -- useful to not show trailing whitespace where it usually doesn't matter.
         only_in_normal_buffers = true,
       })
-    end,
-  },
-
-  -- lsp
-  {
-    "rainbow-delimiters.nvim",
-    event = "UIEnter",
-    before = function()
-      vim.g.rainbow_delimiters = {
-        blacklist = { "markdown", "markdown_inline", "help" },
-      }
     end,
   },
 

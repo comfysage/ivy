@@ -188,6 +188,7 @@ wrapNeovim {
 
     # extra plugsns beacuse they often fail or need extra steps
     vimPlugins.blink-cmp
+    vimPlugins.blink-pairs
     (vimPlugins.cord-nvim.overrideAttrs {
       doCheck = false;
     })
