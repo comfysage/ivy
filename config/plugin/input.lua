@@ -43,7 +43,7 @@ vim.ui.input = function(opts, on_confirm)
       if #vim.api.nvim_buf_get_lines(buf, 0, -1, false) == 1 then
         return
       end
-      local input = vim.api.nvim_buf_get_lines(buf, 0, -1, false)[1]
+      local input = table.concat(vim.api.nvim_buf_get_lines(buf, 0, -1, false), "")
       cb(input)
     end,
   })
