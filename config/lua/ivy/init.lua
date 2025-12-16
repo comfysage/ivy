@@ -1,3 +1,5 @@
+require("ivy.on")
+require("ivy.once")
 require("ivy.notifs").init()
 
 local config_base = "ivy.config"
@@ -14,12 +16,12 @@ end
 vim
   .iter(ipairs({
     { "disable" },
+    { "options" },
     { "autocmds", event = "ConfigDone" },
     { "cmds", event = "VimEnter" },
     { "ft", event = "ConfigDone" },
     { "keybinds", event = "UIEnter" },
-    { "neovide", event = "UIEnter" },
-    { "options" },
+    { "neovide" },
     { "lsp", event = "ConfigDone" },
   }))
   :each(function(_, opts)
@@ -34,14 +36,12 @@ vim
         opts.event = "User"
         pattern = "ConfigDone"
       end
-      vim.api.nvim_create_autocmd(opts.event, {
+      vim.on(opts.event, pattern, {
         group = vim.api.nvim_create_augroup("ivy:" .. vim.inspect(opts.event) .. "[" .. name .. "]", { clear = true }),
-        pattern = pattern,
-        callback = function(_)
-          load_cfg(name)
-        end,
         once = true,
-      })
+      }, function()
+        load_cfg(name)
+      end)
       return
     end
     load_cfg(name)

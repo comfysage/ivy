@@ -17,24 +17,20 @@ local components = {
     name = "document_highlight",
     callback = function(client, buf)
       if client.server_capabilities.documentHighlightProvider then
-        local group = vim.api.nvim_create_augroup(string.format("lsp:document_highlight:%d", buf), { clear = true })
-        vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-          group = group,
+        local augroup = vim.augroup(string.format("lsp:document_highlight:%d", buf), true)
+        augroup({ "CursorHold", "CursorHoldI" }, nil, {
           buffer = buf,
-          callback = function()
-            vim.lsp.buf.clear_references()
-            vim.lsp.buf.document_highlight()
-          end,
           desc = "highlight lsp reference",
-        })
-        vim.api.nvim_create_autocmd("CursorMoved", {
-          group = group,
+        }, function()
+          vim.lsp.buf.clear_references()
+          vim.lsp.buf.document_highlight()
+        end)
+        augroup("CursorMoved", nil, {
           buffer = buf,
-          callback = function()
-            vim.lsp.buf.clear_references()
-          end,
           desc = "clear lsp references",
-        })
+        }, function()
+          vim.lsp.buf.clear_references()
+        end)
       end
     end,
   },
@@ -58,24 +54,20 @@ local components = {
 }
 
 vim.iter(ipairs(components)):each(function(_, fn)
-  vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("lsp:" .. fn.name, { clear = true }),
-    callback = function(ev)
-      local client = vim.lsp.get_client_by_id(ev.data.client_id)
-      if client == nil then
-        return
-      end
-      local ok, result = pcall(fn.callback, client, ev.buf)
-      if not ok then
-        vim.api.nvim_echo(
-          { { "unable to run on attach events for lsp server " }, { client.name }, { ":\n\t" }, { result } },
-          true,
-          { err = true }
-        )
-        return
-      end
-    end,
-  })
+  vim.augroup("lsp:" .. fn.name, true)("LspAttach", nil, {}, function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client == nil then
+      return
+    end
+    local ok, result = pcall(fn.callback, client, ev.buf)
+    if not ok then
+      vim.notify(
+        ("unable to run attach events for lsp server '%s':\n\t%s"):format(client.name, vim.inspect(result)),
+        vim.log.levels.ERROR
+      )
+      return
+    end
+  end)
 end)
 
 local common = props.common
@@ -101,5 +93,7 @@ if type(servers) == "function" then
   servers = servers()
 end
 
----@diagnostic disable-next-line: param-type-mismatch
-vim.iter(pairs(servers)):each(setup_ls)
+vim.once(function()
+  ---@diagnostic disable-next-line: param-type-mismatch
+  vim.iter(pairs(servers)):each(setup_ls)
+end)

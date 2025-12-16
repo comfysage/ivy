@@ -39,10 +39,6 @@ require("neo-tree").setup({
 local keymaps = require("keymaps").setup()
 keymaps.normal["<space>n"] = { "<cmd>Neotree<cr>", "open tree view" }
 
-vim.api.nvim_create_autocmd("WinEnter", {
-  pattern = "neo-tree *",
-  group = vim.api.nvim_create_augroup("filetype:neo-tree:options", { clear = true }),
-  callback = function(ev)
-    vim.api.nvim_set_option_value("sidescrolloff", 0, { win = ev.win })
-  end,
-})
+-- vim.augroup("filetype:neo-tree:options", true)("WinEnter", "neo-tree *", {}, function()
+--   vim.api.nvim_set_option_value("sidescrolloff", 0, { scope = "local" })
+-- end)

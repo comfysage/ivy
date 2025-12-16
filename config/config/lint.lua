@@ -4,9 +4,6 @@ require("lint").linters_by_ft = {
   markdown = { "proselint" },
 }
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  group = vim.api.nvim_create_augroup("nvim-lint:try_lint", { clear = true }),
-  callback = function()
-    require("lint").try_lint()
-  end,
-})
+vim.augroup("nvim-lint:try_lint", true)("BufWritePost", nil, {}, function()
+  require("lint").try_lint()
+end)

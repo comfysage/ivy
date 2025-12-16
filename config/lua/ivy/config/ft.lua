@@ -22,18 +22,15 @@ vim.filetype.add({
   },
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
-  callback = function(ev)
-    if not vim.api.nvim_buf_is_loaded(ev.buf) then
-      return
-    end
+vim.on("FileType", "*", {}, function(ev)
+  if not vim.api.nvim_buf_is_loaded(ev.buf) then
+    return
+  end
 
-    local ok, _ = pcall(vim.treesitter.start, ev.buf)
-    if not ok then
-      return
-    end
-    vim.o.foldmethod = "expr"
-    vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-  end,
-})
+  local ok, _ = pcall(vim.treesitter.start, ev.buf)
+  if not ok then
+    return
+  end
+  vim.o.foldmethod = "expr"
+  vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+end)

@@ -18,21 +18,18 @@ else
   vim.g.neovide_normal_opacity = 0.9
 end
 
-vim.api.nvim_create_autocmd("ColorScheme", {
-  group = vim.api.nvim_create_augroup("neovide:background", { clear = true }),
-  callback = function()
-    local normal = vim.api.nvim_get_hl(0, { name = "Normal" }) or { bg = 0, fg = 0 }
-    local bg = normal.bg and string.format("%x", normal.bg)
-    local fg = normal.fg and string.format("%x", normal.fg)
-    if bg then
-      vim.g.neovide_background_color = bg .. _G.neovide_alpha()
-      vim.g.neovide_title_background_color = bg
-    end
-    if fg then
-      vim.g.neovide_title_text_color = fg
-    end
-  end,
-})
+vim.once.ColorScheme(function()
+  local normal = vim.api.nvim_get_hl(0, { name = "Normal" }) or { bg = 0, fg = 0 }
+  local bg = normal.bg and string.format("%x", normal.bg)
+  local fg = normal.fg and string.format("%x", normal.fg)
+  if bg then
+    vim.g.neovide_background_color = bg .. _G.neovide_alpha()
+    vim.g.neovide_title_background_color = bg
+  end
+  if fg then
+    vim.g.neovide_title_text_color = fg
+  end
+end)
 
 -- font & cursor --
 

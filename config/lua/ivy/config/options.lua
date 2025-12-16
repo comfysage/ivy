@@ -53,6 +53,7 @@ vim.o.inccommand = "split"
 -- folding
 local function setfolds()
   if vim.bo.buftype ~= "" then
+    vim.o.foldenable = false
     return
   end
   vim.o.foldenable = true
@@ -63,20 +64,13 @@ local function setfolds()
   vim.o.foldmethod = "indent"
 end
 
-local foldgroup = vim.api.nvim_create_augroup("ivy:folds:init", { clear = true })
-vim.api.nvim_create_autocmd("BufWinEnter", {
-  group = foldgroup,
-  callback = function(ev)
-    vim.api.nvim_buf_call(ev.buf, setfolds)
-  end,
-})
-vim.api.nvim_create_autocmd("OptionSet", {
-  group = foldgroup,
-  pattern = "buftype",
-  callback = function(ev)
-    vim.api.nvim_buf_call(ev.buf, setfolds)
-  end,
-})
+local foldgroup = vim.augroup("ivy:folds:init", true)
+foldgroup("BufWinEnter", nil, {}, function(ev)
+  vim.api.nvim_buf_call(ev.buf, setfolds)
+end)
+foldgroup("OptionSet", "buftype", {}, function(ev)
+  vim.api.nvim_buf_call(ev.buf, setfolds)
+end)
 
 -- redefine word boundaries - '_' is a word separator, this helps with snake_case
 vim.opt.iskeyword:remove("_")

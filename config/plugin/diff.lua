@@ -24,9 +24,6 @@ if vim.v.vim_did_enter > 0 then
   return
 end
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  group = vim.api.nvim_create_augroup("ivy:diff", { clear = true }),
-  callback = function()
-    diff()
-  end,
-})
+vim.on("VimEnter", nil, {}, function()
+  diff()
+end)

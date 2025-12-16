@@ -26,20 +26,17 @@ notifs.init = function()
   notifs.old_echo = vim.api.nvim_echo
   vim.api.nvim_echo = notifs.nvim_echo
 
-  vim.api.nvim_create_autocmd("UIEnter", {
-    once = true,
-    callback = function()
-      notifs.did_ui_enter = true
+  vim.once.UIEnter(function()
+    notifs.did_ui_enter = true
 
-      vim.api.nvim_echo = notifs.old_echo
+    vim.api.nvim_echo = notifs.old_echo
 
-      vim.schedule(function()
-        for _, args in ipairs(notifs.queue) do
-          vim.api.nvim_echo(unpack(args))
-        end
-      end)
-    end,
-  })
+    vim.schedule(function()
+      for _, args in ipairs(notifs.queue) do
+        vim.api.nvim_echo(unpack(args))
+      end
+    end)
+  end)
 
   notifs.did_init = true
 end
