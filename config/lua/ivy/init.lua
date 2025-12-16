@@ -1,3 +1,5 @@
+require("ivy.notifs").init()
+
 local config_base = "ivy.config"
 
 local load_cfg = function(name)
