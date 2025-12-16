@@ -1076,6 +1076,29 @@
         },
         "version": "b3affa6db7eab80fca2a2db5b73b473144507039"
     },
+    "tether-nvim": {
+        "cargoLocks": null,
+        "date": "2025-11-16",
+        "extract": null,
+        "name": "tether-nvim",
+        "passthru": {
+            "as": "tether"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "comfysage",
+            "repo": "tether.nvim",
+            "rev": "164083f87438c7c797ae3038b9bbe8afb13e930c",
+            "sha256": "sha256-EfdzO++Ohk0ddrynPypTvxN44oa8qV68dEeaQRSRrk8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "164083f87438c7c797ae3038b9bbe8afb13e930c"
+    },
     "toggleterm": {
         "cargoLocks": null,
         "date": "2025-03-09",

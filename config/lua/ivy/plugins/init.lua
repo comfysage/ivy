@@ -388,6 +388,11 @@ return {
   },
 
   {
+    "tether.nvim",
+    lazy = false,
+  },
+
+  {
     "cord.nvim",
     name = "cord.nvim",
     lazy = false,

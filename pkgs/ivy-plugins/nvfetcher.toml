@@ -229,6 +229,11 @@ fetch.github = "nanozuki/tabby.nvim"
 src.git = "https://github.com/nanozuki/tabby.nvim"
 passthru.as = "tabby"
 
+[tether-nvim]
+fetch.github = "comfysage/tether.nvim"
+src.git = "https://github.com/comfysage/tether.nvim"
+passthru.as = "tether"
+
 [toggleterm]
 fetch.github = "akinsho/toggleterm.nvim"
 src.git = "https://github.com/akinsho/toggleterm.nvim"

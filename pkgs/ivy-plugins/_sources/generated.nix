@@ -614,6 +614,19 @@
     as = "tabby";
     date = "2025-05-23";
   };
+  tether-nvim = {
+    pname = "tether-nvim";
+    version = "164083f87438c7c797ae3038b9bbe8afb13e930c";
+    src = fetchFromGitHub {
+      owner = "comfysage";
+      repo = "tether.nvim";
+      rev = "164083f87438c7c797ae3038b9bbe8afb13e930c";
+      fetchSubmodules = false;
+      sha256 = "sha256-EfdzO++Ohk0ddrynPypTvxN44oa8qV68dEeaQRSRrk8=";
+    };
+    as = "tether";
+    date = "2025-11-16";
+  };
   toggleterm = {
     pname = "toggleterm";
     version = "9a88eae817ef395952e08650b3283726786fb5fb";
