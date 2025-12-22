@@ -1,3 +1,9 @@
+if vim.g.ivy_ft then
+  return
+end
+
+vim.g.ivy_ft = true
+
 vim.filetype.add({
   extension = {
     jq = "jq",

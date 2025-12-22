@@ -2,10 +2,7 @@ require("ivy.on")
 require("ivy.once")
 require("ivy.notifs").init()
 
-local config_base = "ivy.config"
-
-local load_cfg = function(name)
-  local mod = config_base .. "." .. name
+local load_cfg = function(mod)
   local ok, result = pcall(require, mod)
   if not ok then
     return vim.notify("error loading " .. mod .. ":\n\t" .. result, vim.log.levels.ERROR)
@@ -13,38 +10,36 @@ local load_cfg = function(name)
   return result
 end
 
+local load = function(spec)
+  return load_cfg(spec.name)
+end
+
+local base_path = debug.getinfo(1).source:sub(2, -#"/lua/ivy/init.lua")
+
 vim
   .iter(ipairs({
-    { "disable" },
-    { "options" },
-    { "autocmds", event = "ConfigDone" },
-    { "cmds", event = "VimEnter" },
-    { "ft", event = "ConfigDone" },
-    { "keybinds", event = "UIEnter" },
-    { "neovide" },
-    { "lsp", event = "ConfigDone" },
+    { "ivy.config.disable" },
+    { "ivy.config.options" },
+    { "ivy.config.autocmds", event = "User ConfigDone" },
+    { "ivy.config.cmds", event = "VimEnter" },
+    { "ivy.config.keybinds", event = "UIEnter" },
+    { "ivy.config.neovide" },
+    { "ivy.config.lsp", event = "User PackDone" },
   }))
-  :each(function(_, opts)
-    local name = opts[1]
-    if not name then
-      return
-    end
-    ---@type string?
-    local pattern
-    if opts.event then
-      if opts.event == "ConfigDone" then
-        opts.event = "User"
-        pattern = "ConfigDone"
-      end
-      vim.on(opts.event, pattern, {
-        group = vim.api.nvim_create_augroup("ivy:" .. vim.inspect(opts.event) .. "[" .. name .. "]", { clear = true }),
-        once = true,
-      }, function()
-        load_cfg(name)
-      end)
-      return
-    end
-    load_cfg(name)
+  :map(function(_, spec)
+    local modname = spec[1]
+    local path = vim.fs.joinpath(base_path, ("lua/%s.lua"):format(modname:gsub("%.", "/")))
+    return {
+      name = spec[1],
+      url = "file://" .. path,
+      event = spec.event,
+      path = path,
+      load = load,
+    }
+  end)
+  :each(function(plug)
+    require("lynn").register(plug, true)
+    require("lynn").load(plug.name)
   end)
 
 require("lynn").packdir = vim.fs.joinpath(
@@ -59,7 +54,7 @@ vim.iter(vim.api.nvim_get_runtime_file("lua/ivy/plugins/*.lua", true)):each(func
   local name = string.gsub(vim.fs.basename(file), "%.lua$", "")
   require("lynn").import("ivy.plugins." .. name, true)
 end)
-require("lynn").loadall()
+require("lynn").setup()
 
 vim.api.nvim_exec_autocmds("User", { pattern = "ConfigDone" })
 

@@ -70,8 +70,8 @@ src.git = "https://github.com/comfysage/lylla.nvim"
 passthru.as = "lylla"
 
 [lynn-nvim]
-fetch.github = "comfysage/lynn.nvim"
-src.git = "https://github.com/comfysage/lynn.nvim"
+fetch.git = "https://codeberg.org/comfysage/lynn.nvim"
+src.git = "https://codeberg.org/comfysage/lynn.nvim"
 passthru.start = "true"
 passthru.as = "lynn"
 

@@ -2,7 +2,7 @@ return {
   {
     "nvim-treesitter-context",
     event = "UIEnter",
-    after = function()
+    config = function()
       local exclude_filetypes = { "nix" }
 
       require("treesitter-context").setup({
@@ -26,7 +26,7 @@ return {
   {
     "neogen",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("neogen").setup({})
 
       local function cbcall(fn, ...)
@@ -58,7 +58,7 @@ return {
   {
     "treewalker.nvim",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("treewalker").setup({
         -- briefly highlight the node after jumping to it
         highlight = true,

@@ -3,7 +3,7 @@ return {
 
   {
     "crates.nvim",
-    after = function()
+    config = function()
       require("crates").setup({})
     end,
     event = "BufRead Cargo.toml",
@@ -16,7 +16,7 @@ return {
   {
     "symbol-usage.nvim",
     event = "BufReadPost",
-    after = function()
+    config = function()
       local SymbolKind = vim.lsp.protocol.SymbolKind
 
       ---@diagnostic disable-next-line: missing-fields

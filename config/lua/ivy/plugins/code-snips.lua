@@ -2,7 +2,7 @@ return {
   {
     "freeze.nvim",
     event = "BufReadPost",
-    after = function()
+    config = function()
       vim.keymap.set("v", "<leader>sc", "<cmd>Freeze<cr>")
 
       require("freeze").setup({
@@ -19,7 +19,7 @@ return {
   {
     "sayama.nvim",
     event = "BufReadPost",
-    after = function()
+    config = function()
       require("sayama").setup({
         dir = vim.fn.glob("$XDG_DATA_HOME/zzz"),
       })

@@ -322,7 +322,7 @@
     },
     "lynn-nvim": {
         "cargoLocks": null,
-        "date": "2025-11-04",
+        "date": "2025-12-22",
         "extract": null,
         "name": "lynn-nvim",
         "passthru": {
@@ -335,14 +335,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "comfysage",
-            "repo": "lynn.nvim",
-            "rev": "695536b501b873806a7e6f04697e9c6452de91b4",
-            "sha256": "sha256-Ox1kZxlSpN+XHyfXqY7Lzu5BY/S6ZWU/3lJW2/EvMyo=",
+            "rev": "d6cd8b3b71a90c9276406c883e026d0578f60cae",
+            "sha256": "sha256-kaMyz6CKEv6Z4B8Y4OKcmQsIuF6fMVtPpKi874Eg0wc=",
             "sparseCheckout": [],
-            "type": "github"
+            "type": "git",
+            "url": "https://codeberg.org/comfysage/lynn.nvim"
         },
-        "version": "695536b501b873806a7e6f04697e9c6452de91b4"
+        "version": "d6cd8b3b71a90c9276406c883e026d0578f60cae"
     },
     "marks-nvim": {
         "cargoLocks": null,

@@ -78,7 +78,7 @@ return {
   {
     "windsurf.nvim",
     name = "windsurf.nvim",
-    after = function()
+    config = function()
       require("codeium").setup({
         enable_cmp_source = false,
       })
@@ -90,7 +90,7 @@ return {
     "keymaps.nvim",
     lazy = false,
     priority = 1000,
-    after = function()
+    config = function()
       require("keymaps").setup()
     end,
   },
@@ -109,7 +109,7 @@ return {
   {
     "mini.ai",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("mini.ai").setup({
         mappings = {
           -- Main textobject prefixes
@@ -132,21 +132,21 @@ return {
   {
     "mini.align",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("mini.align").setup()
     end,
   },
   {
     "mini.bracketed",
     event = "UIEnter",
-    after = function()
+    config = function()
       require("mini.bracketed").setup()
     end,
   },
   {
     "mini.diff",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("mini.diff").setup({
         view = {
           style = "number",
@@ -187,7 +187,7 @@ return {
   {
     "mini.files",
     event = "UIEnter",
-    after = function()
+    config = function()
       require("mini.files").setup({
         options = {
           use_as_default_explorer = false,
@@ -217,7 +217,7 @@ return {
   {
     "mini-git",
     event = "UIEnter",
-    after = function()
+    config = function()
       require("mini.git").setup()
     end,
   },
@@ -225,7 +225,7 @@ return {
     "mini.icons",
     lazy = false,
     priority = 1000,
-    after = function()
+    config = function()
       require("mini.icons").setup({
         filetype = {
           qmljs = { glyph = "󰫾", hl = "MiniIconsAzure" },
@@ -278,7 +278,7 @@ return {
   {
     "mini.jump2d",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("mini.jump2d").setup({
         view = {
           dim = true,
@@ -289,7 +289,7 @@ return {
   {
     "mini.move",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("mini.move").setup({
         mappings = {
           -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
@@ -316,7 +316,7 @@ return {
   {
     "mini.operators",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("mini.operators").setup({
         exchange = { prefix = "Cx" },
         multiply = { prefix = "Cm" },
@@ -328,21 +328,21 @@ return {
   {
     "mini.pairs",
     event = "InsertEnter",
-    after = function()
+    config = function()
       require("mini.pairs").setup()
     end,
   },
   {
     "mini.splitjoin",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("mini.splitjoin").setup()
     end,
   },
   {
     "mini.surround",
     event = "InsertEnter",
-    after = function()
+    config = function()
       require("mini.surround").setup({
         mappings = {
           add = "S", -- Add surrounding in Normal and Visual modes
@@ -361,7 +361,7 @@ return {
   {
     "mini.trailspace",
     event = "BufAdd",
-    after = function()
+    config = function()
       require("mini.trailspace").setup({
         -- highlight only in normal buffers (ones with empty 'buftype'). this is
         -- useful to not show trailing whitespace where it usually doesn't matter.
@@ -375,7 +375,7 @@ return {
     enabled = function()
       return vim.fn.executable("direnv") == 1
     end,
-    after = function()
+    config = function()
       require("direnv").setup({
         autoload_direnv = true,
       })
@@ -396,7 +396,7 @@ return {
     "cord.nvim",
     name = "cord.nvim",
     lazy = false,
-    after = function()
+    config = function()
       require("cord").setup({
         editor = {
           tooltip = "the modal text editor of your nightmares",

@@ -185,17 +185,19 @@
   };
   lynn-nvim = {
     pname = "lynn-nvim";
-    version = "695536b501b873806a7e6f04697e9c6452de91b4";
-    src = fetchFromGitHub {
-      owner = "comfysage";
-      repo = "lynn.nvim";
-      rev = "695536b501b873806a7e6f04697e9c6452de91b4";
+    version = "d6cd8b3b71a90c9276406c883e026d0578f60cae";
+    src = fetchgit {
+      url = "https://codeberg.org/comfysage/lynn.nvim";
+      rev = "d6cd8b3b71a90c9276406c883e026d0578f60cae";
       fetchSubmodules = false;
-      sha256 = "sha256-Ox1kZxlSpN+XHyfXqY7Lzu5BY/S6ZWU/3lJW2/EvMyo=";
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-kaMyz6CKEv6Z4B8Y4OKcmQsIuF6fMVtPpKi874Eg0wc=";
     };
     as = "lynn";
     start = "true";
-    date = "2025-11-04";
+    date = "2025-12-22";
   };
   marks-nvim = {
     pname = "marks-nvim";
